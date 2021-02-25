@@ -8,4 +8,4 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: choco install powerbi
+      - run: choco install powerbi --ignore-checksums
