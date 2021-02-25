@@ -9,3 +9,4 @@ jobs:
 
     steps:
       - run: choco install powerbi --ignore-checksums
+      - run: cat C:\ProgramData\chocolatey\logs\chocolatey.log
