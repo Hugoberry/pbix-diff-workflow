@@ -1,0 +1,14 @@
+name: Choco PowerBI
+
+on: [repository_dispatch]
+
+jobs:
+  choco-powerbi-script:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install PowerBI desktop
+      if: github.event.action == 'script'
+      run: choco install powerbi
