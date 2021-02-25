@@ -1,6 +1,6 @@
 name: Choco PowerBI
 
-on: [repository_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   choco-powerbi-script:
