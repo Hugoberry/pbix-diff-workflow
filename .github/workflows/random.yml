@@ -9,5 +9,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - uses: actions/checkout@v1
       - run: pwsh -command "$env:GITHUB_WORKSPACE\process-run.ps1"
       - run: Get-Process
