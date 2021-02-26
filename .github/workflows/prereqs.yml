@@ -8,5 +8,5 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: choco install powerbi --ignore-checksums
-      - run: ls 'C:\Program Files\'
+      - run: Install-Package Microsoft.AnalysisServices.NetCore.retail.amd64 Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -SkipDependencies
+      - run: ls 'C:\Program Files\PackageManagement\NuGet\Packages'
