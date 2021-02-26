@@ -136,9 +136,6 @@ try {
 }
 catch {
 
-    $ErrorMessage = $_.Exception.Message
-    $FailedItem = $_.Exception.ItemName
-    Write-Debug $ErrorMessage
-    Write-Debug $FailedItem
+    $_
 
 }
