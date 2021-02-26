@@ -11,4 +11,4 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run PowerShell Hello World script
       if: github.event.action == 'script'
-      run: .\($env:GITHUB_WORKSPACE)\blob.ps1
+      run: .\$env:GITHUB_WORKSPACE\blob.ps1

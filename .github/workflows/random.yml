@@ -9,6 +9,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: pwd
-      - run: $env:GITHUB_WORKSPACE
-      - run: $GITHUB_WORKSPACE
+      - run: choco install powerbi --ignore-checksums
+      - run: .\$env:GITHUB_WORKSPACE\process-run.ps1
+      - run: Get-Process
