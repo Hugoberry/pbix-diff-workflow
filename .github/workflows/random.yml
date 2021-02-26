@@ -9,5 +9,5 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: pwsh -command pwd
-      - run: echo %GITHUB_WORKSPACE%
+      - run: pwd
+      - run: $env:GITHUB_WORKSPACE
