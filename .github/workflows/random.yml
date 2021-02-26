@@ -10,3 +10,4 @@ jobs:
 
     steps:
       - run: pwsh -command pwd
+      - run: echo %GITHUB_WORKSPACE%
