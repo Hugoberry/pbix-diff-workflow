@@ -125,7 +125,68 @@ try {
     $dynamicPort = Get-Content "$WorkSpaceDir\msmdsrv.port.txt" -Encoding unicode 
     Write-Host $dynamicPort
 
-    #$server.Disconnect();
+    # loading nuget packages required for this job
+    $p = get-package Microsoft.AnalysisServices.NetCore.retail.amd64
+    $nugetFile = get-childitem $p.source
+    $amoFile = join-path $nugetFile.DirectoryName "lib\netcoreapp3.0\Microsoft.AnalysisServices.dll"
+
+    $p = get-package Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64
+    $nugetFile = get-childitem $p.source
+    $adomdFile = join-path $nugetFile.DirectoryName "lib\netcoreapp3.0\Microsoft.AnalysisServices.AdomdClient.dll"
+
+    $p = get-package Dax.Vpax.NetCore
+    $nugetFile = get-childitem $p.source
+    $vpax = join-path $nugetFile.DirectoryName "lib\netcoreapp3.1\Dax.Vpax.NetCore.dll"
+
+    $p = get-package Dax.Model.Extractor.NetCore
+    $nugetFile = get-childitem $p.source
+    $extractor = join-path $nugetFile.DirectoryName "lib\netcoreapp3.1\Dax.Model.Extractor.NetCore.dll"
+
+
+    $p = get-package Dax.Metadata
+    $nugetFile = get-childitem $p.source
+    $daxMeta = join-path $nugetFile.DirectoryName "lib\netstandard2.0\Dax.Metadata.dll"
+
+    $p = get-package Dax.ViewVpaExport
+    $nugetFile = get-childitem $p.source
+    $daxVpa = join-path $nugetFile.DirectoryName "lib\netstandard2.0\Dax.ViewVpaExport.dll"
+
+    add-type -path $amoFile
+    add-type -path $adomdFile
+    Add-Type -Path $extractor
+    Add-Type -Path $vpax
+    Add-Type -Path $daxMeta
+    Add-Type -Path $daxVpa
+
+    $server = New-Object Microsoft.AnalysisServices.Server
+    $server.Connect("localhost:$dynamicPort")
+
+    $guidDatabase = (New-Guid).ToString()
+    $pbixFile = "$env:GITHUB_WORKSPACE\sample.pbix"
+    $imageLoad_XMLA = @"
+<ImageLoad AllowOverwrite=`"true`" 
+xmlns=`"http://schemas.microsoft.com/analysisservices/2003/engine`" 
+xmlns:ddl100=`"http://schemas.microsoft.com/analysisservices/2008/engine/100`" 
+xmlns:ddl200=`"http://schemas.microsoft.com/analysisservices/2010/engine/200`" 
+xmlns:ddl700_700=`"http://schemas.microsoft.com/analysisservices/2018/engine/700/700`">
+                <ddl700_700:PackagePath>$pbixFile</ddl700_700:PackagePath>
+                <ddl700_700:PackagePartUri>/DataModel</ddl700_700:PackagePartUri>
+                <DatabaseName>$guidDatabase</DatabaseName>
+                <DatabaseID>$guidDatabase</DatabaseID>
+                <ddl100:ReadWriteMode>ReadWrite</ddl100:ReadWriteMode>
+</ImageLoad>
+"@
+
+    $null = $server.Execute($imageLoad_XMLA)
+    $server.Refresh()
+
+    $tom = [Dax.Metadata.Extractor.TomExtractor]::GetDaxModel("localhost:$dynamicPort", $guidDatabase, "aaaa", "bbb", $true, 0)
+    $vpa = new-object  Dax.ViewVpaExport.Model($tom)
+    [Dax.Vpax.Tools.VpaxTools]::ExportVpax("$env:GITHUB_WORKSPACE\tom.vpax", $tom, $vpa, $null)
+
+
+
+    $server.Disconnect();
     #cleanup processes 
     $null = $process.Kill()
     $null = $process.WaitForExit()

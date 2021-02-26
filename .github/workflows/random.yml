@@ -11,4 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: choco install powerbi --ignore-checksums
+      - run: Install-Package Microsoft.AnalysisServices.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
+      - run: Install-Package Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
+      - run: Install-Package Dax.Vpax.NetCore -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
+      - run: Install-Package Dax.Model.Extractor.NetCore -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
+      - run: Install-Package Dax.Metadata -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
+      - run: Install-Package Dax.ViewVpaExport -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
       - run: pwsh -command "$env:GITHUB_WORKSPACE\process-run.ps1"
+      - run: |          
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "adding TOM"
+          git push
