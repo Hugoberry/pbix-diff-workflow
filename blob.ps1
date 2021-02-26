@@ -2,8 +2,7 @@
 $guidInstanceName = (New-Guid).ToString()
 
 $WorkSpaceDir = "C:\code\msmd\ZZZZ\Data"
-#$WorkingDir = "C:\code\msmd\bin"
-$WorkingDir = "C:\Program Files\WindowsApps\Microsoft.MicrosoftPowerBIDesktop_2.90.782.0_x64__8wekyb3d8bbwe\bin"
+$WorkingDir = "C:\Program Files\Microsoft Power BI Desktop\bin"
 $msmdsrv_ini = @"
 <ConfigurationSettings>
     <DataDir>$WorkSpaceDir</DataDir>
@@ -110,7 +109,7 @@ $process.StartInfo.UseShellExecute = $false
 $process.StartInfo.CreateNoWindow = $true
 $process.Startinfo.FileName = "$WorkingDir\msmdsrv.exe"
 $process.StartInfo.WorkingDirectory = "$WorkingDir"
-$process.startInfo.Arguments = "-c -n TAB -s `"$WorkSpaceDir`""
+$process.startInfo.Arguments = "-c -n workspace -s `"$WorkSpaceDir`""
 $null = $process.Start()
 
 

@@ -11,3 +11,4 @@ jobs:
     steps:
       - run: pwd
       - run: $env:GITHUB_WORKSPACE
+      - run: $GITHUB_WORKSPACE
