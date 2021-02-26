@@ -9,5 +9,5 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: .\($GITHUB_WORKSPACE)\process-run.ps1
+      - run: $env:GITHUB_WORKSPACE\process-run.ps1
       - run: Get-Process
