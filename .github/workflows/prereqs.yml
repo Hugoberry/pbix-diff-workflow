@@ -8,5 +8,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: Install-Package Microsoft.AnalysisServices.NetCore.retail.amd64 Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -SkipDependencies
+      - run: Install-Package Microsoft.AnalysisServices.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -SkipDependencies
+      - run: Install-Package Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -SkipDependencies
+      - run: Install-Package Dax.Vpax.NetCore -Source 'https://www.nuget.org/api/v2' -SkipDependencies
+      - run: Install-Package Dax.Model.Extractor.NetCore -Source 'https://www.nuget.org/api/v2' -SkipDependencies
+      - run: Install-Package Dax.Metadata -Source 'https://www.nuget.org/api/v2' -SkipDependencies
+      - run: Install-Package Dax.ViewVpaExport -Source 'https://www.nuget.org/api/v2' -SkipDependencies
       - run: ls 'C:\Program Files\PackageManagement\NuGet\Packages'
