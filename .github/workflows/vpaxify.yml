@@ -1,5 +1,5 @@
   
-name: Adding VPAX files next to PBIX files
+name: Adding VPAX files next to PBIX
 
 on: [workflow_dispatch]
 

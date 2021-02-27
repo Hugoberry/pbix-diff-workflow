@@ -183,7 +183,7 @@ xmlns:ddl700_700=`"http://schemas.microsoft.com/analysisservices/2018/engine/700
     $tom = [Dax.Metadata.Extractor.TomExtractor]::GetDaxModel("localhost:$dynamicPort", $guidDatabase, "aaaa", "bbb", $true, 0)
     $database = [Dax.Metadata.Extractor.TomExtractor]::GetDatabase("localhost:$dynamicPort", $guidDatabase)
     $vpa = new-object  Dax.ViewVpaExport.Model($tom)
-    [Dax.Vpax.Tools.VpaxTools]::ExportVpax("$env:GITHUB_WORKSPACE\tom.vpax", $tom, $vpa, $database)
+    [Dax.Vpax.Tools.VpaxTools]::ExportVpax("$env:GITHUB_WORKSPACE\sample.vpax", $tom, $vpa, $database)
 
 
 
@@ -195,6 +195,11 @@ xmlns:ddl700_700=`"http://schemas.microsoft.com/analysisservices/2018/engine/700
     # #clean FS - workspace
     Get-ChildItem $WorkSpaceDir -Recurse | Remove-Item -Force -Recurse
 
+
+    #prove a point about no compression
+    Expand-Archive .\sample.vpax -Force
+    Compress-Archive -Path  "$env:GITHUB_WORKSPACE\sample\*" -update -DestinationPath  "$env:GITHUB_WORKSPACE\sample.vpax" -CompressionLevel NoCompression
+    Get-ChildItem "$env:GITHUB_WORKSPACE\sample" -Recurse | Remove-Item -Force -Recurse
 }
 catch {
 
