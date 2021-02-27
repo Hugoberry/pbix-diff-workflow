@@ -1,2 +1,1 @@
-*.vpax text
-*.vpax diff
+*.vpax text diff=astextplain
