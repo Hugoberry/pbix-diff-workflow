@@ -181,8 +181,9 @@ xmlns:ddl700_700=`"http://schemas.microsoft.com/analysisservices/2018/engine/700
     $server.Refresh()
 
     $tom = [Dax.Metadata.Extractor.TomExtractor]::GetDaxModel("localhost:$dynamicPort", $guidDatabase, "aaaa", "bbb", $true, 0)
+    $database = [Dax.Metadata.Extractor.TomExtractor]::GetDatabase("localhost:$dynamicPort", $guidDatabase)
     $vpa = new-object  Dax.ViewVpaExport.Model($tom)
-    [Dax.Vpax.Tools.VpaxTools]::ExportVpax("$env:GITHUB_WORKSPACE\tom.vpax", $tom, $vpa, $null)
+    [Dax.Vpax.Tools.VpaxTools]::ExportVpax("$env:GITHUB_WORKSPACE\tom.vpax", $tom, $vpa, $database)
 
 
 
