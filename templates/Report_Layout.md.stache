@@ -1,10 +1,13 @@
 # Layout
-* {{id}}
-* {{config}}
-* {{reportId}}
-* {{layoutOptimization}}
 
-## sections
+|Key|Value|
+|---|---|
+|id|{{id}}|
+|config|{{config}}|
+|reportId|{{reportId}}|
+|layoutOptimization|{{layoutOptimization}}|
+
+## Sections
 |id|name|filters|width|height|config|displayName|objectId|displayOption|ordinal|
 |---|---|---|---|---|---|---|---|---|---|
 {{#sections}}

@@ -1,10 +1,13 @@
 # Layout
-* 708152
-* {&quot;version&quot;:&quot;3.4&quot;,&quot;activeSectionIndex&quot;:0}
-* 326420
-* 0
 
-## sections
+|Key|Value|
+|---|---|
+|id|708152|
+|config|{&quot;version&quot;:&quot;3.4&quot;,&quot;activeSectionIndex&quot;:0}|
+|reportId|326420|
+|layoutOptimization|0|
+
+## Sections
 |id|name|filters|width|height|config|displayName|objectId|displayOption|ordinal|
 |---|---|---|---|---|---|---|---|---|---|
 |4823680|ReportSection|[]|1280|720|{&quot;objects&quot;:{&quot;background&quot;:[{&quot;properties&quot;:{&quot;color&quot;:{&quot;solid&quot;:{&quot;color&quot;:{&quot;expr&quot;:{&quot;Literal&quot;:{&quot;Value&quot;:&quot;&#39;#DDEBF6&#39;&quot;}}}}}}}]}}|Regional Sales Analysis|eb535b6b-d4dc-4743-8edb-1c59a5ca0864|1||
