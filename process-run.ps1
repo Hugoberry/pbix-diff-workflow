@@ -196,6 +196,8 @@ xmlns:ddl700_700=`"http://schemas.microsoft.com/analysisservices/2018/engine/700
     $null = $process.Kill()
     $null = $process.WaitForExit()
 
+#$vpax = Get-Content .\sample\DaxVpaView.json | Out-String    
+#ConvertTo-PoshstacheTemplate -InputFile .\templates\vpax.md.stache -ParametersObject $vpax | Out-File .\vpax.md -Force -Encoding "UTF8"
     # #clean FS - workspace
     Get-ChildItem $WorkSpaceDir -Recurse | Remove-Item -Force -Recurse
 

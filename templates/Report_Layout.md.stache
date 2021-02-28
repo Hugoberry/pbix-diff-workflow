@@ -1,0 +1,26 @@
+# Layout
+* {{id}}
+* {{config}}
+* {{reportId}}
+* {{layoutOptimization}}
+
+## sections
+|id|name|filters|width|height|config|displayName|objectId|displayOption|ordinal|
+|---|---|---|---|---|---|---|---|---|---|
+{{#sections}}
+|{{id}}|{{name}}|{{filters}}|{{width}}|{{height}}|{{config}}|{{displayName}}|{{objectId}}|{{displayOption}}|{{ordinal}}|
+{{/sections}}
+
+## Pods
+|id|name|objectId|boundSection|
+|---|---|---|---|
+{{#pods}}
+|{{id}}|{{name}}|{{objectId}}|{{boundSection}}|
+{{/pods}}
+
+## Resource Packages
+|id|type|name|reportId|
+|---|---|---|---|
+{{#resourcePackages}}
+|{{id}}|{{type}}|{{name}}|{{reportId}}|
+{{/resourcePackages}}

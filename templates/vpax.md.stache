@@ -1,0 +1,47 @@
+# Tables
+|TableName|TableExpression|RowsCount|ReferentialIntegrityViolationCount|IsHidden|Description|ColumnsSize|TableSize|RelationshipsSize|UserHierarchiesSize|IsReferenced|
+|---|---|---|---|---|---|---|---|---|---|---|
+{{#Tables}}
+|{{TableName}}|{{TableExpression}}|{{RowsCount}}|{{ReferentialIntegrityViolationCount}}|{{IsHidden}}|{{Description}}|{{ColumnsSize}}|{{TableSize}}|{{RelationshipsSize}}|{{UserHierarchiesSize}}|{{IsReferenced}}|
+{{/Tables}}
+
+# Columns
+|ColumnName|TableName|FullColumnName|ColumnCardinality|DataType|ColumnType|IsHidden|Encoding|ColumnExpression|DisplayFolder|Description|FormatString|EncodingHint|IsAvailableInMDX|IsKey|IsNullable|IsUnique|KeepUniqueRows|SortByColumnName|State|IsRowNumber|IsReferenced|DictionarySize|DataSize|HierarchiesSize|TotalSize|Selectivity|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+{{#Columns}}
+{{ColumnName}}|{{TableName}}|{{FullColumnName}}|{{ColumnCardinality}}|{{DataType}}|{{ColumnType}}|{{IsHidden}}|{{Encoding}}|{{ColumnExpression}}|{{DisplayFolder}}|{{Description}}|{{FormatString}}|{{EncodingHint}}|{{IsAvailableInMDX}}|{{IsKey}}|{{IsNullable}}|{{IsUnique}}|{{KeepUniqueRows}}|{{SortByColumnName}}|{{State}}|{{IsRowNumber}}|{{IsReferenced}}|{{DictionarySize}}|{{DataSize}}|{{HierarchiesSize}}|{{TotalSize}}|{{Selectivity}}|
+{{/Columns}}
+
+# Measures
+
+# Columns Segments
+|ColumnName|TableName|FullColumnName|PartitionName|SegmentNumber|TablePartitionNumber|SegmentRows|UsedSize|CompressionType|BitsCount|BookmarkBitsCount|VertipaqState|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+{{#ColumnsSegments}}
+|{{ColumnName}}|{{TableName}}|{{FullColumnName}}|{{PartitionName}}|{{SegmentNumber}}|{{TablePartitionNumber}}|{{SegmentRows}}|{{UsedSize}}|{{CompressionType}}|{{BitsCount}}|{{BookmarkBitsCount}}|{{VertipaqState}}|
+{{/ColumnsSegments}}
+
+# Columns Hierarchies
+|ColumnName|TableName|FullColumnName|StructureName|SegmentNumber|TablePartitionNumber|UsedSize|
+|---|---|---|---|---|---|---|
+{{#ColumnsHierarchies}}
+|{{ColumnName}}|{{TableName}}|{{FullColumnName}}|{{StructureName}}|{{SegmentNumber}}|{{TablePartitionNumber}}|{{UsedSize}}|
+{{/ColumnsHierarchies}}
+
+# User Hierarchies
+|TableName|UserHierarchyName|IsHidden|UsedSize|Levels|
+|---|---|---|---|---|
+{{#UserHierarchies}}
+|{{TableName}}|{{UserHierarchyName}}|{{IsHidden}}|{{UsedSize}}|{{Levels}}|
+{{/UserHierarchies}}
+
+# Relationships
+|FromTableName|FromFullColumnName|FromCardinality|FromCardinalityType|ToTableName|ToFullColumnName|ToCardinality|ToCardinalityType|RelyOnReferentialIntegrity|JoinOnDateBehavior|CrossFilteringBehavior|RelationshipType|IsActive|RelationshipName|SecurityFilteringBehavior|UsedSizeFrom|UsedSizeTo|UsedSize|MissingKeys|InvalidRows|OneToManyRatio|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+{{#Relationships}}
+|{{FromTableName}}|{{FromFullColumnName}}|{{FromCardinality}}|{{FromCardinalityType}}|{{ToTableName}}|{{ToFullColumnName}}|{{ToCardinality}}|{{ToCardinalityType}}|{{RelyOnReferentialIntegrity}}|{{JoinOnDateBehavior}}|{{CrossFilteringBehavior}}|{{RelationshipType}}|{{IsActive}}|{{RelationshipName}}|{{SecurityFilteringBehavior}}|{{UsedSizeFrom}}|{{UsedSizeTo}}|{{UsedSize}}|{{MissingKeys}}|{{InvalidRows}}|{{OneToManyRatio}}|
+{{/Relationships}}
+
+# Table permissions
+
+# Calculation Items
