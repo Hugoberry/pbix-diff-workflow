@@ -5,6 +5,8 @@ $WorkSpaceDir = "$env:GITHUB_WORKSPACE\$ExecutionGUID\Data"
 New-Item -ItemType Directory -Force -Path $WorkSpaceDir
 
 $WorkingDir = "C:\Program Files\Microsoft Power BI Desktop\bin"
+
+#region msmdsrv
 $msmdsrv_ini = @"
 <ConfigurationSettings>
     <DataDir>$WorkSpaceDir</DataDir>
@@ -119,12 +121,13 @@ try {
 
 
     #wait a bit
-    start-sleep -Seconds 10
+    start-sleep -Seconds 5
 
     #port is 0 in ini file so it will be generated
     $dynamicPort = Get-Content "$WorkSpaceDir\msmdsrv.port.txt" -Encoding unicode 
     Write-Host $dynamicPort
 
+    #region loading AMO+VPAX libraries 
     # loading nuget packages required for this job
     $p = get-package Microsoft.AnalysisServices.NetCore.retail.amd64
     $nugetFile = get-childitem $p.source
@@ -157,6 +160,7 @@ try {
     Add-Type -Path $vpax
     Add-Type -Path $daxMeta
     Add-Type -Path $daxVpa
+    #endregion
 
     $server = New-Object Microsoft.AnalysisServices.Server
     $server.Connect("localhost:$dynamicPort")
