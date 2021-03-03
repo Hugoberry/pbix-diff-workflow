@@ -1,0 +1,15 @@
+# Pages
+{{for s in sections}}
+##  {{s.displayName}}
+Ordinal|Width|Height|Visible|Filters
+-|-|-|-|-
+|{{s.ordinal}}|{{s.width}}|{{s.height}}|{{s.displayOption}}|{{s.filters}}|
+
+### {{s.displayName}}-Visuals
+
+Visual|X|Y|Z|Height|Width|Config|Filters
+-|-|-|-|-|-|-|-
+    {{- for viz in s.visualContainers}}
+AAA|{{viz.x | math.floor}}|{{viz.y | math.floor}}|{{viz.z| math.floor}}|{{viz.height| math.floor}}|{{viz.width| math.floor}}|{{viz.config}}|{{viz.filters}}
+    {{- end}}
+{{end}}

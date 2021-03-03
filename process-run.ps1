@@ -198,6 +198,19 @@ xmlns:ddl700_700=`"http://schemas.microsoft.com/analysisservices/2018/engine/700
 
 #$vpax = Get-Content .\sample\DaxVpaView.json | Out-String    
 #ConvertTo-PoshstacheTemplate -InputFile .\templates\vpax.md.stache -ParametersObject $vpax | Out-File .\vpax.md -Force -Encoding "UTF8"
+
+# Add-Type -Path C:\code\msmd\bin\Microsoft.Mashup.Client.Packaging.dll 
+# $mFile = $null
+# $powerBiFileLocation = "C:\git\hub\pbix-diff-action\pbix-samples\orig\Global Superstore.pbix" 
+# if(-Not [Microsoft.Mashup.Client.Packaging.MashupPackage]::TryCreateFromPowerBIDesktopFile([System.IO.File]::OpenRead($powerBiFileLocation), [ref] $mFile))
+# {
+# throw "Failed to load file: $($powerBiFileLocation)"
+# }
+# $pqOutputFile = [System.IO.Path]::ChangeExtension($powerBiFileLocation, "pq")
+# # Cannot use > to pipe to file as it will be the wrong encoding
+# [IO.File]::WriteAllLines($pqOutputFile, $mFile.Mfiles.Values)
+
+
     # #clean FS - workspace
     Get-ChildItem $WorkSpaceDir -Recurse | Remove-Item -Force -Recurse
 

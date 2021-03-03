@@ -1,0 +1,16 @@
+# Pages
+{{#each sections}}
+## {{displayName}}
+Ordinal|Width|Height|Visible|Filters
+-|-|-|-|-
+|{{ordinal}}|{{width}}|{{height}}|{{displayOption}}|{{filters}}|
+
+### {{displayName}}-Visuals
+{{#each visualContainers}}
+
+|Width|Height|X|Y
+-|-|-|-
+{{[Math.Ceiling] (width)}}|{{height}}|{{X}}|{{Y}}|
+
+{{/each}}
+{{/each}}
