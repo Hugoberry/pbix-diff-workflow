@@ -5,7 +5,6 @@ $nugetFile = get-childitem $p.source
 $scribFile = join-path $nugetFile.DirectoryName "lib\netstandard2.0\Scriban.dll"
 
 
-
 Add-Type -path $scribFile
 
 $data = Get-Content '.\pbix-samples\unzip\AdventureWorks Sales\Report\Layout.json' | ConvertFrom-Json -AsHashtable
@@ -13,7 +12,5 @@ $data = Get-Content '.\pbix-samples\unzip\AdventureWorks Sales\Report\Layout.jso
 $template = Get-Content '.\templates\Layout.md.sbn' | Out-String
 
 $tmp = [Scriban.Template]::Parse($template)
-
-$tmp
 
 $tmp.Render($data) > .\Layout.md

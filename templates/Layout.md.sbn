@@ -1,15 +1,34 @@
 # Pages
 {{for s in sections}}
 ##  {{s.displayName}}
-Ordinal|Width|Height|Visible|Filters
+Order|Width|Height|Visible|Filters
 -|-|-|-|-
 |{{s.ordinal}}|{{s.width}}|{{s.height}}|{{s.displayOption}}|{{s.filters}}|
 
 ### {{s.displayName}}-Visuals
-
-Visual|X|Y|Z|Height|Width|Config|Filters
--|-|-|-|-|-|-|-
+Positioning|Config|Filters
+-|-|-
     {{- for viz in s.visualContainers}}
-AAA|{{viz.x | math.floor}}|{{viz.y | math.floor}}|{{viz.z| math.floor}}|{{viz.height| math.floor}}|{{viz.width| math.floor}}|{{viz.config}}|{{viz.filters}}
+`X:`{{viz.x| math.floor}}<br>`Y:`
+{{- viz.y| math.floor}}<br>`Z:`
+{{- viz.z| math.floor}}<br>`Width:`
+{{- viz.width| math.floor}}<br>`Height:`
+{{- viz.height| math.floor}} | 
+{{- "conf  = {{viz.config}}" | object.eval_template | object.eval ; conf.singleVisual.visualType }}<br>
+{{- title = conf.singleVisual?.vcObjects?.title | array.first ; title?.properties?.text?.expr?.Literal?.Value}}<br>
+{{- for $kp in conf.singleVisual.projections}}
+    {{- $kp.key}}: {{$kp.value| array.map "queryRef"-}}<br>
+{{- end}} | 
+{{- viz.filters}} 
     {{- end}}
+{{end}}
+
+{{for s in sections}}
+{{- for viz in s.visualContainers}}
+---
+{{viz.config}}
+{{"conf  = {{viz.config}}" | object.eval_template | object.eval ; conf.singleVisual.visualType}} 
+{{conf.singleVisual.projections| object.keys}}
+{{conf.singleVisual.projections| object.values | array.first | array.map "queryRef"}}
+{{- end}}
 {{end}}
