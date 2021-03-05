@@ -1,9 +1,73 @@
-# Pages
+{{~binOps = ["Contains","Or","And","StartsWith","EndsWith"] ; compEnum = ["is",">",">=","<","<="]~}}
+{{~ func render 
+    if $0 | object.typeof == "object"
+        for $x in $0
+            if binOps | array.contains $x.key 
+                render $x.value?.Left 
+                " "
+                $x.key 
+                " "
+                render $x.value?.Right
+            end
+            if $x.key == "Not"
+                "not (" 
+                render $x.value?.Expression 
+                ")"
+            end
+            if $x.key == "Aggregation"
+                render $x.value?.Expression 
+            end
+            if $x.key == "In"
+                for exp in $x.value.Expressions
+                    render exp; " is "
+                end
+                for val in $x.value.Values
+                   val[0].Literal.Value
+                   if !for.last
+                        " or "
+                    end 
+                end
+                for query in $x.value.Table
+                    query.value.Source 
+                end
+            end
+            if $x.key == "Comparison"
+                render $x.value.Left
+                " "
+                "compEnum[{{$x.value.ComparisonKind}}]" | object.eval_template | object.eval 
+                " "
+                render $x.value.Right
+            end
+            if $x.key == "Column"
+                $x.value?.Property 
+            end
+            if $x.key == "Literal"
+                $x.value?.Value
+            end
+        end
+    end
+end~}}
+{{ func filter_visit 
+"filt  = {{$0}}" | object.eval_template | object.eval 
+    for exp in  filt
+        for from in exp?.filter?.From 
+            if from?.Entity
+                "`"
+                from?.Entity
+                "`<br>"
+                where = exp?.filter?.Where | array.first ; cond = where?.Condition 
+                render cond
+                "<br>"
+            end
+        end
+    end
+end~}}
+# Layout
 {{for s in sections}}
 ##  {{s.displayName}}
 Order|Width|Height|Visible|Filters
 -|-|-|-|-
-|{{s.ordinal}}|{{s.width}}|{{s.height}}|{{s.displayOption}}|{{s.filters}}|
+|{{s.ordinal}}|{{s.width}}|{{s.height}}|{{s.displayOption}}|{{filter_visit s.filters}}|
 
 ### {{s.displayName}}-Visuals
 Positioning|Config|Filters
@@ -17,18 +81,9 @@ Positioning|Config|Filters
 {{- "conf  = {{viz.config}}" | object.eval_template | object.eval ; conf.singleVisual.visualType }}<br>
 {{- title = conf.singleVisual?.vcObjects?.title | array.first ; title?.properties?.text?.expr?.Literal?.Value}}<br>
 {{- for $kp in conf.singleVisual.projections}}
-    {{- $kp.key}}: {{$kp.value| array.map "queryRef"-}}<br>
+    {{-"`"}}{{$kp.key}}{{":`"}} {{$kp.value| array.map "queryRef"-}}<br>
 {{- end}} | 
-{{- viz.filters}} 
+{{- filter_visit viz.filters}} 
     {{- end}}
 {{end}}
 
-{{for s in sections}}
-{{- for viz in s.visualContainers}}
----
-{{viz.config}}
-{{"conf  = {{viz.config}}" | object.eval_template | object.eval ; conf.singleVisual.visualType}} 
-{{conf.singleVisual.projections| object.keys}}
-{{conf.singleVisual.projections| object.values | array.first | array.map "queryRef"}}
-{{- end}}
-{{end}}
