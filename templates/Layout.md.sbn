@@ -78,7 +78,11 @@ Positioning|Config|Filters
 {{- viz.z| math.floor}}<br>`Width:`
 {{- viz.width| math.floor}}<br>`Height:`
 {{- viz.height| math.floor}} | 
-{{- "conf  = {{viz.config}}" | object.eval_template | object.eval ; conf.singleVisual.visualType }}<br>
+{{- "conf  = {{viz.config}}" | object.eval_template | object.eval 
+"`" 
+conf.singleVisual.visualType 
+"`"
+}}<br>
 {{- title = conf.singleVisual?.vcObjects?.title | array.first ; title?.properties?.text?.expr?.Literal?.Value}}<br>
 {{- for $kp in conf.singleVisual.projections}}
     {{-"`"}}{{$kp.key}}{{":`"}} {{$kp.value| array.map "queryRef"-}}<br>
