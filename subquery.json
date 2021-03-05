@@ -1,0 +1,57 @@
+{
+    "Name": "subquery",
+    "Expression": {
+        "Subquery": {
+            "Query": {
+                "Version": 2,
+                "From": [
+                    {
+                        "Name": "p",
+                        "Entity": "Product",
+                        "Type": 0
+                    },
+                    {
+                        "Name": "s",
+                        "Entity": "Sales",
+                        "Type": 0
+                    }
+                ],
+                "Select": [
+                    {
+                        "Column": {
+                            "Expression": {
+                                "SourceRef": {
+                                    "Source": "p"
+                                }
+                            },
+                            "Property": "Category"
+                        },
+                        "Name": "field"
+                    }
+                ],
+                "OrderBy": [
+                    {
+                        "Direction": 2,
+                        "Expression": {
+                            "Aggregation": {
+                                "Expression": {
+                                    "Column": {
+                                        "Expression": {
+                                            "SourceRef": {
+                                                "Source": "s"
+                                            }
+                                        },
+                                        "Property": "Sales Amount"
+                                    }
+                                },
+                                "Function": 0
+                            }
+                        }
+                    }
+                ],
+                "Top": 3
+            }
+        }
+    },
+    "Type": 2
+}

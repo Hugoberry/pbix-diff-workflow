@@ -1,12 +1,9 @@
-# recursion
-{{binOps = ["Contains","Or","And"]}}
-{{uniOps = ["Not","Aggregation"]}}
-{{compEnum = ["is",">",">=","<","<="]}}
+{{~binOps = ["Contains","Or","And","StartsWith","EndsWith"] ; compEnum = ["is",">",">=","<","<="]~}}
 {{~ func render ~}}
     {{~if $0 | object.typeof == "object"~}}
         {{~for $x in $0~}}
             {{~if binOps | array.contains $x.key ~}}
-                {{~render $x.value?.Left}} {{$x.key | string.downcase }} {{render $x.value?.Right~}}
+                {{~render $x.value?.Left}} {{$x.key}} {{render $x.value?.Right~}}
             {{~end~}}
             {{~if $x.key == "Not"~}}
                 {{~"not ("}} {{render $x.value?.Expression~}} {{")"~}}
@@ -19,7 +16,13 @@
                     {{~render exp~}} {{" is "~}}
                 {{~end~}}
                 {{~for val in $x.value.Values~}}
-                    {{~val[0].Literal.Value~}} 
+                   {{~val[0].Literal.Value~}}
+                   {{~if ! for.last~}}
+                        {{~" or "~}}
+                    {{~end~}} 
+                {{~end~}}
+                {{~for query in $x.value.Table~}}
+                    {{~query.value.Source~}} 
                 {{~end~}}
             {{~end~}}
             {{~if $x.key == "Comparison"~}}
@@ -34,12 +37,13 @@
         {{~end~}}
     {{~end~}}
 {{~ end ~}}
-
-{{ "filt  = {{model.sections[0].visualContainers[2].filters}}" | object.eval_template | object.eval ; filt}}
-{{for exp in  filt }}
-{{from = exp?.filter?.From | array.first}} 
-{{from?.Entity}}
-{{where = exp?.filter?.Where | array.first }}
-{{cc = where?.Condition; cc}}
-{{render cc }}
-{{end}}
+{{~ "filt  = {{model.sections[2].filters}}" | object.eval_template | object.eval ~}}
+{{~for exp in  filt ~}}
+    {{~for from in exp?.filter?.From~}} 
+        {{~if from?.Entity-}}
+            {{~from?.Entity}}
+            {{~where = exp?.filter?.Where | array.first ; cond = where?.Condition ~}}
+            {{~render cond ~}}
+        {{~end~}}
+    {{~end~}}
+{{~end~}}
