@@ -1,0 +1,43 @@
+{{for k in model.model.queryGroups
+    if for.first
+"## Query Folders\r\r"
+"Order|Name|Description\r"
+"---|---|---\r"
+    end
+    k.annotations[0].value
+"|"
+    k.folder
+"|"
+    k.description 
+"\r"
+end}}
+
+## Queries
+{{for v in model.model.annotations | array.filter @(do;ret $0.name =="PBI_QueryOrder"; end)
+v.value
+end}}
+
+## Expressions
+{{for exp in model.model.expressions
+"### "
+exp.name
+"\r"
+exp?.description
+"\r```\r"
+    if exp.expression | object.typeof == "array"
+        exp.expression | array.join "\r"
+    else
+        exp.expression
+    end
+"\r```\r"
+end}}
+{{for part in model.model.tables
+source = part.partitions[0].source
+if source.type=="m"
+"\r### "
+part.name
+"\r```\r"
+source.expression | array.join "\r"
+"\r```\r"
+end
+end}}

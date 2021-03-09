@@ -1,0 +1,18 @@
+{{for ent in model
+"\r# "
+ent.key
+"\r"
+    if !ent.value.empty?
+        for row in ent.value
+            if for.first
+                header = row | object.keys 
+                header | array.join "|"
+                "\r"
+                header| array.each @(do;ret "---"; end)| array.join "|"
+                "\r"
+            end
+            row | object.values | array.join "|"
+            "\r"
+        end
+    end
+end}}
