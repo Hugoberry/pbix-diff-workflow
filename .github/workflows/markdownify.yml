@@ -1,16 +1,30 @@
-  
-name: Adding VPAX files next to PBIX
+name: Markdownify the PBIX files from commit
 
 on: [workflow_dispatch]
 
 jobs:
-  random-script:
+  master-script:
 
     runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
-      - run: choco install powerbi --ignore-checksums
+      - name: Get latest PowerBI Desktop version
+        id: get-pbi-version
+        run: |
+          clist powerbi --exact -r
+        shell: pwsh
+      - uses: actions/cache@v2
+        id: cache-choco 
+        with:
+          path: C:\Program Files\Microsoft Power BI Desktop\bin\*
+          key: choco-${{steps.get-pbi-version}}
+      
+      - name: Install Power BI Desktop
+        id: choco-pbi
+        run: choco install powerbi --ignore-checksums
+        if: steps.cache-choco.outputs.cache-hit != 'true'
+        
       - run: Install-Package Microsoft.AnalysisServices.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
       - run: Install-Package Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
       - run: Install-Package Dax.Vpax.NetCore -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
