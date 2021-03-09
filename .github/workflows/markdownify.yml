@@ -12,7 +12,7 @@ jobs:
       - name: Get latest PowerBI Desktop version
         id: get-pbi-version
         run: |
-          clist powerbi --exact -r
+          choco list powerbi --exact -r
         shell: pwsh
       - uses: actions/cache@v2
         id: cache-choco 
