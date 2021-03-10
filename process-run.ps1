@@ -56,19 +56,19 @@ try {
     # TODO
     Get-PbixFileList -FileName $pbixFile
 
-    Expand-Archive $pbixFile -Force -DestinationPath $WorkSpaceDir
+    Expand-Archive $pbixFile -Force -DestinationPath "$env:GITHUB_WORKSPACE\$ExecutionGUID\"
 
-    $layout = Get-Content "$WorkSpaceDir\Report\Layout.json" | ConvertFrom-Json -AsHashtable
-    $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
-    $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
-    $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\Sample.md"
+    # $layout = Get-Content "$WorkSpaceDir\Report\Layout.json" | ConvertFrom-Json -AsHashtable
+    # $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
+    # $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
+    # $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\Sample.md"
 
     # Cleanup processes 
     $null = $process.Kill()
     $null = $process.WaitForExit()
 
     # Cleanup file system - workspace
-    Get-ChildItem $WorkSpaceDir -Recurse | Remove-Item -Force -Recurse
+    Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
 }
 catch {
     # Log exception
