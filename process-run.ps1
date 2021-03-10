@@ -57,7 +57,7 @@ try {
     # TODO
     Get-PbixFileList -FileName $pbixFile
 
-    Expand-Archive $pbixFile -Force -DestinationPath "$env:GITHUB_WORKSPACE\$ExecutionGUID\"
+    Expand-Archive $pbixFile -Force -DestinationPath "$env:GITHUB_WORKSPACE\zzz"
 
     # $layout = Get-Content "$WorkSpaceDir\Report\Layout.json" | ConvertFrom-Json -AsHashtable
     # $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
@@ -72,7 +72,7 @@ try {
     start-sleep -Seconds 5
     
     # Cleanup file system - workspace
-    #Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
+    Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
 }
 catch {
     # Log exception
