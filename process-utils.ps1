@@ -6,15 +6,12 @@ function Get-PbixFileList {
 
     [bool]$SeparatorFound = $false
     [int]$FileCount = 0
-    [PSCustomObject]$output = @()
-    write-host "Got the results from 7z"
-    write-host $Result
 
     $Result | ForEach-Object {
         if ($_.StartsWith("------------------- ----- ------------ ------------")) {
             if ($SeparatorFound) {
                 # Second separator! We're done
-                break
+                return
             }
             $SeparatorFound = -not $SeparatorFound
         }
@@ -30,7 +27,7 @@ function Get-PbixFileList {
                 [string]$Name = $_.Substring(53).TrimEnd()
 
                 # Write a PSCustomObject with properties to output
-                $output += [PSCustomObject] @{
+                [PSCustomObject] @{
                     Mode       = $Mode
                     DateTime   = $DateTime
                     Length     = $Length
@@ -41,7 +38,6 @@ function Get-PbixFileList {
             }
         }
     }
-    return $output
 }
 function Add-Dependencies {
     #region loading AMO+VPAX libraries 
@@ -82,7 +78,7 @@ function Add-Dependencies {
     Add-Type -Path $daxMeta
     Add-Type -Path $daxVpa
     Add-Type -Path $scribFile
-    Add-Type -Path "C:\Program Files\Microsoft Power BI Desktop\bin\Microsoft.Mashup.Client.Packaging.dll" 
+    Add-Type -Path "C:\code\msmd\bin\Microsoft.Mashup.Client.Packaging.dll" 
     #endregion
 
 }

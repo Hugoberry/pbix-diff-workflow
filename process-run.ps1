@@ -1,5 +1,6 @@
 # Load utility functions
 . "$PSScriptRoot/process-utils.ps1"
+$env:GITHUB_WORKSPACE = "C:\git\hub\pbix-diff-action"
 
 $ExecutionGUID = (New-Guid).ToString() 
 
@@ -9,7 +10,7 @@ try {
     $null = New-Item -ItemType Directory -Force -Path $WorkSpaceDir
 
     # Prepopulate Msmdsrv.ini
-    $WorkingDir = "C:\Program Files\Microsoft Power BI Desktop\bin"
+    $WorkingDir = "C:\code\msmd\bin"
     Get-MsmdsrvIniContent -WorkingDir $WorkingDir -WorkSpaceDir $WorkSpaceDir | Out-File -FilePath "$WorkSpaceDir\msmdsrv.ini" -Force
     
     # Setup the msmdsrv process
@@ -63,7 +64,7 @@ try {
 
     Write-Host "Expanded"
 
-    $layout = Get-Content "$env:GITHUB_WORKSPACE\zzz\Report\Layout" | ConvertFrom-Json -AsHashtable
+    $layout = Get-Content "$env:GITHUB_WORKSPACE\zzz\Report\Layout" -Encoding unicode | ConvertFrom-Json -AsHashtable
     $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
     $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
     $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\Sample.md"
