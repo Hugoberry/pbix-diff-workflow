@@ -8,6 +8,7 @@ function Get-PbixFileList {
     [int]$FileCount = 0
     [PSCustomObject]$output = @()
     write-host "Got the results from 7z"
+    write-host $Result
 
     $Result | ForEach-Object {
         if ($_.StartsWith("------------------- ----- ------------ ------------")) {
@@ -25,7 +26,7 @@ function Get-PbixFileList {
                 [string]$Mode = $_.Substring(20, 5)
                 [DateTime]$DateTime = [DateTime]::ParseExact($_.Substring(0, 19), "yyyy'-'MM'-'dd HH':'mm':'ss", [CultureInfo]::InvariantCulture)
                 [int]$Length = [int]"0$($_.Substring(26, 12).Trim())"
-                [int]$Compressedlength = [int]"0$($_.Substring(39, 12).Trim())"
+                [int]$CompressedLength = [int]"0$($_.Substring(39, 12).Trim())"
                 [string]$Name = $_.Substring(53).TrimEnd()
 
                 # Write a PSCustomObject with properties to output

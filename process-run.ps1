@@ -57,7 +57,7 @@ try {
     # TODO
     $pbixFileList = Get-PbixFileList -FileName $pbixFile
 
-    Write-host $pbixFileList
+    Write-Host $pbixFileList
 
     Expand-Archive $pbixFile -Force -DestinationPath "$env:GITHUB_WORKSPACE\zzz"
 
