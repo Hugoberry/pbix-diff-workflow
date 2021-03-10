@@ -20,8 +20,7 @@ jobs:
       - run: |
           $response = iwr 'https://chocolatey.org/api/v2/Packages()?$filter=(tolower(Id)%20eq%20%27powerbi%27)%20and%20IsLatestVersion'
           [xml]$content = $response.Content
-          $content.feed.entry.properties.Version
+          $version = $content.feed.entry.properties.Version
+          echo "::set-output name=pbiversion::$version"
         id: get-pbi
-      - env: 
-          MESSAGE: ${{join(steps.get-pbi.outputs.*, '\n')}}
-        run: write-host $env:MESSAGE
+      - run: echo ${{steps.get-pbi.outputs.pbiversion}}
