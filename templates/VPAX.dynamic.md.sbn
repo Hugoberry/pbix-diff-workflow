@@ -11,7 +11,15 @@ ent.key
                 header| array.each @(do;ret "---"; end)| array.join "|"
                 "\r"
             end
-            row | object.values | array.join "|"
+            cells = row | object.values  
+            for cell in cells
+                if cell | object.typeof == "string"
+                    cell | @string.replace "\n" "<br>"
+                else
+                    cell
+                end
+                "|"
+            end
             "\r"
         end
     end

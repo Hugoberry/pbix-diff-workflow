@@ -33,11 +33,15 @@ exp?.description
 end}}
 {{for part in model.model.tables
 source = part.partitions[0].source
-if source.type=="m"
+    if source.type=="m"
 "\r### "
-part.name
+    part.name
 "\r```\r"
-source.expression | array.join "\r"
+    if source.expression | object.typeof == "array"
+    source.expression | array.join "\r"
+    else
+        source.expression
+    end
 "\r```\r"
-end
+    end
 end}}

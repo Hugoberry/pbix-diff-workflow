@@ -213,12 +213,6 @@ xmlns:ddl700_700=`"http://schemas.microsoft.com/analysisservices/2018/engine/700
 
     # #clean FS - workspace
     Get-ChildItem $WorkSpaceDir -Recurse | Remove-Item -Force -Recurse
-
-
-    #prove a point about no compression
-    Expand-Archive .\sample.vpax -Force
-    Compress-Archive -Path  "$env:GITHUB_WORKSPACE\sample\*" -update -DestinationPath  "$env:GITHUB_WORKSPACE\sample.vpax" -CompressionLevel NoCompression
-    Get-ChildItem "$env:GITHUB_WORKSPACE\sample" -Recurse | Remove-Item -Force -Recurse
 }
 catch {
 
