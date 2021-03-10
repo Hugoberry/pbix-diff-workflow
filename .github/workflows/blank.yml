@@ -24,3 +24,4 @@ jobs:
         id: get-pbi
       - env: 
           MESSAGE: ${{join(steps.get-pbi.outputs.*, '\n')}}
+      - run: write-host $env:MESSAGE
