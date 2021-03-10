@@ -17,4 +17,4 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - run: clist --by-id-only 'PowerBI' -r
+      - run: iwr 'https://chocolatey.org/api/v2/Packages()?$filter=(tolower(Id)%20eq%20%27powerbi%27)%20and%20IsLatestVersion'
