@@ -14,12 +14,13 @@ jobs:
         run: |
           $response = iwr 'https://chocolatey.org/api/v2/Packages()?$filter=(tolower(Id)%20eq%20%27powerbi%27)%20and%20IsLatestVersion'
           [xml]$content = $response.Content
-          Write-Host $content.feed.entry.properties.Version
+          $version = $content.feed.entry.properties.Version
+          echo "::set-output name=pbiversion::$version"
       - uses: actions/cache@v2
         id: cache-choco 
         with:
           path: C:\Program Files\Microsoft Power BI Desktop\bin\*
-          key: choco-PowerBI|${{steps.get-pbi-version}}
+          key: choco-PowerBI|${{steps.get-pbi-version.outputs.pbiversion}}
       
       - name: Install Power BI Desktop
         id: choco-pbi
