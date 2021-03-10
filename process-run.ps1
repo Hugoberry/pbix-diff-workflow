@@ -1,6 +1,5 @@
 # Load utility functions
 . "$PSScriptRoot/process-utils.ps1"
-$env:GITHUB_WORKSPACE = "C:\git\hub\pbix-diff-action"
 
 $ExecutionGUID = (New-Guid).ToString() 
 
@@ -10,7 +9,7 @@ try {
     $null = New-Item -ItemType Directory -Force -Path $WorkSpaceDir
 
     # Prepopulate Msmdsrv.ini
-    $WorkingDir = "C:\code\msmd\bin"
+    $WorkingDir = "C:\Program Files\Microsoft Power BI Desktop\bin"
     Get-MsmdsrvIniContent -WorkingDir $WorkingDir -WorkSpaceDir $WorkSpaceDir | Out-File -FilePath "$WorkSpaceDir\msmdsrv.ini" -Force
     
     # Setup the msmdsrv process
