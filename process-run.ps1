@@ -61,7 +61,7 @@ try {
 
     Expand-Archive $pbixFile -Force -DestinationPath "$env:GITHUB_WORKSPACE\zzz"
 
-    "Expanded"
+    Write-Host "Expanded"
 
     $layout = Get-Content "$env:GITHUB_WORKSPACE\zzz\Report\Layout" | ConvertFrom-Json -AsHashtable
     $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String

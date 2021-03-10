@@ -6,6 +6,7 @@ function Get-PbixFileList {
 
     [bool]$SeparatorFound = $false
     [int]$FileCount = 0
+    $output = @()
 
     $Result | ForEach-Object {
         if ($_.StartsWith("------------------- ----- ------------ ------------")) {
@@ -27,7 +28,7 @@ function Get-PbixFileList {
                 [string]$Name = $_.Substring(53).TrimEnd()
 
                 # Write a PSCustomObject with properties to output
-                [PSCustomObject] @{
+                $output += [PSCustomObject] @{
                     Mode       = $Mode
                     DateTime   = $DateTime
                     Length     = $Length
@@ -38,6 +39,7 @@ function Get-PbixFileList {
             }
         }
     }
+    return $output
 }
 function Add-Dependencies {
     #region loading AMO+VPAX libraries 
