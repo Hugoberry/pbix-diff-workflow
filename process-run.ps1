@@ -6,7 +6,7 @@ $ExecutionGUID = (New-Guid).ToString()
 try {
     # Setup the workspace
     $WorkSpaceDir = "$env:GITHUB_WORKSPACE\$ExecutionGUID\Data"
-    New-Item -ItemType Directory -Force -Path $WorkSpaceDir
+    $null = New-Item -ItemType Directory -Force -Path $WorkSpaceDir
 
     # Prepopulate Msmdsrv.ini
     $WorkingDir = "C:\Program Files\Microsoft Power BI Desktop\bin"
@@ -72,7 +72,7 @@ try {
     start-sleep -Seconds 5
     
     # Cleanup file system - workspace
-    Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
+    #Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
 }
 catch {
     # Log exception
