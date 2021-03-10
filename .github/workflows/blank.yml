@@ -22,4 +22,5 @@ jobs:
           [xml]$content = $response.Content
           $content.feed.entry.properties.Version
         id: get-pbi
-      - run: echo ${{join(steps.get-pbi.outputs.*, '\n')}}
+      - env: 
+          MESSAGE: ${{join(steps.get-pbi.outputs.*, '\n')}}
