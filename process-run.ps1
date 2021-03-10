@@ -5,7 +5,7 @@ $ExecutionGUID = (New-Guid).ToString()
 
 try {
     # Setup the workspace
-    $WorkSpaceDir = "$env:GITHUB_WORKSPACE\$ExecutionGUID\Data"
+    $WorkSpaceDir = "$env:TEMP\$ExecutionGUID\Data"
     $null = New-Item -ItemType Directory -Force -Path $WorkSpaceDir
 
     # Prepopulate Msmdsrv.ini
@@ -59,22 +59,23 @@ try {
 
     Expand-Archive $pbixFile -Force -DestinationPath "$env:GITHUB_WORKSPACE\zzz"
 
-    # $layout = Get-Content "$WorkSpaceDir\Report\Layout.json" | ConvertFrom-Json -AsHashtable
-    # $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
-    # $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
-    # $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\Sample.md"
+    "Expanded"
 
-    ls "$env:GITHUB_WORKSPACE\zzz"
+    $layout = Get-Content "$env:GITHUB_WORKSPACE\zzz\Report\Layout" | ConvertFrom-Json -AsHashtable
+    $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
+    $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
+    $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\Sample.md"
+
+    Get-ChildItem "$env:GITHUB_WORKSPACE\zzz"
 
     # Cleanup processes 
     $null = $process.Kill()
     $null = $process.WaitForExit()
     
     #wait a bit
-    start-sleep -Seconds 5
-    
-    # Cleanup file system - workspace
-    Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
+    #start-sleep -Seconds 5
+       # Cleanup file system - workspace
+    #Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
 }
 catch {
     # Log exception
@@ -82,5 +83,5 @@ catch {
     throw "bad things happened"
 }
 finally{
-    Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
+    #Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
 }
