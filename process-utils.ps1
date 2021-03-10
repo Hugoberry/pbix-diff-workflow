@@ -7,6 +7,7 @@ function Get-PbixFileList {
     [bool]$SeparatorFound = $false
     [int]$FileCount = 0
     [PSCustomObject]$output = @()
+    write-host "Got the results from 7z"
 
     $Result | ForEach-Object {
         if ($_.StartsWith("------------------- ----- ------------ ------------")) {
