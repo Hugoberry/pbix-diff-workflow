@@ -64,6 +64,8 @@ try {
     # $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
     # $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\Sample.md"
 
+    ls "$env:GITHUB_WORKSPACE\zzz"
+
     # Cleanup processes 
     $null = $process.Kill()
     $null = $process.WaitForExit()
