@@ -67,7 +67,10 @@ try {
     # Cleanup processes 
     $null = $process.Kill()
     $null = $process.WaitForExit()
-
+    
+    #wait a bit
+    start-sleep -Seconds 5
+    
     # Cleanup file system - workspace
     Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
 }
