@@ -6,7 +6,7 @@ function Get-PbixFileList {
 
     [bool]$SeparatorFound = $false
     [int]$FileCount = 0
-    $output = @()
+    [PSCustomObject]$output = @()
 
     $Result | ForEach-Object {
         if ($_.StartsWith("------------------- ----- ------------ ------------")) {
