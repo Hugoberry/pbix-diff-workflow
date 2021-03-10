@@ -21,5 +21,5 @@ jobs:
           $response = iwr 'https://chocolatey.org/api/v2/Packages()?$filter=(tolower(Id)%20eq%20%27powerbi%27)%20and%20IsLatestVersion'
           [xml]$content = $response.Content
           $content.feed.entry.properties.Version
-      - run: choco info powerbi -r
-        shell: cmd
+        id: get-pbi
+      - run: echo ${{steps.get-pbi}}
