@@ -2,7 +2,7 @@ function Get-PbixFileList {
     param (
         $FileName
     )
-    [string[]]$Result = .\7z.exe l $FileName
+    [string[]]$Result = ."C:\Program Files\7-Zip\7z.exe" l $FileName
 
     [bool]$SeparatorFound = $false
     [int]$FileCount = 0
