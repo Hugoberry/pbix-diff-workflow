@@ -1,9 +1,10 @@
 # Load utility functions
 . "$PSScriptRoot/process-utils.ps1"
 
+$ExecutionGUID = (New-Guid).ToString() 
+
 try {
     # Setup the workspace
-    $ExecutionGUID = (New-Guid).ToString() 
     $WorkSpaceDir = "$env:GITHUB_WORKSPACE\$ExecutionGUID\Data"
     New-Item -ItemType Directory -Force -Path $WorkSpaceDir
 
@@ -73,4 +74,8 @@ try {
 catch {
     # Log exception
     $_
+    throw "bad things happened"
+}
+finally{
+    Get-ChildItem "$env:GITHUB_WORKSPACE\$ExecutionGUID\" -Recurse | Remove-Item -Force -Recurse
 }
