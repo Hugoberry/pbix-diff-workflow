@@ -17,4 +17,4 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - run: choco info powerbi -r --noop
+      - run: choco info powerbi -r --use-system-powershell
