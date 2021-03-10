@@ -55,7 +55,9 @@ try {
     $server.Disconnect();
 
     # TODO
-    Get-PbixFileList -FileName $pbixFile
+    $pbixFileList = Get-PbixFileList -FileName $pbixFile
+
+    Write-host $pbixFileList
 
     Expand-Archive $pbixFile -Force -DestinationPath "$env:GITHUB_WORKSPACE\zzz"
 
