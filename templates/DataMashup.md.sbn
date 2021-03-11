@@ -1,47 +1,48 @@
-{{for k in model.model.queryGroups
+{{for k in this.model.queryGroups
     if for.first
-"## Query Folders\r\r"
-"Order|Name|Description\r"
-"---|---|---\r"
+"## Query Folders\r\n\r\n"
+"Order|Name|Description\r\n"
+"---|---|---\r\n"
     end
     k.annotations[0].value
 "|"
     k.folder
 "|"
     k.description 
-"\r"
+"\r\n"
 end}}
 
 ## Queries
-{{for v in model.model.annotations | array.filter @(do;ret $0.name =="PBI_QueryOrder"; end)
+{{for v in this.model.annotations | array.filter @(do;ret $0.name =="PBI_QueryOrder"; end)
 v.value
 end}}
 
 ## Expressions
-{{for exp in model.model.expressions
+{{for exp in this.model.expressions
 "### "
 exp.name
-"\r"
+"\r\n"
 exp?.description
-"\r```\r"
+"\r\n```\r\n"
     if exp.expression | object.typeof == "array"
-        exp.expression | array.join "\r"
+        exp.expression | array.join "\r\n"
     else
         exp.expression
     end
-"\r```\r"
+"\r\n```\r\n"
 end}}
-{{for part in model.model.tables
-source = part.partitions[0].source
-    if source.type=="m"
-"\r### "
-    part.name
-"\r```\r"
-    if source.expression | object.typeof == "array"
-    source.expression | array.join "\r"
-    else
-        source.expression
-    end
-"\r```\r"
+{{for part in this.model.tables
+    for p in part.partitions
+        if p.source | object.kind == "MPartitionSource"
+    "\r\n### "
+            part.name
+    "\r\n```\r\n"
+            if p.source.expression | object.typeof == "array"
+                p.source.expression | array.join "\r\n"
+            else
+                p.source.expression
+            end
+        end
+"\r\n```\r\n"
     end
 end}}

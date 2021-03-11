@@ -78,7 +78,7 @@ function Add-Dependencies {
     Add-Type -Path $daxMeta
     Add-Type -Path $daxVpa
     Add-Type -Path $scribFile
-    Add-Type -Path "C:\Program Files\Microsoft Power BI Desktop\bin\Microsoft.Mashup.Client.Packaging.dll" 
+    Add-Type -Path "C:\code\msmd\bin\Microsoft.Mashup.Client.Packaging.dll" 
     #endregion
 
 }

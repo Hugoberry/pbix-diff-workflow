@@ -9,7 +9,7 @@ try {
     $null = New-Item -ItemType Directory -Force -Path $WorkSpaceDir
 
     # Prepopulate Msmdsrv.ini
-    $WorkingDir = "C:\Program Files\Microsoft Power BI Desktop\bin"
+    $WorkingDir = "C:\code\msmd\bin"
     Get-MsmdsrvIniContent -WorkingDir $WorkingDir -WorkSpaceDir $WorkSpaceDir | Out-File -FilePath "$WorkSpaceDir\msmdsrv.ini" -Force
     
     # Setup the msmdsrv process
@@ -47,9 +47,9 @@ try {
 
     # VPAXing
     $tom = [Dax.Metadata.Extractor.TomExtractor]::GetDaxModel("localhost:$dynamicPort", $guidDatabase, "aaaa", "bbb", $true, 0)
-    $database = [Dax.Metadata.Extractor.TomExtractor]::GetDatabase("localhost:$dynamicPort", $guidDatabase)
+    $model = [Dax.Metadata.Extractor.TomExtractor]::GetDatabase("localhost:$dynamicPort", $guidDatabase)
     $vpa = new-object  Dax.ViewVpaExport.Model($tom)
-    [Dax.Vpax.Tools.VpaxTools]::ExportVpax("$env:GITHUB_WORKSPACE\sample.vpax", $tom, $vpa, $database)
+    #[Dax.Vpax.Tools.VpaxTools]::ExportVpax("$env:GITHUB_WORKSPACE\sample.vpax", $tom, $vpa, $database)
 
     # Cleanup connection
     $server.Disconnect();
@@ -59,16 +59,23 @@ try {
 
     Write-Host $pbixFileList
 
-    Expand-Archive $pbixFile -Force -DestinationPath "$env:GITHUB_WORKSPACE\zzz"
+    $PbixDir = "$env:TEMP\$ExecutionGUID\PBIX"
+    Expand-Archive $pbixFile -Force -DestinationPath $PbixDir
 
-    Write-Host "Expanded"
-
-    $layout = Get-Content "$env:GITHUB_WORKSPACE\zzz\Report\Layout" -Encoding unicode | ConvertFrom-Json -AsHashtable
+    $layout = Get-Content "$PbixDir\Report\Layout" -Encoding unicode | ConvertFrom-Json -AsHashtable -Depth 20
     $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
     $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
-    $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\Sample.md"
+    $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\sample.layout.md"
 
-    Get-ChildItem "$env:GITHUB_WORKSPACE\zzz"
+
+    $vpaHash = $vpa | convertto-json -Depth 20 | convertfrom-json -AsHashtable -Depth 20
+    $vpaTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\VPA.dynamic.md.sbn" | Out-String
+    $vpaParser = [Scriban.Template]::Parse($vpaTemplate)
+    $vpaParser.Render($vpaHash) > "$env:GITHUB_WORKSPACE\sample.vpa.md"
+
+    $modelTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\DataMashup.md.sbn" | Out-String
+    $modelParser = [Scriban.Template]::Parse($modelTemplate)
+    $modelParser.Render($model) > "$env:GITHUB_WORKSPACE\sample.model.md"
 
     # Cleanup processes 
     $null = $process.Kill()
