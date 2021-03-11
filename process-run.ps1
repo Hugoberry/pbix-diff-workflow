@@ -9,7 +9,7 @@ try {
     $null = New-Item -ItemType Directory -Force -Path $WorkSpaceDir
 
     # Prepopulate Msmdsrv.ini
-    $WorkingDir = "C:\code\msmd\bin"
+    $WorkingDir = "C:\Program Files\Microsoft Power BI Desktop\bin"
     Get-MsmdsrvIniContent -WorkingDir $WorkingDir -WorkSpaceDir $WorkSpaceDir | Out-File -FilePath "$WorkSpaceDir\msmdsrv.ini" -Force
     
     # Setup the msmdsrv process
@@ -55,9 +55,11 @@ try {
     $server.Disconnect();
 
     # TODO
-    $pbixFileList = Get-PbixFileList -FileName $pbixFile
+    $pbixFileList = Get-PbixFileList -FileName $pbixFile |convertto-json | ConvertFrom-Json -AsHashtable
 
-    Write-Host $pbixFileList
+    $pbixTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\FileList.md.sbn" | Out-String
+    $pbixParser = [Scriban.Template]::Parse($pbixTemplate)
+    $pbixParser.Render(@{model = $pbixFilelist}) > "$env:GITHUB_WORKSPACE\sample.pbix.md"
 
     $PbixDir = "$env:TEMP\$ExecutionGUID\PBIX"
     Expand-Archive $pbixFile -Force -DestinationPath $PbixDir

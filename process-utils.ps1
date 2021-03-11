@@ -8,7 +8,7 @@ function Get-PbixFileList {
     [int]$FileCount = 0
 
     $Result | ForEach-Object {
-        if ($_.StartsWith("------------------- ----- ------------ ------------")) {
+        if ($_.StartsWith("------------------")) {
             if ($SeparatorFound) {
                 # Second separator! We're done
                 return
@@ -16,7 +16,7 @@ function Get-PbixFileList {
             $SeparatorFound = -not $SeparatorFound
         }
         else {
-            if ($SeparatorFound) {
+            if ($SeparatorFound -and $_.Substring(20, 5).Trim() -ne "") {
                 # 012345678901234567890123456789012345678901234567890123456789012345678901234567890
                 # x-----------------x x---x x----------x x----------x  x--------------------
                 # 2020-12-20 14:25:18 ....A        18144         2107  XMLClassGenerator.ini
@@ -27,7 +27,7 @@ function Get-PbixFileList {
                 [string]$Name = $_.Substring(53).TrimEnd()
 
                 # Write a PSCustomObject with properties to output
-                [PSCustomObject] @{
+                [pscustomobject]@{
                     Mode       = $Mode
                     DateTime   = $DateTime
                     Length     = $Length
@@ -78,7 +78,7 @@ function Add-Dependencies {
     Add-Type -Path $daxMeta
     Add-Type -Path $daxVpa
     Add-Type -Path $scribFile
-    Add-Type -Path "C:\code\msmd\bin\Microsoft.Mashup.Client.Packaging.dll" 
+    Add-Type -Path "C:\Program Files\Microsoft Power BI Desktop\bin\Microsoft.Mashup.Client.Packaging.dll" 
     #endregion
 
 }
