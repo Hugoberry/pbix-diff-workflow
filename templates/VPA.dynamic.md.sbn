@@ -1,0 +1,26 @@
+{{for ent in this
+"\r\n# "
+ent.key
+"\r\n"
+    if !ent.value.empty?
+        for row in ent.value
+            if for.first
+                header = row | object.keys 
+                header | array.join "|"
+                "\r\n"
+                header| array.each @(do;ret "---"; end)| array.join "|"
+                "\r\n"
+            end
+            cells = row | array.map "value"  
+            for cell in cells
+                if cell | object.typeof == "string"
+                    cell | @string.replace "\n" "<br>"
+                else
+                    cell
+                end
+                "|"
+            end
+            "\r\n"
+        end
+    end
+end}}
