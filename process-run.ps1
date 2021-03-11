@@ -67,17 +67,17 @@ try {
     $layout = Get-Content "$PbixDir\Report\Layout" -Encoding unicode | ConvertFrom-Json -AsHashtable -Depth 20
     $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
     $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
-    $layoutParser.Render($layout) > "$env:GITHUB_WORKSPACE\sample.layout.md"
+    $layoutParser.Render($layout) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
 
 
     $vpaHash = $vpa | convertto-json -Depth 20 | convertfrom-json -AsHashtable -Depth 20
     $vpaTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\VPA.dynamic.md.sbn" | Out-String
     $vpaParser = [Scriban.Template]::Parse($vpaTemplate)
-    $vpaParser.Render($vpaHash) > "$env:GITHUB_WORKSPACE\sample.vpa.md"
+    $vpaParser.Render($vpaHash) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
 
     $modelTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\DataMashup.md.sbn" | Out-String
     $modelParser = [Scriban.Template]::Parse($modelTemplate)
-    $modelParser.Render($model) > "$env:GITHUB_WORKSPACE\sample.model.md"
+    $modelParser.Render($model) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
 
     # Cleanup processes 
     $null = $process.Kill()
