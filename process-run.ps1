@@ -54,13 +54,17 @@ try {
     # Cleanup connection
     $server.Disconnect();
 
-    # TODO
+    # Templating the file list from PBIX file
     $pbixFileList = Get-PbixFileList -FileName $pbixFile |convertto-json | ConvertFrom-Json -AsHashtable
 
     $pbixTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\FileList.md.sbn" | Out-String
     $pbixParser = [Scriban.Template]::Parse($pbixTemplate)
     $pbixParser.Render(@{model = $pbixFilelist}) > "$env:GITHUB_WORKSPACE\sample.pbix.md"
 
+    # Templating the report layout -> pages -> visuals
+    # TODO: Add bookmarks
+    # TODO: Add esoteric languages py/r
+    # TODO: Add Interactions
     $PbixDir = "$env:TEMP\$ExecutionGUID\PBIX"
     Expand-Archive $pbixFile -Force -DestinationPath $PbixDir
 
@@ -68,16 +72,23 @@ try {
     $layoutTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\Layout.md.sbn" | Out-String
     $layoutParser = [Scriban.Template]::Parse($layoutTemplate)
     $layoutParser.Render($layout) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
-
-
+    
+    # Scavenging M from eithe DataMashup or Model.bim expressions  
+    if($pbixFilelist.Name -contains "DataMashup"){
+        $mashup = Get-DataMashupContent -PbixFilePath $pbixFile
+        $mashupTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\DataMashup.md.sbn" | Out-String
+        $mashupParser = [Scriban.Template]::Parse($mashupTemplate)
+        $mashupParser.Render(@{model=$mashup}) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
+    } else {
+        $modelTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\DataMashupV3.md.sbn" | Out-String
+        $modelParser = [Scriban.Template]::Parse($modelTemplate)
+        $modelParser.Render($model) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
+    }
+    # Templating the DataModel metrics via VPAX
     $vpaHash = $vpa | convertto-json -Depth 20 | convertfrom-json -AsHashtable -Depth 20
     $vpaTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\VPA.dynamic.md.sbn" | Out-String
     $vpaParser = [Scriban.Template]::Parse($vpaTemplate)
     $vpaParser.Render($vpaHash) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
-
-    $modelTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\DataMashup.md.sbn" | Out-String
-    $modelParser = [Scriban.Template]::Parse($modelTemplate)
-    $modelParser.Render($model) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
 
     # Cleanup processes 
     $null = $process.Kill()

@@ -215,7 +215,7 @@ function Get-DataMashupContent {
     )
     $mFile = $null
     if (-Not [Microsoft.Mashup.Client.Packaging.MashupPackage]::TryCreateFromPowerBIDesktopFile([System.IO.File]::OpenRead($PbixFilePath), [ref] $mFile)) {
-        throw "Failed to load file: $($powerBiFileLocation)"
+        throw "Failed to load file: $($PbixFilePath)"
     }
     # Cannot use > to pipe to file as it will be the wrong encoding
     return $mFile.Mfiles.Values

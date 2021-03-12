@@ -1,0 +1,49 @@
+# Power Query
+{{for k in this.model.queryGroups
+    if for.first
+"## Query Folders\r\n\r\n"
+"Order|Name|Description\r\n"
+"---|---|---\r\n"
+    end
+    k.annotations[0].value
+"|"
+    k.folder
+"|"
+    k.description 
+"\r\n"
+end}}
+
+## Queries
+{{for v in this.model.annotations | array.filter @(do;ret $0.name =="PBI_QueryOrder"; end)
+v.value
+end}}
+
+## Expressions
+{{for exp in this.model.expressions
+"### "
+exp.name
+"\r\n"
+exp?.description
+"\r\n```\r\n"
+    if exp.expression | object.typeof == "array"
+        exp.expression | array.join "\r\n"
+    else
+        exp.expression
+    end
+"\r\n```\r\n"
+end}}
+{{for part in this.model.tables
+    for p in part.partitions
+        if p.source | object.kind == "MPartitionSource"
+    "\r\n### "
+            part.name
+    "\r\n```\r\n"
+            if p.source.expression | object.typeof == "array"
+                p.source.expression | array.join "\r\n"
+            else
+                p.source.expression
+            end
+        end
+"\r\n```\r\n"
+    end
+end}}

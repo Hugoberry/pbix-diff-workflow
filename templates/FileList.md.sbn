@@ -1,10 +1,9 @@
-# PBIX file contents
+# Overview 
+## PBIX file contents
 
-Mode|DateTime|Length|Compressed|FileName
--|-|-|-|-
+DateTime|Length|Compressed|FileName
+-|-|-|-
 {{for rec in model
-    rec.immediate_base_object.Mode
-    "|"
     rec.immediate_base_object.DateTime | date.to_string "%Y-%m-%d %H:%M:%S"
     "|"
     rec.immediate_base_object.Length
