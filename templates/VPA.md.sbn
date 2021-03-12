@@ -2,22 +2,22 @@
 |TableName|TableExpression|RowsCount|ReferentialIntegrityViolationCount|IsHidden|Description|ColumnsSize|TableSize|RelationshipsSize|UserHierarchiesSize|IsReferenced|
 |---|---|---|---|---|---|---|---|---|---|---|
 {{~for t in Tables~}}
-|{{t.TableName}}|{{t.TableExpression}}|{{t.RowsCount}}|{{t.ReferentialIntegrityViolationCount}}|{{t.IsHidden}}|{{t.Description}}|{{t.ColumnsSize}}|{{t.TableSize}}|{{t.RelationshipsSize}}|{{t.UserHierarchiesSize}}|{{t.IsReferenced}}|
+|{{t.TableName}}|{{t.TableExpression| @string.replace "\n" "<br>"}}|{{t.RowsCount}}|{{t.ReferentialIntegrityViolationCount}}|{{t.IsHidden}}|{{t.Description}}|{{t.ColumnsSize}}|{{t.TableSize}}|{{t.RelationshipsSize}}|{{t.UserHierarchiesSize}}|{{t.IsReferenced}}|
 {{~end~}}
 
 ## Columns
 |ColumnName|TableName|FullColumnName|ColumnCardinality|DataType|ColumnType|IsHidden|Encoding|ColumnExpression|DisplayFolder|Description|FormatString|EncodingHint|IsAvailableInMDX|IsKey|IsNullable|IsUnique|KeepUniqueRows|SortByColumnName|State|IsRowNumber|IsReferenced|DictionarySize|DataSize|HierarchiesSize|TotalSize|Selectivity|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 {{~for c in Columns~}}
-{{c.ColumnName}}|{{c.TableName}}|{{c.FullColumnName}}|{{c.ColumnCardinality}}|{{c.DataType}}|{{c.ColumnType}}|{{c.IsHidden}}|{{c.Encoding}}|{{c.ColumnExpression}}|{{c.DisplayFolder}}|{{c.Description}}|{{c.FormatString}}|{{c.EncodingHint}}|{{c.IsAvailableInMDX}}|{{c.IsKey}}|{{c.IsNullable}}|{{c.IsUnique}}|{{c.KeepUniqueRows}}|{{c.SortByColumnName}}|{{c.State}}|{{c.IsRowNumber}}|{{c.IsReferenced}}|{{c.DictionarySize}}|{{c.DataSize}}|{{c.HierarchiesSize}}|{{c.TotalSize}}|{{c.Selectivity}}|
+{{c.ColumnName}}|{{c.TableName}}|{{c.FullColumnName}}|{{c.ColumnCardinality}}|{{c.DataType}}|{{c.ColumnType}}|{{c.IsHidden}}|{{c.Encoding}}|{{c.ColumnExpression| @string.replace "\n" "<br>"}}|{{c.DisplayFolder}}|{{c.Description}}|{{c.FormatString}}|{{c.EncodingHint}}|{{c.IsAvailableInMDX}}|{{c.IsKey}}|{{c.IsNullable}}|{{c.IsUnique}}|{{c.KeepUniqueRows}}|{{c.SortByColumnName}}|{{c.State}}|{{c.IsRowNumber}}|{{c.IsReferenced}}|{{c.DictionarySize}}|{{c.DataSize}}|{{c.HierarchiesSize}}|{{c.TotalSize}}|{{c.Selectivity}}|
 {{~end~}}
 
 ## Measures
-MeasureName|TableName|FullMeasureName|MeasureExpression|DisplayFolder|Description|IsHidden|DataType|DetailRowsExpression|FormatString|KpiStatusExpression|KpiTargetExpression|KpiTargetFormatString|KpiTrendExpression
---|--|--|--|--|--|--|--|--|--|---|--|--|--|--
-{{for m in Measures}}
-{{MeasureName}}|{{TableName}}|{{FullMeasureName}}|{{MeasureExpression}}|{{DisplayFolder}}|{{Description}}|{{IsHidden}}|{{DataType}}|{{DetailRowsExpression}}|{{FormatString}}|{{KpiStatusExpression}}|{{KpiTargetExpression}}|{{KpiTargetFormatString}}|{{KpiTrendExpression}}
-{{end}}
+|MeasureName|TableName|FullMeasureName|MeasureExpression|DisplayFolder|Description|IsHidden|DataType|DetailRowsExpression|FormatString|KpiStatusExpression|KpiTargetExpression|KpiTargetFormatString|KpiTrendExpression|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+{{~for m in Measures~}}
+|{{m.MeasureName}}|{{m.TableName}}|{{m.FullMeasureName}}|{{m.MeasureExpression| @string.replace "\n" "<br>"}}|{{m.DisplayFolder}}|{{m.Description}}|{{m.IsHidden}}|{{m.DataType}}|{{m.DetailRowsExpression| @string.replace "\n" "<br>"}}|{{m.FormatString}}|{{m.KpiStatusExpression| @string.replace "\n" "<br>"}}|{{m.KpiTargetExpression| @string.replace "\n" "<br>"}}|{{m.KpiTargetFormatString}}|{{m.KpiTrendExpression| @string.replace "\n" "<br>"}}|
+{{~end~}}
 
 ## Columns Segments
 |ColumnName|TableName|FullColumnName|PartitionName|SegmentNumber|TablePartitionNumber|SegmentRows|UsedSize|CompressionType|BitsCount|BookmarkBitsCount|VertipaqState|
