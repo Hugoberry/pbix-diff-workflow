@@ -84,11 +84,11 @@ try {
         $modelParser = [Scriban.Template]::Parse($modelTemplate)
         $modelParser.Render($model) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
     }
-    # Templating the DataModel metrics via VPAX
-    $vpaHash = $vpa | convertto-json -Depth 20 | convertfrom-json -AsHashtable -Depth 20
-    $vpaTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\VPA.md.sbn" | Out-String
-    $vpaParser = [Scriban.Template]::Parse($vpaTemplate)
-    $vpaParser.Render($vpaHash) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
+    # # Templating the DataModel metrics via VPAX
+    # $vpaHash = $vpa | convertto-json -Depth 20 | convertfrom-json -AsHashtable -Depth 20
+    # $vpaTemplate = Get-Content "$env:GITHUB_WORKSPACE\templates\VPA.md.sbn" | Out-String
+    # $vpaParser = [Scriban.Template]::Parse($vpaTemplate)
+    # $vpaParser.Render($vpaHash) >> "$env:GITHUB_WORKSPACE\sample.pbix.md"
 
     # Cleanup processes 
     $null = $process.Kill()
