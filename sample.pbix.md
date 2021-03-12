@@ -37,19 +37,19 @@ Order|Width|Height|Visible|Filters
 ### Main-Visuals
 Positioning|Config|Filters
 -|-|-
-`X:`459<br>`Y:`418<br>`Z:`7000<br>`Width:`791<br>`Height:`281 |``<br><br> |
+`X:`459<br>`Y:`418<br>`Z:`7000<br>`Width:`791<br>`Height:`281 |`Group:Daily increments`<br><br> |
 `X:`132<br>`Y:`0<br>`Z:`1000<br>`Width:`129<br>`Height:`30 |`actionButton`<br>'Cumulative (grey)'<br> |
 `X:`402<br>`Y:`50<br>`Z:`0<br>`Width:`389<br>`Height:`230 |`clusteredColumnChart`<br>'Total deaths'<br>`Category:` ["COVID.Date"]<br>`Y:` ["Sum(COVID.Daily deaths)"]<br> |
 `X:`403<br>`Y:`41<br>`Z:`2000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Daily Deaths'<br> |
 `X:`0<br>`Y:`50<br>`Z:`3000<br>`Width:`389<br>`Height:`230 |`clusteredColumnChart`<br>'Total confirmed cases'<br>`Category:` ["COVID.Date"]<br>`Y:` ["Sum(COVID.Daily cases)"]<br> |
 `X:`0<br>`Y:`41<br>`Z:`4000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Daily Cases'<br> |
 `X:`34<br>`Y:`53<br>`Z:`0<br>`Width:`378<br>`Height:`629 |`pivotTable`<br><br>`Rows:` ["StateDim.Country", "StateDim.State"]<br>`Values:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]<br> |
-`X:`437<br>`Y:`52<br>`Z:`1000<br>`Width:`497<br>`Height:`368 |``<br><br> |
+`X:`437<br>`Y:`52<br>`Z:`1000<br>`Width:`497<br>`Height:`368 |`Group:Pink Map`<br><br> |
 `X:`29<br>`Y:`0<br>`Z:`3000<br>`Width:`118<br>`Height:`38 |`actionButton`<br><br> |
 `X:`152<br>`Y:`0<br>`Z:`2000<br>`Width:`129<br>`Height:`36 |`actionButton`<br>'Summary'<br> |
 `X:`0<br>`Y:`11<br>`Z:`1000<br>`Width:`497<br>`Height:`357 |`shapeMap`<br>'Confirmed cases by State'<br>`Category:` ["StateDim.State"]<br>`Tooltips:` ["COVID measures.Total confirmed cases", "COVID measures.Case fatality rate"]<br>`Value:` ["COVID measures.Total deaths"]<br> |
 `X:`29<br>`Y:`0<br>`Z:`0<br>`Width:`118<br>`Height:`36 |`actionButton`<br>'Summary'<br> |
-`X:`437<br>`Y:`50<br>`Z:`2000<br>`Width:`498<br>`Height:`368 |``<br><br> |
+`X:`437<br>`Y:`50<br>`Z:`2000<br>`Width:`498<br>`Height:`368 |`Group:Blue Map`<br><br> |
 `X:`153<br>`Y:`0<br>`Z:`3000<br>`Width:`130<br>`Height:`42 |`actionButton`<br><br> |
 `X:`153<br>`Y:`1<br>`Z:`2000<br>`Width:`129<br>`Height:`37 |`actionButton`<br>'Summary'<br> |
 `X:`0<br>`Y:`11<br>`Z:`1000<br>`Width:`498<br>`Height:`357 |`shapeMap`<br>'Confirmed cases by State'<br>`Category:` ["StateDim.State"]<br>`Value:` ["Latest COVID measures.Total confirmed cases"]<br>`Tooltips:` ["COVID measures.Total deaths", "COVID measures.Case fatality rate"]<br> |
@@ -57,14 +57,14 @@ Positioning|Config|Filters
 `X:`942<br>`Y:`51<br>`Z:`3000<br>`Width:`308<br>`Height:`74 |`slicer`<br><br>`Values:` ["COVID.Date"]<br> |
 `X:`467<br>`Y:`422<br>`Z:`4000<br>`Width:`116<br>`Height:`25 |`actionButton`<br>'Daily button'<br> |
 `X:`595<br>`Y:`422<br>`Z:`5000<br>`Width:`115<br>`Height:`25 |`actionButton`<br>'Cumulative button'<br> |
-`X:`459<br>`Y:`419<br>`Z:`6000<br>`Width:`791<br>`Height:`281 |``<br><br> |
+`X:`459<br>`Y:`419<br>`Z:`6000<br>`Width:`791<br>`Height:`281 |`Group:Cumulative`<br><br> |
 `X:`6<br>`Y:`0<br>`Z:`4000<br>`Width:`123<br>`Height:`29 |`actionButton`<br>'Daily (grey)'<br> |
 `X:`0<br>`Y:`50<br>`Z:`3000<br>`Width:`388<br>`Height:`231 |`clusteredColumnChart`<br>'Total confirmed cases'<br>`Category:` ["COVID.Date"]<br>`Y:` ["COVID measures.Confirmed cases"]<br> |
 `X:`403<br>`Y:`50<br>`Z:`2000<br>`Width:`388<br>`Height:`231 |`clusteredColumnChart`<br>'Total deaths'<br>`Category:` ["COVID.Date"]<br>`Y:` ["COVID measures.Deaths"]<br> |
 `X:`403<br>`Y:`40<br>`Z:`1000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Cumulative Deaths'<br> |
 `X:`0<br>`Y:`40<br>`Z:`0<br>`Width:`388<br>`Height:`20 |`actionButton`<br>'Cumulative Cases'<br> |
 `X:`734<br>`Y:`384<br>`Z:`8000<br>`Width:`182<br>`Height:`23 |`actionButton`<br>'State View'<br> |
-`X:`959<br>`Y:`142<br>`Z:`11000<br>`Width:`274<br>`Height:`287 |``<br><br> |
+`X:`959<br>`Y:`142<br>`Z:`11000<br>`Width:`274<br>`Height:`287 |`Group:Group 1`<br><br> |
 `X:`0<br>`Y:`237<br>`Z:`2000<br>`Width:`94<br>`Height:`50 |`image`<br>'Source:'<br> |
 `X:`0<br>`Y:`0<br>`Z:`0<br>`Width:`274<br>`Height:`115 |`textbox`<br>'Methodology'<br> |
 `X:`0<br>`Y:`115<br>`Z:`1000<br>`Width:`274<br>`Height:`121 |`actionButton`<br>'Data Source'<br> |
@@ -79,7 +79,7 @@ Order|Width|Height|Visible|Filters
 ### County view-Visuals
 Positioning|Config|Filters
 -|-|-
-`X:`459<br>`Y:`418<br>`Z:`7000<br>`Width:`791<br>`Height:`281 |``<br><br> |
+`X:`459<br>`Y:`418<br>`Z:`7000<br>`Width:`791<br>`Height:`281 |`Group:Daily increments`<br><br> |
 `X:`132<br>`Y:`0<br>`Z:`1000<br>`Width:`129<br>`Height:`30 |`actionButton`<br>'Cumulative (grey)'<br> |
 `X:`402<br>`Y:`50<br>`Z:`0<br>`Width:`389<br>`Height:`230 |`clusteredColumnChart`<br>'Total deaths'<br>`Category:` ["COVID.Date"]<br>`Y:` ["Sum(COVID.Daily deaths)"]<br> |
 `X:`403<br>`Y:`41<br>`Z:`2000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Daily Deaths'<br> |
@@ -87,12 +87,12 @@ Positioning|Config|Filters
 `X:`133<br>`Y:`0<br>`Z:`5000<br>`Width:`122<br>`Height:`29 |`actionButton`<br>'Daily (grey)'<br> |
 `X:`0<br>`Y:`41<br>`Z:`4000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Daily Cases'<br> |
 `X:`28<br>`Y:`53<br>`Z:`0<br>`Width:`386<br>`Height:`629 |`pivotTable`<br><br>`Rows:` ["StateDim.State", "COVID.County Name"]<br>`Values:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]<br> |
-`X:`437<br>`Y:`51<br>`Z:`1000<br>`Width:`486<br>`Height:`367 |``<br><br> |
+`X:`437<br>`Y:`51<br>`Z:`1000<br>`Width:`486<br>`Height:`367 |`Group:Pink Map`<br><br> |
 `X:`29<br>`Y:`0<br>`Z:`3000<br>`Width:`118<br>`Height:`38 |`actionButton`<br><br> |
 `X:`152<br>`Y:`0<br>`Z:`2000<br>`Width:`129<br>`Height:`36 |`actionButton`<br>'Summary'<br> |
 `X:`0<br>`Y:`31<br>`Z:`1000<br>`Width:`486<br>`Height:`336 |`filledMap`<br>'Confirmed cases by State'<br>`Category:` ["COVID.County"]<br>`Tooltips:` ["COVID measures.Total deaths", "COVID measures.Total confirmed cases", "COVID measures.Case fatality rate"]<br> |`COVID`<br>not (County Contains 'Unallocated')<br>
 `X:`29<br>`Y:`0<br>`Z:`0<br>`Width:`118<br>`Height:`36 |`actionButton`<br>'Summary'<br> |
-`X:`437<br>`Y:`50<br>`Z:`2000<br>`Width:`486<br>`Height:`369 |``<br><br> |
+`X:`437<br>`Y:`50<br>`Z:`2000<br>`Width:`486<br>`Height:`369 |`Group:Blue Map`<br><br> |
 `X:`154<br>`Y:`0<br>`Z:`3000<br>`Width:`129<br>`Height:`37 |`actionButton`<br><br> |
 `X:`153<br>`Y:`2<br>`Z:`2000<br>`Width:`129<br>`Height:`37 |`actionButton`<br>'Summary'<br> |
 `X:`0<br>`Y:`33<br>`Z:`1000<br>`Width:`486<br>`Height:`336 |`filledMap`<br>'Confirmed cases by State'<br>`Tooltips:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]<br>`Category:` ["COVID.County"]<br> |`COVID`<br>not (County Contains 'Unallocated')<br>
@@ -100,7 +100,7 @@ Positioning|Config|Filters
 `X:`942<br>`Y:`40<br>`Z:`3000<br>`Width:`309<br>`Height:`75 |`slicer`<br><br>`Values:` ["COVID.Date"]<br> |
 `X:`467<br>`Y:`422<br>`Z:`4000<br>`Width:`116<br>`Height:`25 |`actionButton`<br>'Daily button'<br> |
 `X:`595<br>`Y:`422<br>`Z:`5000<br>`Width:`115<br>`Height:`25 |`actionButton`<br>'Cumulative button'<br> |
-`X:`459<br>`Y:`419<br>`Z:`6000<br>`Width:`791<br>`Height:`281 |``<br><br> |
+`X:`459<br>`Y:`419<br>`Z:`6000<br>`Width:`791<br>`Height:`281 |`Group:Cumulative`<br><br> |
 `X:`6<br>`Y:`0<br>`Z:`4000<br>`Width:`123<br>`Height:`29 |`actionButton`<br>'Daily (grey)'<br> |
 `X:`0<br>`Y:`50<br>`Z:`3000<br>`Width:`388<br>`Height:`231 |`clusteredColumnChart`<br>'Total confirmed cases'<br>`Category:` ["COVID.Date"]<br>`Y:` ["COVID measures.Confirmed cases"]<br> |
 `X:`403<br>`Y:`50<br>`Z:`2000<br>`Width:`388<br>`Height:`231 |`clusteredColumnChart`<br>'Total deaths'<br>`Category:` ["COVID.Date"]<br>`Y:` ["COVID measures.Deaths"]<br> |
@@ -109,7 +109,7 @@ Positioning|Config|Filters
 `X:`463<br>`Y:`51<br>`Z:`8000<br>`Width:`123<br>`Height:`39 |`actionButton`<br><br> |
 `X:`788<br>`Y:`62<br>`Z:`9000<br>`Width:`129<br>`Height:`25 |`actionButton`<br>'State View'<br> |
 `X:`1145<br>`Y:`2<br>`Z:`10000<br>`Width:`129<br>`Height:`25 |`actionButton`<br>'State View'<br> |
-`X:`959<br>`Y:`142<br>`Z:`11000<br>`Width:`274<br>`Height:`287 |``<br><br> |
+`X:`959<br>`Y:`142<br>`Z:`11000<br>`Width:`274<br>`Height:`287 |`Group:Group 1`<br><br> |
 `X:`0<br>`Y:`237<br>`Z:`2000<br>`Width:`94<br>`Height:`50 |`image`<br>'Source:'<br> |
 `X:`0<br>`Y:`0<br>`Z:`0<br>`Width:`274<br>`Height:`115 |`textbox`<br>'Methodology'<br> |
 `X:`0<br>`Y:`115<br>`Z:`1000<br>`Width:`274<br>`Height:`121 |`actionButton`<br>'Data Source'<br> |
@@ -186,263 +186,263 @@ in
 
 # Data Model metrics
 
-## UserHierarchies
-TableName|IsHidden|UserHierarchyName|Levels|UsedSize
----|---|---|---|---
-DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|Date Hierarchy|Year, Quarter, Month, Day|96|
-LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|Date Hierarchy|Year, Quarter, Month, Day|6144|
-
-## ColumnsHierarchies
-ColumnName|UsedSize|TableName|TablePartitionNumber|FullColumnName|SegmentNumber|StructureName
----|---|---|---|---|---|---
-Date|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|0|POS_TO_ID|
-Date|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|1|POS_TO_ID|
-Date|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|2|POS_TO_ID|
-Date|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|3|POS_TO_ID|
-Year|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|0|POS_TO_ID|
-Year|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|1|POS_TO_ID|
-Year|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|2|POS_TO_ID|
-Year|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|3|POS_TO_ID|
-MonthNo|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|0|POS_TO_ID|
-MonthNo|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|1|POS_TO_ID|
-MonthNo|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|2|POS_TO_ID|
-MonthNo|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|3|POS_TO_ID|
-Month|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|0|POS_TO_ID|
-Month|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|1|POS_TO_ID|
-Month|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|2|POS_TO_ID|
-Month|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|3|POS_TO_ID|
-Month|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|0|ID_TO_POS|
-Month|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|1|ID_TO_POS|
-Month|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|2|ID_TO_POS|
-Month|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|3|ID_TO_POS|
-QuarterNo|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|0|POS_TO_ID|
-QuarterNo|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|1|POS_TO_ID|
-QuarterNo|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|2|POS_TO_ID|
-QuarterNo|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|3|POS_TO_ID|
-Quarter|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|0|POS_TO_ID|
-Quarter|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|1|POS_TO_ID|
-Quarter|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|2|POS_TO_ID|
-Quarter|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|3|POS_TO_ID|
-Quarter|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|0|ID_TO_POS|
-Quarter|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|1|ID_TO_POS|
-Quarter|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|2|ID_TO_POS|
-Quarter|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|3|ID_TO_POS|
-Day|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|0|POS_TO_ID|
-Day|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|1|POS_TO_ID|
-Day|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|2|POS_TO_ID|
-Day|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|3|POS_TO_ID|
-County Name|7536|COVID|0|'COVID'[County Name]|0|POS_TO_ID|
-County Name|16|COVID|0|'COVID'[County Name]|1|POS_TO_ID|
-County Name|7536|COVID|0|'COVID'[County Name]|0|ID_TO_POS|
-County Name|16|COVID|0|'COVID'[County Name]|1|ID_TO_POS|
-State|208|COVID|0|'COVID'[State]|0|POS_TO_ID|
-State|16|COVID|0|'COVID'[State]|1|POS_TO_ID|
-State|208|COVID|0|'COVID'[State]|0|ID_TO_POS|
-State|16|COVID|0|'COVID'[State]|1|ID_TO_POS|
-stateFIPS|208|COVID|0|'COVID'[stateFIPS]|0|POS_TO_ID|
-stateFIPS|16|COVID|0|'COVID'[stateFIPS]|1|POS_TO_ID|
-stateFIPS|208|COVID|0|'COVID'[stateFIPS]|0|ID_TO_POS|
-stateFIPS|16|COVID|0|'COVID'[stateFIPS]|1|ID_TO_POS|
-Date|280|COVID|0|'COVID'[Date]|0|POS_TO_ID|
-Date|16|COVID|0|'COVID'[Date]|1|POS_TO_ID|
-Date|280|COVID|0|'COVID'[Date]|0|ID_TO_POS|
-Date|16|COVID|0|'COVID'[Date]|1|ID_TO_POS|
-Cases|2304|COVID|0|'COVID'[Cases]|0|POS_TO_ID|
-Cases|16|COVID|0|'COVID'[Cases]|1|POS_TO_ID|
-Cases|2304|COVID|0|'COVID'[Cases]|0|ID_TO_POS|
-Cases|16|COVID|0|'COVID'[Cases]|1|ID_TO_POS|
-FIPS|12592|COVID|0|'COVID'[FIPS]|0|POS_TO_ID|
-FIPS|16|COVID|0|'COVID'[FIPS]|1|POS_TO_ID|
-FIPS|12592|COVID|0|'COVID'[FIPS]|0|ID_TO_POS|
-FIPS|16|COVID|0|'COVID'[FIPS]|1|ID_TO_POS|
-Deaths|296|COVID|0|'COVID'[Deaths]|0|POS_TO_ID|
-Deaths|16|COVID|0|'COVID'[Deaths]|1|POS_TO_ID|
-Deaths|296|COVID|0|'COVID'[Deaths]|0|ID_TO_POS|
-Deaths|16|COVID|0|'COVID'[Deaths]|1|ID_TO_POS|
-County|12792|COVID|0|'COVID'[County]|0|POS_TO_ID|
-County|16|COVID|0|'COVID'[County]|1|POS_TO_ID|
-County|12792|COVID|0|'COVID'[County]|0|ID_TO_POS|
-County|16|COVID|0|'COVID'[County]|1|ID_TO_POS|
-Daily cases|1256|COVID|0|'COVID'[Daily cases]|0|POS_TO_ID|
-Daily cases|16|COVID|0|'COVID'[Daily cases]|1|POS_TO_ID|
-Daily cases|1256|COVID|0|'COVID'[Daily cases]|0|ID_TO_POS|
-Daily cases|16|COVID|0|'COVID'[Daily cases]|1|ID_TO_POS|
-Daily deaths|192|COVID|0|'COVID'[Daily deaths]|0|POS_TO_ID|
-Daily deaths|16|COVID|0|'COVID'[Daily deaths]|1|POS_TO_ID|
-Daily deaths|192|COVID|0|'COVID'[Daily deaths]|0|ID_TO_POS|
-Daily deaths|16|COVID|0|'COVID'[Daily deaths]|1|ID_TO_POS|
-State|232|StateDim|0|'StateDim'[State]|0|POS_TO_ID|
-State|16|StateDim|0|'StateDim'[State]|1|POS_TO_ID|
-State|232|StateDim|0|'StateDim'[State]|0|ID_TO_POS|
-State|16|StateDim|0|'StateDim'[State]|1|ID_TO_POS|
-State code|232|StateDim|0|'StateDim'[State code]|0|POS_TO_ID|
-State code|16|StateDim|0|'StateDim'[State code]|1|POS_TO_ID|
-State code|232|StateDim|0|'StateDim'[State code]|0|ID_TO_POS|
-State code|16|StateDim|0|'StateDim'[State code]|1|ID_TO_POS|
-US territories|16|StateDim|0|'StateDim'[US territories]|0|POS_TO_ID|
-US territories|16|StateDim|0|'StateDim'[US territories]|1|POS_TO_ID|
-US territories|8|StateDim|0|'StateDim'[US territories]|2|POS_TO_ID|
-US territories|16|StateDim|0|'StateDim'[US territories]|0|ID_TO_POS|
-US territories|16|StateDim|0|'StateDim'[US territories]|1|ID_TO_POS|
-US territories|8|StateDim|0|'StateDim'[US territories]|2|ID_TO_POS|
-Country|8|StateDim|0|'StateDim'[Country]|0|POS_TO_ID|
-Country|8|StateDim|0|'StateDim'[Country]|1|POS_TO_ID|
-Country|8|StateDim|0|'StateDim'[Country]|2|POS_TO_ID|
-Country|8|StateDim|0|'StateDim'[Country]|3|POS_TO_ID|
-Country|8|StateDim|0|'StateDim'[Country]|0|ID_TO_POS|
-Country|8|StateDim|0|'StateDim'[Country]|1|ID_TO_POS|
-Country|8|StateDim|0|'StateDim'[Country]|2|ID_TO_POS|
-Country|8|StateDim|0|'StateDim'[Country]|3|ID_TO_POS|
-Metric|16|Table|0|'Table'[Metric]|0|POS_TO_ID|
-Metric|16|Table|0|'Table'[Metric]|1|POS_TO_ID|
-Metric|16|Table|0|'Table'[Metric]|0|ID_TO_POS|
-Metric|16|Table|0|'Table'[Metric]|1|ID_TO_POS|
-Order|16|Table|0|'Table'[Order]|0|POS_TO_ID|
-Order|16|Table|0|'Table'[Order]|1|POS_TO_ID|
-Date|1472|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|0|POS_TO_ID|
-Date|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|1|POS_TO_ID|
-Date|1472|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|0|ID_TO_POS|
-Date|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|1|ID_TO_POS|
-Year|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|0|POS_TO_ID|
-Year|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|1|POS_TO_ID|
-Year|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|2|POS_TO_ID|
-Year|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|3|POS_TO_ID|
-Year|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|0|ID_TO_POS|
-Year|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|1|ID_TO_POS|
-Year|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|2|ID_TO_POS|
-Year|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|3|ID_TO_POS|
-MonthNo|56|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|0|POS_TO_ID|
-MonthNo|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|1|POS_TO_ID|
-MonthNo|56|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|0|ID_TO_POS|
-MonthNo|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|1|ID_TO_POS|
-Month|56|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|0|POS_TO_ID|
-Month|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|1|POS_TO_ID|
-Month|56|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|0|ID_TO_POS|
-Month|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|1|ID_TO_POS|
-QuarterNo|24|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|0|POS_TO_ID|
-QuarterNo|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|1|POS_TO_ID|
-QuarterNo|24|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|0|ID_TO_POS|
-QuarterNo|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|1|ID_TO_POS|
-Quarter|24|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|0|POS_TO_ID|
-Quarter|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|1|POS_TO_ID|
-Quarter|24|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|0|ID_TO_POS|
-Quarter|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|1|ID_TO_POS|
-Day|128|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]|0|POS_TO_ID|
-Day|16|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]|1|POS_TO_ID|
-
-## Columns
-EncodingHint|FormatString|KeepUniqueRows|DataType|IsNullable|TotalSize|FullColumnName|ColumnExpression|State|DataSize|TableName|IsReferenced|ColumnType|Selectivity|ColumnCardinality|IsKey|ColumnName|DisplayFolder|IsUnique|Description|IsHidden|Encoding|IsRowNumber|SortByColumnName|DictionarySize|HierarchiesSize|IsAvailableInMDX
----|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
-Default||false|Int64|false|120|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]||Ready|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|RowNumber||0|true|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true||true|VALUE|true||120|0|true|
-Default||false|DateTime|true|160|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]||Ready|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|CalculatedTableColumn|1|1|false|Date||false||true|VALUE|false||120|32|true|
-Default||false|Int64|true|160|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|YEAR([Date])|Ready|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|Calculated|1|1|false|Year||false||true|VALUE|false||120|32|true|
-Default||false|Int64|true|160|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|MONTH([Date])|Ready|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|Calculated|1|1|false|MonthNo||false||true|VALUE|false||120|32|true|
-Default||false|String|true|17152|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|FORMAT([Date], "MMMM")|Ready|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|Calculated|1|1|false|Month||false||true|HASH|false|MonthNo|17080|64|true|
-Default||false|Int64|true|160|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|INT(([MonthNo] + 2) / 3)|Ready|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|Calculated|1|1|false|QuarterNo||false||true|VALUE|false||120|32|true|
-Default||false|String|true|17148|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|"Qtr " & [QuarterNo]|Ready|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|Calculated|1|1|false|Quarter||false||true|HASH|false|QuarterNo|17076|64|true|
-Default||false|Int64|true|160|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|DAY([Date])|Ready|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|Calculated|1|1|false|Day||false||true|VALUE|false||120|32|true|
-Default||false|Int64|false|120|'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]||Ready|0|COVID|true|RowNumber||0|true|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true||true|VALUE|true||120|0|true|
-Default||false|String|true|292327|'COVID'[County Name]||Ready|209600|COVID|true|Data|0.008657013008519015|1882|false|County Name||false||false|HASH|false||67623|15104|true|
-Default||false|String|true|34058|'COVID'[State]||Ready|15840|COVID|true|Data|0.00023459493274945262|51|false|State||false||false|HASH|false||17770|448|true|
-Default||false|String|true|34044|'COVID'[stateFIPS]||Ready|15840|COVID|false|Data|0.00023459493274945262|51|false|stateFIPS||false||true|HASH|false||17756|448|true|
-Default|m/d/yyyy|false|DateTime|true|147592|'COVID'[Date]||Ready|143776|COVID|true|Data|0.00031279324366593683|68|false|Date||false||false|HASH|false||3224|592|true|
-Default|0|false|Int64|true|23776|'COVID'[Cases]||Ready|7880|COVID|true|Data|0.0026403429685918785|574|false|Cases||false||false|HASH|false||11256|4640|true|
-Default||false|String|true|334421|'COVID'[FIPS]||Ready|209520|COVID|false|Data|0.01447588732083387|3147|false|FIPS||false||false|HASH|false||99685|25216|true|
-Default|0|false|Int64|true|2664|'COVID'[Deaths]||Ready|368|COVID|true|Data|0.00033579274687666746|73|false|Deaths||false||false|HASH|false||1672|624|true|
-Default||false|String|true|365311|'COVID'[County]|'COVID'[County Name] & ", " & 'COVID'[State]|Ready|210512|COVID|false|Calculated|0.014705882352941176|3197|false|County||false||false|HASH|false||129183|25616|true|
-Default|#,0|false|Int64|true|35780|'COVID'[Daily cases]|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysCases = 'COVID'[Cases]<br><br>RETURN  __TodaysCases - CALCULATE(<br>    SUM('COVID'[Cases]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|Ready|23440|COVID|true|Calculated|0.0014397689009917386|313|false|Daily cases||false||false|HASH|false||9796|2544|true|
-Default|0|false|Int64|true|4112|'COVID'[Daily deaths]|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysDeaths = 'COVID'[Deaths]<br><br>RETURN  __TodaysDeaths - CALCULATE(<br>    SUM('COVID'[Deaths]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|Ready|2160|COVID|true|Calculated|0.00021159542953872197|46|false|Daily deaths||false||false|HASH|false||1536|416|true|
-Default||false|Int64|false|120|'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]||Ready|0|StateDim|false|RowNumber||0|true|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true||true|VALUE|true||120|0|true|
-Default||false|String|true|19208|'StateDim'[State]||Ready|48|StateDim|true|Data|1|57|false|State||false||false|HASH|false||18664|496|true|
-Default||false|String|true|18398|'StateDim'[State code]||Ready|48|StateDim|true|Data|1|57|false|State code||false||false|HASH|false||17854|496|true|
-Default||false|String|true|17174|'StateDim'[US territories]||Ready|8|StateDim|false|Data|0.03508771929824561|2|false|US territories||false||false|HASH|false||17086|80|true|
-Default||false|String|true|17144|'StateDim'[Country]|"USA"|Ready|8|StateDim|false|Calculated|0.017543859649122806|1|false|Country||false||true|HASH|false||17072|64|true|
-Default||false|Int64|false|120|'Table'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]||Ready|0|Table|false|RowNumber||0|true|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true||true|VALUE|true||120|0|true|
-Default||false|String|true|17236|'Table'[Metric]||Ready|8|Table|false|Data|1|3|false|Metric||false||false|HASH|false||17164|64|true|
-Default|0|false|Int64|true|160|'Table'[Order]||Ready|8|Table|false|Data|1|3|false|Order||false||false|VALUE|false||120|32|true|
-Default||false|Int64|false|120|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]||Ready|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|RowNumber||0|true|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true||true|VALUE|true||120|0|true|
-Default||false|DateTime|true|22976|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]||Ready|424|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|CalculatedTableColumn|1|366|false|Date||false||true|HASH|false||19576|2976|true|
-Default||false|Int64|true|1428|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|YEAR([Date])|Ready|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|Calculated|0.00273224043715847|1|false|Year||false||true|HASH|false||1356|64|true|
-Default||false|Int64|true|1728|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|MONTH([Date])|Ready|184|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|Calculated|0.03278688524590164|12|false|MonthNo||false||true|HASH|false||1400|144|true|
-Default||false|String|true|17652|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|FORMAT([Date], "MMMM")|Ready|184|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|Calculated|0.03278688524590164|12|false|Month||false||true|HASH|false|MonthNo|17324|144|true|
-Default||false|Int64|true|1456|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|INT(([MonthNo] + 2) / 3)|Ready|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|Calculated|0.01092896174863388|4|false|QuarterNo||false||true|HASH|false||1368|80|true|
-Default||false|String|true|17224|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|"Qtr " & [QuarterNo]|Ready|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|Calculated|0.01092896174863388|4|false|Quarter||false||true|HASH|false|QuarterNo|17136|80|true|
-Default||false|Int64|true|512|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]|DAY([Date])|Ready|248|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|Calculated|0.08469945355191257|31|false|Day||false||true|VALUE|false||120|144|true|
-Default||false|Int64|false|400|'COVID measures'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]||Ready|8|COVID measures|false|RowNumber||0|true|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true||true|HASH|true||392|0|true|
+## Relationships
+FromFullColumnName|ToCardinalityType|CrossFilteringBehavior|RelationshipType|FromTableName|UsedSizeTo|ToFullColumnName|FromCardinality|MissingKeys|UsedSize|JoinOnDateBehavior|FromCardinalityType|SecurityFilteringBehavior|InvalidRows|RelationshipName|ToCardinality|RelyOnReferentialIntegrity|UsedSizeFrom|ToTableName|OneToManyRatio|IsActive
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
+'COVID'[Date]|One|OneDirection|SingleColumn|COVID|0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|68|0|88|DatePartOnly|Many|OneDirection|0|61d3981d-89bc-4f78-b2b7-ab908a42ac71|366|false|88|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0.0016835636350254835|true|
+'COVID'[State]|One|OneDirection|SingleColumn|COVID|0|'StateDim'[State code]|51|0|48|DateAndTime|Many|OneDirection|0|7cd80576-d9a4-4516-aad6-c8e06584bf7c|57|false|48|StateDim|0.0002621943366023294|true|
 
 ## ColumnsSegments
-BitsCount|BookmarkBitsCount|TableName|UsedSize|PartitionName|FullColumnName|CompressionType|ColumnName|SegmentRows|VertipaqState|SegmentNumber|TablePartitionNumber
+VertipaqState|PartitionName|FullColumnName|TableName|UsedSize|ColumnName|CompressionType|SegmentRows|SegmentNumber|BitsCount|TablePartitionNumber|BookmarkBitsCount
 ---|---|---|---|---|---|---|---|---|---|---|---
-0|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|1|SKIPPED|0|0|
-1|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|NOSPLIT|Date|1|COMPLETED|0|0|
-1|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|NOSPLIT|Year|1|SKIPPED|0|0|
-1|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|NOSPLIT|MonthNo|1|SKIPPED|0|0|
-1|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|NOSPLIT|Month|1|SKIPPED|0|0|
-1|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|NOSPLIT|QuarterNo|1|SKIPPED|0|0|
-1|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|NOSPLIT|Quarter|1|SKIPPED|0|0|
-1|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|NOSPLIT|Day|1|SKIPPED|0|0|
-0|0|COVID|0|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|217396|SKIPPED|0|0|
-12|1273|COVID|209600|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[County Name]|NOSPLIT|County Name|217396|COMPLETED|0|0|
-6|58|COVID|15840|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[State]|NOSPLIT|State|217396|COMPLETED|0|0|
-6|58|COVID|15840|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[stateFIPS]|NOSPLIT|stateFIPS|217396|COMPLETED|0|0|
-7|342|COVID|143776|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Date]|NOSPLIT|Date|217396|COMPLETED|0|0|
-10|10|COVID|7880|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Cases]|NOSPLIT|Cases|217396|COMPLETED|0|0|
-12|1273|COVID|209520|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[FIPS]|NOSPLIT|FIPS|217396|COMPLETED|0|0|
-7|8|COVID|368|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Deaths]|NOSPLIT|Deaths|217396|COMPLETED|0|0|
-12|1276|COVID|210512|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[County]|NOSPLIT|County|217396|SKIPPED|0|0|
-9|78|COVID|23440|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Daily cases]|NOSPLIT|Daily cases|217396|SKIPPED|0|0|
-6|27|COVID|2160|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Daily deaths]|NOSPLIT|Daily deaths|217396|SKIPPED|0|0|
-0|0|StateDim|0|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|57|SKIPPED|0|0|
-6|0|StateDim|48|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[State]|NOSPLIT|State|57|COMPLETED|0|0|
-6|0|StateDim|48|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[State code]|NOSPLIT|State code|57|SKIPPED|0|0|
-1|0|StateDim|8|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[US territories]|NOSPLIT|US territories|57|COMPLETED|0|0|
-1|0|StateDim|8|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[Country]|NOSPLIT|Country|57|SKIPPED|0|0|
-0|0|Table|0|Table-014a30af-502f-48fd-98ad-986611bf42ec|'Table'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|3|SKIPPED|0|0|
-2|0|Table|8|Table-014a30af-502f-48fd-98ad-986611bf42ec|'Table'[Metric]|NOSPLIT|Metric|3|COMPLETED|0|0|
-2|0|Table|8|Table-014a30af-502f-48fd-98ad-986611bf42ec|'Table'[Order]|NOSPLIT|Order|3|COMPLETED|0|0|
-0|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|366|SKIPPED|0|0|
-9|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|424|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|NOSPLIT|Date|366|SKIPPED|0|0|
-1|1|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|NOSPLIT|Year|366|SKIPPED|0|0|
-4|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|184|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|NOSPLIT|MonthNo|366|SKIPPED|0|0|
-4|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|184|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|NOSPLIT|Month|366|SKIPPED|0|0|
-2|4|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|NOSPLIT|QuarterNo|366|SKIPPED|0|0|
-2|4|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|8|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|NOSPLIT|Quarter|366|SKIPPED|0|0|
-5|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|248|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]|NOSPLIT|Day|366|SKIPPED|0|0|
-1|0|COVID measures|8|COVID measures-b4337b49-e425-4b90-acb0-30bb0500cb95|'COVID measures'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|NOSPLIT|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|0|SKIPPED|0|0|
-
-## Measures
-KpiTargetFormatString|FormatString|DisplayFolder|IsReferenced|DetailRowsExpression|FullMeasureName|KpiStatusExpression|MeasureExpression|MeasureName|Description|KpiTrendExpression|TableName|DataType|IsHidden|KpiTargetExpression
----|---|---|---|---|---|---|---|---|---|---|---|---|---|---
-|||false||'COVID'[Updated]||"Data provided by USAFacts. Because of the frequency of data upates, they may not reflect the exact numbers reported by government organizations or the news media. For more information or to download the data, please click the logo below.  Data updated through " & FORMAT([Max date],"mmmm dd, yyyy") & "."|Updated|||COVID|String|false||
-|General Date||true||'COVID'[Max date]||CALCULATE(MAX('COVID'[Date]),ALL('COVID'))|Max date|||COVID|DateTime|true||
-|||false||'StateDim'[Drill-through button text]||IF(SELECTEDVALUE(StateDim[State],0)==0,"Click on a State to view by County  ", "Click here to view by County in " & VALUES(StateDim[State code]) &"  ")|Drill-through button text|||StateDim|String|false||
-|||false||'Table'[Methodology]||"This interactive feature aggregates data from the Centers for Disease Control and Prevention (CDC), state- and local-level public health agencies. County-level data is confirmed by referencing state and local agencies directly.<br><br>Source: USAFacts"|Methodology|||Table|String|false||
-|||false||'Table'[Notes]||"New York* covers 5 counties (Bronx, Kings, New York, Queens, Richmond), not New York county.<br><br>City of St. Louis was renamed to St. Louis City.<br><br>City and Borough of Juneau was renamed to Juneau Borough.<br><br>Municipality of Anchorage was renamed to Anchorage.<br><br>Jackson County includes other portions of Kansas City.<br><br><br>Source: USAFacts"|Notes|||Table|String|false||
-|||false||'Table'[Terms of use]||"This report and data are provided " & """" & "as is" & """" & ", " & """" & "with all faults" & """" & ", and without warranty of any kind. Microsoft gives no express warranties or guarantees and expressly disclaims all implied warranties, including merchantability, fitness for a particular purpose, and non-infringement."|Terms of use|||Table|String|false||
-|#,0||true||'COVID measures'[Total confirmed cases]||SUM('COVID'[Daily cases])|Total confirmed cases|||COVID measures|Int64|false||
-|#,0||true||'COVID measures'[Total deaths]||SUM(COVID[Daily deaths])|Total deaths|||COVID measures|Int64|false||
-|0.0%;-0.0%;0.0%||false||'COVID measures'[Case fatality rate]||DIVIDE([Total deaths],[Total confirmed cases])<br>|Case fatality rate|||COVID measures|Double|false||
-|#,0||false||'COVID measures'[Confirmed cases]||SUM('COVID'[Cases])|Confirmed cases|||COVID measures|Int64|false||
-|#,0||false||'COVID measures'[Deaths]||SUM('COVID'[Deaths])|Deaths|||COVID measures|Int64|false||
-
-## Relationships
-MissingKeys|FromCardinality|ToCardinality|SecurityFilteringBehavior|InvalidRows|ToCardinalityType|UsedSize|FromCardinalityType|RelationshipName|UsedSizeFrom|OneToManyRatio|IsActive|UsedSizeTo|FromTableName|ToFullColumnName|ToTableName|JoinOnDateBehavior|RelationshipType|RelyOnReferentialIntegrity|CrossFilteringBehavior|FromFullColumnName
----|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
-0|68|366|OneDirection|0|One|88|Many|61d3981d-89bc-4f78-b2b7-ab908a42ac71|88|0.0016835636350254835|true|0|COVID|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|DatePartOnly|SingleColumn|false|OneDirection|'COVID'[Date]|
-0|51|57|OneDirection|0|One|48|Many|7cd80576-d9a4-4516-aad6-c8e06584bf7c|48|0.0002621943366023294|true|0|COVID|'StateDim'[State code]|StateDim|DateAndTime|SingleColumn|false|OneDirection|'COVID'[State]|
+SKIPPED|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|0|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|C123|1|0|0|0|0|
+COMPLETED|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|Date|NOSPLIT|1|0|1|0|0|
+SKIPPED|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|Year|NOSPLIT|1|0|1|0|0|
+SKIPPED|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|MonthNo|NOSPLIT|1|0|1|0|0|
+SKIPPED|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|Month|NOSPLIT|1|0|1|0|0|
+SKIPPED|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|QuarterNo|NOSPLIT|1|0|1|0|0|
+SKIPPED|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|Quarter|NOSPLIT|1|0|1|0|0|
+SKIPPED|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|8|Day|NOSPLIT|1|0|1|0|0|
+SKIPPED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|COVID|0|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|C123|217396|0|0|0|0|
+COMPLETED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[County Name]|COVID|209600|County Name|NOSPLIT|217396|0|12|0|1273|
+COMPLETED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[State]|COVID|15840|State|NOSPLIT|217396|0|6|0|58|
+COMPLETED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[stateFIPS]|COVID|15840|stateFIPS|NOSPLIT|217396|0|6|0|58|
+COMPLETED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Date]|COVID|143776|Date|NOSPLIT|217396|0|7|0|342|
+COMPLETED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Cases]|COVID|7880|Cases|NOSPLIT|217396|0|10|0|10|
+COMPLETED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[FIPS]|COVID|209520|FIPS|NOSPLIT|217396|0|12|0|1273|
+COMPLETED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Deaths]|COVID|368|Deaths|NOSPLIT|217396|0|7|0|8|
+SKIPPED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[County]|COVID|210512|County|NOSPLIT|217396|0|12|0|1276|
+SKIPPED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Daily cases]|COVID|23440|Daily cases|NOSPLIT|217396|0|9|0|78|
+SKIPPED|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|'COVID'[Daily deaths]|COVID|2160|Daily deaths|NOSPLIT|217396|0|6|0|27|
+SKIPPED|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|StateDim|0|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|C123|57|0|0|0|0|
+COMPLETED|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[State]|StateDim|48|State|NOSPLIT|57|0|6|0|0|
+SKIPPED|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[State code]|StateDim|48|State code|NOSPLIT|57|0|6|0|0|
+COMPLETED|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[US territories]|StateDim|8|US territories|NOSPLIT|57|0|1|0|0|
+SKIPPED|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|'StateDim'[Country]|StateDim|8|Country|NOSPLIT|57|0|1|0|0|
+SKIPPED|Table-014a30af-502f-48fd-98ad-986611bf42ec|'Table'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|Table|0|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|C123|3|0|0|0|0|
+COMPLETED|Table-014a30af-502f-48fd-98ad-986611bf42ec|'Table'[Metric]|Table|8|Metric|NOSPLIT|3|0|2|0|0|
+COMPLETED|Table-014a30af-502f-48fd-98ad-986611bf42ec|'Table'[Order]|Table|8|Order|NOSPLIT|3|0|2|0|0|
+SKIPPED|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|0|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|C123|366|0|0|0|0|
+SKIPPED|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|424|Date|NOSPLIT|366|0|9|0|0|
+SKIPPED|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|8|Year|NOSPLIT|366|0|1|0|1|
+SKIPPED|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|184|MonthNo|NOSPLIT|366|0|4|0|0|
+SKIPPED|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|184|Month|NOSPLIT|366|0|4|0|0|
+SKIPPED|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|8|QuarterNo|NOSPLIT|366|0|2|0|4|
+SKIPPED|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|8|Quarter|NOSPLIT|366|0|2|0|4|
+SKIPPED|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0-216ce373-b93c-43b1-9d26-654b8ba9e95b|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|248|Day|NOSPLIT|366|0|5|0|0|
+SKIPPED|COVID measures-b4337b49-e425-4b90-acb0-30bb0500cb95|'COVID measures'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|COVID measures|8|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|NOSPLIT|0|0|1|0|0|
 
 ## Tables
-UserHierarchiesSize|ColumnsSize|TableName|TableSize|RelationshipsSize|TableExpression|RowsCount|ReferentialIntegrityViolationCount|IsReferenced|IsHidden|Description
+UserHierarchiesSize|TableSize|TableName|IsReferenced|TableExpression|ColumnsSize|RowsCount|ReferentialIntegrityViolationCount|IsHidden|RelationshipsSize|Description
 ---|---|---|---|---|---|---|---|---|---|---
-96|35220|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|35316|0|Calendar(Date(2015,1,1), Date(2015,1,1))|1|0|true|true||
-0|1274205|COVID|1274341|136||217396|0|true|false||
-0|72044|StateDim|72044|0||57|0|true|false||
-0|17516|Table|17516|0||3|0|false|false||
-6144|63096|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|69240|0|Calendar(Date(Year(MIN('COVID'[Date])), 1, 1), Date(Year(MAX('COVID'[Date])), 12, 31))|366|0|true|true||
-0|400|COVID measures|400|0||0|0|false|false||
+96|35316|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|Calendar(Date(2015,1,1), Date(2015,1,1))|35220|1|0|true|0||
+0|1274341|COVID|true||1274205|217396|0|false|136||
+0|72044|StateDim|true||72044|57|0|false|0||
+0|17516|Table|false||17516|3|0|false|0||
+6144|69240|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|Calendar(Date(Year(MIN('COVID'[Date])), 1, 1), Date(Year(MAX('COVID'[Date])), 12, 31))|63096|366|0|true|0||
+0|400|COVID measures|false||400|0|0|false|0||
+
+## Measures
+DataType|TableName|KpiTrendExpression|MeasureName|KpiTargetFormatString|DisplayFolder|FormatString|IsReferenced|FullMeasureName|IsHidden|DetailRowsExpression|KpiTargetExpression|KpiStatusExpression|MeasureExpression|Description
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
+String|COVID||Updated||||false|'COVID'[Updated]|false||||"Data provided by USAFacts. Because of the frequency of data upates, they may not reflect the exact numbers reported by government organizations or the news media. For more information or to download the data, please click the logo below.  Data updated through " & FORMAT([Max date],"mmmm dd, yyyy") & "."||
+DateTime|COVID||Max date|||General Date|true|'COVID'[Max date]|true||||CALCULATE(MAX('COVID'[Date]),ALL('COVID'))||
+String|StateDim||Drill-through button text||||false|'StateDim'[Drill-through button text]|false||||IF(SELECTEDVALUE(StateDim[State],0)==0,"Click on a State to view by County  ", "Click here to view by County in " & VALUES(StateDim[State code]) &"  ")||
+String|Table||Methodology||||false|'Table'[Methodology]|false||||"This interactive feature aggregates data from the Centers for Disease Control and Prevention (CDC), state- and local-level public health agencies. County-level data is confirmed by referencing state and local agencies directly.<br><br>Source: USAFacts"||
+String|Table||Notes||||false|'Table'[Notes]|false||||"New York* covers 5 counties (Bronx, Kings, New York, Queens, Richmond), not New York county.<br><br>City of St. Louis was renamed to St. Louis City.<br><br>City and Borough of Juneau was renamed to Juneau Borough.<br><br>Municipality of Anchorage was renamed to Anchorage.<br><br>Jackson County includes other portions of Kansas City.<br><br><br>Source: USAFacts"||
+String|Table||Terms of use||||false|'Table'[Terms of use]|false||||"This report and data are provided " & """" & "as is" & """" & ", " & """" & "with all faults" & """" & ", and without warranty of any kind. Microsoft gives no express warranties or guarantees and expressly disclaims all implied warranties, including merchantability, fitness for a particular purpose, and non-infringement."||
+Int64|COVID measures||Total confirmed cases|||#,0|true|'COVID measures'[Total confirmed cases]|false||||SUM('COVID'[Daily cases])||
+Int64|COVID measures||Total deaths|||#,0|true|'COVID measures'[Total deaths]|false||||SUM(COVID[Daily deaths])||
+Double|COVID measures||Case fatality rate|||0.0%;-0.0%;0.0%|false|'COVID measures'[Case fatality rate]|false||||DIVIDE([Total deaths],[Total confirmed cases])<br>||
+Int64|COVID measures||Confirmed cases|||#,0|false|'COVID measures'[Confirmed cases]|false||||SUM('COVID'[Cases])||
+Int64|COVID measures||Deaths|||#,0|false|'COVID measures'[Deaths]|false||||SUM('COVID'[Deaths])||
 
 ## CalculationItems
 
+## ColumnsHierarchies
+UsedSize|SegmentNumber|StructureName|TablePartitionNumber|TableName|FullColumnName|ColumnName
+---|---|---|---|---|---|---
+8|0|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|Date|
+8|1|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|Date|
+8|2|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|Date|
+8|3|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|Date|
+8|0|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|Year|
+8|1|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|Year|
+8|2|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|Year|
+8|3|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|Year|
+8|0|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|MonthNo|
+8|1|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|MonthNo|
+8|2|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|MonthNo|
+8|3|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|MonthNo|
+8|0|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|Month|
+8|1|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|Month|
+8|2|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|Month|
+8|3|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|Month|
+8|0|ID_TO_POS|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|Month|
+8|1|ID_TO_POS|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|Month|
+8|2|ID_TO_POS|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|Month|
+8|3|ID_TO_POS|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|Month|
+8|0|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|QuarterNo|
+8|1|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|QuarterNo|
+8|2|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|QuarterNo|
+8|3|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|QuarterNo|
+8|0|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|Quarter|
+8|1|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|Quarter|
+8|2|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|Quarter|
+8|3|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|Quarter|
+8|0|ID_TO_POS|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|Quarter|
+8|1|ID_TO_POS|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|Quarter|
+8|2|ID_TO_POS|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|Quarter|
+8|3|ID_TO_POS|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|Quarter|
+8|0|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|Day|
+8|1|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|Day|
+8|2|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|Day|
+8|3|POS_TO_ID|0|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|Day|
+7536|0|POS_TO_ID|0|COVID|'COVID'[County Name]|County Name|
+16|1|POS_TO_ID|0|COVID|'COVID'[County Name]|County Name|
+7536|0|ID_TO_POS|0|COVID|'COVID'[County Name]|County Name|
+16|1|ID_TO_POS|0|COVID|'COVID'[County Name]|County Name|
+208|0|POS_TO_ID|0|COVID|'COVID'[State]|State|
+16|1|POS_TO_ID|0|COVID|'COVID'[State]|State|
+208|0|ID_TO_POS|0|COVID|'COVID'[State]|State|
+16|1|ID_TO_POS|0|COVID|'COVID'[State]|State|
+208|0|POS_TO_ID|0|COVID|'COVID'[stateFIPS]|stateFIPS|
+16|1|POS_TO_ID|0|COVID|'COVID'[stateFIPS]|stateFIPS|
+208|0|ID_TO_POS|0|COVID|'COVID'[stateFIPS]|stateFIPS|
+16|1|ID_TO_POS|0|COVID|'COVID'[stateFIPS]|stateFIPS|
+280|0|POS_TO_ID|0|COVID|'COVID'[Date]|Date|
+16|1|POS_TO_ID|0|COVID|'COVID'[Date]|Date|
+280|0|ID_TO_POS|0|COVID|'COVID'[Date]|Date|
+16|1|ID_TO_POS|0|COVID|'COVID'[Date]|Date|
+2304|0|POS_TO_ID|0|COVID|'COVID'[Cases]|Cases|
+16|1|POS_TO_ID|0|COVID|'COVID'[Cases]|Cases|
+2304|0|ID_TO_POS|0|COVID|'COVID'[Cases]|Cases|
+16|1|ID_TO_POS|0|COVID|'COVID'[Cases]|Cases|
+12592|0|POS_TO_ID|0|COVID|'COVID'[FIPS]|FIPS|
+16|1|POS_TO_ID|0|COVID|'COVID'[FIPS]|FIPS|
+12592|0|ID_TO_POS|0|COVID|'COVID'[FIPS]|FIPS|
+16|1|ID_TO_POS|0|COVID|'COVID'[FIPS]|FIPS|
+296|0|POS_TO_ID|0|COVID|'COVID'[Deaths]|Deaths|
+16|1|POS_TO_ID|0|COVID|'COVID'[Deaths]|Deaths|
+296|0|ID_TO_POS|0|COVID|'COVID'[Deaths]|Deaths|
+16|1|ID_TO_POS|0|COVID|'COVID'[Deaths]|Deaths|
+12792|0|POS_TO_ID|0|COVID|'COVID'[County]|County|
+16|1|POS_TO_ID|0|COVID|'COVID'[County]|County|
+12792|0|ID_TO_POS|0|COVID|'COVID'[County]|County|
+16|1|ID_TO_POS|0|COVID|'COVID'[County]|County|
+1256|0|POS_TO_ID|0|COVID|'COVID'[Daily cases]|Daily cases|
+16|1|POS_TO_ID|0|COVID|'COVID'[Daily cases]|Daily cases|
+1256|0|ID_TO_POS|0|COVID|'COVID'[Daily cases]|Daily cases|
+16|1|ID_TO_POS|0|COVID|'COVID'[Daily cases]|Daily cases|
+192|0|POS_TO_ID|0|COVID|'COVID'[Daily deaths]|Daily deaths|
+16|1|POS_TO_ID|0|COVID|'COVID'[Daily deaths]|Daily deaths|
+192|0|ID_TO_POS|0|COVID|'COVID'[Daily deaths]|Daily deaths|
+16|1|ID_TO_POS|0|COVID|'COVID'[Daily deaths]|Daily deaths|
+232|0|POS_TO_ID|0|StateDim|'StateDim'[State]|State|
+16|1|POS_TO_ID|0|StateDim|'StateDim'[State]|State|
+232|0|ID_TO_POS|0|StateDim|'StateDim'[State]|State|
+16|1|ID_TO_POS|0|StateDim|'StateDim'[State]|State|
+232|0|POS_TO_ID|0|StateDim|'StateDim'[State code]|State code|
+16|1|POS_TO_ID|0|StateDim|'StateDim'[State code]|State code|
+232|0|ID_TO_POS|0|StateDim|'StateDim'[State code]|State code|
+16|1|ID_TO_POS|0|StateDim|'StateDim'[State code]|State code|
+16|0|POS_TO_ID|0|StateDim|'StateDim'[US territories]|US territories|
+16|1|POS_TO_ID|0|StateDim|'StateDim'[US territories]|US territories|
+8|2|POS_TO_ID|0|StateDim|'StateDim'[US territories]|US territories|
+16|0|ID_TO_POS|0|StateDim|'StateDim'[US territories]|US territories|
+16|1|ID_TO_POS|0|StateDim|'StateDim'[US territories]|US territories|
+8|2|ID_TO_POS|0|StateDim|'StateDim'[US territories]|US territories|
+8|0|POS_TO_ID|0|StateDim|'StateDim'[Country]|Country|
+8|1|POS_TO_ID|0|StateDim|'StateDim'[Country]|Country|
+8|2|POS_TO_ID|0|StateDim|'StateDim'[Country]|Country|
+8|3|POS_TO_ID|0|StateDim|'StateDim'[Country]|Country|
+8|0|ID_TO_POS|0|StateDim|'StateDim'[Country]|Country|
+8|1|ID_TO_POS|0|StateDim|'StateDim'[Country]|Country|
+8|2|ID_TO_POS|0|StateDim|'StateDim'[Country]|Country|
+8|3|ID_TO_POS|0|StateDim|'StateDim'[Country]|Country|
+16|0|POS_TO_ID|0|Table|'Table'[Metric]|Metric|
+16|1|POS_TO_ID|0|Table|'Table'[Metric]|Metric|
+16|0|ID_TO_POS|0|Table|'Table'[Metric]|Metric|
+16|1|ID_TO_POS|0|Table|'Table'[Metric]|Metric|
+16|0|POS_TO_ID|0|Table|'Table'[Order]|Order|
+16|1|POS_TO_ID|0|Table|'Table'[Order]|Order|
+1472|0|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|Date|
+16|1|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|Date|
+1472|0|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|Date|
+16|1|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|Date|
+8|0|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|Year|
+8|1|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|Year|
+8|2|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|Year|
+8|3|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|Year|
+8|0|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|Year|
+8|1|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|Year|
+8|2|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|Year|
+8|3|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|Year|
+56|0|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|MonthNo|
+16|1|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|MonthNo|
+56|0|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|MonthNo|
+16|1|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|MonthNo|
+56|0|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|Month|
+16|1|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|Month|
+56|0|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|Month|
+16|1|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|Month|
+24|0|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|QuarterNo|
+16|1|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|QuarterNo|
+24|0|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|QuarterNo|
+16|1|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|QuarterNo|
+24|0|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|Quarter|
+16|1|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|Quarter|
+24|0|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|Quarter|
+16|1|ID_TO_POS|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|Quarter|
+128|0|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]|Day|
+16|1|POS_TO_ID|0|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]|Day|
+
 ## TablePermissions
+
+## Columns
+IsUnique|SortByColumnName|ColumnName|Selectivity|EncodingHint|State|IsHidden|KeepUniqueRows|TotalSize|DataSize|ColumnExpression|IsRowNumber|FullColumnName|FormatString|Description|HierarchiesSize|ColumnCardinality|DictionarySize|IsNullable|IsReferenced|IsAvailableInMDX|ColumnType|DataType|Encoding|DisplayFolder|TableName|IsKey
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
+true||RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||Default|Ready|true|false|120|0||true|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|||0|0|120|false|false|true|RowNumber|Int64|VALUE||DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|true|
+false||Date|1|Default|Ready|true|false|160|8||false|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]|||32|1|120|true|true|true|CalculatedTableColumn|DateTime|VALUE||DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|
+false||Year|1|Default|Ready|true|false|160|8|YEAR([Date])|false|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]|||32|1|120|true|true|true|Calculated|Int64|VALUE||DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|
+false||MonthNo|1|Default|Ready|true|false|160|8|MONTH([Date])|false|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]|||32|1|120|true|true|true|Calculated|Int64|VALUE||DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|
+false|MonthNo|Month|1|Default|Ready|true|false|17152|8|FORMAT([Date], "MMMM")|false|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]|||64|1|17080|true|true|true|Calculated|String|HASH||DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|
+false||QuarterNo|1|Default|Ready|true|false|160|8|INT(([MonthNo] + 2) / 3)|false|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|||32|1|120|true|true|true|Calculated|Int64|VALUE||DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|
+false|QuarterNo|Quarter|1|Default|Ready|true|false|17148|8|"Qtr " & [QuarterNo]|false|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|||64|1|17076|true|true|true|Calculated|String|HASH||DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|
+false||Day|1|Default|Ready|true|false|160|8|DAY([Date])|false|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|||32|1|120|true|true|true|Calculated|Int64|VALUE||DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|false|
+true||RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||Default|Ready|true|false|120|0||true|'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|||0|0|120|false|true|true|RowNumber|Int64|VALUE||COVID|true|
+false||County Name|0.008657013008519015|Default|Ready|false|false|292327|209600||false|'COVID'[County Name]|||15104|1882|67623|true|true|true|Data|String|HASH||COVID|false|
+false||State|0.00023459493274945262|Default|Ready|false|false|34058|15840||false|'COVID'[State]|||448|51|17770|true|true|true|Data|String|HASH||COVID|false|
+false||stateFIPS|0.00023459493274945262|Default|Ready|true|false|34044|15840||false|'COVID'[stateFIPS]|||448|51|17756|true|false|true|Data|String|HASH||COVID|false|
+false||Date|0.00031279324366593683|Default|Ready|false|false|147592|143776||false|'COVID'[Date]|m/d/yyyy||592|68|3224|true|true|true|Data|DateTime|HASH||COVID|false|
+false||Cases|0.0026403429685918785|Default|Ready|false|false|23776|7880||false|'COVID'[Cases]|0||4640|574|11256|true|true|true|Data|Int64|HASH||COVID|false|
+false||FIPS|0.01447588732083387|Default|Ready|false|false|334421|209520||false|'COVID'[FIPS]|||25216|3147|99685|true|false|true|Data|String|HASH||COVID|false|
+false||Deaths|0.00033579274687666746|Default|Ready|false|false|2664|368||false|'COVID'[Deaths]|0||624|73|1672|true|true|true|Data|Int64|HASH||COVID|false|
+false||County|0.014705882352941176|Default|Ready|false|false|365311|210512|'COVID'[County Name] & ", " & 'COVID'[State]|false|'COVID'[County]|||25616|3197|129183|true|false|true|Calculated|String|HASH||COVID|false|
+false||Daily cases|0.0014397689009917386|Default|Ready|false|false|35780|23440|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysCases = 'COVID'[Cases]<br><br>RETURN  __TodaysCases - CALCULATE(<br>    SUM('COVID'[Cases]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|false|'COVID'[Daily cases]|#,0||2544|313|9796|true|true|true|Calculated|Int64|HASH||COVID|false|
+false||Daily deaths|0.00021159542953872197|Default|Ready|false|false|4112|2160|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysDeaths = 'COVID'[Deaths]<br><br>RETURN  __TodaysDeaths - CALCULATE(<br>    SUM('COVID'[Deaths]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|false|'COVID'[Daily deaths]|0||416|46|1536|true|true|true|Calculated|Int64|HASH||COVID|false|
+true||RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||Default|Ready|true|false|120|0||true|'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|||0|0|120|false|false|true|RowNumber|Int64|VALUE||StateDim|true|
+false||State|1|Default|Ready|false|false|19208|48||false|'StateDim'[State]|||496|57|18664|true|true|true|Data|String|HASH||StateDim|false|
+false||State code|1|Default|Ready|false|false|18398|48||false|'StateDim'[State code]|||496|57|17854|true|true|true|Data|String|HASH||StateDim|false|
+false||US territories|0.03508771929824561|Default|Ready|false|false|17174|8||false|'StateDim'[US territories]|||80|2|17086|true|false|true|Data|String|HASH||StateDim|false|
+false||Country|0.017543859649122806|Default|Ready|true|false|17144|8|"USA"|false|'StateDim'[Country]|||64|1|17072|true|false|true|Calculated|String|HASH||StateDim|false|
+true||RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||Default|Ready|true|false|120|0||true|'Table'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|||0|0|120|false|false|true|RowNumber|Int64|VALUE||Table|true|
+false||Metric|1|Default|Ready|false|false|17236|8||false|'Table'[Metric]|||64|3|17164|true|false|true|Data|String|HASH||Table|false|
+false||Order|1|Default|Ready|false|false|160|8||false|'Table'[Order]|0||32|3|120|true|false|true|Data|Int64|VALUE||Table|false|
+true||RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||Default|Ready|true|false|120|0||true|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|||0|0|120|false|false|true|RowNumber|Int64|VALUE||LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|true|
+false||Date|1|Default|Ready|true|false|22976|424||false|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|||2976|366|19576|true|true|true|CalculatedTableColumn|DateTime|HASH||LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|
+false||Year|0.00273224043715847|Default|Ready|true|false|1428|8|YEAR([Date])|false|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]|||64|1|1356|true|true|true|Calculated|Int64|HASH||LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|
+false||MonthNo|0.03278688524590164|Default|Ready|true|false|1728|184|MONTH([Date])|false|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]|||144|12|1400|true|true|true|Calculated|Int64|HASH||LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|
+false|MonthNo|Month|0.03278688524590164|Default|Ready|true|false|17652|184|FORMAT([Date], "MMMM")|false|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]|||144|12|17324|true|true|true|Calculated|String|HASH||LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|
+false||QuarterNo|0.01092896174863388|Default|Ready|true|false|1456|8|INT(([MonthNo] + 2) / 3)|false|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]|||80|4|1368|true|true|true|Calculated|Int64|HASH||LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|
+false|QuarterNo|Quarter|0.01092896174863388|Default|Ready|true|false|17224|8|"Qtr " & [QuarterNo]|false|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]|||80|4|17136|true|true|true|Calculated|String|HASH||LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|
+false||Day|0.08469945355191257|Default|Ready|true|false|512|248|DAY([Date])|false|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]|||144|31|120|true|true|true|Calculated|Int64|VALUE||LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|false|
+true||RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||Default|Ready|true|false|400|8||true|'COVID measures'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|||0|0|392|false|false|true|RowNumber|Int64|HASH||COVID measures|true|
+
+## UserHierarchies
+TableName|UsedSize|UserHierarchyName|IsHidden|Levels
+---|---|---|---|---
+DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|96|Date Hierarchy|false|Year, Quarter, Month, Day|
+LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|6144|Date Hierarchy|false|Year, Quarter, Month, Day|
 
 
