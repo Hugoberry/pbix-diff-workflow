@@ -80,7 +80,7 @@ Positioning|Config|Filters
 {{- (object.typeof viz.height == "string" ? (viz.height | string.to_double) : viz.height)| math.floor}} | 
 {{- "conf  = {{viz.config}}" | object.eval_template | object.eval 
 "`" 
-conf?.singleVisual?.visualType 
+conf?.singleVisual?.visualType ?? "Group:" + conf?.singleVisualGroup?.displayName
 "`"
 }}<br>
 {{- title = conf?.singleVisual?.vcObjects?.title | array.first ; title?.properties?.text?.expr?.Literal?.Value}}<br>
