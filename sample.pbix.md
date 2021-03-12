@@ -1,12 +1,12 @@
 # Overview 
 ## PBIX file contents
-The file was last saved on 2020-03-30 18:36:04
+The file was last saved on 2020-03-31 15:52:54
 
 * Version `FileSize:`8 `CompressedSize:`10
 * [Content_Types].xml `FileSize:`770 `CompressedSize:`259
-* DataMashup `FileSize:`28085 `CompressedSize:`6106
+* DataMashup `FileSize:`28633 `CompressedSize:`6128
 * DiagramLayout `FileSize:`1238 `CompressedSize:`364
-* Report\Layout `FileSize:`529250 `CompressedSize:`28655
+* Report\Layout `FileSize:`529182 `CompressedSize:`28630
 * Settings `FileSize:`15 `CompressedSize:`11
 * Metadata `FileSize:`575 `CompressedSize:`256
 * Report\LinguisticSchema `FileSize:`992 `CompressedSize:`322
@@ -22,8 +22,8 @@ The file was last saved on 2020-03-30 18:36:04
 * Report\StaticResources\RegisteredResources\USAFacts_Wordmark_blue8192537517759648.png `FileSize:`120150 `CompressedSize:`100741
 * Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json `FileSize:`3527 `CompressedSize:`1087
 * Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json `FileSize:`25607 `CompressedSize:`8737
-* SecurityBindings `FileSize:`326 `CompressedSize:`323
-* DataModel `FileSize:`446482 `CompressedSize:`446482
+* SecurityBindings `FileSize:`326 `CompressedSize:`326
+* DataModel `FileSize:`453243 `CompressedSize:`453243
 
 
 # Layout
@@ -131,9 +131,10 @@ shared Cases = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Cases"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Removed Columns";
+    #"Changed Type1";
 
 shared Deaths = let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_deaths_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
@@ -145,9 +146,10 @@ shared Deaths = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Deaths"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Removed Columns";
+    #"Changed Type1";
 
 shared COVID = let
     Source = Table.NestedJoin(Cases, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, Deaths, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, "Deaths", JoinKind.LeftOuter),
