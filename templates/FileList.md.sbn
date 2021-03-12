@@ -1,6 +1,6 @@
 # Overview 
 ## PBIX file contents
-The file was last saved on model[0].immediate_base_object.DateTime | date.to_string "%Y-%m-%d %H:%M:%S"
+The file was last saved on {{model[0].immediate_base_object.DateTime | date.to_string "%Y-%m-%d %H:%M:%S"}}
 
 Size|Compressed|FileName
 -|-|-
