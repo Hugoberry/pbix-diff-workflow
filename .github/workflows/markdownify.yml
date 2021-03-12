@@ -38,7 +38,7 @@ jobs:
       - run: pwsh -command "$env:GITHUB_WORKSPACE\process-run.ps1"
       - run: |          
           git config --local user.email "$(git log --format='%ae' HEAD^!)"
-          git config --local user.name "$(git log --format='%an' HEAD^!)[BOT]"
+          git config --local user.name "$(git log --format='%an' HEAD^!)BOT"
           git add .
-          git commit -m "adding Markdown file"
+          git commit -m "$(git log --format='%s' HEAD^!) MD"
           git push
