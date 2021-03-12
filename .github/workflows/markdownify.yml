@@ -27,7 +27,8 @@ jobs:
         run: choco install powerbi --ignore-checksums
         if: steps.cache-choco.outputs.cache-hit != 'true'
         
-      - run: |
+      - name: Install Prerequisites
+        run: |
           Install-Package Microsoft.AnalysisServices.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
           Install-Package Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64 -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
           Install-Package Dax.Vpax.NetCore -Source 'https://www.nuget.org/api/v2' -scope CurrentUser -Force -SkipDependencies
