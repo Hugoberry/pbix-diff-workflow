@@ -1,31 +1,29 @@
 # Overview 
 ## PBIX file contents
-The file was last saved on 2020-03-31 15:52:54
+The file was last saved on 2020-03-30 18:36:04
 
-Size|Compressed|FileName
--|-|-
-8|10|Version
-770|259|[Content_Types].xml
-28633|6128|DataMashup
-1238|364|DiagramLayout
-529182|28630|Report\Layout
-15|11|Settings
-575|256|Metadata
-992|322|Report\LinguisticSchema
-136|119|Connections
-789|443|Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\package.json
-542463|171602|Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\resources\choropleth4C77906D867C4C09AFE83BA5E2AA106A.pbiviz.json
-1005|574|Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\package.json
-169378|58091|Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\resources\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json
-1074|553|Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\package.json
-472163|148781|Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\resources\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654.pbiviz.json
-761266|632573|Report\StaticResources\RegisteredResources\Frame_2_(4)9974572814303304.png
-3281|2894|Report\StaticResources\RegisteredResources\Gradation_with_text894674291833967.GIF
-120150|100741|Report\StaticResources\RegisteredResources\USAFacts_Wordmark_blue8192537517759648.png
-3527|1087|Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json
-25607|8737|Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json
-326|326|SecurityBindings
-453243|453243|DataModel
+* Version `FileSize:`8 `CompressedSize:`10
+* [Content_Types].xml `FileSize:`770 `CompressedSize:`259
+* DataMashup `FileSize:`28085 `CompressedSize:`6106
+* DiagramLayout `FileSize:`1238 `CompressedSize:`364
+* Report\Layout `FileSize:`529250 `CompressedSize:`28655
+* Settings `FileSize:`15 `CompressedSize:`11
+* Metadata `FileSize:`575 `CompressedSize:`256
+* Report\LinguisticSchema `FileSize:`992 `CompressedSize:`322
+* Connections `FileSize:`136 `CompressedSize:`119
+* Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\package.json `FileSize:`789 `CompressedSize:`443
+* Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\resources\choropleth4C77906D867C4C09AFE83BA5E2AA106A.pbiviz.json `FileSize:`542463 `CompressedSize:`171602
+* Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\package.json `FileSize:`1005 `CompressedSize:`574
+* Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\resources\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json `FileSize:`169378 `CompressedSize:`58091
+* Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\package.json `FileSize:`1074 `CompressedSize:`553
+* Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\resources\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654.pbiviz.json `FileSize:`472163 `CompressedSize:`148781
+* Report\StaticResources\RegisteredResources\Frame_2_(4)9974572814303304.png `FileSize:`761266 `CompressedSize:`632573
+* Report\StaticResources\RegisteredResources\Gradation_with_text894674291833967.GIF `FileSize:`3281 `CompressedSize:`2894
+* Report\StaticResources\RegisteredResources\USAFacts_Wordmark_blue8192537517759648.png `FileSize:`120150 `CompressedSize:`100741
+* Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json `FileSize:`3527 `CompressedSize:`1087
+* Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json `FileSize:`25607 `CompressedSize:`8737
+* SecurityBindings `FileSize:`326 `CompressedSize:`323
+* DataModel `FileSize:`446482 `CompressedSize:`446482
 
 
 # Layout
@@ -133,10 +131,9 @@ shared Cases = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Cases"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
-    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
 in
-    #"Changed Type1";
+    #"Removed Columns";
 
 shared Deaths = let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_deaths_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
@@ -148,10 +145,9 @@ shared Deaths = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Deaths"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
-    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
 in
-    #"Changed Type1";
+    #"Removed Columns";
 
 shared COVID = let
     Source = Table.NestedJoin(Cases, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, Deaths, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, "Deaths", JoinKind.LeftOuter),
