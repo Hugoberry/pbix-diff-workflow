@@ -1,14 +1,14 @@
 # Overview 
 ## PBIX file contents
-The file was last saved on 2020-03-30 18:36:04
+The file was last saved on 2020-03-31 15:52:54
 
 Size|Compressed|FileName
 -|-|-
 8|10|Version
 770|259|[Content_Types].xml
-28085|6106|DataMashup
+28633|6128|DataMashup
 1238|364|DiagramLayout
-529250|28655|Report\Layout
+529182|28630|Report\Layout
 15|11|Settings
 575|256|Metadata
 992|322|Report\LinguisticSchema
@@ -24,8 +24,8 @@ Size|Compressed|FileName
 120150|100741|Report\StaticResources\RegisteredResources\USAFacts_Wordmark_blue8192537517759648.png
 3527|1087|Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json
 25607|8737|Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json
-326|323|SecurityBindings
-446482|446482|DataModel
+326|326|SecurityBindings
+453243|453243|DataModel
 
 
 # Layout
@@ -133,9 +133,10 @@ shared Cases = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Cases"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Removed Columns";
+    #"Changed Type1";
 
 shared Deaths = let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_deaths_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
@@ -147,9 +148,10 @@ shared Deaths = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Deaths"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Removed Columns";
+    #"Changed Type1";
 
 shared COVID = let
     Source = Table.NestedJoin(Cases, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, Deaths, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, "Deaths", JoinKind.LeftOuter),
