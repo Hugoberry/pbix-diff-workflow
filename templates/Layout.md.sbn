@@ -67,24 +67,24 @@ end~}}
 ##  {{s.displayName}}
 Order|Width|Height|Visible|Filters
 -|-|-|-|-
-|{{s.ordinal}}|{{s.width}}|{{s.height}}|{{s.displayOption}}|{{filter_visit s.filters}}|
+{{s.ordinal}}|{{s.width}}|{{s.height}}|{{s.displayOption}}|{{filter_visit s.filters}}
 
 ### {{s.displayName}}-Visuals
 Positioning|Config|Filters
 -|-|-
     {{- for viz in s.visualContainers}}
-`X:`{{viz.x| math.floor}}<br>`Y:`
-{{- viz.y| math.floor}}<br>`Z:`
-{{- viz.z| math.floor}}<br>`Width:`
-{{- viz.width| math.floor}}<br>`Height:`
-{{- viz.height| math.floor}} | 
+`X:`{{(object.typeof viz.x == "string" ? (viz.x | string.to_double) : viz.x )| math.floor}}<br>`Y:`
+{{- (object.typeof viz.y == "string" ? (viz.y | string.to_double) : viz.y )| math.floor}}<br>`Z:`
+{{- (object.typeof viz.z == "string" ? (viz.z | string.to_double) : viz.z )| math.floor}}<br>`Width:`
+{{- (object.typeof viz.width == "string" ? (viz.width | string.to_double) : viz.width) | math.floor}}<br>`Height:`
+{{- (object.typeof viz.height == "string" ? (viz.height | string.to_double) : viz.height)| math.floor}} | 
 {{- "conf  = {{viz.config}}" | object.eval_template | object.eval 
 "`" 
-conf.singleVisual.visualType 
+conf?.singleVisual?.visualType 
 "`"
 }}<br>
-{{- title = conf.singleVisual?.vcObjects?.title | array.first ; title?.properties?.text?.expr?.Literal?.Value}}<br>
-{{- for $kp in conf.singleVisual.projections}}
+{{- title = conf?.singleVisual?.vcObjects?.title | array.first ; title?.properties?.text?.expr?.Literal?.Value}}<br>
+{{- for $kp in conf?.singleVisual?.projections}}
     {{-"`"}}{{$kp.key}}{{":`"}} {{$kp.value| array.map "queryRef"-}}<br>
 {{- end}} | 
 {{- filter_visit viz.filters}} 
