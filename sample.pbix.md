@@ -1,14 +1,14 @@
 # Overview 
 ## PBIX file contents
-The file was last saved on 2020-03-30 18:36:04
+The file was last saved on 2020-03-31 15:52:54
 
 Size|Compressed|FileName
 -|-|-
 8|10|Version
 770|259|[Content_Types].xml
-28085|6106|DataMashup
+28633|6128|DataMashup
 1238|364|DiagramLayout
-529250|28655|Report\Layout
+529182|28630|Report\Layout
 15|11|Settings
 575|256|Metadata
 992|322|Report\LinguisticSchema
@@ -24,8 +24,8 @@ Size|Compressed|FileName
 120150|100741|Report\StaticResources\RegisteredResources\USAFacts_Wordmark_blue8192537517759648.png
 3527|1087|Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json
 25607|8737|Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json
-326|323|SecurityBindings
-446482|446482|DataModel
+326|326|SecurityBindings
+453243|453243|DataModel
 
 
 # Layout
@@ -133,9 +133,10 @@ shared Cases = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Cases"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Removed Columns";
+    #"Changed Type1";
 
 shared Deaths = let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_deaths_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
@@ -147,9 +148,10 @@ shared Deaths = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Deaths"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Removed Columns";
+    #"Changed Type1";
 
 shared COVID = let
     Source = Table.NestedJoin(Cases, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, Deaths, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, "Deaths", JoinKind.LeftOuter),
@@ -189,7 +191,7 @@ in
 |TableName|TableExpression|RowsCount|ReferentialIntegrityViolationCount|IsHidden|Description|ColumnsSize|TableSize|RelationshipsSize|UserHierarchiesSize|IsReferenced|
 |---|---|---|---|---|---|---|---|---|---|---|
 |DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|Calendar(Date(2015,1,1), Date(2015,1,1))|1|0|true||35220|35316|0|96|true|
-|COVID||217396|0|false||1274205|1274341|136|0|true|
+|COVID||220593|0|false||1303129|1303265|136|0|true|
 |StateDim||57|0|false||72044|72044|0|0|true|
 |Table||3|0|false||17516|17516|0|0|false|
 |LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|Calendar(Date(Year(MIN('COVID'[Date])), 1, 1), Date(Year(MAX('COVID'[Date])), 12, 31))|366|0|true||63096|69240|0|6144|true|
@@ -207,16 +209,16 @@ QuarterNo|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTempl
 Quarter|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|1|String|Calculated|true|HASH|"Qtr " & [QuarterNo]||||Default|true|false|true|false|false|QuarterNo|Ready|false|true|17076|8|64|17148|1|
 Day|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|1|Int64|Calculated|true|VALUE|DAY([Date])||||Default|true|false|true|false|false||Ready|false|true|120|8|32|160|1|
 RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|COVID|'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Int64|RowNumber|true|VALUE|||||Default|true|true|false|true|false||Ready|true|true|120|0|0|120||
-County Name|COVID|'COVID'[County Name]|1882|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|true|67623|209600|15104|292327|0.008657013008519015|
-State|COVID|'COVID'[State]|51|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|true|17770|15840|448|34058|0.00023459493274945262|
-stateFIPS|COVID|'COVID'[stateFIPS]|51|String|Data|true|HASH|||||Default|true|false|true|false|false||Ready|false|false|17756|15840|448|34044|0.00023459493274945262|
-Date|COVID|'COVID'[Date]|68|DateTime|Data|false|HASH||||m/d/yyyy|Default|true|false|true|false|false||Ready|false|true|3224|143776|592|147592|0.00031279324366593683|
-Cases|COVID|'COVID'[Cases]|574|Int64|Data|false|HASH||||0|Default|true|false|true|false|false||Ready|false|true|11256|7880|4640|23776|0.0026403429685918785|
-FIPS|COVID|'COVID'[FIPS]|3147|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|false|99685|209520|25216|334421|0.01447588732083387|
-Deaths|COVID|'COVID'[Deaths]|73|Int64|Data|false|HASH||||0|Default|true|false|true|false|false||Ready|false|true|1672|368|624|2664|0.00033579274687666746|
-County|COVID|'COVID'[County]|3197|String|Calculated|false|HASH|'COVID'[County Name] & ", " & 'COVID'[State]||||Default|true|false|true|false|false||Ready|false|false|129183|210512|25616|365311|0.014705882352941176|
-Daily cases|COVID|'COVID'[Daily cases]|313|Int64|Calculated|false|HASH|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysCases = 'COVID'[Cases]<br><br>RETURN  __TodaysCases - CALCULATE(<br>    SUM('COVID'[Cases]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|||#,0|Default|true|false|true|false|false||Ready|false|true|9796|23440|2544|35780|0.0014397689009917386|
-Daily deaths|COVID|'COVID'[Daily deaths]|46|Int64|Calculated|false|HASH|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysDeaths = 'COVID'[Deaths]<br><br>RETURN  __TodaysDeaths - CALCULATE(<br>    SUM('COVID'[Deaths]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|||0|Default|true|false|true|false|false||Ready|false|true|1536|2160|416|4112|0.00021159542953872197|
+County Name|COVID|'COVID'[County Name]|1881|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|true|67599|213328|15088|296015|0.008527015816458365|
+State|COVID|'COVID'[State]|51|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|true|17770|17376|448|35594|0.00023119500618786634|
+stateFIPS|COVID|'COVID'[stateFIPS]|51|String|Data|true|HASH|||||Default|true|false|true|false|false||Ready|false|false|17756|17376|448|35580|0.00023119500618786634|
+Date|COVID|'COVID'[Date]|69|DateTime|Data|false|HASH||||m/d/yyyy|Default|true|false|true|false|false||Ready|false|true|3248|145656|592|149496|0.00031279324366593683|
+Cases|COVID|'COVID'[Cases]|642|Int64|Data|false|HASH||||0|Default|true|false|true|false|false||Ready|false|true|19304|8296|5184|32784|0.002910337136717847|
+FIPS|COVID|'COVID'[FIPS]|3145|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|false|99665|213152|25200|338017|0.014257025381585091|
+Deaths|COVID|'COVID'[Deaths]|82|Int64|Data|false|HASH||||0|Default|true|false|true|false|false||Ready|false|true|2700|376|704|3780|0.00037172530406676547|
+County|COVID|'COVID'[County]|3195|String|Calculated|false|HASH|'COVID'[County Name] & ", " & 'COVID'[State]||||Default|true|false|true|false|false||Ready|false|false|129147|214040|25600|368787|0.014483687152357509|
+Daily cases|COVID|'COVID'[Daily cases]|338|Int64|Calculated|false|HASH|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysCases = 'COVID'[Cases]<br><br>RETURN  __TodaysCases - CALCULATE(<br>    SUM('COVID'[Cases]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|||#,0|Default|true|false|true|false|false||Ready|false|true|9920|25744|2752|38416|0.0015322335704215455|
+Daily deaths|COVID|'COVID'[Daily deaths]|49|Int64|Calculated|false|HASH|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysDeaths = 'COVID'[Deaths]<br><br>RETURN  __TodaysDeaths - CALCULATE(<br>    SUM('COVID'[Deaths]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|||0|Default|true|false|true|false|false||Ready|false|true|1548|2560|432|4540|0.00022212853535696962|
 RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|StateDim|'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Int64|RowNumber|true|VALUE|||||Default|true|true|false|true|false||Ready|true|false|120|0|0|120||
 State|StateDim|'StateDim'[State]|57|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|true|18664|48|496|19208|1|
 State code|StateDim|'StateDim'[State code]|57|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|true|17854|48|496|18398|1|
@@ -261,17 +263,17 @@ RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|COVID measures|'COVID measures'[R
 |QuarterNo|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|0|0|1|8|NOSPLIT|1|0|SKIPPED|
 |Quarter|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|0|0|1|8|NOSPLIT|1|0|SKIPPED|
 |Day|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df-30604837-d47d-48d6-b5a3-b689e47bd491|0|0|1|8|NOSPLIT|1|0|SKIPPED|
-|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|COVID|'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|0|C123|0|0|SKIPPED|
-|County Name|COVID|'COVID'[County Name]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|209600|NOSPLIT|12|1273|COMPLETED|
-|State|COVID|'COVID'[State]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|15840|NOSPLIT|6|58|COMPLETED|
-|stateFIPS|COVID|'COVID'[stateFIPS]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|15840|NOSPLIT|6|58|COMPLETED|
-|Date|COVID|'COVID'[Date]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|143776|NOSPLIT|7|342|COMPLETED|
-|Cases|COVID|'COVID'[Cases]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|7880|NOSPLIT|10|10|COMPLETED|
-|FIPS|COVID|'COVID'[FIPS]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|209520|NOSPLIT|12|1273|COMPLETED|
-|Deaths|COVID|'COVID'[Deaths]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|368|NOSPLIT|7|8|COMPLETED|
-|County|COVID|'COVID'[County]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|210512|NOSPLIT|12|1276|SKIPPED|
-|Daily cases|COVID|'COVID'[Daily cases]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|23440|NOSPLIT|9|78|SKIPPED|
-|Daily deaths|COVID|'COVID'[Daily deaths]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|217396|2160|NOSPLIT|6|27|SKIPPED|
+|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|COVID|'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|0|C123|0|0|SKIPPED|
+|County Name|COVID|'COVID'[County Name]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|213328|NOSPLIT|12|1271|COMPLETED|
+|State|COVID|'COVID'[State]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|17376|NOSPLIT|6|59|COMPLETED|
+|stateFIPS|COVID|'COVID'[stateFIPS]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|17376|NOSPLIT|6|59|COMPLETED|
+|Date|COVID|'COVID'[Date]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|145656|NOSPLIT|7|347|COMPLETED|
+|Cases|COVID|'COVID'[Cases]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|8296|NOSPLIT|10|12|COMPLETED|
+|FIPS|COVID|'COVID'[FIPS]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|213152|NOSPLIT|12|1272|COMPLETED|
+|Deaths|COVID|'COVID'[Deaths]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|376|NOSPLIT|7|9|COMPLETED|
+|County|COVID|'COVID'[County]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|214040|NOSPLIT|12|1276|SKIPPED|
+|Daily cases|COVID|'COVID'[Daily cases]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|25744|NOSPLIT|9|79|SKIPPED|
+|Daily deaths|COVID|'COVID'[Daily deaths]|COVID-2e509512-c6a9-426c-b8d3-3b5c4542fa79|0|0|220593|2560|NOSPLIT|6|31|SKIPPED|
 |RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|StateDim|'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|0|0|57|0|C123|0|0|SKIPPED|
 |State|StateDim|'StateDim'[State]|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|0|0|57|48|NOSPLIT|6|0|COMPLETED|
 |State code|StateDim|'StateDim'[State code]|StateDim-44150ab7-d238-4a8e-be80-b5d1ac40ecec|0|0|57|48|NOSPLIT|6|0|SKIPPED|
@@ -329,9 +331,9 @@ RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|COVID measures|'COVID measures'[R
 |Day|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|POS_TO_ID|1|0|8|
 |Day|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|POS_TO_ID|2|0|8|
 |Day|DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df|'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]|POS_TO_ID|3|0|8|
-|County Name|COVID|'COVID'[County Name]|POS_TO_ID|0|0|7536|
+|County Name|COVID|'COVID'[County Name]|POS_TO_ID|0|0|7528|
 |County Name|COVID|'COVID'[County Name]|POS_TO_ID|1|0|16|
-|County Name|COVID|'COVID'[County Name]|ID_TO_POS|0|0|7536|
+|County Name|COVID|'COVID'[County Name]|ID_TO_POS|0|0|7528|
 |County Name|COVID|'COVID'[County Name]|ID_TO_POS|1|0|16|
 |State|COVID|'COVID'[State]|POS_TO_ID|0|0|208|
 |State|COVID|'COVID'[State]|POS_TO_ID|1|0|16|
@@ -345,29 +347,29 @@ RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|COVID measures|'COVID measures'[R
 |Date|COVID|'COVID'[Date]|POS_TO_ID|1|0|16|
 |Date|COVID|'COVID'[Date]|ID_TO_POS|0|0|280|
 |Date|COVID|'COVID'[Date]|ID_TO_POS|1|0|16|
-|Cases|COVID|'COVID'[Cases]|POS_TO_ID|0|0|2304|
+|Cases|COVID|'COVID'[Cases]|POS_TO_ID|0|0|2576|
 |Cases|COVID|'COVID'[Cases]|POS_TO_ID|1|0|16|
-|Cases|COVID|'COVID'[Cases]|ID_TO_POS|0|0|2304|
+|Cases|COVID|'COVID'[Cases]|ID_TO_POS|0|0|2576|
 |Cases|COVID|'COVID'[Cases]|ID_TO_POS|1|0|16|
-|FIPS|COVID|'COVID'[FIPS]|POS_TO_ID|0|0|12592|
+|FIPS|COVID|'COVID'[FIPS]|POS_TO_ID|0|0|12584|
 |FIPS|COVID|'COVID'[FIPS]|POS_TO_ID|1|0|16|
-|FIPS|COVID|'COVID'[FIPS]|ID_TO_POS|0|0|12592|
+|FIPS|COVID|'COVID'[FIPS]|ID_TO_POS|0|0|12584|
 |FIPS|COVID|'COVID'[FIPS]|ID_TO_POS|1|0|16|
-|Deaths|COVID|'COVID'[Deaths]|POS_TO_ID|0|0|296|
+|Deaths|COVID|'COVID'[Deaths]|POS_TO_ID|0|0|336|
 |Deaths|COVID|'COVID'[Deaths]|POS_TO_ID|1|0|16|
-|Deaths|COVID|'COVID'[Deaths]|ID_TO_POS|0|0|296|
+|Deaths|COVID|'COVID'[Deaths]|ID_TO_POS|0|0|336|
 |Deaths|COVID|'COVID'[Deaths]|ID_TO_POS|1|0|16|
-|County|COVID|'COVID'[County]|POS_TO_ID|0|0|12792|
+|County|COVID|'COVID'[County]|POS_TO_ID|0|0|12784|
 |County|COVID|'COVID'[County]|POS_TO_ID|1|0|16|
-|County|COVID|'COVID'[County]|ID_TO_POS|0|0|12792|
+|County|COVID|'COVID'[County]|ID_TO_POS|0|0|12784|
 |County|COVID|'COVID'[County]|ID_TO_POS|1|0|16|
-|Daily cases|COVID|'COVID'[Daily cases]|POS_TO_ID|0|0|1256|
+|Daily cases|COVID|'COVID'[Daily cases]|POS_TO_ID|0|0|1360|
 |Daily cases|COVID|'COVID'[Daily cases]|POS_TO_ID|1|0|16|
-|Daily cases|COVID|'COVID'[Daily cases]|ID_TO_POS|0|0|1256|
+|Daily cases|COVID|'COVID'[Daily cases]|ID_TO_POS|0|0|1360|
 |Daily cases|COVID|'COVID'[Daily cases]|ID_TO_POS|1|0|16|
-|Daily deaths|COVID|'COVID'[Daily deaths]|POS_TO_ID|0|0|192|
+|Daily deaths|COVID|'COVID'[Daily deaths]|POS_TO_ID|0|0|200|
 |Daily deaths|COVID|'COVID'[Daily deaths]|POS_TO_ID|1|0|16|
-|Daily deaths|COVID|'COVID'[Daily deaths]|ID_TO_POS|0|0|192|
+|Daily deaths|COVID|'COVID'[Daily deaths]|ID_TO_POS|0|0|200|
 |Daily deaths|COVID|'COVID'[Daily deaths]|ID_TO_POS|1|0|16|
 |State|StateDim|'StateDim'[State]|POS_TO_ID|0|0|232|
 |State|StateDim|'StateDim'[State]|POS_TO_ID|1|0|16|
@@ -437,8 +439,8 @@ RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|COVID measures|'COVID measures'[R
 ## Relationships
 |FromTableName|FromFullColumnName|FromCardinality|FromCardinalityType|ToTableName|ToFullColumnName|ToCardinality|ToCardinalityType|RelyOnReferentialIntegrity|JoinOnDateBehavior|CrossFilteringBehavior|RelationshipType|IsActive|RelationshipName|SecurityFilteringBehavior|UsedSizeFrom|UsedSizeTo|UsedSize|MissingKeys|InvalidRows|OneToManyRatio|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|COVID|'COVID'[Date]|68|Many|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|366|One|false|DatePartOnly|OneDirection|SingleColumn|true|61d3981d-89bc-4f78-b2b7-ab908a42ac71|OneDirection|88|0|88|0|0|0.0016835636350254835|
-|COVID|'COVID'[State]|51|Many|StateDim|'StateDim'[State code]|57|One|false|DateAndTime|OneDirection|SingleColumn|true|7cd80576-d9a4-4516-aad6-c8e06584bf7c|OneDirection|48|0|48|0|0|0.0002621943366023294|
+|COVID|'COVID'[Date]|69|Many|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]|366|One|false|DatePartOnly|OneDirection|SingleColumn|true|61d3981d-89bc-4f78-b2b7-ab908a42ac71|OneDirection|88|0|88|0|0|0.0016591641620540996|
+|COVID|'COVID'[State]|51|Many|StateDim|'StateDim'[State code]|57|One|false|DateAndTime|OneDirection|SingleColumn|true|7cd80576-d9a4-4516-aad6-c8e06584bf7c|OneDirection|48|0|48|0|0|0.0002583944186805565|
 
 # Table permissions
 
