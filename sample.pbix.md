@@ -217,36 +217,8 @@ Cases|COVID|'COVID'[Cases]|642|Int64|Data|false|HASH||||0|Default|true|false|tru
 FIPS|COVID|'COVID'[FIPS]|3145|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|false|99665|213152|25200|338017|0.014257025381585091|
 Deaths|COVID|'COVID'[Deaths]|82|Int64|Data|false|HASH||||0|Default|true|false|true|false|false||Ready|false|true|2700|376|704|3780|0.00037172530406676547|
 County|COVID|'COVID'[County]|3195|String|Calculated|false|HASH|'COVID'[County Name] & ", " & 'COVID'[State]||||Default|true|false|true|false|false||Ready|false|false|129147|214040|25600|368787|0.014483687152357509|
-Daily cases|COVID|'COVID'[Daily cases]|338|Int64|Calculated|false|HASH|
-VAR __CountyName = 'COVID'[County Name]
-VAR __State = 'COVID'[State]
-VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)
-VAR __TodaysCases = 'COVID'[Cases]
-
-RETURN  __TodaysCases - CALCULATE(
-    SUM('COVID'[Cases]) , 
-    FILTER(
-        COVID, 
-        COVID[Date] = __Yesterday &&
-        COVID[County Name] = __CountyName &&
-        COVID[State] = __State
-    )
-) + 0|||#,0|Default|true|false|true|false|false||Ready|false|true|9920|25744|2752|38416|0.0015322335704215455|
-Daily deaths|COVID|'COVID'[Daily deaths]|49|Int64|Calculated|false|HASH|
-VAR __CountyName = 'COVID'[County Name]
-VAR __State = 'COVID'[State]
-VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)
-VAR __TodaysDeaths = 'COVID'[Deaths]
-
-RETURN  __TodaysDeaths - CALCULATE(
-    SUM('COVID'[Deaths]) , 
-    FILTER(
-        COVID, 
-        COVID[Date] = __Yesterday &&
-        COVID[County Name] = __CountyName &&
-        COVID[State] = __State
-    )
-) + 0|||0|Default|true|false|true|false|false||Ready|false|true|1548|2560|432|4540|0.00022212853535696962|
+Daily cases|COVID|'COVID'[Daily cases]|338|Int64|Calculated|false|HASH|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysCases = 'COVID'[Cases]<br><br>RETURN  __TodaysCases - CALCULATE(<br>    SUM('COVID'[Cases]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|||#,0|Default|true|false|true|false|false||Ready|false|true|9920|25744|2752|38416|0.0015322335704215455|
+Daily deaths|COVID|'COVID'[Daily deaths]|49|Int64|Calculated|false|HASH|<br>VAR __CountyName = 'COVID'[County Name]<br>VAR __State = 'COVID'[State]<br>VAR __Yesterday =  DATEADD(COVID[Date],-1,DAY)<br>VAR __TodaysDeaths = 'COVID'[Deaths]<br><br>RETURN  __TodaysDeaths - CALCULATE(<br>    SUM('COVID'[Deaths]) , <br>    FILTER(<br>        COVID, <br>        COVID[Date] = __Yesterday &&<br>        COVID[County Name] = __CountyName &&<br>        COVID[State] = __State<br>    )<br>) + 0|||0|Default|true|false|true|false|false||Ready|false|true|1548|2560|432|4540|0.00022212853535696962|
 RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|StateDim|'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Int64|RowNumber|true|VALUE|||||Default|true|true|false|true|false||Ready|true|false|120|0|0|120||
 State|StateDim|'StateDim'[State]|57|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|true|18664|48|496|19208|1|
 State code|StateDim|'StateDim'[State code]|57|String|Data|false|HASH|||||Default|true|false|true|false|false||Ready|false|true|17854|48|496|18398|1|
@@ -266,31 +238,19 @@ Day|LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|'LocalDateTable_a0f5b894
 RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|COVID measures|'COVID measures'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Int64|RowNumber|true|HASH|||||Default|true|true|false|true|false||Ready|true|false|392|8|0|400||
 
 ## Measures
-MeasureName|TableName|FullMeasureName|MeasureExpression|DisplayFolder|Description|IsHidden|DataType|DetailRowsExpression|FormatString|KpiStatusExpression|KpiTargetExpression|KpiTargetFormatString|KpiTrendExpression
---|--|--|--|--|--|--|--|--|--|---|--|--|--|--
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
-|||||||||||||
-
+|MeasureName|TableName|FullMeasureName|MeasureExpression|DisplayFolder|Description|IsHidden|DataType|DetailRowsExpression|FormatString|KpiStatusExpression|KpiTargetExpression|KpiTargetFormatString|KpiTrendExpression|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Updated|COVID|'COVID'[Updated]|"Data provided by USAFacts. Because of the frequency of data upates, they may not reflect the exact numbers reported by government organizations or the news media. For more information or to download the data, please click the logo below.  Data updated through " & FORMAT([Max date],"mmmm dd, yyyy") & "."|||false|String|||||||
+|Max date|COVID|'COVID'[Max date]|CALCULATE(MAX('COVID'[Date]),ALL('COVID'))|||true|DateTime||General Date|||||
+|Drill-through button text|StateDim|'StateDim'[Drill-through button text]|IF(SELECTEDVALUE(StateDim[State],0)==0,"Click on a State to view by County  ", "Click here to view by County in " & VALUES(StateDim[State code]) &"  ")|||false|String|||||||
+|Methodology|Table|'Table'[Methodology]|"This interactive feature aggregates data from the Centers for Disease Control and Prevention (CDC), state- and local-level public health agencies. County-level data is confirmed by referencing state and local agencies directly.<br><br>Source: USAFacts"|||false|String|||||||
+|Notes|Table|'Table'[Notes]|"New York* covers 5 counties (Bronx, Kings, New York, Queens, Richmond), not New York county.<br><br>City of St. Louis was renamed to St. Louis City.<br><br>City and Borough of Juneau was renamed to Juneau Borough.<br><br>Municipality of Anchorage was renamed to Anchorage.<br><br>Jackson County includes other portions of Kansas City.<br><br><br>Source: USAFacts"|||false|String|||||||
+|Terms of use|Table|'Table'[Terms of use]|"This report and data are provided " & """" & "as is" & """" & ", " & """" & "with all faults" & """" & ", and without warranty of any kind. Microsoft gives no express warranties or guarantees and expressly disclaims all implied warranties, including merchantability, fitness for a particular purpose, and non-infringement."|||false|String|||||||
+|Total confirmed cases|COVID measures|'COVID measures'[Total confirmed cases]|SUM('COVID'[Daily cases])|||false|Int64||#,0|||||
+|Total deaths|COVID measures|'COVID measures'[Total deaths]|SUM(COVID[Daily deaths])|||false|Int64||#,0|||||
+|Case fatality rate|COVID measures|'COVID measures'[Case fatality rate]|DIVIDE([Total deaths],[Total confirmed cases])<br>|||false|Double||0.0%;-0.0%;0.0%|||||
+|Confirmed cases|COVID measures|'COVID measures'[Confirmed cases]|SUM('COVID'[Cases])|||false|Int64||#,0|||||
+|Deaths|COVID measures|'COVID measures'[Deaths]|SUM('COVID'[Deaths])|||false|Int64||#,0|||||
 
 ## Columns Segments
 |ColumnName|TableName|FullColumnName|PartitionName|SegmentNumber|TablePartitionNumber|SegmentRows|UsedSize|CompressionType|BitsCount|BookmarkBitsCount|VertipaqState|
