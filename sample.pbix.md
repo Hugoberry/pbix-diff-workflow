@@ -3,542 +3,722 @@
 
 DateTime|Length|Compressed|FileName
 -|-|-|-
-2021-02-08 18:36:42|8|10|Version
-2021-02-08 18:37:02|647|248|[Content_Types].xml
-2021-02-08 18:37:02|2132|515|DiagramLayout
-2021-02-08 18:37:02|6106|1391|Report\Layout
-2021-02-08 18:37:02|338|166|Settings
-2021-02-08 18:37:02|234|130|Metadata
-2021-02-08 18:37:02|465031|427872|Report\StaticResources\RegisteredResources\AdventureWorksLogo08110190716818466.jpg
-2021-02-08 18:37:02|3527|1087|Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json
-2021-02-08 18:37:02|326|323|SecurityBindings
-2021-02-08 18:36:42|5951902|5951902|DataModel
-2021-02-08 18:37:02|136|120|Connections
+2019-02-18 16:56:46|8|10|Version
+2019-02-18 16:56:48|771|251|[Content_Types].xml
+2019-02-20 12:06:02|28943|6278|DataMashup
+2019-02-20 11:33:28|226|132|DiagramLayout
+2019-02-20 11:34:50|285326|15001|Report\Layout
+2019-02-20 11:33:28|15|13|Settings
+2019-02-20 11:33:28|567|245|Metadata
+2019-02-20 11:33:28|840|321|Report\LinguisticSchema
+2019-02-20 11:33:28|998|336|DiagramState
+2019-02-20 11:33:28|665|364|Report\CustomVisuals\BulletChart1443347686880\package.json
+2019-02-20 11:33:28|611522|173494|Report\CustomVisuals\BulletChart1443347686880\resources\BulletChart1443347686880.pbiviz.json
+2019-02-20 11:33:28|739|407|Report\CustomVisuals\vitarachartsMicrochart0A1B0D2B8A234CE5923234CD03573361\package.json
+2019-02-20 11:33:28|1890028|362987|Report\CustomVisuals\vitarachartsMicrochart0A1B0D2B8A234CE5923234CD03573361\resources\vitarachartsMicrochart0A1B0D2B8A234CE5923234CD03573361.pbiviz.json
+2019-02-20 11:33:28|1501|1148|Report\StaticResources\RegisteredResources\Profit-selected-icon4464630519023298.png
+2019-02-20 11:33:28|1174|1179|Report\StaticResources\RegisteredResources\Profit_Icon5865933753245831.png
+2019-02-20 11:33:28|1843|1493|Report\StaticResources\RegisteredResources\Total-Sales-normal-icon5150472155772652.png
+2019-02-20 11:33:28|3660|3665|Report\StaticResources\RegisteredResources\Total_Sales_icon017054598027291812.png
+2019-02-20 11:33:28|1126|277|Report\StaticResources\SharedResources\BaseThemes\CY18SU07.json
+2019-02-20 12:06:02|242|237|SecurityBindings
+2019-02-20 12:06:02|144427|83780|Report\StaticResources\RegisteredResources\Power-BI_Global-Superstore_Bg8803589980324844.jpg
+2019-02-20 12:06:02|654|353|Report\CustomVisuals\advanceCardE03760C5AB684758B56AA29F9E6C257B\package.json
+2019-02-20 12:06:02|227520|95785|Report\CustomVisuals\advanceCardE03760C5AB684758B56AA29F9E6C257B\resources\advanceCardE03760C5AB684758B56AA29F9E6C257B.pbiviz.json
+2019-02-20 11:30:02|4940372|4940372|DataModel
 
 
 # Layout
 
-##  Introduction
+##  Superstore Global Analysis
 Order|Width|Height|Visible|Filters
 -|-|-|-|-
 |0|1280|720|1||
 
-### Introduction-Visuals
+### Superstore Global Analysis-Visuals
 Positioning|Config|Filters
 -|-|-
-`X:`40<br>`Y:`54<br>`Z:`0<br>`Width:`279<br>`Height:`279 |`image`<br><br> |
-`X:`394<br>`Y:`64<br>`Z:`1000<br>`Width:`743<br>`Height:`279 |`textbox`<br><br> |
+`X:`65<br>`Y:`138<br>`Z:`18000<br>`Width:`150<br>`Height:`40 |`textbox`<br><br> |
+`X:`63<br>`Y:`171<br>`Z:`15000<br>`Width:`151<br>`Height:`40 |`card`<br><br>`Values:` ["Orders.Total Sale"]<br> |
+`X:`286<br>`Y:`139<br>`Z:`19000<br>`Width:`150<br>`Height:`40 |`textbox`<br><br> |
+`X:`297<br>`Y:`171<br>`Z:`16000<br>`Width:`138<br>`Height:`40 |`card`<br><br>`Values:` ["Orders.Total Profit"]<br> |
+`X:`500<br>`Y:`139<br>`Z:`20000<br>`Width:`150<br>`Height:`40 |`textbox`<br><br> |
+`X:`30<br>`Y:`267<br>`Z:`0<br>`Width:`320<br>`Height:`277 |`tableEx`<br><br>`Values:` ["Orders.Country", "Sum(Orders.Sales)", "Orders.Profit Margin"]<br> |
+`X:`825<br>`Y:`105<br>`Z:`10000<br>`Width:`418<br>`Height:`116 |`lineChart`<br><br>`Y:` ["Sum(Orders.Sales)"]<br>`Category:` ["Date Table.Date.Variation.Date Hierarchy.Year", "Date Table.Date.Variation.Date Hierarchy.Month"]<br> |
+`X:`680<br>`Y:`563<br>`Z:`7000<br>`Width:`298<br>`Height:`151 |`barChart`<br><br>`Category:` ["Orders.City"]<br>`Y:` ["Orders.Sales by City"]<br> |`Orders`<br>City is subquery<br>
+`X:`981<br>`Y:`563<br>`Z:`8000<br>`Width:`263<br>`Height:`151 |`barChart`<br><br>`Category:` ["Orders.Category"]<br>`Y:` ["Sum(Orders.Sales)"]<br> |
+`X:`360<br>`Y:`267<br>`Z:`12000<br>`Width:`307<br>`Height:`437 |`map`<br><br>`Category:` ["Orders.City"]<br>`Size:` ["Sum(Orders.Sales)"]<br> |`Orders`<br>City is subquery<br>
+`X:`30<br>`Y:`582<br>`Z:`9000<br>`Width:`320<br>`Height:`115 |`tableEx`<br><br>`Values:` ["Orders.Category", "Sum(Orders.Sales)", "Orders.Profit Margin"]<br> |
+`X:`534<br>`Y:`171<br>`Z:`17000<br>`Width:`81<br>`Height:`40 |`card`<br><br>`Values:` ["Orders.Profit Margin"]<br> |
+`X:`691<br>`Y:`147<br>`Z:`13000<br>`Width:`125<br>`Height:`43 |`image`<br><br> |
+`X:`691<br>`Y:`185<br>`Z:`14000<br>`Width:`125<br>`Height:`44 |`image`<br><br> |
+`X:`826<br>`Y:`115<br>`Z:`11000<br>`Width:`417<br>`Height:`112 |`lineChart`<br><br>`Y:` ["Sum(Orders.Profit)"]<br>`Category:` ["Date Table.Date.Variation.Date Hierarchy.Year", "Date Table.Date.Variation.Date Hierarchy.Month"]<br> |
+`X:`691<br>`Y:`185<br>`Z:`4000<br>`Width:`125<br>`Height:`44 |`image`<br><br> |
+`X:`691<br>`Y:`148<br>`Z:`5000<br>`Width:`125<br>`Height:`44 |`image`<br><br> |
+`X:`803<br>`Y:`41<br>`Z:`2000<br>`Width:`165<br>`Height:`63 |`slicer`<br><br>`Values:` ["Date Table.Year"]<br> |
+`X:`968<br>`Y:`40<br>`Z:`3000<br>`Width:`165<br>`Height:`64 |`slicer`<br><br>`Values:` ["Date Table.Date.Variation.Date Hierarchy.Month"]<br> |
+`X:`1149<br>`Y:`55<br>`Z:`21000<br>`Width:`100<br>`Height:`40 |`actionButton`<br><br> |
+`X:`683<br>`Y:`268<br>`Z:`6000<br>`Width:`566<br>`Height:`276 |`tableEx`<br><br>`Values:` ["Orders.Sub-Category", "Orders.Total Sale", "Sum(Orders.Sales)", "Orders.Total Profit", "Sum(Orders.Profit)", "Orders.Profit Ratio"]<br> |
+`X:`19<br>`Y:`41<br>`Z:`22<br>`Width:`267<br>`Height:`64 |`advanceCardE03760C5AB684758B56AA29F9E6C257B`<br><br>`mainMeasure:` ["Orders.As of Date"]<br> |
 
 
 
 # Power Query
-
-
-## Queries
-["SqlServerInstance","SqlServerDatabase","Culture","Customer","Date","Product","Reseller","Sales","Sales Order","Sales Territory"]
-
-## Expressions
-### SqlServerInstance
-
+## DataMashup
 ```
-"POWERBI-SQL" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-```
-### SqlServerDatabase
+section Section1;
 
-```
-"AdventureWorksDW2020-DAX-Docs" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-```
-### Culture
-Used to format month names in the Date query.
-```
-"en-US" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
-```
-
-
-### Customer
-```
-let
-    Source = Sql.Database(SqlServerInstance, SqlServerDatabase),
-    dbo_DimCustomer = Source{[Schema="dbo",Item="DimCustomer"]}[Data],
-    #"Removed Other Columns" = Table.SelectColumns(dbo_DimCustomer,{"CustomerKey", "CustomerAlternateKey", "FirstName", "LastName", "DimGeography"}),
-    #"Expanded DimGeography" = Table.ExpandRecordColumn(#"Removed Other Columns", "DimGeography", {"City", "StateProvinceName", "EnglishCountryRegionName", "PostalCode"}, {"City", "StateProvinceName", "EnglishCountryRegionName", "PostalCode"}),
-    #"Merged Columns" = Table.CombineColumns(#"Expanded DimGeography",{"FirstName", "LastName"},Combiner.CombineTextByDelimiter(" ", QuoteStyle.None),"Customer"),
-    #"Add NA Row" = Table.InsertRows(#"Merged Columns", 0, {[CustomerKey = -1, CustomerAlternateKey = "[Not Applicable]", Customer = "[Not Applicable]", City = "[Not Applicable]", StateProvinceName ="[Not Applicable]", EnglishCountryRegionName ="[Not Applicable]", PostalCode ="[Not Applicable]"]}),
-    #"Renamed Columns" = Table.RenameColumns(#"Add NA Row",{{"CustomerAlternateKey", "Customer ID"}, {"StateProvinceName", "State-Province"}, {"EnglishCountryRegionName", "Country-Region"}, {"PostalCode", "Postal Code"}})
+shared Returns = let
+    Source = Excel.Workbook(File.Contents("F:\Power BI\POC PBIX Files\Infocepts POC\Global Superstore.xlsx"), null, true),
+    Returns_Sheet = Source{[Item="Returns",Kind="Sheet"]}[Data],
+    #"Changed Type" = Table.TransformColumnTypes(Returns_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Returned", type text}, {"Order ID", type text}, {"Market", type text}})
 in
-    #"Renamed Columns"
-```
+    #"Changed Type1";
 
-### Date
-```
-let
-    Source = Sql.Database(SqlServerInstance, SqlServerDatabase),
-    dbo_DimDate = Source{[Schema="dbo",Item="DimDate"]}[Data],
-    #"Removed Other Columns" = Table.SelectColumns(dbo_DimDate,{"DateKey", "FullDateAlternateKey", "DayNumberOfMonth", "MonthNumberOfYear", "CalendarYear", "FiscalQuarter", "FiscalYear"}),
-    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"FullDateAlternateKey", "Date"}, {"FiscalYear", "Fiscal Year"}}),
-    #"Added FY Prefix" = Table.TransformColumns(#"Renamed Columns", {{"Fiscal Year", each "FY" & Text.From(_, "en-US"), type text}}),
-    #"Added Fiscal Quarter" = Table.AddColumn(#"Added FY Prefix", "Fiscal Quarter", each [Fiscal Year] & " Q" & Number.ToText([FiscalQuarter])),
-    #"Added Month" = Table.AddColumn(#"Added Fiscal Quarter", "Month", each (Number.ToText([CalendarYear]) & " " & Date.ToText([Date], "MMM", Culture)), type text),
-    #"Added Full Date" = Table.AddColumn(#"Added Month", "Full Date", each [Month] & ", " & Text.PadStart(Number.ToText([DayNumberOfMonth]), 2, "0")),
-    #"Added MonthKey" = Table.AddColumn(#"Added Full Date", "MonthKey", each ([CalendarYear] * 100) + [MonthNumberOfYear]),
-    #"Removed Other Columns1" = Table.SelectColumns(#"Added MonthKey",{"DateKey", "Date", "Fiscal Year", "Fiscal Quarter", "Month", "Full Date", "MonthKey"}),
-    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns1",{{"Fiscal Quarter", type text}, {"Month", type text}, {"Full Date", type text}, {"MonthKey", Int64.Type}})
+shared Orders = let
+    Source = Excel.Workbook(File.Contents("F:\Power BI\POC PBIX Files\Infocepts POC\Global Superstore.xlsx"), null, true),
+    Orders_Sheet = Source{[Item="Orders",Kind="Sheet"]}[Data],
+    #"Promoted Headers" = Table.PromoteHeaders(Orders_Sheet, [PromoteAllScalars=true]),
+    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Category", type text}, {"City", type text}, {"Country", type text}, {"Customer Name", type text}, {"Market", type text}, {"Customer ID", type text}, {"Order Date", type date}, {"Year (OrderDate)", Int64.Type}, {"Order ID", type text}, {"Order Priority", type text}, {"Product ID", type text}, {"Product Name", type text}, {"Region", type text}, {"Row ID", Int64.Type}, {"Segment", type text}, {"Ship Date", type date}, {"Ship Mode", type text}, {"State", type text}, {"Sub-Category", type text}, {"Discount", type number}, {"Profit", type number}, {"Quantity", Int64.Type}, {"Sales", type number}, {"Shipping Cost", type number}}),
+    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "Order Date", "Order Date - Copy"),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Duplicated Column",{{"Order Date - Copy", type text}}),
+    #"Added Index" = Table.AddIndexColumn(#"Changed Type1", "Index", 1, 1),
+    #"Inserted Modulo" = Table.AddColumn(#"Added Index", "Modulo", each Number.Mod([Index], 2), type number),
+    #"Added Custom" = Table.AddColumn(#"Inserted Modulo", "Target Sales", each if ([Modulo]=1) then [Sales]-[Profit] else [Sales] + [Profit]),
+    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom",{{"Target Sales", type number}}),
+    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Index"}),
+    #"Added Custom1" = Table.AddColumn(#"Removed Columns", "Poor", each if ([Modulo]=1) then [Target Sales]*0.3 else [Target Sales]),
+    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Satisfactory", each if ([Modulo]=1) then [Target Sales]*0.9 else [Target Sales]),
+    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "Good", each if ([Modulo]=1) then [Target Sales]*2 else [Target Sales]),
+    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom3",{{"Good", type number}, {"Satisfactory", type number}, {"Poor", type number}}),
+    #"Duplicated Column1" = Table.DuplicateColumn(#"Changed Type3", "Sales", "Sales - Copy"),
+    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column1",{{"Sales - Copy", "Sales w/o decimal"}}),
+    #"Changed Type4" = Table.TransformColumnTypes(#"Renamed Columns",{{"Sales w/o decimal", Int64.Type}})
 in
-    #"Changed Type"
-```
+    #"Changed Type4";
 
-### Sales Territory
-```
-let
-    Source = Sql.Database(SqlServerInstance, SqlServerDatabase),
-    dbo_DimSalesTerritory = Source{[Schema="dbo",Item="DimSalesTerritory"]}[Data],
-    #"Removed Other Columns" = Table.SelectColumns(dbo_DimSalesTerritory,{"SalesTerritoryKey", "SalesTerritoryRegion", "SalesTerritoryCountry", "SalesTerritoryGroup"}),
-    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"SalesTerritoryRegion", "Region"}, {"SalesTerritoryCountry", "Country"}, {"SalesTerritoryGroup", "Group"}})
+shared Table1 = let
+    Source = Excel.Workbook(File.Contents("F:\Power BI\POC PBIX Files\Infocepts POC\Global Superstore.xlsx"), null, true),
+    Table1_Table = Source{[Item="Table1",Kind="Table"]}[Data],
+    #"Changed Type" = Table.TransformColumnTypes(Table1_Table,{{"Category", type text}, {"City", type text}, {"Country", type text}, {"Customer Name", type text}, {"Market", type text}, {"Customer ID", type text}, {"Order Date", type date}, {"Year (OrderDate)", Int64.Type}, {"Order ID", type text}, {"Order Priority", type text}, {"Product ID", type text}, {"Product Name", type text}, {"Region", type text}, {"Row ID", Int64.Type}, {"Segment", type text}, {"Ship Date", type date}, {"Ship Mode", type text}, {"State", type text}, {"Sub-Category", type text}, {"Discount", type number}, {"Profit", type number}, {"Quantity", Int64.Type}, {"Sales", type number}, {"Shipping Cost", type number}})
 in
-    #"Renamed Columns"
-```
+    #"Changed Type";
 
-### Product
-```
-let
-    Source = Sql.Database(SqlServerInstance, SqlServerDatabase),
-    dbo_DimProduct = Source{[Schema="dbo",Item="DimProduct"]}[Data],
-    #"Filtered Rows" = Table.SelectRows(dbo_DimProduct, each ([FinishedGoodsFlag] = true)),
-    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"ProductKey", "ProductAlternateKey", "EnglishProductName", "StandardCost", "Color", "ListPrice", "ModelName", "DimProductSubcategory"}),
-    #"Expanded DimProductSubcategory" = Table.ExpandRecordColumn(#"Removed Other Columns", "DimProductSubcategory", {"EnglishProductSubcategoryName", "DimProductCategory"}, {"EnglishProductSubcategoryName", "DimProductCategory"}),
-    #"Expanded DimProductCategory" = Table.ExpandRecordColumn(#"Expanded DimProductSubcategory", "DimProductCategory", {"EnglishProductCategoryName"}, {"EnglishProductCategoryName"}),
-    #"Renamed Columns" = Table.RenameColumns(#"Expanded DimProductCategory",{{"EnglishProductName", "Product"}, {"StandardCost", "Standard Cost"}, {"ListPrice", "List Price"}, {"ModelName", "Model"}, {"EnglishProductSubcategoryName", "Subcategory"}, {"EnglishProductCategoryName", "Category"}, {"ProductAlternateKey", "SKU"}})
+shared People = let
+    Source = Excel.Workbook(File.Contents("F:\Power BI\POC PBIX Files\Infocepts POC\Global Superstore.xlsx"), null, true),
+    People_Sheet = Source{[Item="People",Kind="Sheet"]}[Data],
+    #"Changed Type" = Table.TransformColumnTypes(People_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Person", type text}, {"Region", type text}})
 in
-    #"Renamed Columns"
-```
+    #"Changed Type1";
 
-### Sales Order
-```
-let
-    Source = Sql.Database(SqlServerInstance, SqlServerDatabase),
-    dbo_vFactSales = Source{[Schema="dbo",Item="vFactSales"]}[Data],
-    #"Removed Other Columns" = Table.SelectColumns(dbo_vFactSales,{"Channel", "SalesOrderLineKey", "SalesOrderNumber", "SalesOrderLineNumber"}),
-    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"SalesOrderNumber", "Sales Order"}}),
-    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Sales Order Line", each [Sales Order] & " - " & Text.PadStart(Number.ToText([SalesOrderLineNumber]), 2, "0")),
-    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"Sales Order Line", type text}}),
-    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"SalesOrderLineNumber"})
+shared #"Date Table" = let
+    Source = Date(#date(2012, 1, 1), #date(2016, 12, 31), 4)
 in
-    #"Removed Columns"
-```
+    Source;
 
-### Sales
-```
-let
-    Source = Sql.Database(SqlServerInstance, SqlServerDatabase),
-    dbo_vFactSales = Source{[Schema="dbo",Item="vFactSales"]}[Data],
-    #"Removed Other Columns" = Table.SelectColumns(dbo_vFactSales,{"SalesOrderLineKey", "ResellerKey", "CustomerKey", "ProductKey", "OrderDateKey", "DueDateKey", "ShipDateKey", "SalesTerritoryKey", "OrderQuantity", "UnitPrice", "ExtendedAmount", "UnitPriceDiscountPct", "ProductStandardCost", "TotalProductCost", "SalesAmount"}),
-    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"OrderQuantity", Int64.Type}}),
-    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"ExtendedAmount", "Extended Amount"}, {"OrderQuantity", "Order Quantity"}, {"ProductStandardCost", "Product Standard Cost"}, {"SalesAmount", "Sales Amount"}, {"TotalProductCost", "Total Product Cost"}, {"UnitPrice", "Unit Price"}, {"UnitPriceDiscountPct", "Unit Price Discount Pct"}})
+shared Date = let fnDateTable = (StartDate as date, EndDate as date, FYStartMonth as number) as table =>
+  let
+    DayCount = Duration.Days(Duration.From(EndDate - StartDate)),
+    Source = List.Dates(StartDate,DayCount,#duration(1,0,0,0)),
+    TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),   
+    ChangedType = Table.TransformColumnTypes(TableFromList,{{"Column1", type date}}),
+    RenamedColumns = Table.RenameColumns(ChangedType,{{"Column1", "Date"}}),
+    InsertYear = Table.AddColumn(RenamedColumns, "Year", each Date.Year([Date]),type text),
+    InsertYearNumber = Table.AddColumn(RenamedColumns, "YearNumber", each Date.Year([Date])),
+    InsertQuarter = Table.AddColumn(InsertYear, "QuarterOfYear", each Date.QuarterOfYear([Date])),
+    InsertMonth = Table.AddColumn(InsertQuarter, "MonthOfYear", each Date.Month([Date]), type text),
+    InsertDay = Table.AddColumn(InsertMonth, "DayOfMonth", each Date.Day([Date])),
+    InsertDayInt = Table.AddColumn(InsertDay, "DateInt", each [Year] * 10000 + [MonthOfYear] * 100 + [DayOfMonth]),
+    InsertMonthName = Table.AddColumn(InsertDayInt, "MonthName", each Date.ToText([Date], "MMMM"), type text),
+    InsertCalendarMonth = Table.AddColumn(InsertMonthName, "MonthInCalendar", each (try(Text.Range([MonthName],0,3)) otherwise [MonthName]) & " " & Number.ToText([Year])),
+    InsertCalendarQtr = Table.AddColumn(InsertCalendarMonth, "QuarterInCalendar", each "Q" & Number.ToText([QuarterOfYear]) & " " & Number.ToText([Year])),
+    InsertDayWeek = Table.AddColumn(InsertCalendarQtr, "DayInWeek", each Date.DayOfWeek([Date])),
+    InsertDayName = Table.AddColumn(InsertDayWeek, "DayOfWeekName", each Date.ToText([Date], "dddd"), type text),
+    InsertWeekEnding = Table.AddColumn(InsertDayName, "WeekEnding", each Date.EndOfWeek([Date]), type date),
+    InsertWeekNumber= Table.AddColumn(InsertWeekEnding, "Week Number", each Date.WeekOfYear([Date])),
+    InsertMonthnYear = Table.AddColumn(InsertWeekNumber,"MonthnYear", each [Year] * 10000 + [MonthOfYear] * 100),
+    InsertQuarternYear = Table.AddColumn(InsertMonthnYear,"QuarternYear", each [Year] * 10000 + [QuarterOfYear] * 100),
+    ChangedType1 = Table.TransformColumnTypes(InsertQuarternYear,{{"QuarternYear", Int64.Type},{"Week Number", Int64.Type},{"Year", type text},{"MonthnYear", Int64.Type}, {"DateInt", Int64.Type}, {"DayOfMonth", Int64.Type}, {"MonthOfYear", Int64.Type}, {"QuarterOfYear", Int64.Type}, {"MonthInCalendar", type text}, {"QuarterInCalendar", type text}, {"DayInWeek", Int64.Type}}),
+    InsertShortYear = Table.AddColumn(ChangedType1, "ShortYear", each Text.End(Text.From([Year]), 2), type text),
+    AddFY = Table.AddColumn(InsertShortYear, "FY", each "FY"&(if [MonthOfYear]>=FYStartMonth then Text.From(Number.From([ShortYear])+1) else [ShortYear]))
 in
-    #"Renamed Columns"
-```
-
-### Reseller
-```
-let
-    Source = Sql.Database(SqlServerInstance, SqlServerDatabase),
-    dbo_DimReseller = Source{[Schema="dbo",Item="DimReseller"]}[Data],
-    #"Removed Other Columns" = Table.SelectColumns(dbo_DimReseller,{"ResellerKey", "ResellerAlternateKey", "BusinessType", "ResellerName", "DimGeography"}),
-    #"Expanded DimGeography" = Table.ExpandRecordColumn(#"Removed Other Columns", "DimGeography", {"City", "StateProvinceName", "EnglishCountryRegionName", "PostalCode"}, {"City", "StateProvinceName", "EnglishCountryRegionName", "PostalCode"}),
-    #"Add NA Row" = Table.InsertRows(#"Expanded DimGeography", 0, {[ResellerKey = -1, ResellerAlternateKey = "[Not Applicable]", BusinessType = "[Not Applicable]", ResellerName = "[Not Applicable]", City = "[Not Applicable]", StateProvinceName ="[Not Applicable]", EnglishCountryRegionName ="[Not Applicable]", PostalCode ="[Not Applicable]"]}),
-    #"Renamed Columns" = Table.RenameColumns(#"Add NA Row",{{"ResellerAlternateKey", "Reseller ID"}, {"BusinessType", "Business Type"}, {"ResellerName", "Reseller"}, {"StateProvinceName", "State-Province"}, {"EnglishCountryRegionName", "Country-Region"}, {"PostalCode", "Postal Code"}})
+    AddFY
 in
-    #"Renamed Columns"
+    fnDateTable;
 ```
-
 
 # Data Model metrics
 
-## ColumnsHierarchies
-StructureName|UsedSize|TablePartitionNumber|TableName|FullColumnName|SegmentNumber|ColumnName
----|---|---|---|---|---|---
-POS_TO_ID|73944|0|Customer|'Customer'[CustomerKey]|0|CustomerKey|
-POS_TO_ID|16|0|Customer|'Customer'[CustomerKey]|1|CustomerKey|
-ID_TO_POS|73944|0|Customer|'Customer'[CustomerKey]|0|CustomerKey|
-ID_TO_POS|16|0|Customer|'Customer'[CustomerKey]|1|CustomerKey|
-POS_TO_ID|73944|0|Customer|'Customer'[Customer ID]|0|Customer ID|
-POS_TO_ID|16|0|Customer|'Customer'[Customer ID]|1|Customer ID|
-ID_TO_POS|73944|0|Customer|'Customer'[Customer ID]|0|Customer ID|
-ID_TO_POS|16|0|Customer|'Customer'[Customer ID]|1|Customer ID|
-POS_TO_ID|73608|0|Customer|'Customer'[Customer]|0|Customer|
-POS_TO_ID|16|0|Customer|'Customer'[Customer]|1|Customer|
-ID_TO_POS|73608|0|Customer|'Customer'[Customer]|0|Customer|
-ID_TO_POS|16|0|Customer|'Customer'[Customer]|1|Customer|
-POS_TO_ID|1088|0|Customer|'Customer'[City]|0|City|
-POS_TO_ID|16|0|Customer|'Customer'[City]|1|City|
-ID_TO_POS|1088|0|Customer|'Customer'[City]|0|City|
-ID_TO_POS|16|0|Customer|'Customer'[City]|1|City|
-POS_TO_ID|224|0|Customer|'Customer'[State-Province]|0|State-Province|
-POS_TO_ID|16|0|Customer|'Customer'[State-Province]|1|State-Province|
-ID_TO_POS|224|0|Customer|'Customer'[State-Province]|0|State-Province|
-ID_TO_POS|16|0|Customer|'Customer'[State-Province]|1|State-Province|
-POS_TO_ID|32|0|Customer|'Customer'[Country-Region]|0|Country-Region|
-POS_TO_ID|16|0|Customer|'Customer'[Country-Region]|1|Country-Region|
-ID_TO_POS|32|0|Customer|'Customer'[Country-Region]|0|Country-Region|
-ID_TO_POS|16|0|Customer|'Customer'[Country-Region]|1|Country-Region|
-POS_TO_ID|1304|0|Customer|'Customer'[Postal Code]|0|Postal Code|
-POS_TO_ID|16|0|Customer|'Customer'[Postal Code]|1|Postal Code|
-ID_TO_POS|1304|0|Customer|'Customer'[Postal Code]|0|Postal Code|
-ID_TO_POS|16|0|Customer|'Customer'[Postal Code]|1|Postal Code|
-POS_TO_ID|5848|0|Date|'Date'[DateKey]|0|DateKey|
-POS_TO_ID|16|0|Date|'Date'[DateKey]|1|DateKey|
-ID_TO_POS|5848|0|Date|'Date'[DateKey]|0|DateKey|
-ID_TO_POS|16|0|Date|'Date'[DateKey]|1|DateKey|
-POS_TO_ID|5848|0|Date|'Date'[Date]|0|Date|
-POS_TO_ID|16|0|Date|'Date'[Date]|1|Date|
-ID_TO_POS|5848|0|Date|'Date'[Date]|0|Date|
-ID_TO_POS|16|0|Date|'Date'[Date]|1|Date|
-POS_TO_ID|24|0|Date|'Date'[Fiscal Year]|0|Fiscal Year|
-POS_TO_ID|16|0|Date|'Date'[Fiscal Year]|1|Fiscal Year|
-ID_TO_POS|24|0|Date|'Date'[Fiscal Year]|0|Fiscal Year|
-ID_TO_POS|16|0|Date|'Date'[Fiscal Year]|1|Fiscal Year|
-POS_TO_ID|72|0|Date|'Date'[Fiscal Quarter]|0|Fiscal Quarter|
-POS_TO_ID|16|0|Date|'Date'[Fiscal Quarter]|1|Fiscal Quarter|
-ID_TO_POS|72|0|Date|'Date'[Fiscal Quarter]|0|Fiscal Quarter|
-ID_TO_POS|16|0|Date|'Date'[Fiscal Quarter]|1|Fiscal Quarter|
-POS_TO_ID|200|0|Date|'Date'[Month]|0|Month|
-POS_TO_ID|16|0|Date|'Date'[Month]|1|Month|
-ID_TO_POS|200|0|Date|'Date'[Month]|0|Month|
-ID_TO_POS|16|0|Date|'Date'[Month]|1|Month|
-POS_TO_ID|200|0|Date|'Date'[MonthKey]|0|MonthKey|
-POS_TO_ID|16|0|Date|'Date'[MonthKey]|1|MonthKey|
-ID_TO_POS|200|0|Date|'Date'[MonthKey]|0|MonthKey|
-ID_TO_POS|16|0|Date|'Date'[MonthKey]|1|MonthKey|
-POS_TO_ID|5848|0|Date|'Date'[Full Date]|0|Full Date|
-POS_TO_ID|16|0|Date|'Date'[Full Date]|1|Full Date|
-ID_TO_POS|5848|0|Date|'Date'[Full Date]|0|Full Date|
-ID_TO_POS|16|0|Date|'Date'[Full Date]|1|Full Date|
-POS_TO_ID|48|0|Sales Territory|'Sales Territory'[SalesTerritoryKey]|0|SalesTerritoryKey|
-POS_TO_ID|16|0|Sales Territory|'Sales Territory'[SalesTerritoryKey]|1|SalesTerritoryKey|
-ID_TO_POS|48|0|Sales Territory|'Sales Territory'[SalesTerritoryKey]|0|SalesTerritoryKey|
-ID_TO_POS|16|0|Sales Territory|'Sales Territory'[SalesTerritoryKey]|1|SalesTerritoryKey|
-POS_TO_ID|48|0|Sales Territory|'Sales Territory'[Region]|0|Region|
-POS_TO_ID|16|0|Sales Territory|'Sales Territory'[Region]|1|Region|
-ID_TO_POS|48|0|Sales Territory|'Sales Territory'[Region]|0|Region|
-ID_TO_POS|16|0|Sales Territory|'Sales Territory'[Region]|1|Region|
-POS_TO_ID|32|0|Sales Territory|'Sales Territory'[Country]|0|Country|
-POS_TO_ID|16|0|Sales Territory|'Sales Territory'[Country]|1|Country|
-ID_TO_POS|32|0|Sales Territory|'Sales Territory'[Country]|0|Country|
-ID_TO_POS|16|0|Sales Territory|'Sales Territory'[Country]|1|Country|
-POS_TO_ID|24|0|Sales Territory|'Sales Territory'[Group]|0|Group|
-POS_TO_ID|16|0|Sales Territory|'Sales Territory'[Group]|1|Group|
-ID_TO_POS|24|0|Sales Territory|'Sales Territory'[Group]|0|Group|
-ID_TO_POS|16|0|Sales Territory|'Sales Territory'[Group]|1|Group|
-POS_TO_ID|1592|0|Product|'Product'[ProductKey]|0|ProductKey|
-POS_TO_ID|16|0|Product|'Product'[ProductKey]|1|ProductKey|
-ID_TO_POS|1592|0|Product|'Product'[ProductKey]|0|ProductKey|
-ID_TO_POS|16|0|Product|'Product'[ProductKey]|1|ProductKey|
-POS_TO_ID|1184|0|Product|'Product'[Product]|0|Product|
-POS_TO_ID|16|0|Product|'Product'[Product]|1|Product|
-ID_TO_POS|1184|0|Product|'Product'[Product]|0|Product|
-ID_TO_POS|16|0|Product|'Product'[Product]|1|Product|
-POS_TO_ID|544|0|Product|'Product'[Standard Cost]|0|Standard Cost|
-POS_TO_ID|16|0|Product|'Product'[Standard Cost]|1|Standard Cost|
-POS_TO_ID|48|0|Product|'Product'[Color]|0|Color|
-POS_TO_ID|16|0|Product|'Product'[Color]|1|Color|
-ID_TO_POS|48|0|Product|'Product'[Color]|0|Color|
-ID_TO_POS|16|0|Product|'Product'[Color]|1|Color|
-POS_TO_ID|488|0|Product|'Product'[List Price]|0|List Price|
-POS_TO_ID|16|0|Product|'Product'[List Price]|1|List Price|
-POS_TO_ID|480|0|Product|'Product'[Model]|0|Model|
-POS_TO_ID|16|0|Product|'Product'[Model]|1|Model|
-ID_TO_POS|480|0|Product|'Product'[Model]|0|Model|
-ID_TO_POS|16|0|Product|'Product'[Model]|1|Model|
-POS_TO_ID|152|0|Product|'Product'[Subcategory]|0|Subcategory|
-POS_TO_ID|16|0|Product|'Product'[Subcategory]|1|Subcategory|
-ID_TO_POS|152|0|Product|'Product'[Subcategory]|0|Subcategory|
-ID_TO_POS|16|0|Product|'Product'[Subcategory]|1|Subcategory|
-POS_TO_ID|24|0|Product|'Product'[Category]|0|Category|
-POS_TO_ID|16|0|Product|'Product'[Category]|1|Category|
-ID_TO_POS|24|0|Product|'Product'[Category]|0|Category|
-ID_TO_POS|16|0|Product|'Product'[Category]|1|Category|
-POS_TO_ID|1184|0|Product|'Product'[SKU]|0|SKU|
-POS_TO_ID|16|0|Product|'Product'[SKU]|1|SKU|
-ID_TO_POS|1184|0|Product|'Product'[SKU]|0|SKU|
-ID_TO_POS|16|0|Product|'Product'[SKU]|1|SKU|
-POS_TO_ID|485016|0|Sales Order|'Sales Order'[SalesOrderLineKey]|0|SalesOrderLineKey|
-POS_TO_ID|16|0|Sales Order|'Sales Order'[SalesOrderLineKey]|1|SalesOrderLineKey|
-ID_TO_POS|485016|0|Sales Order|'Sales Order'[SalesOrderLineKey]|0|SalesOrderLineKey|
-ID_TO_POS|16|0|Sales Order|'Sales Order'[SalesOrderLineKey]|1|SalesOrderLineKey|
-POS_TO_ID|125824|0|Sales Order|'Sales Order'[Sales Order]|0|Sales Order|
-POS_TO_ID|16|0|Sales Order|'Sales Order'[Sales Order]|1|Sales Order|
-ID_TO_POS|125824|0|Sales Order|'Sales Order'[Sales Order]|0|Sales Order|
-ID_TO_POS|16|0|Sales Order|'Sales Order'[Sales Order]|1|Sales Order|
-POS_TO_ID|485016|0|Sales Order|'Sales Order'[Sales Order Line]|0|Sales Order Line|
-POS_TO_ID|16|0|Sales Order|'Sales Order'[Sales Order Line]|1|Sales Order Line|
-ID_TO_POS|485016|0|Sales Order|'Sales Order'[Sales Order Line]|0|Sales Order Line|
-ID_TO_POS|16|0|Sales Order|'Sales Order'[Sales Order Line]|1|Sales Order Line|
-POS_TO_ID|16|0|Sales Order|'Sales Order'[Channel]|0|Channel|
-POS_TO_ID|16|0|Sales Order|'Sales Order'[Channel]|1|Channel|
-POS_TO_ID|8|0|Sales Order|'Sales Order'[Channel]|2|Channel|
-ID_TO_POS|16|0|Sales Order|'Sales Order'[Channel]|0|Channel|
-ID_TO_POS|16|0|Sales Order|'Sales Order'[Channel]|1|Channel|
-ID_TO_POS|8|0|Sales Order|'Sales Order'[Channel]|2|Channel|
-POS_TO_ID|485016|0|Sales|'Sales'[SalesOrderLineKey]|0|SalesOrderLineKey|
-POS_TO_ID|16|0|Sales|'Sales'[SalesOrderLineKey]|1|SalesOrderLineKey|
-ID_TO_POS|485016|0|Sales|'Sales'[SalesOrderLineKey]|0|SalesOrderLineKey|
-ID_TO_POS|16|0|Sales|'Sales'[SalesOrderLineKey]|1|SalesOrderLineKey|
-POS_TO_ID|2552|0|Sales|'Sales'[ResellerKey]|0|ResellerKey|
-POS_TO_ID|16|0|Sales|'Sales'[ResellerKey]|1|ResellerKey|
-ID_TO_POS|2552|0|Sales|'Sales'[ResellerKey]|0|ResellerKey|
-ID_TO_POS|16|0|Sales|'Sales'[ResellerKey]|1|ResellerKey|
-POS_TO_ID|73944|0|Sales|'Sales'[CustomerKey]|0|CustomerKey|
-POS_TO_ID|16|0|Sales|'Sales'[CustomerKey]|1|CustomerKey|
-ID_TO_POS|73944|0|Sales|'Sales'[CustomerKey]|0|CustomerKey|
-ID_TO_POS|16|0|Sales|'Sales'[CustomerKey]|1|CustomerKey|
-POS_TO_ID|1408|0|Sales|'Sales'[ProductKey]|0|ProductKey|
-POS_TO_ID|16|0|Sales|'Sales'[ProductKey]|1|ProductKey|
-ID_TO_POS|1408|0|Sales|'Sales'[ProductKey]|0|ProductKey|
-ID_TO_POS|16|0|Sales|'Sales'[ProductKey]|1|ProductKey|
-POS_TO_ID|4328|0|Sales|'Sales'[OrderDateKey]|0|OrderDateKey|
-POS_TO_ID|16|0|Sales|'Sales'[OrderDateKey]|1|OrderDateKey|
-ID_TO_POS|4328|0|Sales|'Sales'[OrderDateKey]|0|OrderDateKey|
-ID_TO_POS|16|0|Sales|'Sales'[OrderDateKey]|1|OrderDateKey|
-POS_TO_ID|4328|0|Sales|'Sales'[DueDateKey]|0|DueDateKey|
-POS_TO_ID|16|0|Sales|'Sales'[DueDateKey]|1|DueDateKey|
-ID_TO_POS|4328|0|Sales|'Sales'[DueDateKey]|0|DueDateKey|
-ID_TO_POS|16|0|Sales|'Sales'[DueDateKey]|1|DueDateKey|
-POS_TO_ID|4304|0|Sales|'Sales'[ShipDateKey]|0|ShipDateKey|
-POS_TO_ID|16|0|Sales|'Sales'[ShipDateKey]|1|ShipDateKey|
-ID_TO_POS|4304|0|Sales|'Sales'[ShipDateKey]|0|ShipDateKey|
-ID_TO_POS|16|0|Sales|'Sales'[ShipDateKey]|1|ShipDateKey|
-POS_TO_ID|48|0|Sales|'Sales'[SalesTerritoryKey]|0|SalesTerritoryKey|
-POS_TO_ID|16|0|Sales|'Sales'[SalesTerritoryKey]|1|SalesTerritoryKey|
-ID_TO_POS|48|0|Sales|'Sales'[SalesTerritoryKey]|0|SalesTerritoryKey|
-ID_TO_POS|16|0|Sales|'Sales'[SalesTerritoryKey]|1|SalesTerritoryKey|
-POS_TO_ID|168|0|Sales|'Sales'[Order Quantity]|0|Order Quantity|
-POS_TO_ID|16|0|Sales|'Sales'[Order Quantity]|1|Order Quantity|
-ID_TO_POS|168|0|Sales|'Sales'[Order Quantity]|0|Order Quantity|
-ID_TO_POS|16|0|Sales|'Sales'[Order Quantity]|1|Order Quantity|
-POS_TO_ID|1104|0|Sales|'Sales'[Unit Price]|0|Unit Price|
-POS_TO_ID|16|0|Sales|'Sales'[Unit Price]|1|Unit Price|
-ID_TO_POS|1104|0|Sales|'Sales'[Unit Price]|0|Unit Price|
-ID_TO_POS|16|0|Sales|'Sales'[Unit Price]|1|Unit Price|
-POS_TO_ID|5784|0|Sales|'Sales'[Extended Amount]|0|Extended Amount|
-POS_TO_ID|16|0|Sales|'Sales'[Extended Amount]|1|Extended Amount|
-ID_TO_POS|5784|0|Sales|'Sales'[Extended Amount]|0|Extended Amount|
-ID_TO_POS|16|0|Sales|'Sales'[Extended Amount]|1|Extended Amount|
-POS_TO_ID|504|0|Sales|'Sales'[Product Standard Cost]|0|Product Standard Cost|
-POS_TO_ID|16|0|Sales|'Sales'[Product Standard Cost]|1|Product Standard Cost|
-ID_TO_POS|504|0|Sales|'Sales'[Product Standard Cost]|0|Product Standard Cost|
-ID_TO_POS|16|0|Sales|'Sales'[Product Standard Cost]|1|Product Standard Cost|
-POS_TO_ID|5816|0|Sales|'Sales'[Total Product Cost]|0|Total Product Cost|
-POS_TO_ID|16|0|Sales|'Sales'[Total Product Cost]|1|Total Product Cost|
-ID_TO_POS|5816|0|Sales|'Sales'[Total Product Cost]|0|Total Product Cost|
-ID_TO_POS|16|0|Sales|'Sales'[Total Product Cost]|1|Total Product Cost|
-POS_TO_ID|5864|0|Sales|'Sales'[Sales Amount]|0|Sales Amount|
-POS_TO_ID|16|0|Sales|'Sales'[Sales Amount]|1|Sales Amount|
-ID_TO_POS|5864|0|Sales|'Sales'[Sales Amount]|0|Sales Amount|
-ID_TO_POS|16|0|Sales|'Sales'[Sales Amount]|1|Sales Amount|
-POS_TO_ID|40|0|Sales|'Sales'[Unit Price Discount Pct]|0|Unit Price Discount Pct|
-POS_TO_ID|16|0|Sales|'Sales'[Unit Price Discount Pct]|1|Unit Price Discount Pct|
-ID_TO_POS|40|0|Sales|'Sales'[Unit Price Discount Pct]|0|Unit Price Discount Pct|
-ID_TO_POS|16|0|Sales|'Sales'[Unit Price Discount Pct]|1|Unit Price Discount Pct|
-POS_TO_ID|2816|0|Reseller|'Reseller'[ResellerKey]|0|ResellerKey|
-POS_TO_ID|16|0|Reseller|'Reseller'[ResellerKey]|1|ResellerKey|
-ID_TO_POS|2816|0|Reseller|'Reseller'[ResellerKey]|0|ResellerKey|
-ID_TO_POS|16|0|Reseller|'Reseller'[ResellerKey]|1|ResellerKey|
-POS_TO_ID|24|0|Reseller|'Reseller'[Business Type]|0|Business Type|
-POS_TO_ID|16|0|Reseller|'Reseller'[Business Type]|1|Business Type|
-ID_TO_POS|24|0|Reseller|'Reseller'[Business Type]|0|Business Type|
-ID_TO_POS|16|0|Reseller|'Reseller'[Business Type]|1|Business Type|
-POS_TO_ID|2808|0|Reseller|'Reseller'[Reseller]|0|Reseller|
-POS_TO_ID|16|0|Reseller|'Reseller'[Reseller]|1|Reseller|
-ID_TO_POS|2808|0|Reseller|'Reseller'[Reseller]|0|Reseller|
-ID_TO_POS|16|0|Reseller|'Reseller'[Reseller]|1|Reseller|
-POS_TO_ID|1816|0|Reseller|'Reseller'[City]|0|City|
-POS_TO_ID|16|0|Reseller|'Reseller'[City]|1|City|
-ID_TO_POS|1816|0|Reseller|'Reseller'[City]|0|City|
-ID_TO_POS|16|0|Reseller|'Reseller'[City]|1|City|
-POS_TO_ID|272|0|Reseller|'Reseller'[State-Province]|0|State-Province|
-POS_TO_ID|16|0|Reseller|'Reseller'[State-Province]|1|State-Province|
-ID_TO_POS|272|0|Reseller|'Reseller'[State-Province]|0|State-Province|
-ID_TO_POS|16|0|Reseller|'Reseller'[State-Province]|1|State-Province|
-POS_TO_ID|32|0|Reseller|'Reseller'[Country-Region]|0|Country-Region|
-POS_TO_ID|16|0|Reseller|'Reseller'[Country-Region]|1|Country-Region|
-ID_TO_POS|32|0|Reseller|'Reseller'[Country-Region]|0|Country-Region|
-ID_TO_POS|16|0|Reseller|'Reseller'[Country-Region]|1|Country-Region|
-POS_TO_ID|2016|0|Reseller|'Reseller'[Postal Code]|0|Postal Code|
-POS_TO_ID|16|0|Reseller|'Reseller'[Postal Code]|1|Postal Code|
-ID_TO_POS|2016|0|Reseller|'Reseller'[Postal Code]|0|Postal Code|
-ID_TO_POS|16|0|Reseller|'Reseller'[Postal Code]|1|Postal Code|
-POS_TO_ID|2816|0|Reseller|'Reseller'[Reseller ID]|0|Reseller ID|
-POS_TO_ID|16|0|Reseller|'Reseller'[Reseller ID]|1|Reseller ID|
-ID_TO_POS|2816|0|Reseller|'Reseller'[Reseller ID]|0|Reseller ID|
-ID_TO_POS|16|0|Reseller|'Reseller'[Reseller ID]|1|Reseller ID|
-
-## Tables
-RelationshipsSize|IsHidden|UserHierarchiesSize|IsReferenced|TableName|Description|TableSize|ReferentialIntegrityViolationCount|TableExpression|RowsCount|ColumnsSize
----|---|---|---|---|---|---|---|---|---|---
-0|false|306720|true|Customer||2611410|0||18485|2304690|
-0|false|24480|true|Date|Filters the Sales table using sales order date|306557|1||1461|282077|
-0|false|384|true|Sales Territory||54156|0||11|53772|
-0|false|7296|true|Product||166630|0||397|159334|
-323352|false|2443360|true|Sales Order||13326964|0||121253|10560252|
-366808|false|0|true|Sales||6775568|0||121253|6408760|
-0|false|28096|true|Reseller||261329|0||702|233233|
-
-## Relationships
-SecurityFilteringBehavior|InvalidRows|FromCardinality|CrossFilteringBehavior|MissingKeys|RelationshipType|JoinOnDateBehavior|RelyOnReferentialIntegrity|RelationshipName|UsedSizeTo|FromFullColumnName|ToFullColumnName|UsedSize|IsActive|OneToManyRatio|ToCardinalityType|ToCardinality|UsedSizeFrom|FromCardinalityType|ToTableName|FromTableName
----|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
-OneDirection|0|10|OneDirection|0|SingleColumn|DateAndTime|false|c4007daa-09a5-455d-ac3b-d8338a0e4468|0|'Sales'[SalesTerritoryKey]|'Sales Territory'[SalesTerritoryKey]|8|true|9.071940488070398E-05|One|11|8|Many|Sales Territory|Sales|
-OneDirection|0|350|OneDirection|0|SingleColumn|DateAndTime|false|fe440ad4-cbfb-4a8c-9b24-4d02f59a009f|0|'Sales'[ProductKey]|'Product'[ProductKey]|408|true|0.003274145794330862|One|397|408|Many|Product|Sales|
-OneDirection|0|121253|BothDirections|0|SingleColumn|DateAndTime|false|ddc90e12-74d0-451e-87b6-3bc8d773bf07|323352|'Sales'[SalesOrderLineKey]|'Sales Order'[SalesOrderLineKey]|646704|true|1|One|121253|323352|One|Sales Order|Sales|
-OneDirection|0|18485|OneDirection|0|SingleColumn|DateAndTime|false|3921d624-3ba4-40ca-b78d-61fe4ebc7659|0|'Sales'[CustomerKey]|'Customer'[CustomerKey]|36984|true|0.15244983629271028|One|18485|36984|Many|Customer|Sales|
-OneDirection|0|1081|OneDirection|0|SingleColumn|DateAndTime|false|ad03fb2c-8d99-47eb-bdab-0e52920c9d3f|0|'Sales'[OrderDateKey]|'Date'[DateKey]|1736|true|0.012049186411882592|One|1461|1736|Many|Date|Sales|
-OneDirection|0|1081|OneDirection|0|SingleColumn|DateAndTime|false|a390c257-6a75-4c82-aab5-270f564d26b0|0|'Sales'[DueDateKey]|'Date'[DateKey]|1736|false|0.012049186411882592|One|1461|1736|Many|Date|Sales|
-OneDirection|2113|1075|OneDirection|1|SingleColumn|DateAndTime|false|fcf11ed1-afec-495f-8897-4461f7a9d501|0|'Sales'[ShipDateKey]|'Date'[DateKey]|1728|false|0.012049186411882592|One|1461|1728|Many|Date|Sales|
-OneDirection|0|636|OneDirection|0|SingleColumn|DateAndTime|false|f72f8f53-10b5-4d0a-82ea-19e584697a64|0|'Sales'[ResellerKey]|'Reseller'[ResellerKey]|856|true|0.0057895474751140175|One|702|856|Many|Reseller|Sales|
-
-## Measures
+## ColumnsSegments
+SegmentRows|TablePartitionNumber|SegmentNumber|CompressionType|ColumnName|VertipaqState|FullColumnName|BookmarkBitsCount|BitsCount|TableName|PartitionName|UsedSize
+---|---|---|---|---|---|---|---|---|---|---|---
+1173|0|0|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|SKIPPED|'Returns'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|0|Returns|Returns-d6656c76-60d9-480d-bcd3-57be4532a39f|0|
+1173|0|0|NOSPLIT|Returned|COMPLETED|'Returns'[Returned]|1|1|Returns|Returns-d6656c76-60d9-480d-bcd3-57be4532a39f|8|
+1173|0|0|NOSPLIT|Order ID|COMPLETED|'Returns'[Order ID]|0|12|Returns|Returns-d6656c76-60d9-480d-bcd3-57be4532a39f|1880|
+1173|0|0|NOSPLIT|Market|COMPLETED|'Returns'[Market]|4|2|Returns|Returns-d6656c76-60d9-480d-bcd3-57be4532a39f|8|
+1|0|0|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|SKIPPED|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0-a9d755a1-6cd5-4985-aac3-8f06ad7008b0|0|
+1|0|0|NOSPLIT|Date|COMPLETED|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Date]|0|1|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0-a9d755a1-6cd5-4985-aac3-8f06ad7008b0|8|
+1|0|0|NOSPLIT|Year|SKIPPED|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Year]|0|1|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0-a9d755a1-6cd5-4985-aac3-8f06ad7008b0|8|
+1|0|0|NOSPLIT|MonthNo|SKIPPED|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[MonthNo]|0|1|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0-a9d755a1-6cd5-4985-aac3-8f06ad7008b0|8|
+1|0|0|NOSPLIT|Month|SKIPPED|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|0|1|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0-a9d755a1-6cd5-4985-aac3-8f06ad7008b0|8|
+1|0|0|NOSPLIT|QuarterNo|SKIPPED|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[QuarterNo]|0|1|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0-a9d755a1-6cd5-4985-aac3-8f06ad7008b0|8|
+1|0|0|NOSPLIT|Quarter|SKIPPED|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|0|1|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0-a9d755a1-6cd5-4985-aac3-8f06ad7008b0|8|
+1|0|0|NOSPLIT|Day|SKIPPED|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Day]|0|1|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0-a9d755a1-6cd5-4985-aac3-8f06ad7008b0|8|
+51290|0|0|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|SKIPPED|'Orders'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|0|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|0|
+51290|0|0|NOSPLIT|Category|COMPLETED|'Orders'[Category]|53|2|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|3048|
+51290|0|0|NOSPLIT|City|COMPLETED|'Orders'[City]|29|12|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|72896|
+51290|0|0|NOSPLIT|Country|COMPLETED|'Orders'[Country]|68|8|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|26256|
+51290|0|0|NOSPLIT|Customer Name|COMPLETED|'Orders'[Customer Name]|0|10|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|68392|
+51290|0|0|NOSPLIT|Market|COMPLETED|'Orders'[Market]|97|2|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|2840|
+51290|0|0|NOSPLIT|Customer ID|COMPLETED|'Orders'[Customer ID]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Order Date|COMPLETED|'Orders'[Order Date]|0|12|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|82072|
+51290|0|0|NOSPLIT|Year (OrderDate)|COMPLETED|'Orders'[Year (OrderDate)]|28|2|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|12184|
+51290|0|0|NOSPLIT|Order ID|COMPLETED|'Orders'[Order ID]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Order Priority|COMPLETED|'Orders'[Order Priority]|32|2|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|6472|
+51290|0|0|NOSPLIT|Product ID|COMPLETED|'Orders'[Product ID]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Product Name|COMPLETED|'Orders'[Product Name]|0|12|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|82072|
+51290|0|0|NOSPLIT|Region|COMPLETED|'Orders'[Region]|119|4|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|9024|
+51290|0|0|NOSPLIT|Row ID|COMPLETED|'Orders'[Row ID]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Segment|COMPLETED|'Orders'[Segment]|87|2|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|8784|
+51290|0|0|NOSPLIT|Ship Date|COMPLETED|'Orders'[Ship Date]|0|12|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|82072|
+51290|0|0|NOSPLIT|Ship Mode|COMPLETED|'Orders'[Ship Mode]|48|2|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|5656|
+51290|0|0|NOSPLIT|State|COMPLETED|'Orders'[State]|54|12|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|61080|
+51290|0|0|NOSPLIT|Sub-Category|COMPLETED|'Orders'[Sub-Category]|52|5|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|24928|
+51290|0|0|NOSPLIT|Discount|COMPLETED|'Orders'[Discount]|44|5|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|6568|
+51290|0|0|NOSPLIT|Profit|COMPLETED|'Orders'[Profit]|0|32|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|205168|
+51290|0|0|NOSPLIT|Quantity|COMPLETED|'Orders'[Quantity]|40|4|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|21240|
+51290|0|0|NOSPLIT|Sales|COMPLETED|'Orders'[Sales]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Shipping Cost|COMPLETED|'Orders'[Shipping Cost]|0|32|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|205168|
+51290|0|0|NOSPLIT|Order Date - Copy|COMPLETED|'Orders'[Order Date - Copy]|0|12|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|82072|
+51290|0|0|NOSPLIT|Modulo|COMPLETED|'Orders'[Modulo]|77|1|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|5688|
+51290|0|0|NOSPLIT|Target Sales|COMPLETED|'Orders'[Target Sales]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Poor|COMPLETED|'Orders'[Poor]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Satisfactory|COMPLETED|'Orders'[Satisfactory]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Good|COMPLETED|'Orders'[Good]|0|16|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|102584|
+51290|0|0|NOSPLIT|Sales w/o decimal|COMPLETED|'Orders'[Sales w/o decimal]|0|12|Orders|Orders-58142426-99d8-477b-a42a-ae35be6057a5|82072|
+1827|0|0|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|SKIPPED|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|0|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881-a3f68e03-39ec-4ea2-9c12-30c2cae00cbd|0|
+1827|0|0|NOSPLIT|Date|SKIPPED|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Date]|0|12|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881-a3f68e03-39ec-4ea2-9c12-30c2cae00cbd|2928|
+1827|0|0|NOSPLIT|Year|SKIPPED|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Year]|5|3|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881-a3f68e03-39ec-4ea2-9c12-30c2cae00cbd|8|
+1827|0|0|NOSPLIT|MonthNo|SKIPPED|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[MonthNo]|0|4|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881-a3f68e03-39ec-4ea2-9c12-30c2cae00cbd|920|
+1827|0|0|NOSPLIT|Month|SKIPPED|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Month]|0|4|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881-a3f68e03-39ec-4ea2-9c12-30c2cae00cbd|920|
+1827|0|0|NOSPLIT|QuarterNo|SKIPPED|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[QuarterNo]|20|2|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881-a3f68e03-39ec-4ea2-9c12-30c2cae00cbd|8|
+1827|0|0|NOSPLIT|Quarter|SKIPPED|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Quarter]|20|2|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881-a3f68e03-39ec-4ea2-9c12-30c2cae00cbd|8|
+1827|0|0|NOSPLIT|Day|SKIPPED|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Day]|0|5|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881-a3f68e03-39ec-4ea2-9c12-30c2cae00cbd|1224|
+13|0|0|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|SKIPPED|'People'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|0|People|People-1bbf40dd-f01f-415b-9cff-961caea04ea5|0|
+13|0|0|NOSPLIT|Person|COMPLETED|'People'[Person]|0|4|People|People-1bbf40dd-f01f-415b-9cff-961caea04ea5|8|
+13|0|0|NOSPLIT|Region|COMPLETED|'People'[Region]|0|4|People|People-1bbf40dd-f01f-415b-9cff-961caea04ea5|8|
+1826|0|0|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|SKIPPED|'Date Table'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|0|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|0|
+1826|0|0|NOSPLIT|Date|COMPLETED|'Date Table'[Date]|0|12|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|2928|
+1826|0|0|NOSPLIT|Year|COMPLETED|'Date Table'[Year]|7|3|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|8|
+1826|0|0|NOSPLIT|QuarterOfYear|COMPLETED|'Date Table'[QuarterOfYear]|17|2|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|8|
+1826|0|0|NOSPLIT|MonthOfYear|COMPLETED|'Date Table'[MonthOfYear]|0|4|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|920|
+1826|0|0|NOSPLIT|DayOfMonth|COMPLETED|'Date Table'[DayOfMonth]|0|5|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|1224|
+1826|0|0|NOSPLIT|DateInt|COMPLETED|'Date Table'[DateInt]|0|16|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|3656|
+1826|0|0|NOSPLIT|MonthName|COMPLETED|'Date Table'[MonthName]|0|4|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|920|
+1826|0|0|NOSPLIT|MonthInCalendar|COMPLETED|'Date Table'[MonthInCalendar]|0|6|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|1464|
+1826|0|0|NOSPLIT|QuarterInCalendar|COMPLETED|'Date Table'[QuarterInCalendar]|20|5|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|8|
+1826|0|0|NOSPLIT|DayInWeek|COMPLETED|'Date Table'[DayInWeek]|0|3|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|696|
+1826|0|0|NOSPLIT|DayOfWeekName|COMPLETED|'Date Table'[DayOfWeekName]|0|3|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|696|
+1826|0|0|NOSPLIT|WeekEnding|COMPLETED|'Date Table'[WeekEnding]|0|9|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|2088|
+1826|0|0|NOSPLIT|Week Number|COMPLETED|'Date Table'[Week Number]|0|6|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|1464|
+1826|0|0|NOSPLIT|MonthnYear|COMPLETED|'Date Table'[MonthnYear]|0|6|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|1464|
+1826|0|0|NOSPLIT|QuarternYear|COMPLETED|'Date Table'[QuarternYear]|20|5|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|8|
+1826|0|0|NOSPLIT|ShortYear|COMPLETED|'Date Table'[ShortYear]|7|3|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|8|
+1826|0|0|NOSPLIT|FY|COMPLETED|'Date Table'[FY]|9|3|Date Table|Date Table-059c706a-1241-4bdf-a385-6f50971580b0|8|
+1827|0|0|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|SKIPPED|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|0|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513-332101a0-c209-4490-8616-077a5e2a38bb|0|
+1827|0|0|NOSPLIT|Date|COMPLETED|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Date]|0|12|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513-332101a0-c209-4490-8616-077a5e2a38bb|2928|
+1827|0|0|NOSPLIT|Year|SKIPPED|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Year]|5|3|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513-332101a0-c209-4490-8616-077a5e2a38bb|8|
+1827|0|0|NOSPLIT|MonthNo|SKIPPED|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[MonthNo]|0|4|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513-332101a0-c209-4490-8616-077a5e2a38bb|920|
+1827|0|0|NOSPLIT|Month|SKIPPED|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Month]|0|4|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513-332101a0-c209-4490-8616-077a5e2a38bb|920|
+1827|0|0|NOSPLIT|QuarterNo|SKIPPED|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[QuarterNo]|20|2|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513-332101a0-c209-4490-8616-077a5e2a38bb|8|
+1827|0|0|NOSPLIT|Quarter|SKIPPED|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Quarter]|20|2|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513-332101a0-c209-4490-8616-077a5e2a38bb|8|
+1827|0|0|NOSPLIT|Day|SKIPPED|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Day]|0|5|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513-332101a0-c209-4490-8616-077a5e2a38bb|1224|
+2192|0|0|C123|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|SKIPPED|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|0|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829-eb59523c-549c-48c1-9552-61bb5ffe12a8|0|
+2192|0|0|NOSPLIT|Date|COMPLETED|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Date]|0|12|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829-eb59523c-549c-48c1-9552-61bb5ffe12a8|3512|
+2192|0|0|NOSPLIT|Year|SKIPPED|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Year]|6|3|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829-eb59523c-549c-48c1-9552-61bb5ffe12a8|8|
+2192|0|0|NOSPLIT|MonthNo|SKIPPED|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[MonthNo]|0|4|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829-eb59523c-549c-48c1-9552-61bb5ffe12a8|1104|
+2192|0|0|NOSPLIT|Month|SKIPPED|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Month]|0|4|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829-eb59523c-549c-48c1-9552-61bb5ffe12a8|1104|
+2192|0|0|NOSPLIT|QuarterNo|SKIPPED|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[QuarterNo]|24|2|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829-eb59523c-549c-48c1-9552-61bb5ffe12a8|8|
+2192|0|0|NOSPLIT|Quarter|SKIPPED|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Quarter]|24|2|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829-eb59523c-549c-48c1-9552-61bb5ffe12a8|8|
+2192|0|0|NOSPLIT|Day|SKIPPED|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Day]|0|5|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829-eb59523c-549c-48c1-9552-61bb5ffe12a8|1464|
 
 ## TablePermissions
+
+## Relationships
+RelationshipName|InvalidRows|JoinOnDateBehavior|ToCardinality|FromCardinalityType|UsedSizeFrom|FromTableName|CrossFilteringBehavior|RelationshipType|UsedSizeTo|FromCardinality|UsedSize|MissingKeys|ToTableName|FromFullColumnName|SecurityFilteringBehavior|IsActive|ToFullColumnName|ToCardinalityType|OneToManyRatio|RelyOnReferentialIntegrity
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
+0eb7121a-1d1e-4df9-8afa-ef995a3ecb7e|0|DatePartOnly|1827|Many|2352|Orders|OneDirection|SingleColumn|0|1463|2352|0|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|'Orders'[Ship Date]|OneDirection|true|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Date]|One|0.035620978748294015|false|
+07ec809f-7d5a-4bd0-98e5-4921436a7000|5029|DateAndTime|13|Many|16|Orders|OneDirection|SingleColumn|0|13|16|1|People|'Orders'[Region]|OneDirection|true|'People'[Region]|One|0.00025346071358939363|false|
+9f95c77c-fd7c-4eed-8f19-0fe4461f784a|0|DateAndTime|1172|Many|0|Orders|OneDirection|SingleColumn|0|25035|0|0|Returns|'Orders'[Order ID]|OneDirection|true|'Returns'[Order ID]|Many|0.022850458178982257|false|
+93cec081-8dfc-480d-acb8-61e60a25e963|0|DatePartOnly|1827|Many|2928|Date Table|OneDirection|SingleColumn|0|1826|2928|0|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|'Date Table'[Date]|OneDirection|true|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Date]|One|1.0005476451259583|false|
+9cf6421a-3d01-42c3-b154-f38da06ee1c0|0|DatePartOnly|2192|Many|432|Date Table|OneDirection|SingleColumn|0|262|432|0|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|'Date Table'[WeekEnding]|OneDirection|true|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Date]|One|1.2004381161007667|false|
+f7ff5666-6b52-4e01-9729-34cf2051cc1a|0|DateAndTime|1826|Many|2296|Orders|OneDirection|SingleColumn|0|1429|2296|0|Date Table|'Orders'[Order Date]|OneDirection|true|'Date Table'[Date]|One|0.0356014817703256|false|
 
 ## CalculationItems
 
 ## UserHierarchies
-Levels|IsHidden|TableName|UsedSize|UserHierarchyName
+IsHidden|UserHierarchyName|TableName|UsedSize|Levels
 ---|---|---|---|---
-Country-Region, State-Province, City, Postal Code, Customer|false|Customer|306720|Geography|
-Fiscal Year, Fiscal Quarter, Month, Full Date|false|Date|24480|Fiscal|
-Group, Country, Region|false|Sales Territory|384|Sales Territories|
-Category, Subcategory, Model, Product|false|Product|7296|Products|
-Sales Order, Sales Order Line|false|Sales Order|2443360|Sales Orders|
-Country-Region, State-Province, City, Postal Code, Reseller|false|Reseller|28096|Geography|
+false|Date Hierarchy|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|96|Year, Quarter, Month, Day|
+false|Date Hierarchy|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|30624|Year, Quarter, Month, Day|
+false|Date Hierarchy|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|30624|Year, Quarter, Month, Day|
+false|Date Hierarchy|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|36736|Year, Quarter, Month, Day|
 
 ## Columns
-IsUnique|ColumnExpression|TableName|Encoding|IsKey|IsRowNumber|HierarchiesSize|TotalSize|ColumnType|FormatString|EncodingHint|IsReferenced|FullColumnName|IsNullable|State|ColumnName|IsHidden|ColumnCardinality|DataType|Selectivity|DictionarySize|SortByColumnName|KeepUniqueRows|DisplayFolder|DataSize|Description|IsAvailableInMDX
+HierarchiesSize|DataSize|EncodingHint|Encoding|ColumnCardinality|IsKey|IsUnique|FullColumnName|IsNullable|TotalSize|DisplayFolder|ColumnExpression|SortByColumnName|Description|IsAvailableInMDX|Selectivity|DictionarySize|ColumnType|IsHidden|State|DataType|TableName|ColumnName|FormatString|IsRowNumber|KeepUniqueRows|IsReferenced
 ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
-true||Customer|VALUE|true|true|0|120|RowNumber||Default|false|'Customer'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|Ready|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|true|0|Int64||120||false||0||true|
-false||Customer|HASH|false|false|147920|783452|Data|0|Default|true|'Customer'[CustomerKey]|true|Ready|CustomerKey|true|18485|Int64|1|598556||false||36976||true|
-false||Customer|HASH|false|false|147920|674873|Data||Default|false|'Customer'[Customer ID]|true|Ready|Customer ID|false|18485|String|1|489977||false||36976||true|
-false||Customer|HASH|false|false|147248|744599|Data||Default|true|'Customer'[Customer]|true|Ready|Customer|false|18401|String|0.9954557749526644|560375||false||36976||true|
-false||Customer|HASH|false|false|2208|31900|Data||Default|true|'Customer'[City]|true|Ready|City|false|270|String|0.014606437652150393|24684||false||5008||true|
-false||Customer|HASH|false|false|480|19462|Data||Default|true|'Customer'[State-Province]|true|Ready|State-Province|false|54|String|0.0029212875304300786|18638||false||344||true|
-false||Customer|HASH|false|false|96|17388|Data||Default|true|'Customer'[Country-Region]|true|Ready|Country-Region|false|7|String|0.00037868542061130644|17268||false||24||true|
-false||Customer|HASH|false|false|2640|32896|Data||Default|true|'Customer'[Postal Code]|true|Ready|Postal Code|false|324|String|0.01752772518258047|23664||false||6592||true|
-true||Date|VALUE|false|true|0|120|RowNumber||Default|false|'Date'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|Ready|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|true|0|Int64||120||false||0||true|
-false||Date|HASH|false|false|11728|53100|Data|0|Default|true|'Date'[DateKey]|true|Ready|DateKey|true|1461|Int64|1|39028||false||2344||true|
-false||Date|HASH|true|false|11728|100952|Data|dd/mm/yyyy|Default|false|'Date'[Date]|true|Ready|Date|false|1461|DateTime|1|86880||false||2344||true|
-false||Date|HASH|false|false|80|17232|Data||Default|true|'Date'[Fiscal Year]|true|Ready|Fiscal Year|false|4|String|0.0027378507871321013|17144||false||8||true|
-false||Date|HASH|false|false|176|17688|Data||Default|true|'Date'[Fiscal Quarter]|true|Ready|Fiscal Quarter|false|16|String|0.010951403148528405|17504||false||8||true|
-false||Date|HASH|false|false|432|19912|Data||Default|true|'Date'[Month]|true|Ready|Month|false|48|String|0.03285420944558522|18304|MonthKey|false||1176||true|
-false||Date|HASH|false|false|432|3152|Data|0|Default|true|'Date'[MonthKey]|true|Ready|MonthKey|true|48|Int64|0.03285420944558522|1544||false||1176||true|
-false||Date|HASH|false|false|11728|69921|Data||Default|true|'Date'[Full Date]|true|Ready|Full Date|false|1461|String|1|55849||false||2344||true|
-true||Sales Territory|VALUE|true|true|0|120|RowNumber||Default|false|'Sales Territory'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|Ready|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|true|0|Int64||120||false||0||true|
-false||Sales Territory|HASH|false|false|128|1532|Data|0|Default|true|'Sales Territory'[SalesTerritoryKey]|true|Ready|SalesTerritoryKey|true|11|Int64|1|1396||false||8||true|
-false||Sales Territory|HASH|false|false|128|17496|Data||Default|true|'Sales Territory'[Region]|true|Ready|Region|false|11|String|1|17360||false||8||true|
-false||Sales Territory|HASH|false|false|96|17364|Data||Default|true|'Sales Territory'[Country]|true|Ready|Country|false|7|String|0.6363636363636364|17260||false||8||true|
-false||Sales Territory|HASH|false|false|80|17260|Data||Default|true|'Sales Territory'[Group]|true|Ready|Group|false|4|String|0.36363636363636365|17172||false||8||true|
-true||Product|VALUE|true|true|0|120|RowNumber||Default|false|'Product'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|Ready|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|true|0|Int64||120||false||0||true|
-false||Product|HASH|false|false|3216|14060|Data|0|Default|true|'Product'[ProductKey]|true|Ready|ProductKey|true|397|Int64|1|10388||false||456||true|
-false||Product|HASH|false|false|2400|35516|Data||Default|true|'Product'[Product]|true|Ready|Product|false|295|String|0.743073047858942|32660||false||456||true|
-false||Product|VALUE|false|false|560|2272|Data|\$#,0.00;(\$#,0.00);\$#,0.00|Default|false|'Product'[Standard Cost]|true|Ready|Standard Cost|false|134|Decimal|0.33753148614609574|120||false||1592||true|
-false||Product|HASH|false|false|128|17524|Data||Default|false|'Product'[Color]|true|Ready|Color|false|10|String|0.02518891687657431|17260||false||136||true|
-false||Product|VALUE|false|false|504|2216|Data|\$#,0.00;(\$#,0.00);\$#,0.00|Default|false|'Product'[List Price]|true|Ready|List Price|false|120|Decimal|0.3022670025188917|120||false||1592||true|
-false||Product|HASH|false|false|992|23340|Data||Default|true|'Product'[Model]|true|Ready|Model|false|119|String|0.29974811083123426|21988||false||360||true|
-false||Product|HASH|false|false|336|18740|Data||Default|true|'Product'[Subcategory]|true|Ready|Subcategory|false|37|String|0.09319899244332494|18084||false||320||true|
-false||Product|HASH|false|false|80|17348|Data||Default|true|'Product'[Category]|true|Ready|Category|false|4|String|0.010075566750629723|17164||false||104||true|
-false||Product|HASH|false|false|2400|28198|Data||Default|false|'Product'[SKU]|true|Ready|SKU|false|295|String|0.743073047858942|25342||false||456|Stock-keeping unit|true|
-true||Sales Order|VALUE|true|true|0|120|RowNumber||Default|false|'Sales Order'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|Ready|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|true|0|Int64||120||false||0||true|
-false||Sales Order|HASH|false|false|970064|4101996|Data|0|Default|true|'Sales Order'[SalesOrderLineKey]|true|Ready|SalesOrderLineKey|true|121253|Int64|1|2808588||false||323344||true|
-false||Sales Order|HASH|false|false|251680|1367025|Data||Default|true|'Sales Order'[Sales Order]|true|Ready|Sales Order|false|31455|String|0.2594162618656858|875113||false||240232||true|
-false||Sales Order|HASH|false|false|970064|5073915|Data||Default|true|'Sales Order'[Sales Order Line]|true|Ready|Sales Order Line|false|121253|String|1|3780507|SalesOrderLineKey|false||323344||true|
-false||Sales Order|HASH|false|false|80|17196|Data||Default|false|'Sales Order'[Channel]|true|Ready|Channel|false|2|String|1.6494437251037086E-05|17108||false||8||true|
-true||Sales|VALUE|true|true|0|120|RowNumber||Default|false|'Sales'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|Ready|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|true|0|Int64||120||false||0||true|
-false||Sales|HASH|false|false|970064|4101996|Data|0|Default|true|'Sales'[SalesOrderLineKey]|true|Ready|SalesOrderLineKey|true|121253|Int64|1|2808588||false||323344||true|
-false||Sales|HASH|false|false|5136|97552|Data|0|Default|true|'Sales'[ResellerKey]|true|Ready|ResellerKey|true|636|Int64|0.005245231045829794|19256||false||73160||true|
-false||Sales|HASH|false|false|147920|867276|Data|0|Default|true|'Sales'[CustomerKey]|true|Ready|CustomerKey|true|18485|Int64|0.15244983629271028|598556||false||120800||true|
-false||Sales|HASH|false|false|2848|99688|Data|0|Default|true|'Sales'[ProductKey]|true|Ready|ProductKey|true|350|Int64|0.00288652651893149|10096||false||86744||true|
-false||Sales|HASH|false|false|8688|224084|Data|0|Default|true|'Sales'[OrderDateKey]|true|Ready|OrderDateKey|true|1081|Int64|0.008915243334185545|21388||false||194008||true|
-false||Sales|HASH|false|false|8688|224092|Data|0|Default|true|'Sales'[DueDateKey]|true|Ready|DueDateKey|true|1081|Int64|0.008915243334185545|21396||false||194008||true|
-false||Sales|HASH|false|false|8640|224008|Data|0|Default|true|'Sales'[ShipDateKey]|true|Ready|ShipDateKey|true|1075|Int64|0.008865760022432435|21360||false||194008||true|
-false||Sales|HASH|false|false|128|3984|Data|0|Default|true|'Sales'[SalesTerritoryKey]|true|Ready|SalesTerritoryKey|true|10|Int64|8.247218625518543E-05|1392||false||2464||true|
-false||Sales|HASH|false|false|368|2780|Data|#,0|Default|false|'Sales'[Order Quantity]|true|Ready|Order Quantity|false|41|Int64|0.0003381359636462603|1516||false||896||true|
-false||Sales|HASH|false|false|2240|72748|Data|\$#,0.00;(\$#,0.00);\$#,0.00|Default|false|'Sales'[Unit Price]|true|Ready|Unit Price|false|275|Decimal|0.0022679851220175997|5580||false||64928||true|
-false||Sales|HASH|false|false|11600|142728|Data|\$#,0.00;(\$#,0.00);\$#,0.00|Default|false|'Sales'[Extended Amount]|true|Ready|Extended Amount|false|1444|Decimal|0.011908983695248777|38952||false||92176||true|
-false||Sales|HASH|false|false|1040|56508|Data|\$#,0.00;(\$#,0.00);\$#,0.00|Default|false|'Sales'[Product Standard Cost]|true|Ready|Product Standard Cost|false|125|Decimal|0.001030902328189818|2932||false||52536||true|
-false||Sales|HASH|false|false|11664|146556|Data|\$#,0.00;(\$#,0.00);\$#,0.00|Default|false|'Sales'[Total Product Cost]|true|Ready|Total Product Cost|false|1453|Decimal|0.011983208662878444|39052||false||95840||true|
-false||Sales|HASH|false|false|11760|143096|Data|\$#,0.00;(\$#,0.00);\$#,0.00|Default|false|'Sales'[Sales Amount]|true|Ready|Sales Amount|false|1464|Decimal|0.012073928067759148|39160||false||92176||true|
-false||Sales|HASH|false|false|112|1544|Data|0.00%;-0.00%;0.00%|Default|false|'Sales'[Unit Price Discount Pct]|true|Ready|Unit Price Discount Pct|false|9|Double|7.422496762966689E-05|1360||false||72||true|
-true||Reseller|VALUE|true|true|0|120|RowNumber||Default|false|'Reseller'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|Ready|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|true|0|Int64||120||false||0||true|
-false||Reseller|HASH|false|false|5664|26128|Data|0|Default|true|'Reseller'[ResellerKey]|true|Ready|ResellerKey|true|702|Int64|1|19520||false||944||true|
-false||Reseller|HASH|false|false|80|17480|Data||Default|false|'Reseller'[Business Type]|true|Ready|Business Type|false|4|String|0.005698005698005698|17224||false||176||true|
-false||Reseller|HASH|false|false|5648|41099|Data||Default|true|'Reseller'[Reseller]|true|Ready|Reseller|false|700|String|0.9971509971509972|34507||false||944||true|
-false||Reseller|HASH|false|false|3664|33882|Data||Default|true|'Reseller'[City]|true|Ready|City|false|452|String|0.6438746438746439|29410||false||808||true|
-false||Reseller|HASH|false|false|576|20090|Data||Default|true|'Reseller'[State-Province]|true|Ready|State-Province|false|66|String|0.09401709401709402|18954||false||560||true|
-false||Reseller|HASH|false|false|96|17428|Data||Default|true|'Reseller'[Country-Region]|true|Ready|Country-Region|false|7|String|0.009971509971509971|17268||false||64||true|
-false||Reseller|HASH|false|false|4064|32270|Data||Default|true|'Reseller'[Postal Code]|true|Ready|Postal Code|false|502|String|0.7150997150997151|27398||false||808||true|
-false||Reseller|HASH|false|false|5664|44736|Data||Default|false|'Reseller'[Reseller ID]|true|Ready|Reseller ID|false|702|String|1|38128||false||944||true|
+0|0|Default|VALUE|0|true|true|'Returns'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|120|||||true||120|RowNumber|true|Ready|Int64|Returns|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true|false|false|
+64|8|Default|HASH|1|false|false|'Returns'[Returned]|true|17144|||||true|0.0008525149190110827|17072|Data|false|Ready|String|Returns|Returned||false|false|false|
+9424|1880|Default|HASH|1172|false|false|'Returns'[Order ID]|true|48139|||||true|0.9991474850809889|36835|Data|false|Ready|String|Returns|Order ID||false|false|true|
+80|8|Default|HASH|4|false|false|'Returns'[Market]|true|17218|||||true|0.0034100596760443308|17130|Data|false|Ready|String|Returns|Market||false|false|false|
+0|0|Default|VALUE|0|true|true|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|120|||||true||120|RowNumber|true|Ready|Int64|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true|false|false|
+32|8|Default|VALUE|1|false|false|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Date]|true|160|||||true|1|120|CalculatedTableColumn|true|Ready|DateTime|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Date||false|false|true|
+32|8|Default|VALUE|1|false|false|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Year]|true|160||YEAR([Date])|||true|1|120|Calculated|true|Ready|Int64|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Year||false|false|true|
+32|8|Default|VALUE|1|false|false|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[MonthNo]|true|160||MONTH([Date])|||true|1|120|Calculated|true|Ready|Int64|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|MonthNo||false|false|true|
+64|8|Default|HASH|1|false|false|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|true|17152||FORMAT([Date], "MMMM")|MonthNo||true|1|17080|Calculated|true|Ready|String|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month||false|false|true|
+32|8|Default|VALUE|1|false|false|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[QuarterNo]|true|160||INT(([MonthNo] + 2) / 3)|||true|1|120|Calculated|true|Ready|Int64|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|QuarterNo||false|false|true|
+64|8|Default|HASH|1|false|false|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|true|17148||"Qtr " & [QuarterNo]|QuarterNo||true|1|17076|Calculated|true|Ready|String|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter||false|false|true|
+32|8|Default|VALUE|1|false|false|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Day]|true|160||DAY([Date])|||true|1|120|Calculated|true|Ready|Int64|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Day||false|false|true|
+0|0|Default|VALUE|0|true|true|'Orders'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|120|||||true||120|RowNumber|true|Ready|Int64|Orders|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true|false|false|
+64|3048|Default|HASH|3|false|false|'Orders'[Category]|true|20266|||||true|5.8490933905244686E-05|17154|Data|false|Ready|String|Orders|Category||false|false|false|
+29136|72896|Default|HASH|3636|false|false|'Orders'[City]|true|230673|||||true|0.07089101189315657|128641|Data|false|Ready|String|Orders|City||false|false|true|
+1216|26256|Default|HASH|147|false|false|'Orders'[Country]|true|48494|||||true|0.0028660557613569898|21022|Data|false|Ready|String|Orders|Country||false|false|true|
+6400|68392|Default|HASH|795|false|false|'Orders'[Customer Name]|true|108017|||||true|0.015500097484889843|33225|Data|false|Ready|String|Orders|Customer Name||false|false|false|
+80|2840|Default|HASH|4|false|false|'Orders'[Market]|true|20050|||||true|7.798791187365959E-05|17130|Data|false|Ready|String|Orders|Market||false|false|false|
+39024|102584|Default|HASH|4873|false|false|'Orders'[Customer ID]|true|275435|||||true|0.09500877364008578|133827|Data|false|Ready|String|Orders|Customer ID||false|false|false|
+11472|82072|Default|HASH|1429|false|false|'Orders'[Order Date]|true|179720|||||true|0.027861181516864886|86176|Data|false|Ready|DateTime|Orders|Order Date|dd mmmm yyyy|false|false|true|
+80|12184|Default|HASH|4|false|false|'Orders'[Year (OrderDate)]|true|13632|||||true|7.798791187365959E-05|1368|Data|false|Ready|Int64|Orders|Year (OrderDate)|0|false|false|false|
+200320|102584|Default|HASH|25035|false|false|'Orders'[Order ID]|true|1199971|||||true|0.4881068434392669|897067|Data|false|Ready|String|Orders|Order ID||false|false|true|
+80|6472|Default|HASH|4|false|false|'Orders'[Order Priority]|true|23690|||||true|7.798791187365959E-05|17138|Data|false|Ready|String|Orders|Order Priority||false|false|false|
+82384|102584|Default|HASH|10292|false|false|'Orders'[Product ID]|true|491067|||||true|0.20066289725092612|306099|Data|false|Ready|String|Orders|Product ID||false|false|false|
+30352|82072|Default|HASH|3788|false|false|'Orders'[Product Name]|true|328181|||||true|0.07385455254435562|215757|Data|false|Ready|String|Orders|Product Name||false|false|false|
+144|9024|Default|HASH|13|false|false|'Orders'[Region]|true|26540|||||true|0.00025346071358939363|17372|Data|false|Ready|String|Orders|Region||false|false|true|
+205184|102584|Default|VALUE|51290|false|false|'Orders'[Row ID]|true|307888|||||true|1|120|Data|false|Ready|Int64|Orders|Row ID|0|false|false|false|
+64|8784|Default|HASH|3|false|false|'Orders'[Segment]|true|25990|||||true|5.8490933905244686E-05|17142|Data|false|Ready|String|Orders|Segment||false|false|false|
+11744|82072|Default|HASH|1463|false|false|'Orders'[Ship Date]|true|180744|||||true|0.028524078767790992|86928|Data|false|Ready|DateTime|Orders|Ship Date|dd mmmm yyyy|false|false|true|
+80|5656|Default|HASH|4|false|false|'Orders'[Ship Mode]|true|22922|||||true|7.798791187365959E-05|17186|Data|false|Ready|String|Orders|Ship Mode||false|false|false|
+8736|61080|Default|HASH|1087|false|false|'Orders'[State]|true|113801|||||true|0.02119321505166699|43985|Data|false|Ready|String|Orders|State||false|false|false|
+176|24928|Default|HASH|17|false|false|'Orders'[Sub-Category]|true|42586|||||true|0.00033144862546305323|17482|Data|false|Ready|String|Orders|Sub-Category||false|false|false|
+256|6568|Default|HASH|27|false|false|'Orders'[Discount]|true|8440|||||true|0.0005264184051472022|1616|Data|false|Ready|Double|Orders|Discount||false|false|false|
+98320|205168|Default|VALUE|24575|false|false|'Orders'[Profit]|true|303608|||||true|0.47913823357379604|120|Data|false|Ready|Double|Orders|Profit||false|false|true|
+160|21240|Default|HASH|14|false|false|'Orders'[Quantity]|true|22808|||||true|0.0002729576915578085|1408|Data|false|Ready|Int64|Orders|Quantity|0|false|false|false|
+184000|102584|Default|HASH|22995|false|false|'Orders'[Sales]|true|1546520|||||true|0.44833300838370055|1259936|Data|false|Ready|Double|Orders|Sales|0.0|false|false|true|
+67528|205168|Default|VALUE|16877|false|false|'Orders'[Shipping Cost]|true|272816|||||true|0.3290504971729382|120|Data|false|Ready|Double|Orders|Shipping Cost||false|false|false|
+11472|82072|Default|HASH|1429|false|false|'Orders'[Order Date - Copy]|true|145161|||||true|0.027861181516864886|51617|Data|false|Ready|String|Orders|Order Date - Copy||false|false|false|
+80|5688|Default|HASH|2|false|false|'Orders'[Modulo]|true|7072|||||true|3.899395593682979E-05|1304|Data|false|Ready|Double|Orders|Modulo||false|false|false|
+241280|102584|Default|HASH|30154|false|false|'Orders'[Target Sales]|true|1674624|||||true|0.5879118736595828|1330760|Data|false|Ready|Double|Orders|Target Sales||false|false|false|
+253808|102584|Default|HASH|31721|false|false|'Orders'[Poor]|true|1708584|||||true|0.618463638136089|1352192|Data|false|Ready|Double|Orders|Poor||false|false|false|
+256048|102584|Default|HASH|32000|false|false|'Orders'[Satisfactory]|true|1718848|||||true|0.6239032949892767|1360216|Data|false|Ready|Double|Orders|Satisfactory||false|false|false|
+244224|102584|Default|HASH|30522|false|false|'Orders'[Good]|true|1681488|||||true|0.5950867615519595|1334680|Data|false|Ready|Double|Orders|Good||false|false|false|
+18048|82072|Default|HASH|2250|false|false|'Orders'[Sales w/o decimal]|true|142432|||||true|0.04386820042893352|42312|Data|false|Ready|Int64|Orders|Sales w/o decimal|0|false|false|false|
+0|0|Default|VALUE|0|true|true|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|120|||||true||120|RowNumber|true|Ready|Int64|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true|false|false|
+14656|2928|Default|HASH|1827|false|false|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Date]|true|112224|||||true|1|94640|CalculatedTableColumn|true|Ready|DateTime|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Date||false|false|true|
+80|8|Default|HASH|5|false|false|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Year]|true|1460||YEAR([Date])|||true|0.002736726874657909|1372|Calculated|true|Ready|Int64|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Year||false|false|true|
+144|920|Default|HASH|12|false|false|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[MonthNo]|true|2464||MONTH([Date])|||true|0.006568144499178982|1400|Calculated|true|Ready|Int64|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|MonthNo||false|false|true|
+144|920|Default|HASH|12|false|false|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Month]|true|18388||FORMAT([Date], "MMMM")|MonthNo||true|0.006568144499178982|17324|Calculated|true|Ready|String|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Month||false|false|true|
+80|8|Default|HASH|4|false|false|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[QuarterNo]|true|1456||INT(([MonthNo] + 2) / 3)|||true|0.0021893814997263274|1368|Calculated|true|Ready|Int64|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|QuarterNo||false|false|true|
+80|8|Default|HASH|4|false|false|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Quarter]|true|17224||"Qtr " & [QuarterNo]|QuarterNo||true|0.0021893814997263274|17136|Calculated|true|Ready|String|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Quarter||false|false|true|
+288|1224|Default|HASH|31|false|false|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Day]|true|2988||DAY([Date])|||true|0.016967706622879036|1476|Calculated|true|Ready|Int64|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Day||false|false|true|
+0|0|Default|VALUE|0|true|true|'People'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|120|||||true||120|RowNumber|true|Ready|Int64|People|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true|false|false|
+144|8|Default|HASH|13|false|false|'People'[Person]|true|17698|||||true|1|17546|Data|false|Ready|String|People|Person||false|false|false|
+144|8|Default|HASH|13|false|false|'People'[Region]|true|17524|||||true|1|17372|Data|false|Ready|String|People|Region||false|false|true|
+0|0|Default|VALUE|0|true|true|'Date Table'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|120|||||true||120|RowNumber|true|Ready|Int64|Date Table|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true|false|false|
+14656|2928|Default|HASH|1826|false|false|'Date Table'[Date]|true|112200|||||true|1|94616|Data|false|Ready|DateTime|Date Table|Date|dd-mm-yyyy|false|false|true|
+80|8|Default|HASH|5|false|false|'Date Table'[Year]|true|17234|||||true|0.002738225629791895|17146|Data|false|Ready|String|Date Table|Year||false|false|false|
+80|8|Default|HASH|4|false|false|'Date Table'[QuarterOfYear]|true|1456|||||true|0.002190580503833516|1368|Data|false|Ready|Int64|Date Table|QuarterOfYear|0|false|false|false|
+144|920|Default|HASH|12|false|false|'Date Table'[MonthOfYear]|true|2464|||||true|0.0065717415115005475|1400|Data|false|Ready|Int64|Date Table|MonthOfYear|0|false|false|false|
+288|1224|Default|HASH|31|false|false|'Date Table'[DayOfMonth]|true|2988|||||true|0.016976998904709748|1476|Data|false|Ready|Int64|Date Table|DayOfMonth|0|false|false|false|
+7328|3656|Default|VALUE|1826|false|false|'Date Table'[DateInt]|true|11104|||||true|1|120|Data|false|Ready|Int64|Date Table|DateInt|0|false|false|false|
+144|920|Default|HASH|12|false|false|'Date Table'[MonthName]|true|18388|||||true|0.0065717415115005475|17324|Data|false|Ready|String|Date Table|MonthName||false|false|false|
+528|1464|Default|HASH|60|false|false|'Date Table'[MonthInCalendar]|true|20608|||||true|0.03285870755750274|18616|Data|false|Ready|String|Date Table|MonthInCalendar||false|false|false|
+208|8|Default|HASH|20|false|false|'Date Table'[QuarterInCalendar]|true|17752|||||true|0.01095290251916758|17536|Data|false|Ready|String|Date Table|QuarterInCalendar||false|false|false|
+96|696|Default|HASH|7|false|false|'Date Table'[DayInWeek]|true|2172|||||true|0.0038335158817086527|1380|Data|false|Ready|Int64|Date Table|DayInWeek|0|false|false|false|
+96|696|Default|HASH|7|false|false|'Date Table'[DayOfWeekName]|true|18018|||||true|0.0038335158817086527|17226|Data|false|Ready|String|Date Table|DayOfWeekName||false|false|false|
+2144|2088|Default|HASH|262|false|false|'Date Table'[WeekEnding]|true|14800|||||true|0.14348302300109528|10568|Data|false|Ready|DateTime|Date Table|WeekEnding|dd mmmm yyyy|false|false|true|
+480|1464|Default|HASH|54|false|false|'Date Table'[Week Number]|true|3512|||||true|0.029572836801752465|1568|Data|false|Ready|Int64|Date Table|Week Number|0|false|false|false|
+528|1464|Default|HASH|60|false|false|'Date Table'[MonthnYear]|true|3584|||||true|0.03285870755750274|1592|Data|false|Ready|Int64|Date Table|MonthnYear|0|false|false|false|
+208|8|Default|HASH|20|false|false|'Date Table'[QuarternYear]|true|1648|||||true|0.01095290251916758|1432|Data|false|Ready|Int64|Date Table|QuarternYear|0|false|false|false|
+80|8|Default|HASH|5|false|false|'Date Table'[ShortYear]|true|17214|||||true|0.002738225629791895|17126|Data|false|Ready|String|Date Table|ShortYear||false|false|false|
+96|8|Default|HASH|6|false|false|'Date Table'[FY]|true|17268|||||true|0.0032858707557502738|17164|Data|false|Ready|String|Date Table|FY||false|false|false|
+0|0|Default|VALUE|0|true|true|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|120|||||true||120|RowNumber|true|Ready|Int64|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true|false|false|
+14656|2928|Default|HASH|1827|false|false|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Date]|true|112224|||||true|1|94640|CalculatedTableColumn|true|Ready|DateTime|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Date||false|false|true|
+80|8|Default|HASH|5|false|false|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Year]|true|1460||YEAR([Date])|||true|0.002736726874657909|1372|Calculated|true|Ready|Int64|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Year||false|false|true|
+144|920|Default|HASH|12|false|false|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[MonthNo]|true|2464||MONTH([Date])|||true|0.006568144499178982|1400|Calculated|true|Ready|Int64|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|MonthNo||false|false|true|
+144|920|Default|HASH|12|false|false|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Month]|true|18388||FORMAT([Date], "MMMM")|MonthNo||true|0.006568144499178982|17324|Calculated|true|Ready|String|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Month||false|false|true|
+80|8|Default|HASH|4|false|false|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[QuarterNo]|true|1456||INT(([MonthNo] + 2) / 3)|||true|0.0021893814997263274|1368|Calculated|true|Ready|Int64|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|QuarterNo||false|false|true|
+80|8|Default|HASH|4|false|false|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Quarter]|true|17224||"Qtr " & [QuarterNo]|QuarterNo||true|0.0021893814997263274|17136|Calculated|true|Ready|String|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Quarter||false|false|true|
+288|1224|Default|HASH|31|false|false|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Day]|true|2988||DAY([Date])|||true|0.016967706622879036|1476|Calculated|true|Ready|Int64|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Day||false|false|true|
+0|0|Default|VALUE|0|true|true|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|false|120|||||true||120|RowNumber|true|Ready|Int64|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61||true|false|false|
+17584|3512|Default|HASH|2192|false|false|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Date]|true|123488|||||true|1|102392|CalculatedTableColumn|true|Ready|DateTime|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Date||false|false|true|
+96|8|Default|HASH|6|false|false|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Year]|true|1480||YEAR([Date])|||true|0.002737226277372263|1376|Calculated|true|Ready|Int64|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Year||false|false|true|
+144|1104|Default|HASH|12|false|false|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[MonthNo]|true|2648||MONTH([Date])|||true|0.005474452554744526|1400|Calculated|true|Ready|Int64|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|MonthNo||false|false|true|
+144|1104|Default|HASH|12|false|false|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Month]|true|18572||FORMAT([Date], "MMMM")|MonthNo||true|0.005474452554744526|17324|Calculated|true|Ready|String|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Month||false|false|true|
+80|8|Default|HASH|4|false|false|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[QuarterNo]|true|1456||INT(([MonthNo] + 2) / 3)|||true|0.0018248175182481751|1368|Calculated|true|Ready|Int64|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|QuarterNo||false|false|true|
+80|8|Default|HASH|4|false|false|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Quarter]|true|17224||"Qtr " & [QuarterNo]|QuarterNo||true|0.0018248175182481751|17136|Calculated|true|Ready|String|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Quarter||false|false|true|
+288|1464|Default|HASH|31|false|false|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Day]|true|3228||DAY([Date])|||true|0.014142335766423358|1476|Calculated|true|Ready|Int64|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Day||false|false|true|
 
-## ColumnsSegments
-VertipaqState|SegmentNumber|FullColumnName|TablePartitionNumber|PartitionName|ColumnName|BitsCount|TableName|UsedSize|CompressionType|BookmarkBitsCount|SegmentRows
----|---|---|---|---|---|---|---|---|---|---|---
-SKIPPED|0|'Customer'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Customer-01f41322-c19c-4b65-a4cb-85a8045da233|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|0|Customer|0|C123|0|18485|
-SKIPPED|0|'Customer'[CustomerKey]|0|Customer-01f41322-c19c-4b65-a4cb-85a8045da233|CustomerKey|16|Customer|36976|NOSPLIT|0|18485|
-COMPLETED|0|'Customer'[Customer ID]|0|Customer-01f41322-c19c-4b65-a4cb-85a8045da233|Customer ID|16|Customer|36976|NOSPLIT|0|18485|
-COMPLETED|0|'Customer'[Customer]|0|Customer-01f41322-c19c-4b65-a4cb-85a8045da233|Customer|16|Customer|36976|NOSPLIT|0|18485|
-COMPLETED|0|'Customer'[City]|0|Customer-01f41322-c19c-4b65-a4cb-85a8045da233|City|9|Customer|5008|NOSPLIT|130|18485|
-COMPLETED|0|'Customer'[State-Province]|0|Customer-01f41322-c19c-4b65-a4cb-85a8045da233|State-Province|6|Customer|344|NOSPLIT|21|18485|
-COMPLETED|0|'Customer'[Country-Region]|0|Customer-01f41322-c19c-4b65-a4cb-85a8045da233|Country-Region|3|Customer|24|NOSPLIT|7|18485|
-COMPLETED|0|'Customer'[Postal Code]|0|Customer-01f41322-c19c-4b65-a4cb-85a8045da233|Postal Code|9|Customer|6592|NOSPLIT|118|18485|
-SKIPPED|0|'Date'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Date-6302b3e1-4d31-40e4-b909-ba364d21aa87|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|0|Date|0|C123|0|1461|
-SKIPPED|0|'Date'[DateKey]|0|Date-6302b3e1-4d31-40e4-b909-ba364d21aa87|DateKey|12|Date|2344|NOSPLIT|0|1461|
-COMPLETED|0|'Date'[Date]|0|Date-6302b3e1-4d31-40e4-b909-ba364d21aa87|Date|12|Date|2344|NOSPLIT|0|1461|
-COMPLETED|0|'Date'[Fiscal Year]|0|Date-6302b3e1-4d31-40e4-b909-ba364d21aa87|Fiscal Year|2|Date|8|NOSPLIT|4|1461|
-COMPLETED|0|'Date'[Fiscal Quarter]|0|Date-6302b3e1-4d31-40e4-b909-ba364d21aa87|Fiscal Quarter|4|Date|8|NOSPLIT|16|1461|
-COMPLETED|0|'Date'[Month]|0|Date-6302b3e1-4d31-40e4-b909-ba364d21aa87|Month|6|Date|1176|NOSPLIT|0|1461|
-COMPLETED|0|'Date'[MonthKey]|0|Date-6302b3e1-4d31-40e4-b909-ba364d21aa87|MonthKey|6|Date|1176|NOSPLIT|0|1461|
-COMPLETED|0|'Date'[Full Date]|0|Date-6302b3e1-4d31-40e4-b909-ba364d21aa87|Full Date|12|Date|2344|NOSPLIT|0|1461|
-SKIPPED|0|'Sales Territory'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Sales Territory-86e24776-e692-45a5-9e92-91af2c36c1a6|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|0|Sales Territory|0|C123|0|11|
-SKIPPED|0|'Sales Territory'[SalesTerritoryKey]|0|Sales Territory-86e24776-e692-45a5-9e92-91af2c36c1a6|SalesTerritoryKey|4|Sales Territory|8|NOSPLIT|0|11|
-COMPLETED|0|'Sales Territory'[Region]|0|Sales Territory-86e24776-e692-45a5-9e92-91af2c36c1a6|Region|4|Sales Territory|8|NOSPLIT|0|11|
-COMPLETED|0|'Sales Territory'[Country]|0|Sales Territory-86e24776-e692-45a5-9e92-91af2c36c1a6|Country|3|Sales Territory|8|NOSPLIT|0|11|
-COMPLETED|0|'Sales Territory'[Group]|0|Sales Territory-86e24776-e692-45a5-9e92-91af2c36c1a6|Group|2|Sales Territory|8|NOSPLIT|0|11|
-SKIPPED|0|'Product'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|0|Product|0|C123|0|397|
-SKIPPED|0|'Product'[ProductKey]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|ProductKey|9|Product|456|NOSPLIT|0|397|
-COMPLETED|0|'Product'[Product]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|Product|9|Product|456|NOSPLIT|0|397|
-COMPLETED|0|'Product'[Standard Cost]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|Standard Cost|32|Product|1592|NOSPLIT|0|397|
-COMPLETED|0|'Product'[Color]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|Color|4|Product|136|NOSPLIT|1|397|
-COMPLETED|0|'Product'[List Price]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|List Price|32|Product|1592|NOSPLIT|0|397|
-COMPLETED|0|'Product'[Model]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|Model|7|Product|360|NOSPLIT|0|397|
-COMPLETED|0|'Product'[Subcategory]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|Subcategory|6|Product|320|NOSPLIT|0|397|
-COMPLETED|0|'Product'[Category]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|Category|2|Product|104|NOSPLIT|0|397|
-COMPLETED|0|'Product'[SKU]|0|Product-3d5e98b2-a997-4444-96bb-fe1718e2f2b8|SKU|9|Product|456|NOSPLIT|0|397|
-SKIPPED|0|'Sales Order'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Sales Order-3ce1b467-3e1b-4732-b605-3e94fee75991|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|0|Sales Order|0|C123|0|121253|
-COMPLETED|0|'Sales Order'[SalesOrderLineKey]|0|Sales Order-3ce1b467-3e1b-4732-b605-3e94fee75991|SalesOrderLineKey|21|Sales Order|323344|NOSPLIT|0|121253|
-COMPLETED|0|'Sales Order'[Sales Order]|0|Sales Order-3ce1b467-3e1b-4732-b605-3e94fee75991|Sales Order|16|Sales Order|240232|NOSPLIT|17|121253|
-COMPLETED|0|'Sales Order'[Sales Order Line]|0|Sales Order-3ce1b467-3e1b-4732-b605-3e94fee75991|Sales Order Line|21|Sales Order|323344|NOSPLIT|0|121253|
-COMPLETED|0|'Sales Order'[Channel]|0|Sales Order-3ce1b467-3e1b-4732-b605-3e94fee75991|Channel|1|Sales Order|8|NOSPLIT|2|121253|
-SKIPPED|0|'Sales'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|0|Sales|0|C123|0|121253|
-SKIPPED|0|'Sales'[SalesOrderLineKey]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|SalesOrderLineKey|21|Sales|323344|NOSPLIT|0|121253|
-COMPLETED|0|'Sales'[ResellerKey]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|ResellerKey|10|Sales|73160|NOSPLIT|77|121253|
-COMPLETED|0|'Sales'[CustomerKey]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|CustomerKey|16|Sales|120800|NOSPLIT|1|121253|
-COMPLETED|0|'Sales'[ProductKey]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|ProductKey|9|Sales|86744|NOSPLIT|180|121253|
-COMPLETED|0|'Sales'[OrderDateKey]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|OrderDateKey|12|Sales|194008|NOSPLIT|0|121253|
-COMPLETED|0|'Sales'[DueDateKey]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|DueDateKey|12|Sales|194008|NOSPLIT|0|121253|
-COMPLETED|0|'Sales'[ShipDateKey]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|ShipDateKey|12|Sales|194008|NOSPLIT|0|121253|
-COMPLETED|0|'Sales'[SalesTerritoryKey]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|SalesTerritoryKey|4|Sales|2464|NOSPLIT|136|121253|
-COMPLETED|0|'Sales'[Order Quantity]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|Order Quantity|6|Sales|896|NOSPLIT|22|121253|
-COMPLETED|0|'Sales'[Unit Price]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|Unit Price|9|Sales|64928|NOSPLIT|264|121253|
-COMPLETED|0|'Sales'[Extended Amount]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|Extended Amount|12|Sales|92176|NOSPLIT|262|121253|
-COMPLETED|0|'Sales'[Product Standard Cost]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|Product Standard Cost|7|Sales|52536|NOSPLIT|243|121253|
-COMPLETED|0|'Sales'[Total Product Cost]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|Total Product Cost|12|Sales|95840|NOSPLIT|241|121253|
-COMPLETED|0|'Sales'[Sales Amount]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|Sales Amount|12|Sales|92176|NOSPLIT|262|121253|
-COMPLETED|0|'Sales'[Unit Price Discount Pct]|0|Sales-1c496a38-f0f4-4d25-b987-657177c38553|Unit Price Discount Pct|4|Sales|72|NOSPLIT|10|121253|
-SKIPPED|0|'Reseller'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61|0|Reseller|0|C123|0|702|
-SKIPPED|0|'Reseller'[ResellerKey]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|ResellerKey|10|Reseller|944|NOSPLIT|0|702|
-COMPLETED|0|'Reseller'[Business Type]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|Business Type|2|Reseller|176|NOSPLIT|0|702|
-COMPLETED|0|'Reseller'[Reseller]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|Reseller|10|Reseller|944|NOSPLIT|0|702|
-COMPLETED|0|'Reseller'[City]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|City|9|Reseller|808|NOSPLIT|0|702|
-COMPLETED|0|'Reseller'[State-Province]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|State-Province|7|Reseller|560|NOSPLIT|1|702|
-COMPLETED|0|'Reseller'[Country-Region]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|Country-Region|3|Reseller|64|NOSPLIT|2|702|
-COMPLETED|0|'Reseller'[Postal Code]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|Postal Code|9|Reseller|808|NOSPLIT|0|702|
-COMPLETED|0|'Reseller'[Reseller ID]|0|Reseller-e44d0a71-e144-4c32-b1af-2f758a686c3c|Reseller ID|10|Reseller|944|NOSPLIT|0|702|
+## Tables
+ReferentialIntegrityViolationCount|Description|RowsCount|IsHidden|ColumnsSize|UserHierarchiesSize|TableName|IsReferenced|TableSize|TableExpression|RelationshipsSize
+---|---|---|---|---|---|---|---|---|---|---
+0||1173|false|82621|0|Returns|true|82621||0|
+0||1|true|35220|96|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|true|35316|Calendar(Date(2015,1,1), Date(2015,1,1))|0|
+0||51290|false|12892188|0|Orders|true|12896852||4664|
+0||1827|true|156324|30624|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|true|186948|Calendar(Date(Year(MIN('Orders'[Ship Date])), 1, 1), Date(Year(MAX('Orders'[Ship Date])), 12, 31))|0|
+1||13|false|35342|0|People|true|35342||0|
+0||1826|false|282530|0|Date Table|true|285890||3360|
+0||1827|true|156324|30624|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|true|186948|Calendar(Date(Year(MIN('Date Table'[Date])), 1, 1), Date(Year(MAX('Date Table'[Date])), 12, 31))|0|
+0||2192|true|168216|36736|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|true|204952|Calendar(Date(Year(MIN('Date Table'[WeekEnding])), 1, 1), Date(Year(MAX('Date Table'[WeekEnding])), 12, 31))|0|
+
+## ColumnsHierarchies
+SegmentNumber|UsedSize|TableName|ColumnName|TablePartitionNumber|StructureName|FullColumnName
+---|---|---|---|---|---|---
+0|8|Returns|Returned|0|POS_TO_ID|'Returns'[Returned]|
+1|8|Returns|Returned|0|POS_TO_ID|'Returns'[Returned]|
+2|8|Returns|Returned|0|POS_TO_ID|'Returns'[Returned]|
+3|8|Returns|Returned|0|POS_TO_ID|'Returns'[Returned]|
+0|8|Returns|Returned|0|ID_TO_POS|'Returns'[Returned]|
+1|8|Returns|Returned|0|ID_TO_POS|'Returns'[Returned]|
+2|8|Returns|Returned|0|ID_TO_POS|'Returns'[Returned]|
+3|8|Returns|Returned|0|ID_TO_POS|'Returns'[Returned]|
+0|4696|Returns|Order ID|0|POS_TO_ID|'Returns'[Order ID]|
+1|16|Returns|Order ID|0|POS_TO_ID|'Returns'[Order ID]|
+0|4696|Returns|Order ID|0|ID_TO_POS|'Returns'[Order ID]|
+1|16|Returns|Order ID|0|ID_TO_POS|'Returns'[Order ID]|
+0|24|Returns|Market|0|POS_TO_ID|'Returns'[Market]|
+1|16|Returns|Market|0|POS_TO_ID|'Returns'[Market]|
+0|24|Returns|Market|0|ID_TO_POS|'Returns'[Market]|
+1|16|Returns|Market|0|ID_TO_POS|'Returns'[Market]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Date|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Date]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Date|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Date]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Date|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Date]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Date|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Date]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Year|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Year]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Year|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Year]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Year|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Year]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Year|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Year]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|MonthNo|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[MonthNo]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|MonthNo|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[MonthNo]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|MonthNo|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[MonthNo]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|MonthNo|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[MonthNo]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month|0|ID_TO_POS|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month|0|ID_TO_POS|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month|0|ID_TO_POS|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Month|0|ID_TO_POS|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Month]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|QuarterNo|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[QuarterNo]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|QuarterNo|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[QuarterNo]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|QuarterNo|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[QuarterNo]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|QuarterNo|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[QuarterNo]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter|0|ID_TO_POS|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter|0|ID_TO_POS|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter|0|ID_TO_POS|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Quarter|0|ID_TO_POS|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Quarter]|
+0|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Day|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Day]|
+1|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Day|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Day]|
+2|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Day|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Day]|
+3|8|DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0|Day|0|POS_TO_ID|'DateTableTemplate_eb367a5b-76ec-4efd-82f2-36d6a3435ba0'[Day]|
+0|16|Orders|Category|0|POS_TO_ID|'Orders'[Category]|
+1|16|Orders|Category|0|POS_TO_ID|'Orders'[Category]|
+0|16|Orders|Category|0|ID_TO_POS|'Orders'[Category]|
+1|16|Orders|Category|0|ID_TO_POS|'Orders'[Category]|
+0|14552|Orders|City|0|POS_TO_ID|'Orders'[City]|
+1|16|Orders|City|0|POS_TO_ID|'Orders'[City]|
+0|14552|Orders|City|0|ID_TO_POS|'Orders'[City]|
+1|16|Orders|City|0|ID_TO_POS|'Orders'[City]|
+0|592|Orders|Country|0|POS_TO_ID|'Orders'[Country]|
+1|16|Orders|Country|0|POS_TO_ID|'Orders'[Country]|
+0|592|Orders|Country|0|ID_TO_POS|'Orders'[Country]|
+1|16|Orders|Country|0|ID_TO_POS|'Orders'[Country]|
+0|3184|Orders|Customer Name|0|POS_TO_ID|'Orders'[Customer Name]|
+1|16|Orders|Customer Name|0|POS_TO_ID|'Orders'[Customer Name]|
+0|3184|Orders|Customer Name|0|ID_TO_POS|'Orders'[Customer Name]|
+1|16|Orders|Customer Name|0|ID_TO_POS|'Orders'[Customer Name]|
+0|24|Orders|Market|0|POS_TO_ID|'Orders'[Market]|
+1|16|Orders|Market|0|POS_TO_ID|'Orders'[Market]|
+0|24|Orders|Market|0|ID_TO_POS|'Orders'[Market]|
+1|16|Orders|Market|0|ID_TO_POS|'Orders'[Market]|
+0|19496|Orders|Customer ID|0|POS_TO_ID|'Orders'[Customer ID]|
+1|16|Orders|Customer ID|0|POS_TO_ID|'Orders'[Customer ID]|
+0|19496|Orders|Customer ID|0|ID_TO_POS|'Orders'[Customer ID]|
+1|16|Orders|Customer ID|0|ID_TO_POS|'Orders'[Customer ID]|
+0|5720|Orders|Order Date|0|POS_TO_ID|'Orders'[Order Date]|
+1|16|Orders|Order Date|0|POS_TO_ID|'Orders'[Order Date]|
+0|5720|Orders|Order Date|0|ID_TO_POS|'Orders'[Order Date]|
+1|16|Orders|Order Date|0|ID_TO_POS|'Orders'[Order Date]|
+0|24|Orders|Year (OrderDate)|0|POS_TO_ID|'Orders'[Year (OrderDate)]|
+1|16|Orders|Year (OrderDate)|0|POS_TO_ID|'Orders'[Year (OrderDate)]|
+0|24|Orders|Year (OrderDate)|0|ID_TO_POS|'Orders'[Year (OrderDate)]|
+1|16|Orders|Year (OrderDate)|0|ID_TO_POS|'Orders'[Year (OrderDate)]|
+0|100144|Orders|Order ID|0|POS_TO_ID|'Orders'[Order ID]|
+1|16|Orders|Order ID|0|POS_TO_ID|'Orders'[Order ID]|
+0|100144|Orders|Order ID|0|ID_TO_POS|'Orders'[Order ID]|
+1|16|Orders|Order ID|0|ID_TO_POS|'Orders'[Order ID]|
+0|24|Orders|Order Priority|0|POS_TO_ID|'Orders'[Order Priority]|
+1|16|Orders|Order Priority|0|POS_TO_ID|'Orders'[Order Priority]|
+0|24|Orders|Order Priority|0|ID_TO_POS|'Orders'[Order Priority]|
+1|16|Orders|Order Priority|0|ID_TO_POS|'Orders'[Order Priority]|
+0|41176|Orders|Product ID|0|POS_TO_ID|'Orders'[Product ID]|
+1|16|Orders|Product ID|0|POS_TO_ID|'Orders'[Product ID]|
+0|41176|Orders|Product ID|0|ID_TO_POS|'Orders'[Product ID]|
+1|16|Orders|Product ID|0|ID_TO_POS|'Orders'[Product ID]|
+0|15160|Orders|Product Name|0|POS_TO_ID|'Orders'[Product Name]|
+1|16|Orders|Product Name|0|POS_TO_ID|'Orders'[Product Name]|
+0|15160|Orders|Product Name|0|ID_TO_POS|'Orders'[Product Name]|
+1|16|Orders|Product Name|0|ID_TO_POS|'Orders'[Product Name]|
+0|56|Orders|Region|0|POS_TO_ID|'Orders'[Region]|
+1|16|Orders|Region|0|POS_TO_ID|'Orders'[Region]|
+0|56|Orders|Region|0|ID_TO_POS|'Orders'[Region]|
+1|16|Orders|Region|0|ID_TO_POS|'Orders'[Region]|
+0|205168|Orders|Row ID|0|POS_TO_ID|'Orders'[Row ID]|
+1|16|Orders|Row ID|0|POS_TO_ID|'Orders'[Row ID]|
+0|16|Orders|Segment|0|POS_TO_ID|'Orders'[Segment]|
+1|16|Orders|Segment|0|POS_TO_ID|'Orders'[Segment]|
+0|16|Orders|Segment|0|ID_TO_POS|'Orders'[Segment]|
+1|16|Orders|Segment|0|ID_TO_POS|'Orders'[Segment]|
+0|5856|Orders|Ship Date|0|POS_TO_ID|'Orders'[Ship Date]|
+1|16|Orders|Ship Date|0|POS_TO_ID|'Orders'[Ship Date]|
+0|5856|Orders|Ship Date|0|ID_TO_POS|'Orders'[Ship Date]|
+1|16|Orders|Ship Date|0|ID_TO_POS|'Orders'[Ship Date]|
+0|24|Orders|Ship Mode|0|POS_TO_ID|'Orders'[Ship Mode]|
+1|16|Orders|Ship Mode|0|POS_TO_ID|'Orders'[Ship Mode]|
+0|24|Orders|Ship Mode|0|ID_TO_POS|'Orders'[Ship Mode]|
+1|16|Orders|Ship Mode|0|ID_TO_POS|'Orders'[Ship Mode]|
+0|4352|Orders|State|0|POS_TO_ID|'Orders'[State]|
+1|16|Orders|State|0|POS_TO_ID|'Orders'[State]|
+0|4352|Orders|State|0|ID_TO_POS|'Orders'[State]|
+1|16|Orders|State|0|ID_TO_POS|'Orders'[State]|
+0|72|Orders|Sub-Category|0|POS_TO_ID|'Orders'[Sub-Category]|
+1|16|Orders|Sub-Category|0|POS_TO_ID|'Orders'[Sub-Category]|
+0|72|Orders|Sub-Category|0|ID_TO_POS|'Orders'[Sub-Category]|
+1|16|Orders|Sub-Category|0|ID_TO_POS|'Orders'[Sub-Category]|
+0|112|Orders|Discount|0|POS_TO_ID|'Orders'[Discount]|
+1|16|Orders|Discount|0|POS_TO_ID|'Orders'[Discount]|
+0|112|Orders|Discount|0|ID_TO_POS|'Orders'[Discount]|
+1|16|Orders|Discount|0|ID_TO_POS|'Orders'[Discount]|
+0|98304|Orders|Profit|0|POS_TO_ID|'Orders'[Profit]|
+1|16|Orders|Profit|0|POS_TO_ID|'Orders'[Profit]|
+0|64|Orders|Quantity|0|POS_TO_ID|'Orders'[Quantity]|
+1|16|Orders|Quantity|0|POS_TO_ID|'Orders'[Quantity]|
+0|64|Orders|Quantity|0|ID_TO_POS|'Orders'[Quantity]|
+1|16|Orders|Quantity|0|ID_TO_POS|'Orders'[Quantity]|
+0|91984|Orders|Sales|0|POS_TO_ID|'Orders'[Sales]|
+1|16|Orders|Sales|0|POS_TO_ID|'Orders'[Sales]|
+0|91984|Orders|Sales|0|ID_TO_POS|'Orders'[Sales]|
+1|16|Orders|Sales|0|ID_TO_POS|'Orders'[Sales]|
+0|67512|Orders|Shipping Cost|0|POS_TO_ID|'Orders'[Shipping Cost]|
+1|16|Orders|Shipping Cost|0|POS_TO_ID|'Orders'[Shipping Cost]|
+0|5720|Orders|Order Date - Copy|0|POS_TO_ID|'Orders'[Order Date - Copy]|
+1|16|Orders|Order Date - Copy|0|POS_TO_ID|'Orders'[Order Date - Copy]|
+0|5720|Orders|Order Date - Copy|0|ID_TO_POS|'Orders'[Order Date - Copy]|
+1|16|Orders|Order Date - Copy|0|ID_TO_POS|'Orders'[Order Date - Copy]|
+0|16|Orders|Modulo|0|POS_TO_ID|'Orders'[Modulo]|
+1|16|Orders|Modulo|0|POS_TO_ID|'Orders'[Modulo]|
+2|8|Orders|Modulo|0|POS_TO_ID|'Orders'[Modulo]|
+0|16|Orders|Modulo|0|ID_TO_POS|'Orders'[Modulo]|
+1|16|Orders|Modulo|0|ID_TO_POS|'Orders'[Modulo]|
+2|8|Orders|Modulo|0|ID_TO_POS|'Orders'[Modulo]|
+0|120624|Orders|Target Sales|0|POS_TO_ID|'Orders'[Target Sales]|
+1|16|Orders|Target Sales|0|POS_TO_ID|'Orders'[Target Sales]|
+0|120624|Orders|Target Sales|0|ID_TO_POS|'Orders'[Target Sales]|
+1|16|Orders|Target Sales|0|ID_TO_POS|'Orders'[Target Sales]|
+0|126888|Orders|Poor|0|POS_TO_ID|'Orders'[Poor]|
+1|16|Orders|Poor|0|POS_TO_ID|'Orders'[Poor]|
+0|126888|Orders|Poor|0|ID_TO_POS|'Orders'[Poor]|
+1|16|Orders|Poor|0|ID_TO_POS|'Orders'[Poor]|
+0|128008|Orders|Satisfactory|0|POS_TO_ID|'Orders'[Satisfactory]|
+1|16|Orders|Satisfactory|0|POS_TO_ID|'Orders'[Satisfactory]|
+0|128008|Orders|Satisfactory|0|ID_TO_POS|'Orders'[Satisfactory]|
+1|16|Orders|Satisfactory|0|ID_TO_POS|'Orders'[Satisfactory]|
+0|122096|Orders|Good|0|POS_TO_ID|'Orders'[Good]|
+1|16|Orders|Good|0|POS_TO_ID|'Orders'[Good]|
+0|122096|Orders|Good|0|ID_TO_POS|'Orders'[Good]|
+1|16|Orders|Good|0|ID_TO_POS|'Orders'[Good]|
+0|9008|Orders|Sales w/o decimal|0|POS_TO_ID|'Orders'[Sales w/o decimal]|
+1|16|Orders|Sales w/o decimal|0|POS_TO_ID|'Orders'[Sales w/o decimal]|
+0|9008|Orders|Sales w/o decimal|0|ID_TO_POS|'Orders'[Sales w/o decimal]|
+1|16|Orders|Sales w/o decimal|0|ID_TO_POS|'Orders'[Sales w/o decimal]|
+0|7312|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Date|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Date]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Date|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Date]|
+0|7312|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Date|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Date]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Date|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Date]|
+0|24|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Year|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Year]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Year|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Year]|
+0|24|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Year|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Year]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Year|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Year]|
+0|56|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|MonthNo|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[MonthNo]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|MonthNo|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[MonthNo]|
+0|56|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|MonthNo|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[MonthNo]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|MonthNo|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[MonthNo]|
+0|56|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Month|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Month]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Month|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Month]|
+0|56|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Month|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Month]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Month|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Month]|
+0|24|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|QuarterNo|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[QuarterNo]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|QuarterNo|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[QuarterNo]|
+0|24|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|QuarterNo|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[QuarterNo]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|QuarterNo|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[QuarterNo]|
+0|24|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Quarter|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Quarter]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Quarter|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Quarter]|
+0|24|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Quarter|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Quarter]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Quarter|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Quarter]|
+0|128|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Day|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Day]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Day|0|POS_TO_ID|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Day]|
+0|128|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Day|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Day]|
+1|16|LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881|Day|0|ID_TO_POS|'LocalDateTable_417ba064-6a08-4e2b-b83d-bc8c30ba6881'[Day]|
+0|56|People|Person|0|POS_TO_ID|'People'[Person]|
+1|16|People|Person|0|POS_TO_ID|'People'[Person]|
+0|56|People|Person|0|ID_TO_POS|'People'[Person]|
+1|16|People|Person|0|ID_TO_POS|'People'[Person]|
+0|56|People|Region|0|POS_TO_ID|'People'[Region]|
+1|16|People|Region|0|POS_TO_ID|'People'[Region]|
+0|56|People|Region|0|ID_TO_POS|'People'[Region]|
+1|16|People|Region|0|ID_TO_POS|'People'[Region]|
+0|7312|Date Table|Date|0|POS_TO_ID|'Date Table'[Date]|
+1|16|Date Table|Date|0|POS_TO_ID|'Date Table'[Date]|
+0|7312|Date Table|Date|0|ID_TO_POS|'Date Table'[Date]|
+1|16|Date Table|Date|0|ID_TO_POS|'Date Table'[Date]|
+0|24|Date Table|Year|0|POS_TO_ID|'Date Table'[Year]|
+1|16|Date Table|Year|0|POS_TO_ID|'Date Table'[Year]|
+0|24|Date Table|Year|0|ID_TO_POS|'Date Table'[Year]|
+1|16|Date Table|Year|0|ID_TO_POS|'Date Table'[Year]|
+0|24|Date Table|QuarterOfYear|0|POS_TO_ID|'Date Table'[QuarterOfYear]|
+1|16|Date Table|QuarterOfYear|0|POS_TO_ID|'Date Table'[QuarterOfYear]|
+0|24|Date Table|QuarterOfYear|0|ID_TO_POS|'Date Table'[QuarterOfYear]|
+1|16|Date Table|QuarterOfYear|0|ID_TO_POS|'Date Table'[QuarterOfYear]|
+0|56|Date Table|MonthOfYear|0|POS_TO_ID|'Date Table'[MonthOfYear]|
+1|16|Date Table|MonthOfYear|0|POS_TO_ID|'Date Table'[MonthOfYear]|
+0|56|Date Table|MonthOfYear|0|ID_TO_POS|'Date Table'[MonthOfYear]|
+1|16|Date Table|MonthOfYear|0|ID_TO_POS|'Date Table'[MonthOfYear]|
+0|128|Date Table|DayOfMonth|0|POS_TO_ID|'Date Table'[DayOfMonth]|
+1|16|Date Table|DayOfMonth|0|POS_TO_ID|'Date Table'[DayOfMonth]|
+0|128|Date Table|DayOfMonth|0|ID_TO_POS|'Date Table'[DayOfMonth]|
+1|16|Date Table|DayOfMonth|0|ID_TO_POS|'Date Table'[DayOfMonth]|
+0|7312|Date Table|DateInt|0|POS_TO_ID|'Date Table'[DateInt]|
+1|16|Date Table|DateInt|0|POS_TO_ID|'Date Table'[DateInt]|
+0|56|Date Table|MonthName|0|POS_TO_ID|'Date Table'[MonthName]|
+1|16|Date Table|MonthName|0|POS_TO_ID|'Date Table'[MonthName]|
+0|56|Date Table|MonthName|0|ID_TO_POS|'Date Table'[MonthName]|
+1|16|Date Table|MonthName|0|ID_TO_POS|'Date Table'[MonthName]|
+0|248|Date Table|MonthInCalendar|0|POS_TO_ID|'Date Table'[MonthInCalendar]|
+1|16|Date Table|MonthInCalendar|0|POS_TO_ID|'Date Table'[MonthInCalendar]|
+0|248|Date Table|MonthInCalendar|0|ID_TO_POS|'Date Table'[MonthInCalendar]|
+1|16|Date Table|MonthInCalendar|0|ID_TO_POS|'Date Table'[MonthInCalendar]|
+0|88|Date Table|QuarterInCalendar|0|POS_TO_ID|'Date Table'[QuarterInCalendar]|
+1|16|Date Table|QuarterInCalendar|0|POS_TO_ID|'Date Table'[QuarterInCalendar]|
+0|88|Date Table|QuarterInCalendar|0|ID_TO_POS|'Date Table'[QuarterInCalendar]|
+1|16|Date Table|QuarterInCalendar|0|ID_TO_POS|'Date Table'[QuarterInCalendar]|
+0|32|Date Table|DayInWeek|0|POS_TO_ID|'Date Table'[DayInWeek]|
+1|16|Date Table|DayInWeek|0|POS_TO_ID|'Date Table'[DayInWeek]|
+0|32|Date Table|DayInWeek|0|ID_TO_POS|'Date Table'[DayInWeek]|
+1|16|Date Table|DayInWeek|0|ID_TO_POS|'Date Table'[DayInWeek]|
+0|32|Date Table|DayOfWeekName|0|POS_TO_ID|'Date Table'[DayOfWeekName]|
+1|16|Date Table|DayOfWeekName|0|POS_TO_ID|'Date Table'[DayOfWeekName]|
+0|32|Date Table|DayOfWeekName|0|ID_TO_POS|'Date Table'[DayOfWeekName]|
+1|16|Date Table|DayOfWeekName|0|ID_TO_POS|'Date Table'[DayOfWeekName]|
+0|1056|Date Table|WeekEnding|0|POS_TO_ID|'Date Table'[WeekEnding]|
+1|16|Date Table|WeekEnding|0|POS_TO_ID|'Date Table'[WeekEnding]|
+0|1056|Date Table|WeekEnding|0|ID_TO_POS|'Date Table'[WeekEnding]|
+1|16|Date Table|WeekEnding|0|ID_TO_POS|'Date Table'[WeekEnding]|
+0|224|Date Table|Week Number|0|POS_TO_ID|'Date Table'[Week Number]|
+1|16|Date Table|Week Number|0|POS_TO_ID|'Date Table'[Week Number]|
+0|224|Date Table|Week Number|0|ID_TO_POS|'Date Table'[Week Number]|
+1|16|Date Table|Week Number|0|ID_TO_POS|'Date Table'[Week Number]|
+0|248|Date Table|MonthnYear|0|POS_TO_ID|'Date Table'[MonthnYear]|
+1|16|Date Table|MonthnYear|0|POS_TO_ID|'Date Table'[MonthnYear]|
+0|248|Date Table|MonthnYear|0|ID_TO_POS|'Date Table'[MonthnYear]|
+1|16|Date Table|MonthnYear|0|ID_TO_POS|'Date Table'[MonthnYear]|
+0|88|Date Table|QuarternYear|0|POS_TO_ID|'Date Table'[QuarternYear]|
+1|16|Date Table|QuarternYear|0|POS_TO_ID|'Date Table'[QuarternYear]|
+0|88|Date Table|QuarternYear|0|ID_TO_POS|'Date Table'[QuarternYear]|
+1|16|Date Table|QuarternYear|0|ID_TO_POS|'Date Table'[QuarternYear]|
+0|24|Date Table|ShortYear|0|POS_TO_ID|'Date Table'[ShortYear]|
+1|16|Date Table|ShortYear|0|POS_TO_ID|'Date Table'[ShortYear]|
+0|24|Date Table|ShortYear|0|ID_TO_POS|'Date Table'[ShortYear]|
+1|16|Date Table|ShortYear|0|ID_TO_POS|'Date Table'[ShortYear]|
+0|32|Date Table|FY|0|POS_TO_ID|'Date Table'[FY]|
+1|16|Date Table|FY|0|POS_TO_ID|'Date Table'[FY]|
+0|32|Date Table|FY|0|ID_TO_POS|'Date Table'[FY]|
+1|16|Date Table|FY|0|ID_TO_POS|'Date Table'[FY]|
+0|7312|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Date|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Date]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Date|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Date]|
+0|7312|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Date|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Date]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Date|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Date]|
+0|24|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Year|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Year]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Year|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Year]|
+0|24|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Year|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Year]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Year|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Year]|
+0|56|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|MonthNo|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[MonthNo]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|MonthNo|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[MonthNo]|
+0|56|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|MonthNo|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[MonthNo]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|MonthNo|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[MonthNo]|
+0|56|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Month|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Month]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Month|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Month]|
+0|56|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Month|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Month]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Month|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Month]|
+0|24|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|QuarterNo|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[QuarterNo]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|QuarterNo|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[QuarterNo]|
+0|24|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|QuarterNo|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[QuarterNo]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|QuarterNo|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[QuarterNo]|
+0|24|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Quarter|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Quarter]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Quarter|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Quarter]|
+0|24|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Quarter|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Quarter]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Quarter|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Quarter]|
+0|128|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Day|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Day]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Day|0|POS_TO_ID|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Day]|
+0|128|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Day|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Day]|
+1|16|LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513|Day|0|ID_TO_POS|'LocalDateTable_44ca8a91-7317-47fd-bcb4-c982b7e0b513'[Day]|
+0|8776|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Date|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Date]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Date|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Date]|
+0|8776|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Date|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Date]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Date|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Date]|
+0|32|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Year|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Year]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Year|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Year]|
+0|32|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Year|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Year]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Year|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Year]|
+0|56|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|MonthNo|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[MonthNo]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|MonthNo|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[MonthNo]|
+0|56|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|MonthNo|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[MonthNo]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|MonthNo|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[MonthNo]|
+0|56|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Month|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Month]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Month|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Month]|
+0|56|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Month|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Month]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Month|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Month]|
+0|24|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|QuarterNo|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[QuarterNo]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|QuarterNo|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[QuarterNo]|
+0|24|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|QuarterNo|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[QuarterNo]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|QuarterNo|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[QuarterNo]|
+0|24|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Quarter|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Quarter]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Quarter|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Quarter]|
+0|24|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Quarter|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Quarter]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Quarter|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Quarter]|
+0|128|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Day|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Day]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Day|0|POS_TO_ID|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Day]|
+0|128|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Day|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Day]|
+1|16|LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829|Day|0|ID_TO_POS|'LocalDateTable_9bf99ddc-78b8-484e-be3e-cff0efffa829'[Day]|
+
+## Measures
+IsReferenced|IsHidden|FullMeasureName|DataType|KpiTargetExpression|MeasureName|Description|TableName|KpiTrendExpression|KpiTargetFormatString|FormatString|DetailRowsExpression|KpiStatusExpression|MeasureExpression|DisplayFolder
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
+true|false|'Orders'[Total Sale]|Double||Total Sale||Orders|||\$#,0.00;(\$#,0.00);\$#,0.00|||SUM(Orders[Sales])||
+true|false|'Orders'[Total Profit]|Double||Total Profit||Orders|||\$#,0.0;(\$#,0.0);\$#,0.0|||SUM(Orders[Profit])||
+false|false|'Orders'[Profit Growth]|Double||Profit Growth||Orders||||||DIVIDE([Total Profit],<br>CALCULATE([Total Profit],DATEADD('Date Table'[Date],-1,YEAR)),0 ) - 1||
+true|false|'Orders'[Profit Ratio]|Double||Profit Ratio||Orders|||0 %;-0 %;0 %|||DIVIDE([Total Profit],[Total Sale],0)||
+false|false|'Orders'[% of Profit Margin]|String||% of Profit Margin||Orders||||||CONCATENATE([Profit Ratio], "%")||
+false|false|'Orders'[Sales by City]|Double||Sales by City||Orders||||||<br>CALCULATE([Total Sale],<br>TOPN(5,Orders,Orders[City],ASC))<br>||
+false|false|'Orders'[Selected Country]|String||Selected Country||Orders||||||SELECTEDVALUE(Orders[Country])||
+false|false|'Orders'[Total Sales]|Double||Total Sales||Orders||||||SUM(Orders[Sales])||
+false|false|'Orders'[As of Date]|DateTime||As of Date||Orders|||mmmm\, yyyy|||Max(Orders[Order Date])||
+false|false|'Date Table'[Sales LY]|Double||Sales LY||Date Table||||||CALCULATE([Total Sale],SAMEPERIODLASTYEAR('Date Table'[Date]))||
 
 
