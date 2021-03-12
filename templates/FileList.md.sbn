@@ -1,11 +1,10 @@
 # Overview 
 ## PBIX file contents
+The file was last saved on model[0].immediate_base_object.DateTime | date.to_string "%Y-%m-%d %H:%M:%S"
 
-DateTime|Length|Compressed|FileName
--|-|-|-
+Size|Compressed|FileName
+-|-|-
 {{for rec in model
-    rec.immediate_base_object.DateTime | date.to_string "%Y-%m-%d %H:%M:%S"
-    "|"
     rec.immediate_base_object.Length
     "|"
     rec.immediate_base_object.Compressed
