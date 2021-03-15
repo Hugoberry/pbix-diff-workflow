@@ -33,9 +33,9 @@
 "\r\n"
 end}}
 
-## Columns
+### Columns
 {{for c in model.Columns
-"### "
+"#### "
 c.FullColumnName
 "\r\n"
     if !c.Description.empty?
@@ -105,41 +105,85 @@ c.FullColumnName
 "\r\n"
 end}}
 
-## Measures
-|MeasureName|TableName|FullMeasureName|MeasureExpression|DisplayFolder|Description|IsHidden|DataType|DetailRowsExpression|FormatString|KpiStatusExpression|KpiTargetExpression|KpiTargetFormatString|KpiTrendExpression|
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-{{~for m in Measures~}}
-|{{m.MeasureName}}|{{m.TableName}}|{{m.FullMeasureName}}|{{m.MeasureExpression| @string.replace "\n" "<br>"}}|{{m.DisplayFolder}}|{{m.Description}}|{{m.IsHidden}}|{{m.DataType}}|{{m.DetailRowsExpression| @string.replace "\n" "<br>"}}|{{m.FormatString}}|{{m.KpiStatusExpression| @string.replace "\n" "<br>"}}|{{m.KpiTargetExpression| @string.replace "\n" "<br>"}}|{{m.KpiTargetFormatString}}|{{m.KpiTrendExpression| @string.replace "\n" "<br>"}}|
-{{~end~}}
+### Measures
+{{for m in Measures
+"#### "
+m.FullMeasureName
+"\r\n"
+if !m.Description.empty?
+    m.Description
+"<br>\r\n"
+end
+"\r\n```\r\n"
+m.MeasureExpression
+"\r\n```\r\n"
+if !m.DisplayFolder.empty?
+"`Folder:` "
+end
+if m.IsHidden
+" `Hidden` "
+end
+" `DataType`: "
+m.DataType
+if !m.FormatString.empty?
+" `FormatString:` "
+    m.FormatString
+end
+if m.KpiTargetFormatString 
+" `KpiTargetFormatString:` "
+    m.KpiTargetFormatString
+end
+if m.DetailRowsExpression
+"\r\n```\r\n"
+    m.DetailRowsExpression
+"\r\n```\r\n"
+end
+if m.KpiStatusExpression
+"\r\n```\r\n"
+    m.KpiStatusExpression
+"\r\n```\r\n"
+end
+if m.KpiTargetExpression
+"\r\n```\r\n" 
+    m.KpiTargetExpression
+"\r\n```\r\n"
+end
+if m.KpiTrendExpression
+"\r\n```\r\n"
+    m.KpiTrendExpression
+"\r\n```\r\n"
+end
+"\r\n"
+end}}
 
-## Columns Segments
+### Columns Segments
 |ColumnName|TableName|FullColumnName|PartitionName|SegmentNumber|TablePartitionNumber|SegmentRows|UsedSize|CompressionType|BitsCount|BookmarkBitsCount|VertipaqState|
 |---|---|---|---|---|---|---|---|---|---|---|---|
 {{~for cs in ColumnsSegments~}}
 |{{cs.ColumnName}}|{{cs.TableName}}|{{cs.FullColumnName}}|{{cs.PartitionName}}|{{cs.SegmentNumber}}|{{cs.TablePartitionNumber}}|{{cs.SegmentRows}}|{{cs.UsedSize}}|{{cs.CompressionType}}|{{cs.BitsCount}}|{{cs.BookmarkBitsCount}}|{{cs.VertipaqState}}|
 {{~end~}}
 
-## Columns Hierarchies
+### Columns Hierarchies
 |ColumnName|TableName|FullColumnName|StructureName|SegmentNumber|TablePartitionNumber|UsedSize|
 |---|---|---|---|---|---|---|
 {{~for ch in ColumnsHierarchies~}}
 |{{ch.ColumnName}}|{{ch.TableName}}|{{ch.FullColumnName}}|{{ch.StructureName}}|{{ch.SegmentNumber}}|{{ch.TablePartitionNumber}}|{{ch.UsedSize}}|
 {{~end~}}
 
-## User Hierarchies
+### User Hierarchies
 |TableName|UserHierarchyName|IsHidden|UsedSize|Levels|
 |---|---|---|---|---|
 {{~for uh in UserHierarchies~}}
 |{{uh.TableName}}|{{uh.UserHierarchyName}}|{{uh.IsHidden}}|{{uh.UsedSize}}|{{uh.Levels}}|
 {{~end~}}
 
-## Relationships
+### Relationships
 |FromTableName|FromFullColumnName|FromCardinality|FromCardinalityType|ToTableName|ToFullColumnName|ToCardinality|ToCardinalityType|RelyOnReferentialIntegrity|JoinOnDateBehavior|CrossFilteringBehavior|RelationshipType|IsActive|RelationshipName|SecurityFilteringBehavior|UsedSizeFrom|UsedSizeTo|UsedSize|MissingKeys|InvalidRows|OneToManyRatio|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 {{~for r in Relationships~}}
 |{{r.FromTableName}}|{{r.FromFullColumnName}}|{{r.FromCardinality}}|{{r.FromCardinalityType}}|{{r.ToTableName}}|{{r.ToFullColumnName}}|{{r.ToCardinality}}|{{r.ToCardinalityType}}|{{r.RelyOnReferentialIntegrity}}|{{r.JoinOnDateBehavior}}|{{r.CrossFilteringBehavior}}|{{r.RelationshipType}}|{{r.IsActive}}|{{r.RelationshipName}}|{{r.SecurityFilteringBehavior}}|{{r.UsedSizeFrom}}|{{r.UsedSizeTo}}|{{r.UsedSize}}|{{r.MissingKeys}}|{{r.InvalidRows}}|{{r.OneToManyRatio}}|
 {{~end~}}
 
-# Table permissions
+### Table permissions
 
-# Calculation Items
+### Calculation Items
