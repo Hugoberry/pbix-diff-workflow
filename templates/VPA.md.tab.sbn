@@ -1,109 +1,16 @@
-## Metrics
-### Tables
-{{for t in Tables
-"##### " 
-    t.TableName
-    if t.Description
-        "\r\n"
-        t.Description
-    end
-    if t.TableExpression
-"\r\n```\r\n"
-        t.TableExpression
-"\r\n```\r\n"
-    end
-    if t.IsHidden
-"**Hidden** " 
-    end
-    if t.IsReferenced
-"**Referenced** "
-    end
-"`RowCount:` "
-        t.RowsCount | object.format "#,#"
-" `ReferentialIntegrityViolationCount:` "
-        t.ReferentialIntegrityViolationCount
-"<br> `ColumnsSize:` " 
-        t.ColumnsSize | object.format "#,#"
-" `TableSize:` "
-        t.TableSize | object.format "#,#"
-" `RelationshipsSize:` " 
-        t.RelationshipsSize
-" `UserHierarchiesSize:` "
-        t.UserHierarchiesSize | object.format "#,#"
-"\r\n"
-end}}
+## Tables
+|TableName|TableExpression|RowsCount|ReferentialIntegrityViolationCount|IsHidden|Description|ColumnsSize|TableSize|RelationshipsSize|UserHierarchiesSize|IsReferenced|
+|---|---|---|---|---|---|---|---|---|---|---|
+{{~for t in Tables~}}
+|{{t.TableName}}|{{t.TableExpression| @string.replace "\n" "<br>"}}|{{t.RowsCount}}|{{t.ReferentialIntegrityViolationCount}}|{{t.IsHidden}}|{{t.Description}}|{{t.ColumnsSize}}|{{t.TableSize}}|{{t.RelationshipsSize}}|{{t.UserHierarchiesSize}}|{{t.IsReferenced}}|
+{{~end~}}
 
 ## Columns
-{{for c in model.Columns
-"### "
-c.FullColumnName
-"\r\n"
-    if !c.Description.empty?
-        c.Description
-        "<br>\r\n"
-    end
-    if c.IsHidden
-" `Hidden` "
-    end
-    if c.IsKey
-" `Key` "
-    end
-    if c.IsNullable
-" `Nullable` "
-    end
-    if c.IsUnique
-" `Unique` "
-    end
-    if c.IsRowNumber
-" `RowNumber` "
-    end
-    if c.IsReferenced
-" `Referenced` "
-    end
-    if c.State != "Ready"
-" `State:` **"
-    c.State
-"**"
-    end
-    if c.ColumnCardinality!=0
-" `Cardinality:` "
-    c.ColumnCardinality | object.format "#,#"
-    end
-"<br> `DataType:` "
-    c.DataType
-" `ColumnType:` "
-    c.ColumnType
-" `Encoding:` "
-    c.Encoding
-    if c.ColumnExpression
-"\r\n```\r\n"
-    c.ColumnExpression
-"\r\n```\r\n"
-    end
-    if !c.DisplayFolder.empty?
-" `DisplayFolder:` "
-    c.DisplayFolder
-    end
-    if !c.FormatString.empty?
-" `Format String:` "
-        c.FormatString
-    end
-    if !c.EncodingHint == "Default"
-" `EncodingHint:` "
-    c.EncodingHint
-    end 
-    if c.SortByColumnName
-    " `Sort by:` "
-    c.SortByColumnName
-    end
-"<br>`DictionarySize:` "
-    c.DictionarySize | object.format "#,#"
-" `DataSize:` "
-    c.DataSize | object.format "#,#"
-" `HierarchiesSize:` "
-    c.HierarchiesSize | object.format "#,#"
-"\r\n"
-end}}
+|ColumnName|TableName|FullColumnName|ColumnCardinality|DataType|ColumnType|IsHidden|Encoding|ColumnExpression|DisplayFolder|Description|FormatString|EncodingHint|IsAvailableInMDX|IsKey|IsNullable|IsUnique|KeepUniqueRows|SortByColumnName|State|IsRowNumber|IsReferenced|DictionarySize|DataSize|HierarchiesSize|TotalSize|Selectivity|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+{{~for c in Columns~}}
+{{c.ColumnName}}|{{c.TableName}}|{{c.FullColumnName}}|{{c.ColumnCardinality}}|{{c.DataType}}|{{c.ColumnType}}|{{c.IsHidden}}|{{c.Encoding}}|{{c.ColumnExpression| @string.replace "\n" "<br>"}}|{{c.DisplayFolder}}|{{c.Description}}|{{c.FormatString}}|{{c.EncodingHint}}|{{c.IsAvailableInMDX}}|{{c.IsKey}}|{{c.IsNullable}}|{{c.IsUnique}}|{{c.KeepUniqueRows}}|{{c.SortByColumnName}}|{{c.State}}|{{c.IsRowNumber}}|{{c.IsReferenced}}|{{c.DictionarySize}}|{{c.DataSize}}|{{c.HierarchiesSize}}|{{c.TotalSize}}|{{c.Selectivity}}|
+{{~end~}}
 
 ## Measures
 |MeasureName|TableName|FullMeasureName|MeasureExpression|DisplayFolder|Description|IsHidden|DataType|DetailRowsExpression|FormatString|KpiStatusExpression|KpiTargetExpression|KpiTargetFormatString|KpiTrendExpression|
