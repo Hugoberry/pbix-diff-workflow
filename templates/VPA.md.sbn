@@ -34,7 +34,7 @@
 end}}
 
 ### Columns
-{{for c in model.Columns
+{{for c in Columns
 "#### "
 c.FullColumnName
 "\r\n"
