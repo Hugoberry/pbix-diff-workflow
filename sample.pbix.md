@@ -390,8 +390,6 @@ in
 ```
 
 
-```
-
 ### COVID
 ```
 let
@@ -425,8 +423,6 @@ let
     #"Changed Type" = Table.TransformColumnTypes(Source,{{"Metric", type text}, {"Order", Int64.Type}})
 in
     #"Changed Type"
-```
-
 ```
 
 ### COVID measures
