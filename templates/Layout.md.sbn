@@ -79,11 +79,11 @@ end~}}
         "<br>\r\n**Filter:**<br>\r\n"
         filter_visit s.filters
     end
-"\r\n#### "
+"\r\n### "
     s.displayName
 "-Visuals"
     for viz in s.visualContainers
-"\r\n##### `Page:` "
+"\r\n#### `Page:` "
         s.displayName
         " `Visual:` "
         "conf  = {{viz.config}}" | object.eval_template | object.eval 

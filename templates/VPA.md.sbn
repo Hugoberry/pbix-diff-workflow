@@ -19,17 +19,17 @@
 "**Referenced** "
     end
 "`RowCount:` "
-        t.RowsCount | object.format "#,#"
+        t.RowsCount 
 " `ReferentialIntegrityViolationCount:` "
         t.ReferentialIntegrityViolationCount
 "<br> `ColumnsSize:` " 
-        t.ColumnsSize | object.format "#,#"
+        t.ColumnsSize 
 " `TableSize:` "
-        t.TableSize | object.format "#,#"
+        t.TableSize 
 " `RelationshipsSize:` " 
         t.RelationshipsSize
 " `UserHierarchiesSize:` "
-        t.UserHierarchiesSize | object.format "#,#"
+        t.UserHierarchiesSize 
 "\r\n"
 end}}
 
@@ -67,7 +67,7 @@ c.FullColumnName
     end
     if c.ColumnCardinality!=0
 " `Cardinality:` "
-    c.ColumnCardinality | object.format "#,#"
+    c.ColumnCardinality 
     end
 "<br> `DataType:` "
     c.DataType
@@ -97,11 +97,11 @@ c.FullColumnName
     c.SortByColumnName
     end
 "<br>`DictionarySize:` "
-    c.DictionarySize | object.format "#,#"
+    c.DictionarySize 
 " `DataSize:` "
-    c.DataSize | object.format "#,#"
+    c.DataSize 
 " `HierarchiesSize:` "
-    c.HierarchiesSize | object.format "#,#"
+    c.HierarchiesSize 
 "\r\n"
 end}}
 
@@ -160,7 +160,7 @@ end}}
 |TableName|UserHierarchyName|IsHidden|UsedSize|Levels|
 |---|---|---|---|---|
 {{~for uh in UserHierarchies~}}
-|{{uh.TableName}}|{{uh.UserHierarchyName}}|{{uh.IsHidden}}|{{uh.UsedSize | object.format "#,#"}}|{{uh.Levels}}|
+|{{uh.TableName}}|{{uh.UserHierarchyName}}|{{uh.IsHidden}}|{{uh.UsedSize }}|{{uh.Levels}}|
 {{~end~}}
 
 ### Relationships
