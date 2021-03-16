@@ -64,9 +64,9 @@ end~}}
 end~}}
 ## Report\Layout
 {{for s in sections
-"### "
+"### `Page:` "
     s.displayName
-"-Page\r\n"
+"\r\n"
 "`Order:` "
     s.ordinal
 " `Width:` "
@@ -83,7 +83,9 @@ end~}}
     s.displayName
 "-Visuals"
     for viz in s.visualContainers
-"\r\n##### "
+"\r\n##### `Page:` "
+        s.displayName
+        " `Visual:` "
         "conf  = {{viz.config}}" | object.eval_template | object.eval 
         conf?.singleVisual?.visualType ?? "Group:" + conf?.singleVisualGroup?.displayName
         title = conf?.singleVisual?.vcObjects?.title | array.first 

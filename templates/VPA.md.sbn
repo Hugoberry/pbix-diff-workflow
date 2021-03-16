@@ -1,7 +1,7 @@
 ## Metrics
 ### Tables
 {{for t in Tables
-"##### " 
+"##### `Table:` " 
     t.TableName
     if t.Description
         "\r\n"
@@ -35,7 +35,7 @@ end}}
 
 ### Columns
 {{for c in Columns
-"#### "
+"#### `Column:` "
 c.FullColumnName
 "\r\n"
     if !c.Description.empty?
@@ -107,7 +107,7 @@ end}}
 
 ### Measures
 {{for m in Measures
-"#### "
+"#### `Measure:` "
 m.FullMeasureName
 "\r\n"
 if !m.Description.empty?
@@ -165,7 +165,7 @@ end}}
 
 ### Relationships
 {{for r in Relationships
-"#### "
+"#### `Relationship:` "
 r.FromFullColumnName
 " => "
 r.ToFullColumnName
