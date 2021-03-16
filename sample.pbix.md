@@ -1,4 +1,8 @@
 # Overview 
+- [PBIX file contents](#PBIX-file-contents)
+- [Report\Layout](#ReportLayout-1)
+- [Power Query](#Power-Query)
+- [Metrics+DAX](#Metrics)
 ## PBIX file contents
 The file was last saved on 2020-03-31 15:52:54
 
@@ -7,11 +11,11 @@ The file was last saved on 2020-03-31 15:52:54
 ##### [Content_Types].xml
  `FileSize:`770 `CompressedSize:`259
 ##### DataMashup
- `FileSize:`28633 `CompressedSize:`6128
+ `FileSize:`28,633 `CompressedSize:`6,128
 ##### DiagramLayout
- `FileSize:`1238 `CompressedSize:`364
+ `FileSize:`1,238 `CompressedSize:`364
 ##### Report\Layout
- `FileSize:`529182 `CompressedSize:`28630
+ `FileSize:`529,182 `CompressedSize:`28,630
 ##### Settings
  `FileSize:`15 `CompressedSize:`11
 ##### Metadata
@@ -23,118 +27,325 @@ The file was last saved on 2020-03-31 15:52:54
 ##### Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\package.json
  `FileSize:`789 `CompressedSize:`443
 ##### Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\resources\choropleth4C77906D867C4C09AFE83BA5E2AA106A.pbiviz.json
- `FileSize:`542463 `CompressedSize:`171602
+ `FileSize:`542,463 `CompressedSize:`171,602
 ##### Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\package.json
- `FileSize:`1005 `CompressedSize:`574
+ `FileSize:`1,005 `CompressedSize:`574
 ##### Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\resources\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json
- `FileSize:`169378 `CompressedSize:`58091
+ `FileSize:`169,378 `CompressedSize:`58,091
 ##### Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\package.json
- `FileSize:`1074 `CompressedSize:`553
+ `FileSize:`1,074 `CompressedSize:`553
 ##### Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\resources\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654.pbiviz.json
- `FileSize:`472163 `CompressedSize:`148781
+ `FileSize:`472,163 `CompressedSize:`148,781
 ##### Report\StaticResources\RegisteredResources\Frame_2_(4)9974572814303304.png
- `FileSize:`761266 `CompressedSize:`632573
+ `FileSize:`761,266 `CompressedSize:`632,573
 ##### Report\StaticResources\RegisteredResources\Gradation_with_text894674291833967.GIF
- `FileSize:`3281 `CompressedSize:`2894
+ `FileSize:`3,281 `CompressedSize:`2,894
 ##### Report\StaticResources\RegisteredResources\USAFacts_Wordmark_blue8192537517759648.png
- `FileSize:`120150 `CompressedSize:`100741
+ `FileSize:`120,150 `CompressedSize:`100,741
 ##### Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json
- `FileSize:`3527 `CompressedSize:`1087
+ `FileSize:`3,527 `CompressedSize:`1,087
 ##### Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json
- `FileSize:`25607 `CompressedSize:`8737
+ `FileSize:`25,607 `CompressedSize:`8,737
 ##### SecurityBindings
  `FileSize:`326 `CompressedSize:`326
 ##### DataModel
- `FileSize:`453243 `CompressedSize:`453243
+ `FileSize:`453,243 `CompressedSize:`453,243
 
 
-# Layout
+## Report\Layout
+### Main-Page
+`Order:` 0 `Width:` 1280 `Height:` 720 `Visible:` 1
+#### Main-Visuals
+##### Group:Daily increments
+`X:` 459 `Y:` 418 `Z:` 7000 `Width:` 791 `Height:` 281
 
-##  Main
-Order|Width|Height|Visible|Filters
--|-|-|-|-
-0|1280|720|1|
+##### actionButton
+'Cumulative (grey)'<br>
+`X:` 132 `Y:` 0 `Z:` 1000 `Width:` 129 `Height:` 30
 
-### Main-Visuals
-Positioning|Config|Filters
--|-|-
-`X:`459<br>`Y:`418<br>`Z:`7000<br>`Width:`791<br>`Height:`281 |`Group:Daily increments`<br><br> |
-`X:`132<br>`Y:`0<br>`Z:`1000<br>`Width:`129<br>`Height:`30 |`actionButton`<br>'Cumulative (grey)'<br> |
-`X:`402<br>`Y:`50<br>`Z:`0<br>`Width:`389<br>`Height:`230 |`clusteredColumnChart`<br>'Total deaths'<br>`Category:` ["COVID.Date"]<br>`Y:` ["Sum(COVID.Daily deaths)"]<br> |
-`X:`403<br>`Y:`41<br>`Z:`2000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Daily Deaths'<br> |
-`X:`0<br>`Y:`50<br>`Z:`3000<br>`Width:`389<br>`Height:`230 |`clusteredColumnChart`<br>'Total confirmed cases'<br>`Category:` ["COVID.Date"]<br>`Y:` ["Sum(COVID.Daily cases)"]<br> |
-`X:`0<br>`Y:`41<br>`Z:`4000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Daily Cases'<br> |
-`X:`34<br>`Y:`53<br>`Z:`0<br>`Width:`378<br>`Height:`629 |`pivotTable`<br><br>`Rows:` ["StateDim.Country", "StateDim.State"]<br>`Values:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]<br> |
-`X:`437<br>`Y:`52<br>`Z:`1000<br>`Width:`497<br>`Height:`368 |`Group:Pink Map`<br><br> |
-`X:`29<br>`Y:`0<br>`Z:`3000<br>`Width:`118<br>`Height:`38 |`actionButton`<br><br> |
-`X:`152<br>`Y:`0<br>`Z:`2000<br>`Width:`129<br>`Height:`36 |`actionButton`<br>'Summary'<br> |
-`X:`0<br>`Y:`11<br>`Z:`1000<br>`Width:`497<br>`Height:`357 |`shapeMap`<br>'Confirmed cases by State'<br>`Category:` ["StateDim.State"]<br>`Tooltips:` ["COVID measures.Total confirmed cases", "COVID measures.Case fatality rate"]<br>`Value:` ["COVID measures.Total deaths"]<br> |
-`X:`29<br>`Y:`0<br>`Z:`0<br>`Width:`118<br>`Height:`36 |`actionButton`<br>'Summary'<br> |
-`X:`437<br>`Y:`50<br>`Z:`2000<br>`Width:`498<br>`Height:`368 |`Group:Blue Map`<br><br> |
-`X:`153<br>`Y:`0<br>`Z:`3000<br>`Width:`130<br>`Height:`42 |`actionButton`<br><br> |
-`X:`153<br>`Y:`1<br>`Z:`2000<br>`Width:`129<br>`Height:`37 |`actionButton`<br>'Summary'<br> |
-`X:`0<br>`Y:`11<br>`Z:`1000<br>`Width:`498<br>`Height:`357 |`shapeMap`<br>'Confirmed cases by State'<br>`Category:` ["StateDim.State"]<br>`Value:` ["Latest COVID measures.Total confirmed cases"]<br>`Tooltips:` ["COVID measures.Total deaths", "COVID measures.Case fatality rate"]<br> |
-`X:`29<br>`Y:`0<br>`Z:`0<br>`Width:`118<br>`Height:`38 |`actionButton`<br>'Summary'<br> |
-`X:`942<br>`Y:`51<br>`Z:`3000<br>`Width:`308<br>`Height:`74 |`slicer`<br><br>`Values:` ["COVID.Date"]<br> |
-`X:`467<br>`Y:`422<br>`Z:`4000<br>`Width:`116<br>`Height:`25 |`actionButton`<br>'Daily button'<br> |
-`X:`595<br>`Y:`422<br>`Z:`5000<br>`Width:`115<br>`Height:`25 |`actionButton`<br>'Cumulative button'<br> |
-`X:`459<br>`Y:`419<br>`Z:`6000<br>`Width:`791<br>`Height:`281 |`Group:Cumulative`<br><br> |
-`X:`6<br>`Y:`0<br>`Z:`4000<br>`Width:`123<br>`Height:`29 |`actionButton`<br>'Daily (grey)'<br> |
-`X:`0<br>`Y:`50<br>`Z:`3000<br>`Width:`388<br>`Height:`231 |`clusteredColumnChart`<br>'Total confirmed cases'<br>`Category:` ["COVID.Date"]<br>`Y:` ["COVID measures.Confirmed cases"]<br> |
-`X:`403<br>`Y:`50<br>`Z:`2000<br>`Width:`388<br>`Height:`231 |`clusteredColumnChart`<br>'Total deaths'<br>`Category:` ["COVID.Date"]<br>`Y:` ["COVID measures.Deaths"]<br> |
-`X:`403<br>`Y:`40<br>`Z:`1000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Cumulative Deaths'<br> |
-`X:`0<br>`Y:`40<br>`Z:`0<br>`Width:`388<br>`Height:`20 |`actionButton`<br>'Cumulative Cases'<br> |
-`X:`734<br>`Y:`384<br>`Z:`8000<br>`Width:`182<br>`Height:`23 |`actionButton`<br>'State View'<br> |
-`X:`959<br>`Y:`142<br>`Z:`11000<br>`Width:`274<br>`Height:`287 |`Group:Group 1`<br><br> |
-`X:`0<br>`Y:`237<br>`Z:`2000<br>`Width:`94<br>`Height:`50 |`image`<br>'Source:'<br> |
-`X:`0<br>`Y:`0<br>`Z:`0<br>`Width:`274<br>`Height:`115 |`textbox`<br>'Methodology'<br> |
-`X:`0<br>`Y:`115<br>`Z:`1000<br>`Width:`274<br>`Height:`121 |`actionButton`<br>'Data Source'<br> |
-`X:`466<br>`Y:`379<br>`Z:`9000<br>`Width:`149<br>`Height:`31 |`image`<br><br> |
-`X:`35<br>`Y:`700<br>`Z:`10000<br>`Width:`1216<br>`Height:`18 |`actionButton`<br><br> |
+##### clusteredColumnChart
+'Total deaths'<br>
+`X:` 402 `Y:` 50 `Z:` 0 `Width:` 389 `Height:` 230<br>
+**Fields:**<br>
+ `Category:` ["COVID.Date"] `Y:` ["Sum(COVID.Daily deaths)"]
 
-##  County view
-Order|Width|Height|Visible|Filters
--|-|-|-|-
-1|1280|720|1|`StateDim`<br>State is 'New York'<br>
+##### actionButton
+'Daily Deaths'<br>
+`X:` 403 `Y:` 41 `Z:` 2000 `Width:` 388 `Height:` 19
 
-### County view-Visuals
-Positioning|Config|Filters
--|-|-
-`X:`459<br>`Y:`418<br>`Z:`7000<br>`Width:`791<br>`Height:`281 |`Group:Daily increments`<br><br> |
-`X:`132<br>`Y:`0<br>`Z:`1000<br>`Width:`129<br>`Height:`30 |`actionButton`<br>'Cumulative (grey)'<br> |
-`X:`402<br>`Y:`50<br>`Z:`0<br>`Width:`389<br>`Height:`230 |`clusteredColumnChart`<br>'Total deaths'<br>`Category:` ["COVID.Date"]<br>`Y:` ["Sum(COVID.Daily deaths)"]<br> |
-`X:`403<br>`Y:`41<br>`Z:`2000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Daily Deaths'<br> |
-`X:`0<br>`Y:`50<br>`Z:`3000<br>`Width:`389<br>`Height:`230 |`clusteredColumnChart`<br>'Total confirmed cases'<br>`Category:` ["COVID.Date"]<br>`Y:` ["Sum(COVID.Daily cases)"]<br> |
-`X:`133<br>`Y:`0<br>`Z:`5000<br>`Width:`122<br>`Height:`29 |`actionButton`<br>'Daily (grey)'<br> |
-`X:`0<br>`Y:`41<br>`Z:`4000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Daily Cases'<br> |
-`X:`28<br>`Y:`53<br>`Z:`0<br>`Width:`386<br>`Height:`629 |`pivotTable`<br><br>`Rows:` ["StateDim.State", "COVID.County Name"]<br>`Values:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]<br> |
-`X:`437<br>`Y:`51<br>`Z:`1000<br>`Width:`486<br>`Height:`367 |`Group:Pink Map`<br><br> |
-`X:`29<br>`Y:`0<br>`Z:`3000<br>`Width:`118<br>`Height:`38 |`actionButton`<br><br> |
-`X:`152<br>`Y:`0<br>`Z:`2000<br>`Width:`129<br>`Height:`36 |`actionButton`<br>'Summary'<br> |
-`X:`0<br>`Y:`31<br>`Z:`1000<br>`Width:`486<br>`Height:`336 |`filledMap`<br>'Confirmed cases by State'<br>`Category:` ["COVID.County"]<br>`Tooltips:` ["COVID measures.Total deaths", "COVID measures.Total confirmed cases", "COVID measures.Case fatality rate"]<br> |`COVID`<br>not (County Contains 'Unallocated')<br>
-`X:`29<br>`Y:`0<br>`Z:`0<br>`Width:`118<br>`Height:`36 |`actionButton`<br>'Summary'<br> |
-`X:`437<br>`Y:`50<br>`Z:`2000<br>`Width:`486<br>`Height:`369 |`Group:Blue Map`<br><br> |
-`X:`154<br>`Y:`0<br>`Z:`3000<br>`Width:`129<br>`Height:`37 |`actionButton`<br><br> |
-`X:`153<br>`Y:`2<br>`Z:`2000<br>`Width:`129<br>`Height:`37 |`actionButton`<br>'Summary'<br> |
-`X:`0<br>`Y:`33<br>`Z:`1000<br>`Width:`486<br>`Height:`336 |`filledMap`<br>'Confirmed cases by State'<br>`Tooltips:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]<br>`Category:` ["COVID.County"]<br> |`COVID`<br>not (County Contains 'Unallocated')<br>
-`X:`29<br>`Y:`1<br>`Z:`0<br>`Width:`118<br>`Height:`38 |`actionButton`<br>'Summary'<br> |
-`X:`942<br>`Y:`40<br>`Z:`3000<br>`Width:`309<br>`Height:`75 |`slicer`<br><br>`Values:` ["COVID.Date"]<br> |
-`X:`467<br>`Y:`422<br>`Z:`4000<br>`Width:`116<br>`Height:`25 |`actionButton`<br>'Daily button'<br> |
-`X:`595<br>`Y:`422<br>`Z:`5000<br>`Width:`115<br>`Height:`25 |`actionButton`<br>'Cumulative button'<br> |
-`X:`459<br>`Y:`419<br>`Z:`6000<br>`Width:`791<br>`Height:`281 |`Group:Cumulative`<br><br> |
-`X:`6<br>`Y:`0<br>`Z:`4000<br>`Width:`123<br>`Height:`29 |`actionButton`<br>'Daily (grey)'<br> |
-`X:`0<br>`Y:`50<br>`Z:`3000<br>`Width:`388<br>`Height:`231 |`clusteredColumnChart`<br>'Total confirmed cases'<br>`Category:` ["COVID.Date"]<br>`Y:` ["COVID measures.Confirmed cases"]<br> |
-`X:`403<br>`Y:`50<br>`Z:`2000<br>`Width:`388<br>`Height:`231 |`clusteredColumnChart`<br>'Total deaths'<br>`Category:` ["COVID.Date"]<br>`Y:` ["COVID measures.Deaths"]<br> |
-`X:`403<br>`Y:`40<br>`Z:`1000<br>`Width:`388<br>`Height:`19 |`actionButton`<br>'Cumulative Deaths'<br> |
-`X:`0<br>`Y:`40<br>`Z:`0<br>`Width:`388<br>`Height:`20 |`actionButton`<br>'Cumulative Cases'<br> |
-`X:`463<br>`Y:`51<br>`Z:`8000<br>`Width:`123<br>`Height:`39 |`actionButton`<br><br> |
-`X:`788<br>`Y:`62<br>`Z:`9000<br>`Width:`129<br>`Height:`25 |`actionButton`<br>'State View'<br> |
-`X:`1145<br>`Y:`2<br>`Z:`10000<br>`Width:`129<br>`Height:`25 |`actionButton`<br>'State View'<br> |
-`X:`959<br>`Y:`142<br>`Z:`11000<br>`Width:`274<br>`Height:`287 |`Group:Group 1`<br><br> |
-`X:`0<br>`Y:`237<br>`Z:`2000<br>`Width:`94<br>`Height:`50 |`image`<br>'Source:'<br> |
-`X:`0<br>`Y:`0<br>`Z:`0<br>`Width:`274<br>`Height:`115 |`textbox`<br>'Methodology'<br> |
-`X:`0<br>`Y:`115<br>`Z:`1000<br>`Width:`274<br>`Height:`121 |`actionButton`<br>'Data Source'<br> |
-`X:`35<br>`Y:`700<br>`Z:`12000<br>`Width:`1216<br>`Height:`18 |`actionButton`<br><br> |
+##### clusteredColumnChart
+'Total confirmed cases'<br>
+`X:` 0 `Y:` 50 `Z:` 3000 `Width:` 389 `Height:` 230<br>
+**Fields:**<br>
+ `Category:` ["COVID.Date"] `Y:` ["Sum(COVID.Daily cases)"]
+
+##### actionButton
+'Daily Cases'<br>
+`X:` 0 `Y:` 41 `Z:` 4000 `Width:` 388 `Height:` 19
+
+##### pivotTable
+`X:` 34 `Y:` 53 `Z:` 0 `Width:` 378 `Height:` 629<br>
+**Fields:**<br>
+ `Rows:` ["StateDim.Country", "StateDim.State"] `Values:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]
+
+##### Group:Pink Map
+`X:` 437 `Y:` 52 `Z:` 1000 `Width:` 497 `Height:` 368
+
+##### actionButton
+`X:` 29 `Y:` 0 `Z:` 3000 `Width:` 118 `Height:` 38
+
+##### actionButton
+'Summary'<br>
+`X:` 152 `Y:` 0 `Z:` 2000 `Width:` 129 `Height:` 36
+
+##### shapeMap
+'Confirmed cases by State'<br>
+`X:` 0 `Y:` 11 `Z:` 1000 `Width:` 497 `Height:` 357<br>
+**Fields:**<br>
+ `Category:` ["StateDim.State"] `Tooltips:` ["COVID measures.Total confirmed cases", "COVID measures.Case fatality rate"] `Value:` ["COVID measures.Total deaths"]
+
+##### actionButton
+'Summary'<br>
+`X:` 29 `Y:` 0 `Z:` 0 `Width:` 118 `Height:` 36
+
+##### Group:Blue Map
+`X:` 437 `Y:` 50 `Z:` 2000 `Width:` 498 `Height:` 368
+
+##### actionButton
+`X:` 153 `Y:` 0 `Z:` 3000 `Width:` 130 `Height:` 42
+
+##### actionButton
+'Summary'<br>
+`X:` 153 `Y:` 1 `Z:` 2000 `Width:` 129 `Height:` 37
+
+##### shapeMap
+'Confirmed cases by State'<br>
+`X:` 0 `Y:` 11 `Z:` 1000 `Width:` 498 `Height:` 357<br>
+**Fields:**<br>
+ `Category:` ["StateDim.State"] `Value:` ["Latest COVID measures.Total confirmed cases"] `Tooltips:` ["COVID measures.Total deaths", "COVID measures.Case fatality rate"]
+
+##### actionButton
+'Summary'<br>
+`X:` 29 `Y:` 0 `Z:` 0 `Width:` 118 `Height:` 38
+
+##### slicer
+`X:` 942 `Y:` 51 `Z:` 3000 `Width:` 308 `Height:` 74<br>
+**Fields:**<br>
+ `Values:` ["COVID.Date"]
+
+##### actionButton
+'Daily button'<br>
+`X:` 467 `Y:` 422 `Z:` 4000 `Width:` 116 `Height:` 25
+
+##### actionButton
+'Cumulative button'<br>
+`X:` 595 `Y:` 422 `Z:` 5000 `Width:` 115 `Height:` 25
+
+##### Group:Cumulative
+`X:` 459 `Y:` 419 `Z:` 6000 `Width:` 791 `Height:` 281
+
+##### actionButton
+'Daily (grey)'<br>
+`X:` 6 `Y:` 0 `Z:` 4000 `Width:` 123 `Height:` 29
+
+##### clusteredColumnChart
+'Total confirmed cases'<br>
+`X:` 0 `Y:` 50 `Z:` 3000 `Width:` 388 `Height:` 231<br>
+**Fields:**<br>
+ `Category:` ["COVID.Date"] `Y:` ["COVID measures.Confirmed cases"]
+
+##### clusteredColumnChart
+'Total deaths'<br>
+`X:` 403 `Y:` 50 `Z:` 2000 `Width:` 388 `Height:` 231<br>
+**Fields:**<br>
+ `Category:` ["COVID.Date"] `Y:` ["COVID measures.Deaths"]
+
+##### actionButton
+'Cumulative Deaths'<br>
+`X:` 403 `Y:` 40 `Z:` 1000 `Width:` 388 `Height:` 19
+
+##### actionButton
+'Cumulative Cases'<br>
+`X:` 0 `Y:` 40 `Z:` 0 `Width:` 388 `Height:` 20
+
+##### actionButton
+'State View'<br>
+`X:` 734 `Y:` 384 `Z:` 8000 `Width:` 182 `Height:` 23
+
+##### Group:Group 1
+`X:` 959 `Y:` 142 `Z:` 11000 `Width:` 274 `Height:` 287
+
+##### image
+'Source:'<br>
+`X:` 0 `Y:` 237 `Z:` 2000 `Width:` 94 `Height:` 50
+
+##### textbox
+'Methodology'<br>
+`X:` 0 `Y:` 0 `Z:` 0 `Width:` 274 `Height:` 115
+
+##### actionButton
+'Data Source'<br>
+`X:` 0 `Y:` 115 `Z:` 1000 `Width:` 274 `Height:` 121
+
+##### image
+`X:` 466 `Y:` 379 `Z:` 9000 `Width:` 149 `Height:` 31
+
+##### actionButton
+`X:` 35 `Y:` 700 `Z:` 10000 `Width:` 1216 `Height:` 18
+
+### County view-Page
+`Order:` 1 `Width:` 1280 `Height:` 720 `Visible:` 1<br>
+**Filter:**<br>
+`StateDim`<br>State is 'New York'<br>
+#### County view-Visuals
+##### Group:Daily increments
+`X:` 459 `Y:` 418 `Z:` 7000 `Width:` 791 `Height:` 281
+
+##### actionButton
+'Cumulative (grey)'<br>
+`X:` 132 `Y:` 0 `Z:` 1000 `Width:` 129 `Height:` 30
+
+##### clusteredColumnChart
+'Total deaths'<br>
+`X:` 402 `Y:` 50 `Z:` 0 `Width:` 389 `Height:` 230<br>
+**Fields:**<br>
+ `Category:` ["COVID.Date"] `Y:` ["Sum(COVID.Daily deaths)"]
+
+##### actionButton
+'Daily Deaths'<br>
+`X:` 403 `Y:` 41 `Z:` 2000 `Width:` 388 `Height:` 19
+
+##### clusteredColumnChart
+'Total confirmed cases'<br>
+`X:` 0 `Y:` 50 `Z:` 3000 `Width:` 389 `Height:` 230<br>
+**Fields:**<br>
+ `Category:` ["COVID.Date"] `Y:` ["Sum(COVID.Daily cases)"]
+
+##### actionButton
+'Daily (grey)'<br>
+`X:` 133 `Y:` 0 `Z:` 5000 `Width:` 122 `Height:` 29
+
+##### actionButton
+'Daily Cases'<br>
+`X:` 0 `Y:` 41 `Z:` 4000 `Width:` 388 `Height:` 19
+
+##### pivotTable
+`X:` 28 `Y:` 53 `Z:` 0 `Width:` 386 `Height:` 629<br>
+**Fields:**<br>
+ `Rows:` ["StateDim.State", "COVID.County Name"] `Values:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]
+
+##### Group:Pink Map
+`X:` 437 `Y:` 51 `Z:` 1000 `Width:` 486 `Height:` 367
+
+##### actionButton
+`X:` 29 `Y:` 0 `Z:` 3000 `Width:` 118 `Height:` 38
+
+##### actionButton
+'Summary'<br>
+`X:` 152 `Y:` 0 `Z:` 2000 `Width:` 129 `Height:` 36
+
+##### filledMap
+'Confirmed cases by State'<br>
+`X:` 0 `Y:` 31 `Z:` 1000 `Width:` 486 `Height:` 336<br>
+**Fields:**<br>
+ `Category:` ["COVID.County"] `Tooltips:` ["COVID measures.Total deaths", "COVID measures.Total confirmed cases", "COVID measures.Case fatality rate"]<br>
+**Filter**:<br>
+`COVID`<br>not (County Contains 'Unallocated')<br>
+
+##### actionButton
+'Summary'<br>
+`X:` 29 `Y:` 0 `Z:` 0 `Width:` 118 `Height:` 36
+
+##### Group:Blue Map
+`X:` 437 `Y:` 50 `Z:` 2000 `Width:` 486 `Height:` 369
+
+##### actionButton
+`X:` 154 `Y:` 0 `Z:` 3000 `Width:` 129 `Height:` 37
+
+##### actionButton
+'Summary'<br>
+`X:` 153 `Y:` 2 `Z:` 2000 `Width:` 129 `Height:` 37
+
+##### filledMap
+'Confirmed cases by State'<br>
+`X:` 0 `Y:` 33 `Z:` 1000 `Width:` 486 `Height:` 336<br>
+**Fields:**<br>
+ `Tooltips:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"] `Category:` ["COVID.County"]<br>
+**Filter**:<br>
+`COVID`<br>not (County Contains 'Unallocated')<br>
+
+##### actionButton
+'Summary'<br>
+`X:` 29 `Y:` 1 `Z:` 0 `Width:` 118 `Height:` 38
+
+##### slicer
+`X:` 942 `Y:` 40 `Z:` 3000 `Width:` 309 `Height:` 75<br>
+**Fields:**<br>
+ `Values:` ["COVID.Date"]
+
+##### actionButton
+'Daily button'<br>
+`X:` 467 `Y:` 422 `Z:` 4000 `Width:` 116 `Height:` 25
+
+##### actionButton
+'Cumulative button'<br>
+`X:` 595 `Y:` 422 `Z:` 5000 `Width:` 115 `Height:` 25
+
+##### Group:Cumulative
+`X:` 459 `Y:` 419 `Z:` 6000 `Width:` 791 `Height:` 281
+
+##### actionButton
+'Daily (grey)'<br>
+`X:` 6 `Y:` 0 `Z:` 4000 `Width:` 123 `Height:` 29
+
+##### clusteredColumnChart
+'Total confirmed cases'<br>
+`X:` 0 `Y:` 50 `Z:` 3000 `Width:` 388 `Height:` 231<br>
+**Fields:**<br>
+ `Category:` ["COVID.Date"] `Y:` ["COVID measures.Confirmed cases"]
+
+##### clusteredColumnChart
+'Total deaths'<br>
+`X:` 403 `Y:` 50 `Z:` 2000 `Width:` 388 `Height:` 231<br>
+**Fields:**<br>
+ `Category:` ["COVID.Date"] `Y:` ["COVID measures.Deaths"]
+
+##### actionButton
+'Cumulative Deaths'<br>
+`X:` 403 `Y:` 40 `Z:` 1000 `Width:` 388 `Height:` 19
+
+##### actionButton
+'Cumulative Cases'<br>
+`X:` 0 `Y:` 40 `Z:` 0 `Width:` 388 `Height:` 20
+
+##### actionButton
+`X:` 463 `Y:` 51 `Z:` 8000 `Width:` 123 `Height:` 39
+
+##### actionButton
+'State View'<br>
+`X:` 788 `Y:` 62 `Z:` 9000 `Width:` 129 `Height:` 25
+
+##### actionButton
+'State View'<br>
+`X:` 1145 `Y:` 2 `Z:` 10000 `Width:` 129 `Height:` 25
+
+##### Group:Group 1
+`X:` 959 `Y:` 142 `Z:` 11000 `Width:` 274 `Height:` 287
+
+##### image
+'Source:'<br>
+`X:` 0 `Y:` 237 `Z:` 2000 `Width:` 94 `Height:` 50
+
+##### textbox
+'Methodology'<br>
+`X:` 0 `Y:` 0 `Z:` 0 `Width:` 274 `Height:` 115
+
+##### actionButton
+'Data Source'<br>
+`X:` 0 `Y:` 115 `Z:` 1000 `Width:` 274 `Height:` 121
+
+##### actionButton
+`X:` 35 `Y:` 700 `Z:` 12000 `Width:` 1216 `Height:` 18
 
 
 
