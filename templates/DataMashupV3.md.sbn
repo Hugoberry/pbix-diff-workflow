@@ -20,7 +20,7 @@ end}}
 
 ## Expressions
 {{for exp in this.model.expressions
-"### "
+"### `Expression:` "
 exp.name
 "\r\n"
 exp?.description
@@ -35,7 +35,7 @@ end}}
 {{for part in this.model.tables
     for p in part.partitions
         if p.source | object.kind == "MPartitionSource"
-    "\r\n### "
+    "\r\n### `Partition:` "
             part.name
     "\r\n```\r\n"
             if p.source.expression | object.typeof == "array"
