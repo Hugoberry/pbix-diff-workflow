@@ -1,4 +1,4 @@
-# pbix-diff-action
+# pbix-diff-workflow
 This workflow translates the `sample.pbix` file into plain english (Markdown) and commits it along side it as `sample.pbix.md`. 
 >Eventually this project will become a standalone Github Action that will apply the same action across all PBIX files in the repo.
 ## How it works
