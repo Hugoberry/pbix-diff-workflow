@@ -62,32 +62,61 @@ end~}}
         end
     end
 end~}}
-# Layout
-{{for s in sections}}
-##  {{s.displayName}}
-Order|Width|Height|Visible|Filters
--|-|-|-|-
-{{s.ordinal}}|{{s.width}}|{{s.height}}|{{s.displayOption}}|{{filter_visit s.filters}}
+## Report\Layout
+{{for s in sections
+"### "
+    s.displayName
+"-Page\r\n"
+"`Order:` "
+    s.ordinal
+" `Width:` "
+    s.width
+" `Height:` "
+    s.height
+" `Visible:` "
+    s.displayOption
+    if s.filters != "[]" && s.filters
+        "<br>\r\n**Filter:**<br>\r\n"
+        filter_visit s.filters
+    end
+"\r\n#### "
+    s.displayName
+"-Visuals"
+    for viz in s.visualContainers
+"\r\n##### "
+        "conf  = {{viz.config}}" | object.eval_template | object.eval 
+        conf?.singleVisual?.visualType ?? "Group:" + conf?.singleVisualGroup?.displayName
+        title = conf?.singleVisual?.vcObjects?.title | array.first 
+        if title?.properties?.text?.expr?.Literal?.Value
+"\r\n"
+            title?.properties?.text?.expr?.Literal?.Value
+"<br>"
+        end
+"\r\n`X:` "
+        (object.typeof viz.x == "string" ? (viz.x | string.to_double) : viz.x )| math.floor
+" `Y:` "
+        (object.typeof viz.y == "string" ? (viz.y | string.to_double) : viz.y )| math.floor
+" `Z:` "
+        (object.typeof viz.z == "string" ? (viz.z | string.to_double) : viz.z )| math.floor
+" `Width:` "
+        (object.typeof viz.width == "string" ? (viz.width | string.to_double) : viz.width) | math.floor
+" `Height:` "
+        (object.typeof viz.height == "string" ? (viz.height | string.to_double) : viz.height)| math.floor
+        if conf?.singleVisual?.projections
+"<br>\r\n**Fields:**<br>\r\n"
+            for $kp in conf.singleVisual.projections
+                " `"
+                $kp.key
+                ":` "
+                $kp.value| array.map "queryRef"
 
-### {{s.displayName}}-Visuals
-Positioning|Config|Filters
--|-|-
-    {{- for viz in s.visualContainers}}
-`X:`{{(object.typeof viz.x == "string" ? (viz.x | string.to_double) : viz.x )| math.floor}}<br>`Y:`
-{{- (object.typeof viz.y == "string" ? (viz.y | string.to_double) : viz.y )| math.floor}}<br>`Z:`
-{{- (object.typeof viz.z == "string" ? (viz.z | string.to_double) : viz.z )| math.floor}}<br>`Width:`
-{{- (object.typeof viz.width == "string" ? (viz.width | string.to_double) : viz.width) | math.floor}}<br>`Height:`
-{{- (object.typeof viz.height == "string" ? (viz.height | string.to_double) : viz.height)| math.floor}} | 
-{{- "conf  = {{viz.config}}" | object.eval_template | object.eval 
-"`" 
-conf?.singleVisual?.visualType ?? "Group:" + conf?.singleVisualGroup?.displayName
-"`"
-}}<br>
-{{- title = conf?.singleVisual?.vcObjects?.title | array.first ; title?.properties?.text?.expr?.Literal?.Value}}<br>
-{{- for $kp in conf?.singleVisual?.projections}}
-    {{-"`"}}{{$kp.key}}{{":`"}} {{$kp.value| array.map "queryRef"-}}<br>
-{{- end}} | 
-{{- filter_visit viz.filters}} 
-    {{- end}}
-{{end}}
-
+            end
+        end
+        if viz?.filters != "[]" && viz.filters
+"<br>\r\n**Filter**:<br>\r\n"
+            filter_visit viz.filters
+        end 
+"\r\n"
+    end
+"\r\n"
+end}}
