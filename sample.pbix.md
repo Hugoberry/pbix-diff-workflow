@@ -4,22 +4,20 @@
 - [Power Query](#Power-Query)
 - [Metrics+DAX](#Metrics)
 ## PBIX file contents
-The file was last saved on 2020-03-31 15:52:54
+The file was last saved on 2021-03-16 16:08:28
 
 #### `File:` Version
  `FileSize:`8 `CompressedSize:`10
 #### `File:` [Content_Types].xml
- `FileSize:`770 `CompressedSize:`259
-#### `File:` DataMashup
- `FileSize:`28633 `CompressedSize:`6128
+ `FileSize:`752 `CompressedSize:`271
 #### `File:` DiagramLayout
- `FileSize:`1238 `CompressedSize:`364
+ `FileSize:`1238 `CompressedSize:`363
 #### `File:` Report\Layout
- `FileSize:`529182 `CompressedSize:`28630
+ `FileSize:`530064 `CompressedSize:`28692
 #### `File:` Settings
- `FileSize:`15 `CompressedSize:`11
+ `FileSize:`418 `CompressedSize:`198
 #### `File:` Metadata
- `FileSize:`575 `CompressedSize:`256
+ `FileSize:`234 `CompressedSize:`130
 #### `File:` Report\LinguisticSchema
  `FileSize:`992 `CompressedSize:`322
 #### `File:` Connections
@@ -47,9 +45,9 @@ The file was last saved on 2020-03-31 15:52:54
 #### `File:` Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json
  `FileSize:`25607 `CompressedSize:`8737
 #### `File:` SecurityBindings
- `FileSize:`326 `CompressedSize:`326
+ `FileSize:`326 `CompressedSize:`323
 #### `File:` DataModel
- `FileSize:`453243 `CompressedSize:`453243
+ `FileSize:`451432 `CompressedSize:`451432
 
 
 ## Report\Layout
@@ -486,11 +484,16 @@ The file was last saved on 2020-03-31 15:52:54
 
 
 # Power Query
-## DataMashup
-```
-section Section1;
 
-shared Cases = let
+
+## Queries
+["Cases","Deaths","COVID","StateDim","Table","COVID measures"]
+
+## Expressions
+### `Expression:` Cases
+
+```
+let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_confirmed_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
     #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
     Cols = Table.ColumnNames(#"Promoted Headers"),
@@ -503,9 +506,12 @@ shared Cases = let
     #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
     #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Changed Type1";
+    #"Changed Type1"
+```
+### `Expression:` Deaths
 
-shared Deaths = let
+```
+let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_deaths_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
     #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
     Cols = Table.ColumnNames(#"Promoted Headers"),
@@ -518,9 +524,13 @@ shared Deaths = let
     #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
     #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Changed Type1";
+    #"Changed Type1"
+```
 
-shared COVID = let
+
+### `Partition:` COVID
+```
+let
     Source = Table.NestedJoin(Cases, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, Deaths, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, "Deaths", JoinKind.LeftOuter),
     #"Expanded Deaths" = Table.ExpandTableColumn(Source, "Deaths", {"Deaths"}, {"Deaths.1"}),
     #"Renamed Columns" = Table.RenameColumns(#"Expanded Deaths",{{"Deaths.1", "Deaths"}}),
@@ -532,27 +542,37 @@ shared COVID = let
     #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","Municipality of Anchorage","Anchorage",Replacer.ReplaceText,{"County Name"}),
     #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value4",{{"Cases", Int64.Type}, {"Deaths", Int64.Type}})
 in
-    #"Changed Type1";
+    #"Changed Type1"
+```
 
-shared StateDim = let
+### `Partition:` StateDim
+```
+let
     Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("XZTRbuowDIZfpeJ62jsgykbHmlYU6DjTLkyb0ahtjJJ0jPP0J07ZqZmEkPq5sX/7j/v+Ppt3cIQeZg+z+av/Ezj7eAjUtgGuGTTqL+pA/3DagrZgCW8mvIBOfaLRit5fzFkAOzRQI+GMY61l5VQ1OIpsp0gsO7iAkZ7Eywk/+TSqpuxPTPizRHMKNZ9ZzZVPoJR/XiUTTGpoSEUSM9Z1SqOiZhKWNdG1gtB5IhjFS0Cs0PpnFOuCQandULVXwocJv+Kg7C3tK8uRgtLUbLrkzFw70DXhmGNroWoGK52jqilPo6pGnUATTjj2c7boqGoqOLeWfuczzSkt7iM4mICZYSlqN4pPmVlCHs3t6oglx18QvBJ7Di/RCvqzbVRwV6zuYy/SWElTEy/3gVR+q4qsE+l94ICmJcKmLNC4JlqAQe9sULD4HYyhHech2GizRlGFjGnK2s7fmLArGVuLzMgT0pgzdv1zqbW9dl8wLkDOjNk0WMsosTc/N8ycAod7scXid/C/2IKJ3Uoy1Uqa4lZw/h1u4/ZtYjsHjX/aMdP20vTeTQ/2nCq/SaP8PZNfgvdLn1xoueQBaV3EDpXM6lLZCrVV4QxruLxi75MRZZ7Ne2lUBToqoMfwvaHreJB2XPEBetrvHWPBSGl05BeFVuo23rATOXsvH6RxGG3G65NvWGj3WDze5LPT+4S9EivrvDAX4WfkP2NDfwyNxsykHDoYKHX5c+7jHw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [State = _t, #"State code" = _t, #"US territories" = _t]),
     #"Changed Type" = Table.TransformColumnTypes(Source,{{"State", type text}, {"State code", type text}, {"US territories", type text}})
 in
-    #"Changed Type";
+    #"Changed Type"
+```
 
-shared Table = let
+### `Partition:` Table
+```
+let
     Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcs7PS8ssyk1NUXBOLE4tVtJRMlSK1YlWcklNLMkAcY3AXJCkgltiSWJOZkmlQlBiSSpQylgpNhYA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [Metric = _t, Order = _t]),
     #"Changed Type" = Table.TransformColumnTypes(Source,{{"Metric", type text}, {"Order", Int64.Type}})
 in
-    #"Changed Type";
+    #"Changed Type"
+```
 
-shared #"COVID measures" = let
+### `Partition:` COVID measures
+```
+let
     Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
     #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", Int64.Type}}),
     #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
 in
-    #"Removed Columns";
+    #"Removed Columns"
 ```
+
 
 ## Metrics
 ### Tables
@@ -664,7 +684,7 @@ DAY([Date])
 
 ---
 #### `Column:` 'COVID'[Date]
- `Nullable`  `Referenced`  `Cardinality:` 69<br> `DataType:` DateTime `ColumnType:` Data `Encoding:` HASH `Format String:` m/d/yyyy<br>`DictionarySize:` 3248 `DataSize:` 145656 `HierarchiesSize:` 592
+ `Nullable`  `Referenced`  `Cardinality:` 69<br> `DataType:` DateTime `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 3248 `DataSize:` 145656 `HierarchiesSize:` 592
 
 ---
 #### `Column:` 'COVID'[Cases]
