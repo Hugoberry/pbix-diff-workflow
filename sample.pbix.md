@@ -4,245 +4,247 @@
 - [Power Query](#Power-Query)
 - [Metrics+DAX](#Metrics)
 ## PBIX file contents
-The file was last saved on 2020-12-03 10:42:02
+The file was last saved on 2020-03-30 18:36:04
 
-##### Version
+### `File:` Version
  `FileSize:`8 `CompressedSize:`10
-##### [Content_Types].xml
- `FileSize:`752 `CompressedSize:`271
-##### DiagramLayout
- `FileSize:`1,238 `CompressedSize:`363
-##### Report\Layout
- `FileSize:`530,064 `CompressedSize:`28,692
-##### Settings
- `FileSize:`418 `CompressedSize:`198
-##### Metadata
- `FileSize:`234 `CompressedSize:`130
-##### Report\LinguisticSchema
+### `File:` [Content_Types].xml
+ `FileSize:`770 `CompressedSize:`259
+### `File:` DataMashup
+ `FileSize:`28,085 `CompressedSize:`6,106
+### `File:` DiagramLayout
+ `FileSize:`1,238 `CompressedSize:`364
+### `File:` Report\Layout
+ `FileSize:`529,250 `CompressedSize:`28,655
+### `File:` Settings
+ `FileSize:`15 `CompressedSize:`11
+### `File:` Metadata
+ `FileSize:`575 `CompressedSize:`256
+### `File:` Report\LinguisticSchema
  `FileSize:`992 `CompressedSize:`322
-##### Connections
+### `File:` Connections
  `FileSize:`136 `CompressedSize:`119
-##### Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\package.json
+### `File:` Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\package.json
  `FileSize:`789 `CompressedSize:`443
-##### Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\resources\choropleth4C77906D867C4C09AFE83BA5E2AA106A.pbiviz.json
+### `File:` Report\CustomVisuals\choropleth4C77906D867C4C09AFE83BA5E2AA106A\resources\choropleth4C77906D867C4C09AFE83BA5E2AA106A.pbiviz.json
  `FileSize:`542,463 `CompressedSize:`171,602
-##### Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\package.json
+### `File:` Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\package.json
  `FileSize:`1,005 `CompressedSize:`574
-##### Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\resources\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json
+### `File:` Report\CustomVisuals\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1\resources\PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json
  `FileSize:`169,378 `CompressedSize:`58,091
-##### Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\package.json
+### `File:` Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\package.json
  `FileSize:`1,074 `CompressedSize:`553
-##### Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\resources\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654.pbiviz.json
+### `File:` Report\CustomVisuals\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654\resources\PBI_CV_FFFE680D_D220_4F62_B16C_C7B5C5732654.pbiviz.json
  `FileSize:`472,163 `CompressedSize:`148,781
-##### Report\StaticResources\RegisteredResources\Frame_2_(4)9974572814303304.png
+### `File:` Report\StaticResources\RegisteredResources\Frame_2_(4)9974572814303304.png
  `FileSize:`761,266 `CompressedSize:`632,573
-##### Report\StaticResources\RegisteredResources\Gradation_with_text894674291833967.GIF
+### `File:` Report\StaticResources\RegisteredResources\Gradation_with_text894674291833967.GIF
  `FileSize:`3,281 `CompressedSize:`2,894
-##### Report\StaticResources\RegisteredResources\USAFacts_Wordmark_blue8192537517759648.png
+### `File:` Report\StaticResources\RegisteredResources\USAFacts_Wordmark_blue8192537517759648.png
  `FileSize:`120,150 `CompressedSize:`100,741
-##### Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json
+### `File:` Report\StaticResources\SharedResources\BaseThemes\CY19SU12.json
  `FileSize:`3,527 `CompressedSize:`1,087
-##### Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json
+### `File:` Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json
  `FileSize:`25,607 `CompressedSize:`8,737
-##### SecurityBindings
- `FileSize:`326 `CompressedSize:`324
-##### DataModel
- `FileSize:`446,816 `CompressedSize:`446,816
+### `File:` SecurityBindings
+ `FileSize:`326 `CompressedSize:`323
+### `File:` DataModel
+ `FileSize:`446,482 `CompressedSize:`446,482
 
 
 ## Report\Layout
-### Main-Page
+### `Page:` Main
 `Order:` 0 `Width:` 1280 `Height:` 720 `Visible:` 1
 #### Main-Visuals
-##### Group:Daily increments
+##### `Page:` Main `Visual:` Group:Daily increments
 `X:` 459 `Y:` 418 `Z:` 7000 `Width:` 791 `Height:` 281
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Cumulative (grey)'<br>
 `X:` 132 `Y:` 0 `Z:` 1000 `Width:` 129 `Height:` 30
 
-##### clusteredColumnChart
+##### `Page:` Main `Visual:` clusteredColumnChart
 'Total deaths'<br>
 `X:` 402 `Y:` 50 `Z:` 0 `Width:` 389 `Height:` 230<br>
 **Fields:**<br>
  `Category:` ["COVID.Date"] `Y:` ["Sum(COVID.Daily deaths)"]
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Daily Deaths'<br>
 `X:` 403 `Y:` 41 `Z:` 2000 `Width:` 388 `Height:` 19
 
-##### clusteredColumnChart
+##### `Page:` Main `Visual:` clusteredColumnChart
 'Total confirmed cases'<br>
 `X:` 0 `Y:` 50 `Z:` 3000 `Width:` 389 `Height:` 230<br>
 **Fields:**<br>
  `Category:` ["COVID.Date"] `Y:` ["Sum(COVID.Daily cases)"]
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Daily Cases'<br>
 `X:` 0 `Y:` 41 `Z:` 4000 `Width:` 388 `Height:` 19
 
-##### pivotTable
+##### `Page:` Main `Visual:` pivotTable
 `X:` 34 `Y:` 53 `Z:` 0 `Width:` 378 `Height:` 629<br>
 **Fields:**<br>
  `Rows:` ["StateDim.Country", "StateDim.State"] `Values:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]
 
-##### Group:Pink Map
+##### `Page:` Main `Visual:` Group:Pink Map
 `X:` 437 `Y:` 52 `Z:` 1000 `Width:` 497 `Height:` 368
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 `X:` 29 `Y:` 0 `Z:` 3000 `Width:` 118 `Height:` 38
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Summary'<br>
 `X:` 152 `Y:` 0 `Z:` 2000 `Width:` 129 `Height:` 36
 
-##### shapeMap
+##### `Page:` Main `Visual:` shapeMap
 'Confirmed cases by State'<br>
 `X:` 0 `Y:` 11 `Z:` 1000 `Width:` 497 `Height:` 357<br>
 **Fields:**<br>
  `Category:` ["StateDim.State"] `Tooltips:` ["COVID measures.Total confirmed cases", "COVID measures.Case fatality rate"] `Value:` ["COVID measures.Total deaths"]
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Summary'<br>
 `X:` 29 `Y:` 0 `Z:` 0 `Width:` 118 `Height:` 36
 
-##### Group:Blue Map
+##### `Page:` Main `Visual:` Group:Blue Map
 `X:` 437 `Y:` 50 `Z:` 2000 `Width:` 498 `Height:` 368
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 `X:` 153 `Y:` 0 `Z:` 3000 `Width:` 130 `Height:` 42
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Summary'<br>
 `X:` 153 `Y:` 1 `Z:` 2000 `Width:` 129 `Height:` 37
 
-##### shapeMap
+##### `Page:` Main `Visual:` shapeMap
 'Confirmed cases by State'<br>
 `X:` 0 `Y:` 11 `Z:` 1000 `Width:` 498 `Height:` 357<br>
 **Fields:**<br>
  `Category:` ["StateDim.State"] `Value:` ["Latest COVID measures.Total confirmed cases"] `Tooltips:` ["COVID measures.Total deaths", "COVID measures.Case fatality rate"]
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Summary'<br>
 `X:` 29 `Y:` 0 `Z:` 0 `Width:` 118 `Height:` 38
 
-##### slicer
+##### `Page:` Main `Visual:` slicer
 `X:` 942 `Y:` 51 `Z:` 3000 `Width:` 308 `Height:` 74<br>
 **Fields:**<br>
  `Values:` ["COVID.Date"]
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Daily button'<br>
 `X:` 467 `Y:` 422 `Z:` 4000 `Width:` 116 `Height:` 25
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Cumulative button'<br>
 `X:` 595 `Y:` 422 `Z:` 5000 `Width:` 115 `Height:` 25
 
-##### Group:Cumulative
+##### `Page:` Main `Visual:` Group:Cumulative
 `X:` 459 `Y:` 419 `Z:` 6000 `Width:` 791 `Height:` 281
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Daily (grey)'<br>
 `X:` 6 `Y:` 0 `Z:` 4000 `Width:` 123 `Height:` 29
 
-##### clusteredColumnChart
+##### `Page:` Main `Visual:` clusteredColumnChart
 'Total confirmed cases'<br>
 `X:` 0 `Y:` 50 `Z:` 3000 `Width:` 388 `Height:` 231<br>
 **Fields:**<br>
  `Category:` ["COVID.Date"] `Y:` ["COVID measures.Confirmed cases"]
 
-##### clusteredColumnChart
+##### `Page:` Main `Visual:` clusteredColumnChart
 'Total deaths'<br>
 `X:` 403 `Y:` 50 `Z:` 2000 `Width:` 388 `Height:` 231<br>
 **Fields:**<br>
  `Category:` ["COVID.Date"] `Y:` ["COVID measures.Deaths"]
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Cumulative Deaths'<br>
 `X:` 403 `Y:` 40 `Z:` 1000 `Width:` 388 `Height:` 19
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Cumulative Cases'<br>
 `X:` 0 `Y:` 40 `Z:` 0 `Width:` 388 `Height:` 20
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'State View'<br>
 `X:` 734 `Y:` 384 `Z:` 8000 `Width:` 182 `Height:` 23
 
-##### Group:Group 1
+##### `Page:` Main `Visual:` Group:Group 1
 `X:` 959 `Y:` 142 `Z:` 11000 `Width:` 274 `Height:` 287
 
-##### image
+##### `Page:` Main `Visual:` image
 'Source:'<br>
 `X:` 0 `Y:` 237 `Z:` 2000 `Width:` 94 `Height:` 50
 
-##### textbox
+##### `Page:` Main `Visual:` textbox
 'Methodology'<br>
 `X:` 0 `Y:` 0 `Z:` 0 `Width:` 274 `Height:` 115
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 'Data Source'<br>
 `X:` 0 `Y:` 115 `Z:` 1000 `Width:` 274 `Height:` 121
 
-##### image
+##### `Page:` Main `Visual:` image
 `X:` 466 `Y:` 379 `Z:` 9000 `Width:` 149 `Height:` 31
 
-##### actionButton
+##### `Page:` Main `Visual:` actionButton
 `X:` 35 `Y:` 700 `Z:` 10000 `Width:` 1216 `Height:` 18
 
-### County view-Page
+### `Page:` County view
 `Order:` 1 `Width:` 1280 `Height:` 720 `Visible:` 1<br>
 **Filter:**<br>
 `StateDim`<br>State is 'New York'<br>
 #### County view-Visuals
-##### Group:Daily increments
+##### `Page:` County view `Visual:` Group:Daily increments
 `X:` 459 `Y:` 418 `Z:` 7000 `Width:` 791 `Height:` 281
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Cumulative (grey)'<br>
 `X:` 132 `Y:` 0 `Z:` 1000 `Width:` 129 `Height:` 30
 
-##### clusteredColumnChart
+##### `Page:` County view `Visual:` clusteredColumnChart
 'Total deaths'<br>
 `X:` 402 `Y:` 50 `Z:` 0 `Width:` 389 `Height:` 230<br>
 **Fields:**<br>
  `Category:` ["COVID.Date"] `Y:` ["Sum(COVID.Daily deaths)"]
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Daily Deaths'<br>
 `X:` 403 `Y:` 41 `Z:` 2000 `Width:` 388 `Height:` 19
 
-##### clusteredColumnChart
+##### `Page:` County view `Visual:` clusteredColumnChart
 'Total confirmed cases'<br>
 `X:` 0 `Y:` 50 `Z:` 3000 `Width:` 389 `Height:` 230<br>
 **Fields:**<br>
  `Category:` ["COVID.Date"] `Y:` ["Sum(COVID.Daily cases)"]
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Daily (grey)'<br>
 `X:` 133 `Y:` 0 `Z:` 5000 `Width:` 122 `Height:` 29
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Daily Cases'<br>
 `X:` 0 `Y:` 41 `Z:` 4000 `Width:` 388 `Height:` 19
 
-##### pivotTable
+##### `Page:` County view `Visual:` pivotTable
 `X:` 28 `Y:` 53 `Z:` 0 `Width:` 386 `Height:` 629<br>
 **Fields:**<br>
  `Rows:` ["StateDim.State", "COVID.County Name"] `Values:` ["COVID measures.Total confirmed cases", "COVID measures.Total deaths", "COVID measures.Case fatality rate"]
 
-##### Group:Pink Map
+##### `Page:` County view `Visual:` Group:Pink Map
 `X:` 437 `Y:` 51 `Z:` 1000 `Width:` 486 `Height:` 367
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 `X:` 29 `Y:` 0 `Z:` 3000 `Width:` 118 `Height:` 38
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Summary'<br>
 `X:` 152 `Y:` 0 `Z:` 2000 `Width:` 129 `Height:` 36
 
-##### filledMap
+##### `Page:` County view `Visual:` filledMap
 'Confirmed cases by State'<br>
 `X:` 0 `Y:` 31 `Z:` 1000 `Width:` 486 `Height:` 336<br>
 **Fields:**<br>
@@ -250,21 +252,21 @@ The file was last saved on 2020-12-03 10:42:02
 **Filter**:<br>
 `COVID`<br>not (County Contains 'Unallocated')<br>
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Summary'<br>
 `X:` 29 `Y:` 0 `Z:` 0 `Width:` 118 `Height:` 36
 
-##### Group:Blue Map
+##### `Page:` County view `Visual:` Group:Blue Map
 `X:` 437 `Y:` 50 `Z:` 2000 `Width:` 486 `Height:` 369
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 `X:` 154 `Y:` 0 `Z:` 3000 `Width:` 129 `Height:` 37
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Summary'<br>
 `X:` 153 `Y:` 2 `Z:` 2000 `Width:` 129 `Height:` 37
 
-##### filledMap
+##### `Page:` County view `Visual:` filledMap
 'Confirmed cases by State'<br>
 `X:` 0 `Y:` 33 `Z:` 1000 `Width:` 486 `Height:` 336<br>
 **Fields:**<br>
@@ -272,92 +274,87 @@ The file was last saved on 2020-12-03 10:42:02
 **Filter**:<br>
 `COVID`<br>not (County Contains 'Unallocated')<br>
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Summary'<br>
 `X:` 29 `Y:` 1 `Z:` 0 `Width:` 118 `Height:` 38
 
-##### slicer
+##### `Page:` County view `Visual:` slicer
 `X:` 942 `Y:` 40 `Z:` 3000 `Width:` 309 `Height:` 75<br>
 **Fields:**<br>
  `Values:` ["COVID.Date"]
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Daily button'<br>
 `X:` 467 `Y:` 422 `Z:` 4000 `Width:` 116 `Height:` 25
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Cumulative button'<br>
 `X:` 595 `Y:` 422 `Z:` 5000 `Width:` 115 `Height:` 25
 
-##### Group:Cumulative
+##### `Page:` County view `Visual:` Group:Cumulative
 `X:` 459 `Y:` 419 `Z:` 6000 `Width:` 791 `Height:` 281
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Daily (grey)'<br>
 `X:` 6 `Y:` 0 `Z:` 4000 `Width:` 123 `Height:` 29
 
-##### clusteredColumnChart
+##### `Page:` County view `Visual:` clusteredColumnChart
 'Total confirmed cases'<br>
 `X:` 0 `Y:` 50 `Z:` 3000 `Width:` 388 `Height:` 231<br>
 **Fields:**<br>
  `Category:` ["COVID.Date"] `Y:` ["COVID measures.Confirmed cases"]
 
-##### clusteredColumnChart
+##### `Page:` County view `Visual:` clusteredColumnChart
 'Total deaths'<br>
 `X:` 403 `Y:` 50 `Z:` 2000 `Width:` 388 `Height:` 231<br>
 **Fields:**<br>
  `Category:` ["COVID.Date"] `Y:` ["COVID measures.Deaths"]
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Cumulative Deaths'<br>
 `X:` 403 `Y:` 40 `Z:` 1000 `Width:` 388 `Height:` 19
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Cumulative Cases'<br>
 `X:` 0 `Y:` 40 `Z:` 0 `Width:` 388 `Height:` 20
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 `X:` 463 `Y:` 51 `Z:` 8000 `Width:` 123 `Height:` 39
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'State View'<br>
 `X:` 788 `Y:` 62 `Z:` 9000 `Width:` 129 `Height:` 25
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'State View'<br>
 `X:` 1145 `Y:` 2 `Z:` 10000 `Width:` 129 `Height:` 25
 
-##### Group:Group 1
+##### `Page:` County view `Visual:` Group:Group 1
 `X:` 959 `Y:` 142 `Z:` 11000 `Width:` 274 `Height:` 287
 
-##### image
+##### `Page:` County view `Visual:` image
 'Source:'<br>
 `X:` 0 `Y:` 237 `Z:` 2000 `Width:` 94 `Height:` 50
 
-##### textbox
+##### `Page:` County view `Visual:` textbox
 'Methodology'<br>
 `X:` 0 `Y:` 0 `Z:` 0 `Width:` 274 `Height:` 115
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 'Data Source'<br>
 `X:` 0 `Y:` 115 `Z:` 1000 `Width:` 274 `Height:` 121
 
-##### actionButton
+##### `Page:` County view `Visual:` actionButton
 `X:` 35 `Y:` 700 `Z:` 12000 `Width:` 1216 `Height:` 18
 
 
 
 # Power Query
-
-
-## Queries
-["Cases","Deaths","COVID","StateDim","Table","COVID measures"]
-
-## Expressions
-### Cases
-
+## DataMashup
 ```
-let
+section Section1;
+
+shared Cases = let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_confirmed_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
     #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
     Cols = Table.ColumnNames(#"Promoted Headers"),
@@ -369,12 +366,9 @@ let
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
     #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
 in
-    #"Removed Columns"
-```
-### Deaths
+    #"Removed Columns";
 
-```
-let
+shared Deaths = let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_deaths_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
     #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
     Cols = Table.ColumnNames(#"Promoted Headers"),
@@ -386,13 +380,9 @@ let
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
     #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
 in
-    #"Removed Columns"
-```
+    #"Removed Columns";
 
-
-### COVID
-```
-let
+shared COVID = let
     Source = Table.NestedJoin(Cases, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, Deaths, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, "Deaths", JoinKind.LeftOuter),
     #"Expanded Deaths" = Table.ExpandTableColumn(Source, "Deaths", {"Deaths"}, {"Deaths.1"}),
     #"Renamed Columns" = Table.RenameColumns(#"Expanded Deaths",{{"Deaths.1", "Deaths"}}),
@@ -404,126 +394,116 @@ let
     #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","Municipality of Anchorage","Anchorage",Replacer.ReplaceText,{"County Name"}),
     #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value4",{{"Cases", Int64.Type}, {"Deaths", Int64.Type}})
 in
-    #"Changed Type1"
-```
+    #"Changed Type1";
 
-### StateDim
-```
-let
+shared StateDim = let
     Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("XZTRbuowDIZfpeJ62jsgykbHmlYU6DjTLkyb0ahtjJJ0jPP0J07ZqZmEkPq5sX/7j/v+Ppt3cIQeZg+z+av/Ezj7eAjUtgGuGTTqL+pA/3DagrZgCW8mvIBOfaLRit5fzFkAOzRQI+GMY61l5VQ1OIpsp0gsO7iAkZ7Eywk/+TSqpuxPTPizRHMKNZ9ZzZVPoJR/XiUTTGpoSEUSM9Z1SqOiZhKWNdG1gtB5IhjFS0Cs0PpnFOuCQandULVXwocJv+Kg7C3tK8uRgtLUbLrkzFw70DXhmGNroWoGK52jqilPo6pGnUATTjj2c7boqGoqOLeWfuczzSkt7iM4mICZYSlqN4pPmVlCHs3t6oglx18QvBJ7Di/RCvqzbVRwV6zuYy/SWElTEy/3gVR+q4qsE+l94ICmJcKmLNC4JlqAQe9sULD4HYyhHech2GizRlGFjGnK2s7fmLArGVuLzMgT0pgzdv1zqbW9dl8wLkDOjNk0WMsosTc/N8ycAod7scXid/C/2IKJ3Uoy1Uqa4lZw/h1u4/ZtYjsHjX/aMdP20vTeTQ/2nCq/SaP8PZNfgvdLn1xoueQBaV3EDpXM6lLZCrVV4QxruLxi75MRZZ7Ne2lUBToqoMfwvaHreJB2XPEBetrvHWPBSGl05BeFVuo23rATOXsvH6RxGG3G65NvWGj3WDze5LPT+4S9EivrvDAX4WfkP2NDfwyNxsykHDoYKHX5c+7jHw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [State = _t, #"State code" = _t, #"US territories" = _t]),
     #"Changed Type" = Table.TransformColumnTypes(Source,{{"State", type text}, {"State code", type text}, {"US territories", type text}})
 in
-    #"Changed Type"
-```
+    #"Changed Type";
 
-### Table
-```
-let
+shared Table = let
     Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcs7PS8ssyk1NUXBOLE4tVtJRMlSK1YlWcklNLMkAcY3AXJCkgltiSWJOZkmlQlBiSSpQylgpNhYA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [Metric = _t, Order = _t]),
     #"Changed Type" = Table.TransformColumnTypes(Source,{{"Metric", type text}, {"Order", Int64.Type}})
 in
-    #"Changed Type"
-```
+    #"Changed Type";
 
-### COVID measures
-```
-let
+shared #"COVID measures" = let
     Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
     #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", Int64.Type}}),
     #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
 in
-    #"Removed Columns"
+    #"Removed Columns";
 ```
-
 
 ## Metrics
 ### Tables
-##### DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df
+##### `Table:` DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df
 
 ```
 Calendar(Date(2015,1,1), Date(2015,1,1))
 ```
 **Hidden** **Referenced** `RowCount:` 1 `ReferentialIntegrityViolationCount:` 0<br> `ColumnsSize:` 35,220 `TableSize:` 35,316 `RelationshipsSize:` 0 `UserHierarchiesSize:` 96
-##### COVID
+##### `Table:` COVID
 **Referenced** `RowCount:` 217,396 `ReferentialIntegrityViolationCount:` 0<br> `ColumnsSize:` 1,274,205 `TableSize:` 1,274,341 `RelationshipsSize:` 136 `UserHierarchiesSize:` 
-##### StateDim
+##### `Table:` StateDim
 **Referenced** `RowCount:` 57 `ReferentialIntegrityViolationCount:` 0<br> `ColumnsSize:` 72,044 `TableSize:` 72,044 `RelationshipsSize:` 0 `UserHierarchiesSize:` 
-##### Table
+##### `Table:` Table
 `RowCount:` 3 `ReferentialIntegrityViolationCount:` 0<br> `ColumnsSize:` 17,516 `TableSize:` 17,516 `RelationshipsSize:` 0 `UserHierarchiesSize:` 
-##### LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0
+##### `Table:` LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0
 
 ```
 Calendar(Date(Year(MIN('COVID'[Date])), 1, 1), Date(Year(MAX('COVID'[Date])), 12, 31))
 ```
 **Hidden** **Referenced** `RowCount:` 366 `ReferentialIntegrityViolationCount:` 0<br> `ColumnsSize:` 63,096 `TableSize:` 69,240 `RelationshipsSize:` 0 `UserHierarchiesSize:` 6,144
-##### COVID measures
+##### `Table:` COVID measures
 `RowCount:`  `ReferentialIntegrityViolationCount:` 0<br> `ColumnsSize:` 400 `TableSize:` 400 `RelationshipsSize:` 0 `UserHierarchiesSize:` 
 
 
 ### Columns
-#### 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
+#### `Column:` 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
  `Hidden`  `Key`  `Unique`  `RowNumber` <br> `DataType:` Int64 `ColumnType:` RowNumber `Encoding:` VALUE<br>`DictionarySize:` 120 `DataSize:`  `HierarchiesSize:` 
-#### 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]
+#### `Column:` 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Date]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 1<br> `DataType:` DateTime `ColumnType:` CalculatedTableColumn `Encoding:` VALUE<br>`DictionarySize:` 120 `DataSize:` 8 `HierarchiesSize:` 32
-#### 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]
+#### `Column:` 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Year]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 1<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` VALUE
 ```
 YEAR([Date])
 ```
 <br>`DictionarySize:` 120 `DataSize:` 8 `HierarchiesSize:` 32
-#### 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]
+#### `Column:` 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[MonthNo]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 1<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` VALUE
 ```
 MONTH([Date])
 ```
 <br>`DictionarySize:` 120 `DataSize:` 8 `HierarchiesSize:` 32
-#### 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]
+#### `Column:` 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Month]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 1<br> `DataType:` String `ColumnType:` Calculated `Encoding:` HASH
 ```
 FORMAT([Date], "MMMM")
 ```
  `Sort by:` MonthNo<br>`DictionarySize:` 17,080 `DataSize:` 8 `HierarchiesSize:` 64
-#### 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]
+#### `Column:` 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[QuarterNo]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 1<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` VALUE
 ```
 INT(([MonthNo] + 2) / 3)
 ```
 <br>`DictionarySize:` 120 `DataSize:` 8 `HierarchiesSize:` 32
-#### 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]
+#### `Column:` 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Quarter]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 1<br> `DataType:` String `ColumnType:` Calculated `Encoding:` HASH
 ```
 "Qtr " & [QuarterNo]
 ```
  `Sort by:` QuarterNo<br>`DictionarySize:` 17,076 `DataSize:` 8 `HierarchiesSize:` 64
-#### 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]
+#### `Column:` 'DateTableTemplate_fe7eb183-f12b-4c88-bb89-cfaa7f88e1df'[Day]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 1<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` VALUE
 ```
 DAY([Date])
 ```
 <br>`DictionarySize:` 120 `DataSize:` 8 `HierarchiesSize:` 32
-#### 'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
+#### `Column:` 'COVID'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
  `Hidden`  `Key`  `Unique`  `RowNumber`  `Referenced` <br> `DataType:` Int64 `ColumnType:` RowNumber `Encoding:` VALUE<br>`DictionarySize:` 120 `DataSize:`  `HierarchiesSize:` 
-#### 'COVID'[County Name]
+#### `Column:` 'COVID'[County Name]
  `Nullable`  `Referenced`  `Cardinality:` 1,882<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 67,623 `DataSize:` 209,600 `HierarchiesSize:` 15,104
-#### 'COVID'[State]
+#### `Column:` 'COVID'[State]
  `Nullable`  `Referenced`  `Cardinality:` 51<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17,770 `DataSize:` 15,840 `HierarchiesSize:` 448
-#### 'COVID'[stateFIPS]
+#### `Column:` 'COVID'[stateFIPS]
  `Hidden`  `Nullable`  `Cardinality:` 51<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17,756 `DataSize:` 15,840 `HierarchiesSize:` 448
-#### 'COVID'[Date]
- `Nullable`  `Referenced`  `Cardinality:` 68<br> `DataType:` DateTime `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 3,224 `DataSize:` 143,776 `HierarchiesSize:` 592
-#### 'COVID'[Cases]
+#### `Column:` 'COVID'[Date]
+ `Nullable`  `Referenced`  `Cardinality:` 68<br> `DataType:` DateTime `ColumnType:` Data `Encoding:` HASH `Format String:` m/d/yyyy<br>`DictionarySize:` 3,224 `DataSize:` 143,776 `HierarchiesSize:` 592
+#### `Column:` 'COVID'[Cases]
  `Nullable`  `Referenced`  `Cardinality:` 574<br> `DataType:` Int64 `ColumnType:` Data `Encoding:` HASH `Format String:` 0<br>`DictionarySize:` 11,256 `DataSize:` 7,880 `HierarchiesSize:` 4,640
-#### 'COVID'[FIPS]
+#### `Column:` 'COVID'[FIPS]
  `Nullable`  `Cardinality:` 3,147<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 99,685 `DataSize:` 209,520 `HierarchiesSize:` 25,216
-#### 'COVID'[Deaths]
+#### `Column:` 'COVID'[Deaths]
  `Nullable`  `Referenced`  `Cardinality:` 73<br> `DataType:` Int64 `ColumnType:` Data `Encoding:` HASH `Format String:` 0<br>`DictionarySize:` 1,672 `DataSize:` 368 `HierarchiesSize:` 624
-#### 'COVID'[County]
+#### `Column:` 'COVID'[County]
  `Nullable`  `Cardinality:` 3,197<br> `DataType:` String `ColumnType:` Calculated `Encoding:` HASH
 ```
 'COVID'[County Name] & ", " & 'COVID'[State]
 ```
 <br>`DictionarySize:` 129,183 `DataSize:` 210,512 `HierarchiesSize:` 25,616
-#### 'COVID'[Daily cases]
+#### `Column:` 'COVID'[Daily cases]
  `Nullable`  `Referenced`  `Cardinality:` 313<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
 ```
 
@@ -543,7 +523,7 @@ RETURN  __TodaysCases - CALCULATE(
 ) + 0
 ```
  `Format String:` #,0<br>`DictionarySize:` 9,796 `DataSize:` 23,440 `HierarchiesSize:` 2,544
-#### 'COVID'[Daily deaths]
+#### `Column:` 'COVID'[Daily deaths]
  `Nullable`  `Referenced`  `Cardinality:` 46<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
 ```
 
@@ -563,90 +543,90 @@ RETURN  __TodaysDeaths - CALCULATE(
 ) + 0
 ```
  `Format String:` 0<br>`DictionarySize:` 1,536 `DataSize:` 2,160 `HierarchiesSize:` 416
-#### 'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
+#### `Column:` 'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
  `Hidden`  `Key`  `Unique`  `RowNumber` <br> `DataType:` Int64 `ColumnType:` RowNumber `Encoding:` VALUE<br>`DictionarySize:` 120 `DataSize:`  `HierarchiesSize:` 
-#### 'StateDim'[State]
+#### `Column:` 'StateDim'[State]
  `Nullable`  `Referenced`  `Cardinality:` 57<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 18,664 `DataSize:` 48 `HierarchiesSize:` 496
-#### 'StateDim'[State code]
+#### `Column:` 'StateDim'[State code]
  `Nullable`  `Referenced`  `Cardinality:` 57<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17,854 `DataSize:` 48 `HierarchiesSize:` 496
-#### 'StateDim'[US territories]
+#### `Column:` 'StateDim'[US territories]
  `Nullable`  `Cardinality:` 2<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17,086 `DataSize:` 8 `HierarchiesSize:` 80
-#### 'StateDim'[Country]
+#### `Column:` 'StateDim'[Country]
  `Hidden`  `Nullable`  `Cardinality:` 1<br> `DataType:` String `ColumnType:` Calculated `Encoding:` HASH
 ```
 "USA"
 ```
 <br>`DictionarySize:` 17,072 `DataSize:` 8 `HierarchiesSize:` 64
-#### 'Table'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
+#### `Column:` 'Table'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
  `Hidden`  `Key`  `Unique`  `RowNumber` <br> `DataType:` Int64 `ColumnType:` RowNumber `Encoding:` VALUE<br>`DictionarySize:` 120 `DataSize:`  `HierarchiesSize:` 
-#### 'Table'[Metric]
+#### `Column:` 'Table'[Metric]
  `Nullable`  `Cardinality:` 3<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17,164 `DataSize:` 8 `HierarchiesSize:` 64
-#### 'Table'[Order]
+#### `Column:` 'Table'[Order]
  `Nullable`  `Cardinality:` 3<br> `DataType:` Int64 `ColumnType:` Data `Encoding:` VALUE `Format String:` 0<br>`DictionarySize:` 120 `DataSize:` 8 `HierarchiesSize:` 32
-#### 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
+#### `Column:` 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
  `Hidden`  `Key`  `Unique`  `RowNumber` <br> `DataType:` Int64 `ColumnType:` RowNumber `Encoding:` VALUE<br>`DictionarySize:` 120 `DataSize:`  `HierarchiesSize:` 
-#### 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]
+#### `Column:` 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 366<br> `DataType:` DateTime `ColumnType:` CalculatedTableColumn `Encoding:` HASH<br>`DictionarySize:` 19,576 `DataSize:` 424 `HierarchiesSize:` 2,976
-#### 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]
+#### `Column:` 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Year]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 1<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
 ```
 YEAR([Date])
 ```
 <br>`DictionarySize:` 1,356 `DataSize:` 8 `HierarchiesSize:` 64
-#### 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]
+#### `Column:` 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[MonthNo]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 12<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
 ```
 MONTH([Date])
 ```
 <br>`DictionarySize:` 1,400 `DataSize:` 184 `HierarchiesSize:` 144
-#### 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]
+#### `Column:` 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Month]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 12<br> `DataType:` String `ColumnType:` Calculated `Encoding:` HASH
 ```
 FORMAT([Date], "MMMM")
 ```
  `Sort by:` MonthNo<br>`DictionarySize:` 17,324 `DataSize:` 184 `HierarchiesSize:` 144
-#### 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]
+#### `Column:` 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[QuarterNo]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 4<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
 ```
 INT(([MonthNo] + 2) / 3)
 ```
 <br>`DictionarySize:` 1,368 `DataSize:` 8 `HierarchiesSize:` 80
-#### 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]
+#### `Column:` 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Quarter]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 4<br> `DataType:` String `ColumnType:` Calculated `Encoding:` HASH
 ```
 "Qtr " & [QuarterNo]
 ```
  `Sort by:` QuarterNo<br>`DictionarySize:` 17,136 `DataSize:` 8 `HierarchiesSize:` 80
-#### 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]
+#### `Column:` 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Day]
  `Hidden`  `Nullable`  `Referenced`  `Cardinality:` 31<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` VALUE
 ```
 DAY([Date])
 ```
 <br>`DictionarySize:` 120 `DataSize:` 248 `HierarchiesSize:` 144
-#### 'COVID measures'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
+#### `Column:` 'COVID measures'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
  `Hidden`  `Key`  `Unique`  `RowNumber` <br> `DataType:` Int64 `ColumnType:` RowNumber `Encoding:` HASH<br>`DictionarySize:` 392 `DataSize:` 8 `HierarchiesSize:` 
 
 
 ### Measures
-#### 'COVID'[Updated]
+#### `Measure:` 'COVID'[Updated]
 
 ```
 "Data provided by USAFacts. Because of the frequency of data upates, they may not reflect the exact numbers reported by government organizations or the news media. For more information or to download the data, please click the logo below.  Data updated through " & FORMAT([Max date],"mmmm dd, yyyy") & "."
 ```
  `DataType`: String
-#### 'COVID'[Max date]
+#### `Measure:` 'COVID'[Max date]
 
 ```
 CALCULATE(MAX('COVID'[Date]),ALL('COVID'))
 ```
  `Hidden`  `DataType`: DateTime `FormatString:` General Date
-#### 'StateDim'[Drill-through button text]
+#### `Measure:` 'StateDim'[Drill-through button text]
 
 ```
 IF(SELECTEDVALUE(StateDim[State],0)==0,"Click on a State to view by County  ", "Click here to view by County in " & VALUES(StateDim[State code]) &"  ")
 ```
  `DataType`: String
-#### 'Table'[Methodology]
+#### `Measure:` 'Table'[Methodology]
 
 ```
 "This interactive feature aggregates data from the Centers for Disease Control and Prevention (CDC), state- and local-level public health agencies. County-level data is confirmed by referencing state and local agencies directly.
@@ -654,7 +634,7 @@ IF(SELECTEDVALUE(StateDim[State],0)==0,"Click on a State to view by County  ", "
 Source: USAFacts"
 ```
  `DataType`: String
-#### 'Table'[Notes]
+#### `Measure:` 'Table'[Notes]
 
 ```
 "New York* covers 5 counties (Bronx, Kings, New York, Queens, Richmond), not New York county.
@@ -671,38 +651,38 @@ Jackson County includes other portions of Kansas City.
 Source: USAFacts"
 ```
  `DataType`: String
-#### 'Table'[Terms of use]
+#### `Measure:` 'Table'[Terms of use]
 
 ```
 "This report and data are provided " & """" & "as is" & """" & ", " & """" & "with all faults" & """" & ", and without warranty of any kind. Microsoft gives no express warranties or guarantees and expressly disclaims all implied warranties, including merchantability, fitness for a particular purpose, and non-infringement."
 ```
  `DataType`: String
-#### 'COVID measures'[Total confirmed cases]
+#### `Measure:` 'COVID measures'[Total confirmed cases]
 
 ```
 SUM('COVID'[Daily cases])
 ```
  `DataType`: Int64 `FormatString:` #,0
-#### 'COVID measures'[Total deaths]
+#### `Measure:` 'COVID measures'[Total deaths]
 
 ```
 SUM(COVID[Daily deaths])
 ```
  `DataType`: Int64 `FormatString:` #,0
-#### 'COVID measures'[Case fatality rate]
+#### `Measure:` 'COVID measures'[Case fatality rate]
 
 ```
 DIVIDE([Total deaths],[Total confirmed cases])
 
 ```
  `DataType`: Double `FormatString:` 0.0%;-0.0%;0.0%
-#### 'COVID measures'[Confirmed cases]
+#### `Measure:` 'COVID measures'[Confirmed cases]
 
 ```
 SUM('COVID'[Cases])
 ```
  `DataType`: Int64 `FormatString:` #,0
-#### 'COVID measures'[Deaths]
+#### `Measure:` 'COVID measures'[Deaths]
 
 ```
 SUM('COVID'[Deaths])
@@ -717,11 +697,11 @@ SUM('COVID'[Deaths])
 |LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0|Date Hierarchy|false|6,144|Year, Quarter, Month, Day|
 
 ### Relationships
-#### 'COVID'[Date] => 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]
+#### `Relationship:` 'COVID'[Date] => 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]
 `Active` Many => One<br>
 `Cardinality:` 68 => 366 `JoinOnDateBehavior:` DatePartOnly `CrossFilteringBehavior:` OneDirection `SecurityFilteringBehavior:` OneDirection<br>
 `RelationshipType:` SingleColumn `RelyOnReferentialIntegrity:` false `MissingKeys:` 0 `InvalidRows:` 0
-#### 'COVID'[State] => 'StateDim'[State code]
+#### `Relationship:` 'COVID'[State] => 'StateDim'[State code]
 `Active` Many => One<br>
 `Cardinality:` 51 => 57 `JoinOnDateBehavior:` DateAndTime `CrossFilteringBehavior:` OneDirection `SecurityFilteringBehavior:` OneDirection<br>
 `RelationshipType:` SingleColumn `RelyOnReferentialIntegrity:` false `MissingKeys:` 0 `InvalidRows:` 0
