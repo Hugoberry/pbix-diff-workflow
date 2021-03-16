@@ -4,18 +4,18 @@
 - [Power Query](#Power-Query)
 - [Metrics+DAX](#Metrics)
 ## PBIX file contents
-The file was last saved on 2020-03-30 18:36:04
+The file was last saved on 2020-03-31 15:52:54
 
 #### `File:` Version
  `FileSize:`8 `CompressedSize:`10
 #### `File:` [Content_Types].xml
  `FileSize:`770 `CompressedSize:`259
 #### `File:` DataMashup
- `FileSize:`28085 `CompressedSize:`6106
+ `FileSize:`28633 `CompressedSize:`6128
 #### `File:` DiagramLayout
  `FileSize:`1238 `CompressedSize:`364
 #### `File:` Report\Layout
- `FileSize:`529250 `CompressedSize:`28655
+ `FileSize:`529182 `CompressedSize:`28630
 #### `File:` Settings
  `FileSize:`15 `CompressedSize:`11
 #### `File:` Metadata
@@ -47,9 +47,9 @@ The file was last saved on 2020-03-30 18:36:04
 #### `File:` Report\StaticResources\SharedResources\Shapemaps\usa.states.topo.json
  `FileSize:`25607 `CompressedSize:`8737
 #### `File:` SecurityBindings
- `FileSize:`326 `CompressedSize:`323
+ `FileSize:`326 `CompressedSize:`326
 #### `File:` DataModel
- `FileSize:`446482 `CompressedSize:`446482
+ `FileSize:`453243 `CompressedSize:`453243
 
 
 ## Report\Layout
@@ -500,9 +500,10 @@ shared Cases = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Cases"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Removed Columns";
+    #"Changed Type1";
 
 shared Deaths = let
     Source = Csv.Document(AzureStorage.BlobContents("https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_deaths_usafacts.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
@@ -514,9 +515,10 @@ shared Deaths = let
     #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Type", {"Value"}),
     #"Renamed Columns" = Table.RenameColumns(#"Removed Errors",{{"Attribute", "Date"}, {"Value", "Deaths"}}),
     #"Added Custom" = Table.AddColumn(#"Renamed Columns", "FIPS", each Text.PadStart(Text.From([countyFIPS]),5,"0")),
-    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"})
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"countyFIPS"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Date", type date}})
 in
-    #"Removed Columns";
+    #"Changed Type1";
 
 shared COVID = let
     Source = Table.NestedJoin(Cases, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, Deaths, {"County Name", "State", "stateFIPS", "Date", "FIPS"}, "Deaths", JoinKind.LeftOuter),
@@ -563,7 +565,7 @@ Calendar(Date(2015,1,1), Date(2015,1,1))
 
 ---
 ##### `Table:` COVID
-**Referenced** `RowCount:` 217396 `ReferentialIntegrityViolationCount:` 0<br> `ColumnsSize:` 1274205 `TableSize:` 1274341 `RelationshipsSize:` 136 `UserHierarchiesSize:` 0
+**Referenced** `RowCount:` 220593 `ReferentialIntegrityViolationCount:` 0<br> `ColumnsSize:` 1303129 `TableSize:` 1303265 `RelationshipsSize:` 136 `UserHierarchiesSize:` 0
 
 ---
 ##### `Table:` StateDim
@@ -650,43 +652,43 @@ DAY([Date])
 
 ---
 #### `Column:` 'COVID'[County Name]
- `Nullable`  `Referenced`  `Cardinality:` 1882<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 67623 `DataSize:` 209600 `HierarchiesSize:` 15104
+ `Nullable`  `Referenced`  `Cardinality:` 1881<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 67599 `DataSize:` 213328 `HierarchiesSize:` 15088
 
 ---
 #### `Column:` 'COVID'[State]
- `Nullable`  `Referenced`  `Cardinality:` 51<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17770 `DataSize:` 15840 `HierarchiesSize:` 448
+ `Nullable`  `Referenced`  `Cardinality:` 51<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17770 `DataSize:` 17376 `HierarchiesSize:` 448
 
 ---
 #### `Column:` 'COVID'[stateFIPS]
- `Hidden`  `Nullable`  `Cardinality:` 51<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17756 `DataSize:` 15840 `HierarchiesSize:` 448
+ `Hidden`  `Nullable`  `Cardinality:` 51<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 17756 `DataSize:` 17376 `HierarchiesSize:` 448
 
 ---
 #### `Column:` 'COVID'[Date]
- `Nullable`  `Referenced`  `Cardinality:` 68<br> `DataType:` DateTime `ColumnType:` Data `Encoding:` HASH `Format String:` m/d/yyyy<br>`DictionarySize:` 3224 `DataSize:` 143776 `HierarchiesSize:` 592
+ `Nullable`  `Referenced`  `Cardinality:` 69<br> `DataType:` DateTime `ColumnType:` Data `Encoding:` HASH `Format String:` m/d/yyyy<br>`DictionarySize:` 3248 `DataSize:` 145656 `HierarchiesSize:` 592
 
 ---
 #### `Column:` 'COVID'[Cases]
- `Nullable`  `Referenced`  `Cardinality:` 574<br> `DataType:` Int64 `ColumnType:` Data `Encoding:` HASH `Format String:` 0<br>`DictionarySize:` 11256 `DataSize:` 7880 `HierarchiesSize:` 4640
+ `Nullable`  `Referenced`  `Cardinality:` 642<br> `DataType:` Int64 `ColumnType:` Data `Encoding:` HASH `Format String:` 0<br>`DictionarySize:` 19304 `DataSize:` 8296 `HierarchiesSize:` 5184
 
 ---
 #### `Column:` 'COVID'[FIPS]
- `Nullable`  `Cardinality:` 3147<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 99685 `DataSize:` 209520 `HierarchiesSize:` 25216
+ `Nullable`  `Cardinality:` 3145<br> `DataType:` String `ColumnType:` Data `Encoding:` HASH<br>`DictionarySize:` 99665 `DataSize:` 213152 `HierarchiesSize:` 25200
 
 ---
 #### `Column:` 'COVID'[Deaths]
- `Nullable`  `Referenced`  `Cardinality:` 73<br> `DataType:` Int64 `ColumnType:` Data `Encoding:` HASH `Format String:` 0<br>`DictionarySize:` 1672 `DataSize:` 368 `HierarchiesSize:` 624
+ `Nullable`  `Referenced`  `Cardinality:` 82<br> `DataType:` Int64 `ColumnType:` Data `Encoding:` HASH `Format String:` 0<br>`DictionarySize:` 2700 `DataSize:` 376 `HierarchiesSize:` 704
 
 ---
 #### `Column:` 'COVID'[County]
- `Nullable`  `Cardinality:` 3197<br> `DataType:` String `ColumnType:` Calculated `Encoding:` HASH
+ `Nullable`  `Cardinality:` 3195<br> `DataType:` String `ColumnType:` Calculated `Encoding:` HASH
 ```
 'COVID'[County Name] & ", " & 'COVID'[State]
 ```
-<br>`DictionarySize:` 129183 `DataSize:` 210512 `HierarchiesSize:` 25616
+<br>`DictionarySize:` 129147 `DataSize:` 214040 `HierarchiesSize:` 25600
 
 ---
 #### `Column:` 'COVID'[Daily cases]
- `Nullable`  `Referenced`  `Cardinality:` 313<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
+ `Nullable`  `Referenced`  `Cardinality:` 338<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
 ```
 
 VAR __CountyName = 'COVID'[County Name]
@@ -704,11 +706,11 @@ RETURN  __TodaysCases - CALCULATE(
     )
 ) + 0
 ```
- `Format String:` #,0<br>`DictionarySize:` 9796 `DataSize:` 23440 `HierarchiesSize:` 2544
+ `Format String:` #,0<br>`DictionarySize:` 9920 `DataSize:` 25744 `HierarchiesSize:` 2752
 
 ---
 #### `Column:` 'COVID'[Daily deaths]
- `Nullable`  `Referenced`  `Cardinality:` 46<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
+ `Nullable`  `Referenced`  `Cardinality:` 49<br> `DataType:` Int64 `ColumnType:` Calculated `Encoding:` HASH
 ```
 
 VAR __CountyName = 'COVID'[County Name]
@@ -726,7 +728,7 @@ RETURN  __TodaysDeaths - CALCULATE(
     )
 ) + 0
 ```
- `Format String:` 0<br>`DictionarySize:` 1536 `DataSize:` 2160 `HierarchiesSize:` 416
+ `Format String:` 0<br>`DictionarySize:` 1548 `DataSize:` 2560 `HierarchiesSize:` 432
 
 ---
 #### `Column:` 'StateDim'[RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61]
@@ -941,7 +943,7 @@ SUM('COVID'[Deaths])
 ### Relationships
 #### `Relationship:` 'COVID'[Date] => 'LocalDateTable_a0f5b894-4f57-4a54-a9d5-5508aa5843d0'[Date]
 `Active` Many => One<br>
-`Cardinality:` 68 => 366 `JoinOnDateBehavior:` DatePartOnly `CrossFilteringBehavior:` OneDirection `SecurityFilteringBehavior:` OneDirection<br>
+`Cardinality:` 69 => 366 `JoinOnDateBehavior:` DatePartOnly `CrossFilteringBehavior:` OneDirection `SecurityFilteringBehavior:` OneDirection<br>
 `RelationshipType:` SingleColumn `RelyOnReferentialIntegrity:` false `MissingKeys:` 0 `InvalidRows:` 0
 
 ---
