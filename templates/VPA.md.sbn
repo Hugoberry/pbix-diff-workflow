@@ -30,7 +30,7 @@
         t.RelationshipsSize
 " `UserHierarchiesSize:` "
         t.UserHierarchiesSize 
-"\r\n"
+"\r\n---\r\n"
 end}}
 
 ### Columns
@@ -102,7 +102,7 @@ c.FullColumnName
     c.DataSize 
 " `HierarchiesSize:` "
     c.HierarchiesSize 
-"\r\n"
+"\r\n---\r\n"
 end}}
 
 ### Measures
@@ -153,7 +153,7 @@ if m.KpiTrendExpression
     m.KpiTrendExpression
 "\r\n```\r\n"
 end
-"\r\n"
+"\r\n---\r\n"
 end}}
 
 ### User Hierarchies
@@ -198,5 +198,5 @@ r.RelyOnReferentialIntegrity
 r.MissingKeys
 " `InvalidRows:` "
 r.InvalidRows
-"\r\n"
+"\r\n---\r\n"
 end}}

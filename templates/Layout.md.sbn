@@ -118,7 +118,7 @@ end~}}
 "<br>\r\n**Filter**:<br>\r\n"
             filter_visit viz.filters
         end 
-"\r\n"
-    end
 "\r\n---\r\n"
+    end
+"\r\n"
 end}}
